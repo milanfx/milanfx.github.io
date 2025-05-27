@@ -1,12 +1,17 @@
 ---
 layout: page
-title: 首页
+title: Milanfx Study Notes
 permalink: /
 ---
 
-欢迎来到我的网站！
+- [00 - Kaggle Projects](/00 - Kaggle Projects/)
+- [01 - MSDS Express]      (/01 - MSDS Express/)
+- [02 - MSDS Courses]      (/02 - MSDS Courses/)
+- [03 - MSDS Electives]    (/03 - MSDS Electives/)
+- [04 - MSCS Courses]      (/04 - MSCS Courses/)
+- [05 - IBM Specialization](/05 - IBM Specialization/)
+- [06 - DL Specialization] (/06 - DL Specialization/)
 
-- [01 - MSDS Express](/01 - MSDS Express/)
-- [一级网页2](/一级2/)
-- [一级网页3](/一级3/)
-- [一级网页4](/一级4/)
+
+
+

@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 一级网页4
-permalink: /一级4/
+title: Kaggle Projects
+permalink: /00 - Kaggle Projects/
 ---
 
-这是一级网页4的内容。
+Kaggle Projects
 
 ### 二级网页
 - [二级网页1](/一级4/二级1/)

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 一级网页4
-permalink: /一级4/
+title: MSCS Courses
+permalink: /03 - MSCS Courses
 ---
 
 这是一级网页4的内容。

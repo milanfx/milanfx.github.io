@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 一级网页2
-permalink: /一级2/
+title: MSDS Courses
+permalink: /02 - MSDS Courses/
 ---
 
 这是一级网页2的内容。

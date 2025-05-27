@@ -1,8 +1,10 @@
 ---
 layout: page
-title: 01 - MSDS Express
+title: MSDS Express
 permalink: /01 - MSDS Express/
 ---
+
+MSDS Express
 
 这是一级网页1的内容。
 
