@@ -1,50 +1,51 @@
-### your site title here
+# Configurations
+title:            Jekyll Gitbook
+longtitle:        Jekyll Gitbook
+toc:
+  enabled: true
+  h_min:   1
+  h_max:   3
 
-title: Hagura - Light!
-# disabled because we are using a custom domain
-#baseurl: /hagura # name of the repository
-email: your@email.com
+# markdown render engine.
+markdown:         kramdown
+kramdown:
+  auto_ids:               true
+  input:                  GFM
+  math_engine:            mathjax
+  smart_quotes:           lsquo,rsquo,ldquo,rdquo
+  toc_levels:             1..6
+  syntax_highlighter:     rouge
+  syntax_highlighter_opts:
+    guess_lang:           true
 
-highlighter: rouge
+syntax_highlighter_style: colorful
+markdown_ext:             markdown,mkdown,mkdn,mkd,md
 
-permalink: /:title/
-paginate: 4
-paginate_path: /page:num/
-
-
-
-# Tracker
-analytics: UA-83979019-4
-
-# Comments
-disqus-shortname: webjeda-demo
-
-
-#optimization
-#compress.html
-compress_html:
-  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
-  comments: ["<!-- ", " -->"]
-  endings: [all]
-  ignore:
-    envs: [local]
-  blanklines: false
-  profile: false
-  startings: []
-
-
-sass:
-  sass_dir: /assets/css/_sass
-  style: compressed
-
-include:
-  - _pages
+# Permalinks
+permalink:                /:categories/:year-:month-:day-:title:output_ext
+# Disqus comments
+# disqushandler:            sighingnow
 
 exclude:
-  - README.md
-  - LICENSE.md
+  - _drafts
+collections:
+  pages:
+    output: true
+    permalink: /:collection/:path/
+  others:
+    output: true
+    permalink: /:collection/:path/
 
+ordered_collections:
+  - posts
+  - pages
+  - others
 
+page_width:       800px
+destination:      ./_site
+incremental:      false
+regenerate:       true
 plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-readme-index
+  - jemoji
