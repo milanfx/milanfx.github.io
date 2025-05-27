@@ -1,10 +1,18 @@
 ---
 layout: page
-title: 一级网页4
-permalink: /一级4/
+title: DL Specialization
+permalink: /06DLSpecialization/
 ---
 
-这是一级网页4的内容。
+### Study Notes
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
 
 ### 二级网页
 - [二级网页1](/一级4/二级1/)
