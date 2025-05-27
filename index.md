@@ -4,6 +4,14 @@ title: Milanfx Study Notes
 permalink: /
 ---
 
+### Study Notes
+
+xxxxx xxxxx xxxxx
+xxxxx xxxxx xxxxx
+xxxxx xxxxx xxxxx
+xxxxx xxxxx xxxxx
+
+<br>
 | ID | Host   | Content |
 |:--:|:------:|:-------:|
 |##########|##########|##########|
@@ -14,7 +22,5 @@ permalink: /
 | 04 | MSCS   | [Courses](/04 - MSCS Courses/)              |
 | 05 | IBM    | [Specialization](/05 - IBM Specialization/) |
 | 06 | DL     | [Specialization](/06 - DL Specialization/)  |
-
-
 
 
