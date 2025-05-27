@@ -1,27 +1,37 @@
----
-title: Why Jekyll with GitBook
-author: Tao He
-date: 2019-04-27
-category: Jekyll
-layout: post
----
+## Webjeda Hagura Theme
 
-### Specialization1
+[**Demo**](http://hagura.webjeda.com/)
 
-### Specialization2
+Hagura is a theme made for blogs with long text paragraphs. Made to be easy on the eyes as well with a switchable theme.
 
-### Specialization3
+Suitable fonts are selected for better readability. Since the theme is created for smartphone reading, the theme is very light and it loads instantly even on a slow data connection.
 
-### Specialization4
+The theme comes with pre-installed analytics, disqus and html compressor. But make sure you change key parameters in the _config.yml file.
 
-### Specialization5
 
-### Specialization6
 
-### Specialization7
+## Installation
+* Fork the repository
+* Go to settings and set Github Pages source as master.
+* Your new site should be ready at https://username.github.io/hagura/
 
-### Specialization8
 
-### Specialization9
+Default theme will look like this
 
-### Specialization10
+![webjeda hagura jekyll theme](https://hagura.webjeda.com/assets/images/hagura-1.png)
+
+Switch to Dark Theme
+
+![webjeda hagura dark jekyll theme](https://hagura.webjeda.com/assets/images/hagura-dark-jekyll-theme.png)
+
+This theme is responsive.
+
+![webjeda hagura responsive jekyll theme](https://hagura.webjeda.com/assets/images/hagura-responsive.png)
+
+
+## Development
+Make changes to the **master** branch and create a pull request. Do not use **gh-pages** branch as it is used to host the theme.
+
+
+## License
+MIT License 
