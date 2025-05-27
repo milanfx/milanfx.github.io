@@ -1,6 +1,6 @@
 # Configurations
-title:            Milanfx Study Notes
-longtitle:        Milanfx Study Notes
+title:            Jekyll Gitbook
+longtitle:        Jekyll Gitbook
 toc:
   enabled: true
   h_min:   1
