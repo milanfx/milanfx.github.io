@@ -4,7 +4,7 @@ title: Milanfx Study Notes
 permalink: /
 ---
 
-### Study Notes
+<h2>Study Notes</h2>
 
 xxxxx xxxxx xxxxx
 
@@ -14,7 +14,7 @@ xxxxx xxxxx xxxxx
 
 xxxxx xxxxx xxxxx
 
----
+<h2>Study Notes</h2>
 
 | ID   | Content                | Link |
 |:--:|:--:|:--:|
