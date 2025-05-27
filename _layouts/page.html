@@ -5,6 +5,7 @@
   <title>{{ page.title }} - {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Roboto Condensed', sans-serif;
@@ -14,47 +15,64 @@
       line-height: 1.5;
       font-size: 1rem;
     }
+
     h1 {
       color: DarkRed;
     }
+
     h2 {
-    background-color: Ivory;
-    color: DarkRed;
-    text-align: left;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 20px;
-    margin: 0;
-    overflow: hidden;
-    padding: 10px;
-    border-bottom: 3px solid DarkRed;
-    border-top: 3px solid DarkRed;
-  }
+      background-color: Ivory;
+      color: DarkRed;
+      text-align: left;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      overflow: hidden;
+      padding: 5px;
+      border-top: 3px solid DarkRed;
+      border-bottom: 3px solid DarkRed;
+    }
+
+    .back-home {
+      background-color: Ivory;
+      color: DarkRed;
+      text-align: left;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      overflow: hidden;
+      padding: 5px;
+      border-top: 3px solid DarkRed;
+      border-bottom: 3px solid DarkRed;
+      display: block;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <!-- 标题块（每个页面都会应用） -->
-  <div style="border-top:5px solid DarkRed;"></div>
-  <div style="border-top:3px solid Ivory;"></div>
+
+  <div style="border-top: 5px solid DarkRed;"></div>
+  <div style="border-top: 3px solid Ivory;"></div>
   <div style="
-    background-color:DarkRed;
-    color:Ivory;
-    text-align:center;
-    font-family:Roboto Condensed;
-    font-size:40px;
-    margin:0;
-    overflow:hidden;
-    padding:10px 0;
+    background-color: DarkRed;
+    color: Ivory;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 0;
   ">
     {{ page.title }}
   </div>
-  <div style="border-bottom:3px solid Ivory;"></div>
-  <div style="border-bottom:5px solid DarkRed;"></div>
+  <div style="border-bottom: 3px solid Ivory;"></div>
+  <div style="border-bottom: 5px solid DarkRed;"></div>
 
-  <hr>
   <div>
     {{ content }}
   </div>
-  <hr>
-  <a href="/">Back to Home</a>
+
+  <a href="/" class="back-home">Back to Home</a>
+
 </body>
 </html>
