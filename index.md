@@ -7,11 +7,14 @@ permalink: /
 ### Study Notes
 
 xxxxx xxxxx xxxxx
-xxxxx xxxxx xxxxx
-xxxxx xxxxx xxxxx
+
 xxxxx xxxxx xxxxx
 
-<br>
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 | ID   | Content | Content |
 |:----:|:-------:|:-------:|
