@@ -1,10 +1,20 @@
 ---
 layout: page
 title: MSDS Courses
-permalink: /02 - MSDS Courses/
+permalink: /02MSDSCourses/
 ---
 
-这是一级网页2的内容。
+### Study Notes
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级2/二级1/)

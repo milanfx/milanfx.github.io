@@ -1,10 +1,20 @@
 ---
 layout: page
 title: Kaggle Projects
-permalink: /00 - Kaggle Projects/
+permalink: /00KaggleProjects/
 ---
 
-Kaggle Projects
+### Study Notes
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级4/二级1/)

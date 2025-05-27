@@ -1,12 +1,20 @@
 ---
 layout: page
 title: MSDS Express
-permalink: /01 - MSDS Express/
+permalink: /01MSDSExpress/
 ---
 
-MSDS Express
+### Study Notes
 
-这是一级网页1的内容。
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级1/二级1/)

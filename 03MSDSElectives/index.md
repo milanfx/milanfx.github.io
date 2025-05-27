@@ -1,11 +1,20 @@
 ---
 layout: page
 title: MSDS Electives
-permalink: /03 - MSDS Electives
+permalink: /03MSDSElectives
 ---
 
+### Study Notes
 
-这是一级网页3的内容。
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级3/二级1/)

@@ -1,10 +1,20 @@
 ---
 layout: page
 title: MSCS Courses
-permalink: /03 - MSCS Courses
+permalink: /03MSCSCourses
 ---
 
-这是一级网页4的内容。
+### Study Notes
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级4/二级1/)
