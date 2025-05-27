@@ -4,6 +4,7 @@ title: Milanfx Study Notes
 permalink: /
 ---
 
+<br>
 <h2>Study Notes</h2>
 
 xxxxx xxxxx xxxxx
@@ -15,7 +16,7 @@ xxxxx xxxxx xxxxx
 xxxxx xxxxx xxxxx
 
 <h2>Study Notes</h2>
-
+<br>
 | ID   | Content                | Link |
 |:--:|:--:|:--:|
 |######|########################|######|
@@ -27,4 +28,4 @@ xxxxx xxxxx xxxxx
 | 05   | IBM Specialization     | [Link](/05IBMSpecialization/) |
 | 06   | DL Specialization      | [Link](/06DLSpecialization/)  |
 |######|########################|######|
-
+<br>
