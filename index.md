@@ -6,7 +6,7 @@ permalink: /
 
 <br>
 
-<h2>Study Notes</h2>
+<h3>Study Notes</h3>
 
 xxxxx xxxxx xxxxx
 
@@ -16,9 +16,10 @@ xxxxx xxxxx xxxxx
 
 xxxxx xxxxx xxxxx
 
-<h2>Study Notes</h2>
+<h3>Study Notes</h3>
 
 <br>
+
 | ID   | Content                | Link |
 |:--:|:--:|:--:|
 |######|########################|######|
