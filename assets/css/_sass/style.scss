@@ -4,7 +4,7 @@ html, body {
 
 body {
     max-width: $content-width;
-    font-family: $base-font-family;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     margin: 0 auto;
     line-height: $base-line-height;
     font-size: $base-font-size;
@@ -19,7 +19,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     font-weight: bold;
     line-height: 1.8;
     margin: 0;
@@ -29,6 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 a {
     color: $brand-color;
     text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     &:hover{
         color: $text-color;
     }
@@ -45,6 +46,7 @@ p a {
     -webkit-transition: box-shadow ease 1s;
     -moz-transition: box-shadow ease 1s;
     transition: box-shadow ease 1s;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     &:hover {
         color: lighten($background-color, 50%);
         -webkit-box-shadow: inset 0 -100px 0 0 lighten($brand-color, 10%);
@@ -66,6 +68,7 @@ code {
     font-size: 0.7*$base-font-size;
     border-radius: 3px;
     border: 1px solid $brand-color;
+    font-family: 'Roboto Condensed', monospace; /* 改成 Roboto Condensed（代码块通常可额外保留 monospace） */
     > code {
         border: none;
     }
@@ -79,7 +82,7 @@ code {
 blockquote {
     border-left: 2px solid $brand-color;
     padding-left: 1em;
-    font-family: Georgia,Times,Times New Roman,serif;
+    font-family: 'Roboto Condensed', Georgia,Times,Times New Roman,serif; /* 改成 Roboto Condensed */
     font-size: 0.9*$base-font-size;
     font-style: italic;
 }
@@ -87,6 +90,7 @@ blockquote {
 .headline, .post-headline {
     font-size: 4em;
     margin-bottom: 0.5em;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     @include media-query($on-palm) {
         font-size: 2em;
     }
@@ -96,8 +100,9 @@ blockquote {
 table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 0.9em; /* 比基础字体稍微小一点 */
+    font-size: 0.9em;
     margin: 1em 0;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 table, th, td {
@@ -144,12 +149,14 @@ tr:hover {
 /* Article list in index/home page */
 .article-list {
     margin: 1em 0;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 /* Pagination style in index/home page */
 .pagination {
     margin: 2em 0;
     text-align: center;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
     a {
         &:hover {
             background-color: transparent;
@@ -182,6 +189,7 @@ tr:hover {
 #markdown-toc::before {
     content: "Contents";
     font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 // Using numbers instead of bullets for listing
@@ -194,6 +202,7 @@ tr:hover {
     padding: 1.5em;
     list-style: decimal;
     display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 /* Theme switch button */
@@ -205,16 +214,19 @@ tr:hover {
 footer {
     position: relative;
     top: 2em;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 /* Footer navigation links */
 .links a {
     margin-right: 1em;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 /* Footer copyrights */
 .copy {
     color: #aaa;
+    font-family: 'Roboto Condensed', sans-serif; /* 改成 Roboto Condensed */
 }
 
 /* Horizontal Divider */
