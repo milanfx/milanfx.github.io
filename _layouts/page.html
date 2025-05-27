@@ -20,7 +20,24 @@
   </style>
 </head>
 <body>
-  <h1>{{ page.title }}</h1>
+  <!-- 标题块（每个页面都会应用） -->
+  <div style="border-top:5px solid DarkRed;"></div>
+  <div style="border-top:3px solid Ivory;"></div>
+  <div style="
+    background-color:DarkRed;
+    color:Ivory;
+    text-align:center;
+    font-family:Roboto Condensed;
+    font-size:40px;
+    margin:0;
+    overflow:hidden;
+    padding:10px 0;
+  ">
+    {{ page.title }}
+  </div>
+  <div style="border-bottom:3px solid Ivory;"></div>
+  <div style="border-bottom:5px solid DarkRed;"></div>
+
   <hr>
   <div>
     {{ content }}
