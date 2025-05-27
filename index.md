@@ -13,7 +13,7 @@ permalink: /
 | 04 | MSCS  | [Courses](/04 - MSCS Courses/)              |
 | 05 | IBM   | [Specialization](/05 - IBM Specialization/) |
 | 06 | DL    | [Specialization](/06 - DL Specialization/)  |
-
+|--------|--------|----------------|
 
 
 
