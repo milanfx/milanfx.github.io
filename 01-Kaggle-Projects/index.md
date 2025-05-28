@@ -4,7 +4,7 @@ title: Kaggle Projects
 permalink: /01-Kaggle-Projects/
 ---
 
-### Study Notes
+<h3>Study Notes</h3>
 
 xxxxx xxxxx xxxxx
 
@@ -14,8 +14,11 @@ xxxxx xxxxx xxxxx
 
 xxxxx xxxxx xxxxx
 
----
+<h3>Study Notes</h3>
 
-### 二级网页
-- [二级网页1](/一级4/二级1/)
-- [二级网页2](/一级4/二级2/)
+<br>
+
+| ID  | Specialization      | Courses                   | Link   |
+|:---:|:-------------------:|:-------------------------:|:------:|
+|######|########################|########################|######|
+| 01  | Data Algorithms     | Searching & Sorting       | [Link] |

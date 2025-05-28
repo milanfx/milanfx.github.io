@@ -4,7 +4,7 @@ title: DL Specialization
 permalink: /06-DL-Specialization/
 ---
 
-### Study Notes
+<h3>Study Notes</h3>
 
 xxxxx xxxxx xxxxx
 
@@ -14,6 +14,11 @@ xxxxx xxxxx xxxxx
 
 xxxxx xxxxx xxxxx
 
-### 二级网页
-- [二级网页1](/一级4/二级1/)
-- [二级网页2](/一级4/二级2/)
+<h3>Study Notes</h3>
+
+<br>
+
+| ID  | Specialization      | Courses                   | Link   |
+|:---:|:-------------------:|:-------------------------:|:------:|
+|######|########################|########################|######|
+| 01  | Data Algorithms     | Searching & Sorting       | [Link] |
