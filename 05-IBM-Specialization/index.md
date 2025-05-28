@@ -1,7 +1,7 @@
 ---
 layout: page
-title: MSDS Electives
-permalink: /03MSDSElectives
+title: IBM Specialization
+permalink: /05-IBM-Specialization/
 ---
 
 ### Study Notes
@@ -17,5 +17,5 @@ xxxxx xxxxx xxxxx
 ---
 
 ### 二级网页
-- [二级网页1](/一级3/二级1/)
-- [二级网页2](/一级3/二级2/)
+- [二级网页1](/一级4/二级1/)
+- [二级网页2](/一级4/二级2/)

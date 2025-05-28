@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MSDS Courses
-permalink: /02MSDSCourses/
+permalink: /03-MSDS-Courses/
 ---
 
 <br>

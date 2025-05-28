@@ -1,7 +1,7 @@
 ---
 layout: page
-title: DL Specialization
-permalink: /06DLSpecialization/
+title: MSCS Courses
+permalink: /04-MSCS-Courses
 ---
 
 ### Study Notes
@@ -13,6 +13,8 @@ xxxxx xxxxx xxxxx
 xxxxx xxxxx xxxxx
 
 xxxxx xxxxx xxxxx
+
+---
 
 ### 二级网页
 - [二级网页1](/一级4/二级1/)

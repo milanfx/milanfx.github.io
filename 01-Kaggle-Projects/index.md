@@ -1,7 +1,7 @@
 ---
 layout: page
-title: MSDS Express
-permalink: /01MSDSExpress/
+title: Kaggle Projects
+permalink: /01-Kaggle-Projects/
 ---
 
 ### Study Notes
@@ -17,5 +17,5 @@ xxxxx xxxxx xxxxx
 ---
 
 ### 二级网页
-- [二级网页1](/一级1/二级1/)
-- [二级网页2](/一级1/二级2/)
+- [二级网页1](/一级4/二级1/)
+- [二级网页2](/一级4/二级2/)
