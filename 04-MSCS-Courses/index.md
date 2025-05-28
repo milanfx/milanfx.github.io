@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MSCS Courses
-permalink: /04-MSCS-Courses
+permalink: /04-MSCS-Courses/
 ---
 
 <h3>Study Notes</h3>
