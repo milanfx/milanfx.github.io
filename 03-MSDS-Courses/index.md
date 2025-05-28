@@ -4,8 +4,6 @@ title: MSDS Courses
 permalink: /03-MSDS-Courses/
 ---
 
-<br>
-
 <h3>Study Notes</h3>
 
 xxxxx xxxxx xxxxx
@@ -64,5 +62,3 @@ xxxxx xxxxx xxxxx
 | 39  | Communication       | Presentation              | [Link] |
 | 40  | Communication       | Capstone Project          | [Link] |
 |######|########################|########################|######|
-
-<br>
