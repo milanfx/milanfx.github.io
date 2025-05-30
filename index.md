@@ -6,25 +6,16 @@ permalink: /
 
 <h3>Study Notes</h3>
 
-xxxxx xxxxx xxxxx
+xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
 
-xxxxx xxxxx xxxxx
+<div>
+  <a href="/01-Kaggle-Projects/" class="cour">Kaggle<br>Projects</a>
+  <a href="/02-MSDS-Express/" class="cour">MSDS<br>Express</a>
+  <a href="/03-MSDS-Courses/" class="cour">MSDS<br>Courses</a>
+</div>
 
-xxxxx xxxxx xxxxx
-
-xxxxx xxxxx xxxxx
-
-<h3>Study Notes</h3>
-
-<br>
-
-| ID   | Content                | Link |
-|:--:|:--:|:--:|
-|######|########################|######|
-| 01   | Kaggle Projects        | [Link](/01-Kaggle-Projects/)    |
-| 02   | MSDS Express           | [Link](/02-MSDS-Express/)       |
-| 03   | MSDS Courses           | [Link](/03-MSDS-Courses/)       |
-| 04   | MSCS Courses           | [Link](/04-MSCS-Courses/)       |
-| 05   | IBM Specialization     | [Link](/05-IBM-Specialization/) |
-| 06   | DL Specialization      | [Link](/06-DL-Specialization/)  |
-|######|########################|######|
+<div>
+  <a href="/04-MSCS-Courses/" class="cour">MSCS<br>Courses</a>
+  <a href="/05-IBM-Specialization/" class="cour">IBM<br>Specialization</a>
+  <a href="/06-DL-Specialization/" class="cour">DL<br>Specialization</a>
+</div>
