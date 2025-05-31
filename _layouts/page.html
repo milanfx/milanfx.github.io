@@ -9,11 +9,15 @@
   <style>
     body {
       font-family: 'Roboto Condensed', sans-serif;
-      padding: 40px;
       background-color: Ivory;
       color: DarkSlateGray;
       line-height: 1.5;
       font-size: 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
     }
 
     h2, h3, h4 {
@@ -58,33 +62,34 @@
       padding: 5px;
       border-radius: 5px;
       border: 2px solid #006064;
-      width: 150px;
     }
 
     .btn.back { font-size: 14px; width: 90px; }
-    .btn.cour1 { background-color: #006064; }
-    .btn.cour2 { background-color: #00838f; }
-    .btn.cour3 { background-color: #0097a7; }
-    .btn.cour4 { background-color: #00acc1; }
+    .btn.cour1 { background-color: #006064; width: 150px; }
+    .btn.cour2 { background-color: #00838f; width: 150px; }
+    .btn.cour3 { background-color: #0097a7; width: 150px; }
+    .btn.cour4 { background-color: #00acc1; width: 150px; }
   </style>
 </head>
 <body>
-  <div style="border-top: 5px solid #006064;"></div>
-  <div style="border-top: 3px solid Ivory;"></div>
-  <div class="title">
-    {{ page.title }}
+  <div class="container">
+    <div style="border-top: 5px solid #006064;"></div>
+    <div style="border-top: 3px solid Ivory;"></div>
+    <div class="title">
+      {{ page.title }}
+    </div>
+    <div style="border-bottom: 3px solid Ivory;"></div>
+    <div style="border-bottom: 5px solid #006064;"></div>
+    <br>
+    <a href="/" class="btn back">Go Home</a>
+    <a href="javascript:history.back()" class="btn back">Go Back</a>
+    <br>
+    <div>
+      {{ content }}
+    </div>
+    <br>
+    <a href="/" class="btn back">Go Home</a>
+    <a href="javascript:history.back()" class="btn back">Go Back</a>
   </div>
-  <div style="border-bottom: 3px solid Ivory;"></div>
-  <div style="border-bottom: 5px solid #006064;"></div>
-  <br>
-  <a href="/" class="btn back">Go Home</a>
-  <a href="javascript:history.back()" class="btn back">Go Back</a>
-  <br>
-  <div>
-    {{ content }}
-  </div>
-  <br>
-  <a href="/" class="btn back">Go Home</a>
-  <a href="javascript:history.back()" class="btn back">Go Back</a>
 </body>
 </html>
