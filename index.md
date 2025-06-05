@@ -9,11 +9,11 @@ permalink: /
 xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
 
 <div>
-  <a href="/01-MSDS-Express/" class="btn cour1">MSDS<br>Express</a>
+  <a href="/01-DS-Express/" class="btn cour1">DS<br>Express</a>
   <a href="/02-MSDS-Courses/" class="btn cour2">MSDS<br>Courses</a>
-  <a href="/03-MSCS-Express/" class="btn cour3">MSCS<br>Express</a>
+  <a href="/03-CS-Express/" class="btn cour3">CS<br>Express</a>
   <a href="/04-MSCS-Courses/" class="btn cour4">MSCS<br>Courses</a>
-  <a href="" class="btn cour5">MSEM<br>Courses</a>
+  <a href="" class="btn cour5">EM<br>Express</a>
   <a href="" class="btn cour6">MSEM<br>Courses</a>
 </div>
 <!--
