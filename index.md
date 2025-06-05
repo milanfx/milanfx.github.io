@@ -14,14 +14,16 @@ xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
   <a href="/03-MSCS-Express/" class="btn cour3">MSCS<br>Express</a>
   <a href="/04-MSCS-Courses/" class="btn cour4">MSCS<br>Courses</a>
   <a href="" class="btn cour5">MSEM<br>Courses</a>
+  <a href="" class="btn cour6">MSEM<br>Courses</a>
 </div>
-
+<!--
 <div>
   <a href="" class="btn cour1">Kaggle<br>Projects</a>
   <a href="" class="btn cour2">IBM   <br>Specialization</a>
   <a href="" class="btn cour3">DL.AI <br>Specialization</a>
   <a href="" class="btn cour4">Google<br>Specialization</a>
   <a href="" class="btn cour5">Other <br>Specialization</a>
+  <a href="" class="btn cour6">Other <br>Specialization</a>
 </div>
-
+-->
 <h3>Milanfx</h3>
