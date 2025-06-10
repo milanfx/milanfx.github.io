@@ -18,6 +18,34 @@ permalink: /
   <a href=""                  class="btn box5">Other<br>-</a>
 </div>
 
+<div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+</div>
+
+<div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+</div>
+
+<div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+</div>
+
+<div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+  <a href=""                  class="btn box4">Other<br>-</a>
+  <a href=""                  class="btn box5">Other<br>-</a>
+</div>
+
 <!--
 <div>
   <a href="" class="btn box1">Kaggle<br>Projects</a>
