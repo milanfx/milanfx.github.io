@@ -10,8 +10,8 @@ permalink: /
     <div class="row2" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
       <a href="/01-MSDS/" class="btn box1">01<br>MSDS</a>
       <a href="/02-MSCS/" class="btn box2">02<br>MSCS</a>
-      <a href="/03-MSEM/" class="btn box1">03<br>Other</a>
-      <a href="/04-MSEE/" class="btn box2">04<br>Other</a>
+      <a href="/#/" class="btn box1">03<br>Other</a>
+      <a href="/#/" class="btn box2">04<br>Other</a>
     </div>
   </div>
 </div>
@@ -52,5 +52,5 @@ permalink: /
   </div>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
