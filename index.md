@@ -16,10 +16,10 @@ permalink: /
   </div>
 </div>
 
-<div class="row2">
+<div class="row">
   <div class="btn text">
     <div class="btn name">Fundamental Knowledge</div><br>
-    <div class="row2" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+    <div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
       <a href="/05-Boulder/"  class="btn box2">05<br>Boulder </a>
       <a href="/06-Colorado/" class="btn box1">06<br>Colorado</a>
       <a href="/07-Michigan/" class="btn box2">07<br>Michigan</a>
@@ -28,10 +28,10 @@ permalink: /
   </div>
 </div>
 
-<div class="row2">
+<div class="row">
   <div class="btn text">
     <div class="btn name">Other Knowledge</div><br>
-    <div class="row2" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+    <div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
       <a href="/#/" class="btn box1">09<br>Other</a>
       <a href="/#/" class="btn box2">10<br>Other</a>
       <a href="/#/" class="btn box1">11<br>Other</a>
@@ -40,10 +40,10 @@ permalink: /
   </div>
 </div>
 
-<div class="row2">
+<div class="row">
   <div class="btn text">
     <div class="btn name">Other Knowledge</div><br>
-    <div class="row2" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+    <div class="row" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
       <a href="/#/" class="btn box2">13<br>Other</a>
       <a href="/#/" class="btn box1">14<br>Other</a>
       <a href="/#/" class="btn box2">15<br>Other</a>
