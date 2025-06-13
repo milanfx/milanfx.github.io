@@ -7,7 +7,7 @@ permalink: /
 <div class="block">
   <div class="btn text">
     <div class="btn name">Core Knowledge</div><br>
-    <div class="block" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+    <div class="block" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
       <a href="/#/" class="btn empty">-<br>-</a>
       <a href="/01-MSDS/" class="btn box1">01<br>MSDS</a>
       <a href="/02-MSCS/" class="btn box1">02<br>MSCS</a>
