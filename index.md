@@ -24,10 +24,10 @@ permalink: /
     <div class="btn name">Fundamental Knowledge</div><br>
     <div class="block" style="grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr;">
       <a href="/#/" class="btn empty">-<br>-</a>
-      <a href="/05-Boulder/"  class="btn box2">06<br>Boulder </a>
-      <a href="/06-Colorado/" class="btn box2">07<br>Colorado</a>
+      <a href="/06-Boulder/"  class="btn box2">06<br>Boulder </a>
+      <a href="/07-Colorado/" class="btn box2">07<br>Colorado</a>
       <a href="/08-SanDiego/" class="btn box2">08<br>SanDiego</a>
-      <a href="/09-Michigan/" class="btn box2">09<br>Other</a>
+      <a href="//"            class="btn box2">09<br>Other</a>
       <a href="//"            class="btn box2">10<br>Other</a>
       <a href="//"            class="btn empty">-<br>-</a>
     </div>
