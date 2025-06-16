@@ -9,7 +9,7 @@ permalink: /
     <div class="btn name">Core Knowledge</div><br>
     <div class="block" style="grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr;">
       <a href="/#/"       class="btn empty">-<br>-</a>
-      <a href="/01-MSDS/" class="btn box1"><span class="btn box2">01</span><br>MSDS</a>
+      <a href="/01-MSDS/" class="btn box1"><span class="btn box2">01</span>MSDS</a>
       <a href="/02-MSCS/" class="btn box1">02<br>MSCS</a>
       <a href="/#/"       class="btn box1">03<br>Other</a>
       <a href="/#/"       class="btn box1">04<br>Other</a>
