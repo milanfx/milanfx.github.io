@@ -12,7 +12,7 @@ permalink: /
       <a href="/01-MSDS/" class="btn box1"><span class="btn box11">01</span>MSDS</a>
       <a href="/02-MSCS/" class="btn box1"><span class="btn box11">02</span>-</a>
       <a href="/03-MSAI/" class="btn box1"><span class="btn box11">03</span>-</a>
-      <a href="/04-MEEM/" class="btn box1"><span class="btn box11">04</span>MEEM</a>
+      <a href="/04-MEEM/" class="btn box1"><span class="btn box11">04</span>-</a>
       <a href="/#/"       class="btn box1"><span class="btn box11">05</span>-</a>
       <a href="/#/"       class="btn empty">-<br>-</a>
     </div>
@@ -24,8 +24,8 @@ permalink: /
     <div class="btn name">Foundational Courses Notes</div><br>
     <div class="block" style="grid-template-columns: 0.5fr 2fr 2fr 2fr 2fr 2fr 0.5fr;">
       <a href="/#/"           class="btn empty">-<br>-</a>
-      <a href="/06-Colorado/" class="btn box2"><span class="btn box22">06</span>Colorado</a>
-      <a href="/#/"           class="btn box2"><span class="btn box22">07</span>Northeastern</a>
+      <a href="/06-Colorado/" class="btn box2"><span class="btn box22">06</span>-</a>
+      <a href="/#/"           class="btn box2"><span class="btn box22">07</span>-</a>
       <a href="/#/"           class="btn box2"><span class="btn box22">08</span>-</a>
       <a href="/#/"           class="btn box2"><span class="btn box22">09</span>-</a>
       <a href="/#/"           class="btn box2"><span class="btn box22">10</span>-</a>
