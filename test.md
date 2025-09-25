@@ -209,7 +209,7 @@ Step 1: Create a new file named `greetnew.sh`.
 
 Step 2: Add the following lines to the file:
 
-&#x60;&#x60;&#x60;
+```
 #! /bin/bash
 
 # This script accepts the user\'s name and prints 
@@ -229,7 +229,7 @@ read lastname
 
 # Print the welcome message followed by the name	
 echo "Hello $firstname $lastname."
-&#x60;&#x60;&#x60;
+```
 
 Step 3: Save the file.
 
