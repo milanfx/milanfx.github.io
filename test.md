@@ -4,11 +4,11 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-## Sub-queries and Nested Selects
+# Sub-queries and Nested Selects
 
 **Estimated time needed:** 20 minutes
 
-### Objectives
+## Objectives
 
 After completing this lab, you will be able to:
 
@@ -17,7 +17,7 @@ After completing this lab, you will be able to:
 *   Build column expressions (for example, sub-query in place of a column)
 *   Write table expressions (for example, sub-query in place of a table)
 
-### Software Used in this Lab
+## Software Used in this Lab
 
 In this lab, you will use <a href="https://www.mysql.com/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0110ENSkillsNetwork24601058-2021-01-01" target="_blank">MySQL</a>. MySQL is a Relational Database Management System (RDBMS) designed to store, manipulate, and retrieve data efficiently.
 
@@ -25,7 +25,7 @@ In this lab, you will use <a href="https://www.mysql.com/?utm_medium=Exinfluence
 
 To complete this lab, you will use MySQL relational database service available as part of IBM Skills Network Labs (SN Labs) Cloud IDE. SN Labs is a virtual lab environment used in this course.
 
-### Database Used in this Lab
+## Database Used in this Lab
 
 The database used in this lab is internal. You will be working on a sample HR database. This HR database schema consists of 5 tables: **EMPLOYEES**, **JOB_HISTORY**, **JOBS**, **DEPARTMENTS**, and **LOCATIONS**. Each table has a few rows of sample data. The following diagram shows the tables for the HR database:
 
@@ -48,7 +48,7 @@ Using the skills acquired in the previous modules, you should first create the d
 
 4. Use these files in the phpMyAdmin interface as the data for the respective tables  in the \'HR\' database.
 
-## Sub-queries and Nested Selects
+# Sub-queries and Nested Selects
 
 Say you are asked to retrieve all employee records whose salary is lower than the average salary. You might use the following query to do this.
 
@@ -92,7 +92,7 @@ FROM (SELECT SALARY
 ```
 Note that it is necessary to give an alias to any derived tables.
 
-## Practice Problems
+# Practice Problems
 
 Step 1: Write a query to find the average salary of the five least-earning employees.
 
@@ -129,6 +129,6 @@ SELECT EMPL_ID, YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE))),
 FROM JOB_HISTORY;
 ```
 
-### Conclusion
+## Conclusion
 
 Congratulations! You have completed this lab and are ready for the next topic.
