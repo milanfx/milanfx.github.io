@@ -211,12 +211,12 @@ Step 2: Add the following lines to the file:
 
 
 <pre><code>
-#! /bin/bash
-
-# This script accepts the user's name and prints 
-# a message greeting the user
-
-echo -n "Enter your firstname :"	  	
+      #! /bin/bash
+      
+      # This script accepts the user's name and prints 
+      # a message greeting the user
+      
+      echo -n "Enter your firstname :"	  	
 </code></pre>
 
 Step 3: Save the file.
