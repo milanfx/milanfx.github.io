@@ -32,9 +32,7 @@ First, let\'s introduce you to GitHub. GitHub is a collection of folders and fil
 
 ---
 
-# Exercise 1: Creating a GitHub Account
-
----
+## Exercise 1: Creating a GitHub Account
 
 Please use the following steps to create an account on GitHub:
 
