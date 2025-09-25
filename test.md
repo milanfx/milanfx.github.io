@@ -35,21 +35,21 @@ Click on **view existing** link in the **Existing Lite plan instance** box.
 
 **Step4:** The **Manage** tab will be active by default in your services dashboard. Click on **Go to UI**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-3.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-3.png" width="800"></div> 
 
 **Step5:** Now click on the menu bar icon in the top left corner of your Db2 service dashboard.
 
 Click on **Load** **>** **Load Data**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-4.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-4.png" width="800"></div> 
 
 **Step6:** You can either drag and drop the CSV file into the **File selection** box, or you can click on the **browse files** link, also provided in the **File selection** box to browse your local folders to find and open the downloaded CSV file.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-5.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-5.png" width="800"></div> 
 
 The name of the CSV file you have uploaded will appear in the **Selected file** section on the right.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-6.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-6.png" width="800"></div> 
 
 Click **Next** to proceed.
 
@@ -57,11 +57,11 @@ Click **Next** to proceed.
 
 **NOTE:** Select the schema name with a random mix of alphabets and numbers. It will be similar to, but not the same as, the one you see in the screenshot below (_MGJ73335_). The ones that you do NOT have to select are AUDIT, DB2INST1, ERRORSCHEMA, and ST_INFORMTN_SCHEMA (and sometimes you might also see SQLxxxxx as well).
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-7.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-7.png" width="800"></div>
 
 **Step8:** Click on **New Table**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-8.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-8.png" width="800"></div> 
 
 **Step9:** Enter the name **CARSALESTABLE** in the input box prompting you with **_NEW TABLE NAME_**.
 
@@ -69,25 +69,25 @@ Click **Next** to proceed.
 
 Now click on **Create** to create the new table.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-9.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-9.png" width="800"></div> 
 
 **Step10:** A table by the name of **CARSALESTABLE** has been created.
 
 Click **Next** at the bottom right of the page to proceed.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-10.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-10.png" width="800"></div> 
 
 **Step11:** Click **Next** to proceed.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-11.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-11.png" width="800"></div>
 
 **Step12:** Then click **Begin Load** to begin the process of loading the data from the CSV into your database.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-12.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-12.png" width="800"></div> 
 
 **Step13:** Data from your CSV file is now loaded into your Db2 instance.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-13.png" width="600"></div> 
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-13.png" width="800"></div> 
 
 Congratulations! You have successfully loaded data from a CSV file into the IBM Db2 instance you created in the previous lab.
 
@@ -100,13 +100,13 @@ Congratulations! You have successfully loaded data from a CSV file into the IBM 
 
 2. Enter your **Email** address [preferably use Gmail ID or Yahoo ID] and a strong **Password**, as per criteria, and then click the **Next** button.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png" width="800"></div>
 
 > **NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
 
 3. An email is sent to the address you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_3.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_3.png" width="800"></div>
 
 4. Once your email is successfully verified, enter your **First name** and **Last name**, and select your country (for example, United States) under **Country or region** then click **Next**.
 
@@ -114,21 +114,21 @@ Congratulations! You have successfully loaded data from a CSV file into the IBM 
 First Name: Ada
 Last Name: Lovelace
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_4.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_4.png" width="800"></div>
 
 5. Go through the Account Notice. If you wish, you can opt for email updates. Then accept the Terms and Conditions and click **Continue**.  
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_5.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_5.png" width="800"></div>
 
 6. Before creating your account, review the account privacy notice and acknowledge that you have read and understood by checking the checkbox and clicking **Continue**.  
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png" width="800"></div>
 
 > It takes a few seconds to create and set up your account.
 
 7. On the next screen, you will be asked to verify your identity where you will see the feature code has been applied for you already. Then click on **Create account**. 
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png" width="800"></div>
 
 > **Note:** It might take a couple of minutes to create your account.
 
@@ -136,11 +136,11 @@ Last Name: Lovelace
 
 8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM-dashboard.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM-dashboard.png" width="800"></div>
 
 9. Now you may explore the [IBM Catalog](https://cloud.ibm.com/catalog?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) for exploring the services and resources offered by IBM Cloud.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/catalog.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/catalog.png" width="800"></div>
 
 ---
 
