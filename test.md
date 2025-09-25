@@ -4,112 +4,231 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-## Getting Started with GitHub
 
-Estimated time: **20 min**
 
-In this lab, you will get started with GitHub by creating a GitHub account and project and adding a file to it using its Web interface.
+## Getting Started with Shell Scripting
 
----
+Estimated time needed: **30** minutes
 
-### Objectives
+### Learning Objectives
 
 After completing this lab, you will be able to:
 
-1. Describe GitHub
-2. Create a GitHub account
-3. Add a project and repo
-4. Edit and create a file
-5. Upload a file and Commit
+-   Create and execute a simple Bash shell script
+-   Implement the shebang directive in a Bash shell script
+
+### About Skills Network Cloud IDE
+
+Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project related labs. Theia is an open-source IDE (Integrated Development Environment) that can be run on a desktop or on the cloud. To complete this lab, we will be using the Cloud IDE based on Theia running in a Docker container.
+
+### Important notice about this lab environment
+
+Please be aware that sessions for this lab environment are not persisted. Every time you connect to this lab, a new environment is created for you. Any data you may have saved in the earlier session would get lost. Plan to complete these labs in a single session to avoid losing your data.
 
 ---
 
-### GitHub Overview
+## Exercise 1 - Create and execute a basic shell script
 
-First, let\'s introduce you to GitHub. GitHub is a collection of folders and files. It is a Git repository hosting service, but it adds many of its own features. Git is a command-line tool. It hosts and maintains a server via command line. GitHub provides this Git server and a Web-based graphical interface for you. It also provides access control and collaboration features, such as wikis and basic task management tools for every project. In addition, GitHub provides cloud storage for source code, supports all popular programming languages, and streamlines the iteration process. GitHub includes a free plan for individual developers and hosting Open Source projects.
+In this exercise, you will create a simple script which will do the following:
+
+- Accept a user name
+- Print a welcome message to the user
+
+You will also add comments to the script, which are lines starting with `#`. Comments are not executed by the shell.
+
+When used appropriately, comments can make a shell script more readable and help in debugging the script.
+
+
+### 1.1. Create a new script file
+
+Step 1: On the menu on the lab screen, use **File->New File** to create a new file.
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/file_new.png" width="400"></p>
+
+Step 2: Name it as `greet.sh` and click **OK**
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/file_name.png" width="400"></p>
+
+Step 3: Copy and paste the following lines into the newly created file.
+
+```
+# This script accepts the user\'s name and prints 
+# a message greeting the user
+
+# Print the prompt message on screen
+echo -n "Enter your name :"	  	
+
+# Wait for user to enter a name, and save the entered name into the variable \'name\'
+read name				
+
+# Print the welcome message followed by the name	
+echo "Welcome $name"
+
+# The following message should print on a single line. Hence the usage of \'-n\'
+echo -n "Congratulations! You just created and ran your first shell script "
+echo "using Bash on IBM Skills Network"
+
+```
+
+Step 4: Save the file using the **File->Save** menu option.
+
+
+### 1.2. Execute the script
+
+Open a new terminal by clicking on the menu bar and selecting **Terminal**->**New Terminal**, as in the image below.
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/new-terminal.png" width="400"></p>
+
+This will open a new terminal at the bottom of the screen.
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/terminal_bottom_screen.png" width="400"></p>
+
+Run the commands below in the newly opened terminal.
+
+Let\'s check the permissions for this new file by entering the following:
+
+```
+ls -l greet.sh
+```
+
+If the file exists and has read permissions, run the following command to execute it:
+
+```
+bash greet.sh
+```
+
+The message `Enter your name :`  appears on screen.
+
+Type your name and press the `Enter` key.
+
+You should now see the welcome messages displayed on screen with your entered name.
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/greet_output.png" width="600"></p>
+
+Congratulations! You have succesfully executed your first Bash shell script.
+
+
+---
+
+## Exercise 2 - Using a shebang line
+
+In this exercise, you will edit the `greet.sh` script you created in the previous exercise by adding a \'shebang\' and making it an executable file.
+
+This is done to ensure that the name of the script can be used like a command. Adding this special shebang line lets you specify the path to the interpreter of the script - in this case, the *Bash shell*.
+
+Follow the steps below to learn how to add a shebang to your script.
+
+### 2.1. Find the path to the interpreter
+
+The `which` command helps you find out the path of the command `bash`.
+
+```
+which bash
+```
+
+In this case, it returns the path `/bin/bash`.
+
+### 2.2. Edit the script `greet.sh` and add the shebang line to the script
+
+Open the file and add the following line at the beginning of the script:
+
+```
+#! /bin/bash
+```
+
+The script should now look like the following:
+
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/code_with_shabang.png" width="600"></p>
+
+### 2.3. Check the permissions of the script
+
+One more step needs to be completed to make `greet.sh` completely executable by name. <br>
+To add the execute permission for the user on `greet.sh`, enter the following: 
+
+```
+chmod +x greet.sh
+```
+
+Verify whether the execute permission is granted.
+
+> **Tip**: Generally it\'s not a good idea to grant permissions to a script for all users, groups, and others. It\'s more appropriate to limit the execute permission to only the owner, or the user who created the file (you).
+
+To change permissions for `greet.sh` to make the file executable for the user, run the command below:
+
+```
+chmod u+x greet.sh
+```
+
+Verify the permissions using the command below:
+
+```
+ls -l greet.sh
+```
+
+If you wish to grant execute permission to everyone, you need to run the command `chmod +x greet.sh`.
+
+### 2.4. Execute the script.
+
+Enter the command given below to run the shell script.
+
+```
+./greet.sh
+```
+
+
+The `.` here refers to the current directory. You are telling Linux to execute the script `greet.sh` and that it can be found in the current directory.
 
 ---
 
-## Exercise 1: Creating a GitHub Account
+## Practice exercise
 
-Please use the following steps to create an account on GitHub:
+1.  Create a script named `greetnew.sh` that takes the first and last names of the user, saves them in corresponding variables `firstname` and `lastname`, and prints a welcome message, such as `"Hello <firstname> <lastname>"`.
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300"></p>
+> Use the `read` command and `echo` commands. Write comments. Make sure to add the shebang line.
 
-Step 1: Create an account: https://github.com/join 
+> Step 1: Create a new file named `greetnew.sh`.
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="400"></p>
+> Step 2: Add the following lines to the file:
 
-<b>NOTE:</b> If you already have a GitHub account, you can skip this step and simply log in to your account.
+```
+#! /bin/bash
 
-Step 2: Provide the necessary details to create an account as shown below:
+# This script accepts the user\'s name and prints 
+# a message greeting the user
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="400"></p>
+# Print the prompt message on screen
+echo -n "Enter your firstname :"	  	
 
-Click `Continue`.
+# Wait for user to enter a name, and save the entered name into the variable \'name\'
+read firstname				
 
-Step 3: Click `Visual puzzle` to verify the account. 
+# Print the prompt message on screen
+echo -n "Enter your lastname :"	  	
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="400"></p>
+# Wait for user to enter a name, and save the entered name into the variable \'name\'
+read lastname	
 
----
+# Print the welcome message followed by the name	
+echo "Hello $firstname $lastname."
 
-## Exercise 3: Create and edit a file
+```
 
-### Exercise 3a: Edit a file 
+> Step 3: Save the file.
 
-Step 1: Once the repository is created, the root folder of your repository is listed by default, and has just one file, `ReadMe.md`. Click the pencil icon to edit the file.
+> Step 4: Add the execute permission to `greetnew.sh` for the owner:
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/I3qFPUkPzVKQbJOTXmsTJg/Edit-file.PNG" alt="Edit file." width="600"></p>
+```
+chmod u+x greetnew.sh
+```
 
-Step 2: Add some text to the file.
+> Step 5: Execute the file from the command prompt using the following command:
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="600"></p>
-
-Step 3: After adding the text and click `Commit Changes`.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="400"></p>
-
-Now, check that your file is edited with the new text.
-
----
-
-### Exercise 3b: Create a new file
-
-Step 1: Click the repository name to return to the master branch, like in this testrepo.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/8djlv1HcKvXNEB5ZUWKB4g/File-updated.PNG" alt="Commit changes." width="600"></p>
-
-Step 2: Click `Add file` and select `Create New file` to create a file in the repository.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Id6vkES1XdpxtQqnyi9bOg/Create-new-file.PNG" alt="Create new file." width="600"></p>
-
-Step 3: Provide the file name and the extension of the file. For example, firstpython.py and add the lines.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="400"></p>
-
----
-
-## Exercise 4: Upload a file & Commit
-
-Step 1: Click `Add file` and select `Upload files` to upload a file (any .txt, .ipynb, .png file) in the repository from the local computer.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/c3mA45CpiA_5MuF1K4OSQw/Upload.png" alt="Upload files." width="600"></p>
-
-Step 2: Click `choose your files` and select any files from your computer.
-
-><p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/4HSqlEOnZxjo06fMJTXrfQ/select-files.PNG" alt="Select files." width="600"></p>
-
-Step 3: Once the file finishes uploading, click `Commit changes`.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Njphq1g3PQGwNmtQj0pOuA/commit-upload.PNG" alt="Commit uplaoded files." width="600"></p>
-
-Step 4: Now, your file is uploaded in the repository.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="600"></p>
-
----
+```
+./greetnew.sh
+```
 
 ### Summary
 
-In this document, you have learned how to create a new repository, add a new file, edit a file, upload a file in a repository, and commit the changes.
+In this lab, you learned how to:
+- Create and execute a simple Bash shell script
+- Implement the shebang directive `#! /bin/bash` in a Bash shell script
