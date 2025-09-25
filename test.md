@@ -36,19 +36,19 @@ Please use the following steps to create an account on GitHub:
 
 Step 1: Create an account: https://github.com/join 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300">
 
 <b>NOTE:</b> If you already have a GitHub account, you can skip this step and simply log in to your account.
 
 Step 2: Provide the necessary details to create an account as shown below:
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="300">
 
 Click `Continue`.
 
 Step 3: Click `Visual puzzle` to verify the account. 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="300">
 
 ---
 
@@ -62,11 +62,11 @@ Step 1: Once the repository is created, the root folder of your repository is li
 
 Step 2: Add some text to the file.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="600">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="300">
 
 Step 3: After adding the text and click `Commit Changes`.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="600">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="300">
 
 Now, check that your file is edited with the new text.
 
