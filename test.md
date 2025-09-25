@@ -6,174 +6,140 @@ permalink: /xxx/
 
 
 
-## Getting Started with Shell Scripting
+## Creating an IBM Cloud Account
 
-Estimated time needed: **30** minutes
+**Estimated Effort:** 15 minutes
 
-### Learning Objectives
+### Lab overview:
+
+To access the resources and services that the IBM Cloud provides, you need an IBM Cloud Account. This lab will take you through step-by-step instructions to create one.
+
+### Objective(s):
 
 After completing this lab, you will be able to:
+* Create an IBM Cloud Trial Account using a Feature Code
 
--   Create and execute a simple Bash shell script
--   Implement the shebang directive in a Bash shell script
+### Prerequisite:
 
-### About Skills Network Cloud IDE
+Please ensure you click on the **\"Launch App\"** button from the previous section of this lab to get a feature code and activate the trial account before moving forward with the lab instructions. These instructions will help you create an IBM Cloud account.
 
-Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project related labs. Theia is an open-source IDE (Integrated Development Environment) that can be run on a desktop or on the cloud. To complete this lab, we will be using the Cloud IDE based on Theia running in a Docker container.
-
-### Important notice about this lab environment
-
-Please be aware that sessions for this lab environment are not persisted. Every time you connect to this lab, a new environment is created for you. Any data you may have saved in the earlier session would get lost. Plan to complete these labs in a single session to avoid losing your data.
+> **Note:** These instructions only apply to creating a **NEW** IBM Cloud account using an email address that you have not used previously to create another IBM Cloud account. If you have already used your IBM Cloud feature code in another course/lab to create an IBM Cloud account, please skip this lab, as the code can only be used once.
 
 ---
 
-## Exercise 1 - Create and execute a basic shell script
+## Activate Trial Account
 
-In this exercise, you will create a simple script which will do the following:
+1. The previous section of the lab is the first step for activating your IBM Cloud trial account using Feature Code.
 
-- Accept a user name
-- Print a welcome message to the user
+2. On clicking on the `Launch App` button, you will get a unique code.
 
-You will also add comments to the script, which are lines starting with `#`. Comments are not executed by the shell.
+3. Next, click on Activate Your Trial. It will redirect you to the IBM Cloud registration page, to create an account on IBM Cloud.
 
-When used appropriately, comments can make a shell script more readable and help in debugging the script.
-
-
-### 1.1. Create a new script file
-
-Step 1: On the menu on the lab screen, use **File->New File** to create a new file.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/file_new.png" width="400"></p>
-
-Step 2: Name it as `greet.sh` and click **OK**
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/file_name.png" width="400"></p>
-
-Step 3: Copy and paste the following lines into the newly created file.
-
-```
-# This script accepts the user\'s name and prints 
-# a message greeting the user
-
-# Print the prompt message on screen
-echo -n "Enter your name :"	  	
-
-# Wait for user to enter a name, and save the entered name into the variable \'name\'
-read name				
-
-# Print the welcome message followed by the name	
-echo "Welcome $name"
-
-# The following message should print on a single line. Hence the usage of \'-n\'
-echo -n "Congratulations! You just created and ran your first shell script "
-echo "using Bash on IBM Skills Network"
-
-```
-
-Step 4: Save the file using the **File->Save** menu option.
-
-
-### 1.2. Execute the script
-
-Open a new terminal by clicking on the menu bar and selecting **Terminal**->**New Terminal**, as in the image below.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/new-terminal.png" width="400"></p>
-
-This will open a new terminal at the bottom of the screen.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/terminal_bottom_screen.png" width="400"></p>
-
-Run the commands below in the newly opened terminal.
-
-Let\'s check the permissions for this new file by entering the following:
-
-```
-ls -l greet.sh
-```
-
-If the file exists and has read permissions, run the following command to execute it:
-
-```
-bash greet.sh
-```
-
-The message `Enter your name :`  appears on screen.
-
-Type your name and press the `Enter` key.
-
-You should now see the welcome messages displayed on screen with your entered name.
-
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/greet_output.png" width="600"></p>
-
-Congratulations! You have succesfully executed your first Bash shell script.
-
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/activate_trial_account.png" width="400"></p>
 
 ---
 
-## Exercise 2 - Using a shebang line
+## Create an IBM Cloud Account
 
-In this exercise, you will edit the `greet.sh` script you created in the previous exercise by adding a \'shebang\' and making it an executable file.
+1. Once you are on the [account creation](https://cloud.ibm.com/registration?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) page, follow the below instructions to create an IBM cloud trial account.
 
-This is done to ensure that the name of the script can be used like a command. Adding this special shebang line lets you specify the path to the interpreter of the script - in this case, the *Bash shell*.
+2. Enter your **Email** address [preferably use Gmail ID or Yahoo ID] and a strong **Password**, as per criteria, and then click the **Next** button.
 
-Follow the steps below to learn how to add a shebang to your script.
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png" width="600"></p>
 
-### 2.1. Find the path to the interpreter
+> **NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
 
-The `which` command helps you find out the path of the command `bash`.
+3. An email is sent to the address you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
 
-```
-which bash
-```
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_3.png" width="600"></p>
 
-In this case, it returns the path `/bin/bash`.
+4. Once your email is successfully verified, enter your **First name** and **Last name**, and select your country (for example, United States) under **Country or region** then click **Next**.
 
-### 2.2. Edit the script `greet.sh` and add the shebang line to the script
+>**Note:** Kindly use your full last name instead of just using single letters/initials. For example:
+First Name: Ada
+Last Name: Lovelace
 
-Open the file and add the following line at the beginning of the script:
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_4.png" width="600"></p>
 
-```
-#! /bin/bash
-```
+5. Go through the Account Notice. If you wish, you can opt for email updates. Then accept the Terms and Conditions and click **Continue**.  
 
-The script should now look like the following:
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_5.png" width="600"></p>
 
-<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20-%20Bash%20Scripting/images/code_with_shabang.png" width="600"></p>
+6. Before creating your account, review the account privacy notice and acknowledge that you have read and understood by checking the checkbox and clicking **Continue**.  
 
-### 2.3. Check the permissions of the script
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png" width="600"></p>
 
-One more step needs to be completed to make `greet.sh` completely executable by name. <br>
-To add the execute permission for the user on `greet.sh`, enter the following: 
+> It takes a few seconds to create and set up your account.
 
-```
-chmod +x greet.sh
-```
+7. On the next screen, you will be asked to verify your identity where you will see the feature code has been applied for you already. Then click on **Create account**. 
 
-Verify whether the execute permission is granted.
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png" width="600"></p>
 
-> **Tip**: Generally it\'s not a good idea to grant permissions to a script for all users, groups, and others. It\'s more appropriate to limit the execute permission to only the owner, or the user who created the file (you).
+> **Note:** It might take a couple of minutes to create your account.
 
-To change permissions for `greet.sh` to make the file executable for the user, run the command below:
+> **Note:** Please ensure you do not use the Credit Card option to verify your account for coursework as that can result in unnecessary charges and delays in activating your account.
 
-```
-chmod u+x greet.sh
-```
+8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
 
-Verify the permissions using the command below:
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM-dashboard.png" width="600"></p>
 
-```
-ls -l greet.sh
-```
+9. Now you may explore the [IBM Catalog](https://cloud.ibm.com/catalog?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) for exploring the services and resources offered by IBM Cloud.
 
-If you wish to grant execute permission to everyone, you need to run the command `chmod +x greet.sh`.
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/catalog.png" width="600"></p>
 
-### 2.4. Execute the script.
+---
 
-Enter the command given below to run the shell script.
+## Ways To Troubleshoot
 
-```
-./greet.sh
-```
+If you encounter any of the below errors while activating your IBM Cloud trial account, please follow the steps as instructed below.
+
+- Ooops snap! The promotional codes for IBM Cloud are very popular and have temporarily run out. Please check back soon.
+
+    **Reason** - It takes 24 to 48 hours to populate news feature codes.
+
+    **Solution** - Please try again later
+
+- Something went wrong error.
+
+    **Reason** - This could be because you have already applied a code to this email earlier or your domain/country/IP is restricted.
+
+    **Solution** - Try from another email id
+
+- Feature code expired.
+
+    **Reason** - You may have applied the feature code already once.
+
+    **Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
+
+- If your trial ends.
+
+    **Reason** - Trial accounts are valid only for 6 months, and the same feature code cannot be applied again.
+
+    **Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
+
+---
+
+## Other Possible Solutions:
+
+- Try clearing your browser\'s cache and cookies
+- Try from a different browser on an incognito mode.
+
+If you still face any issues, please write an email to support@cognitiveclass.ai with the following details
+
+**Subject Line:** Feature Code Issue
+
+**Email Content:**
+
+- Name of the course you are undertaking.
+- The course link where you obtained the feature code.
+- The feature code you are trying to apply.
+- The error message that it is shown.
+- The email ID used to create the IBM Cloud account.
+- Your username.
+
+Once you obtain a new feature code, you can create a new account using a different Email ID.
+
+Congratulations! You have successfully created your IBM Cloud Account!
 
 
 The `.` here refers to the current directory. You are telling Linux to execute the script `greet.sh` and that it can be found in the current directory.
