@@ -209,7 +209,6 @@ Step 1: Create a new file named `greetnew.sh`.
 
 Step 2: Add the following lines to the file:
 
-
 <pre><code>
       #! /bin/bash
       
