@@ -201,7 +201,7 @@ Congratulations! You have successfully created your IBM Cloud Account!
 
 ## Practice exercise
 
-1.  Create a script named `greetnew.sh` that takes the first and last names of the user, saves them in corresponding variables `firstname` and `lastname`, and prints a welcome message, such as `"Hello <firstname> <lastname>"`.
+Create a script named `greetnew.sh` that takes the first and last names of the user, saves them in corresponding variables `firstname` and `lastname`, and prints a welcome message, such as `"Hello <firstname> <lastname>"`.
 
 Use the `read` command and `echo` commands. Write comments. Make sure to add the shebang line.
 
@@ -231,15 +231,15 @@ read lastname
 echo "Hello $firstname $lastname."
 ```
 
-> Step 3: Save the file.
+Step 3: Save the file.
 
-> Step 4: Add the execute permission to `greetnew.sh` for the owner:
+Step 4: Add the execute permission to `greetnew.sh` for the owner:
 
-      ```
-      chmod u+x greetnew.sh
-      ```
+```
+chmod u+x greetnew.sh
+```
 
-> Step 5: Execute the file from the command prompt using the following command:
+Step 5: Execute the file from the command prompt using the following command:
 
 ```
 ./greetnew.sh
