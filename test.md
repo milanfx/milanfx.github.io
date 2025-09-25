@@ -34,6 +34,10 @@ First, let\'s introduce you to GitHub. GitHub is a collection of folders and fil
 
 Please use the following steps to create an account on GitHub:
 
+<p align="center">
+  <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300">
+</p>
+
 Step 1: Create an account: https://github.com/join 
 
 ><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="400">
