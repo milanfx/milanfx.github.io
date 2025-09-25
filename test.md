@@ -103,7 +103,7 @@ You need to order the data in ascending salary order and limit it to the top fiv
 
 
 
-<summary>Click here for the solution</summary>
+
 
 ```SQL
 SELECT AVG(SALARY) 
@@ -122,7 +122,7 @@ Age in years can be calculated as the year component in the difference between D
 
 
 
-<summary>Click here for the solution</summary>
+
 
 ```SQL
 SELECT * 
@@ -138,9 +138,6 @@ WHERE YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE,B_DATE))) >
 
 
 For this, you need to calculate the years of service as a difference between the date of joining and the current date. Average years of service need to be queried separately to be displayed.
-
-
-
 
 ```SQL
 SELECT EMPL_ID, YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE))), 
