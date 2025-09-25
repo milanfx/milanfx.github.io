@@ -4,236 +4,152 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
+# Hands-on Lab: Sub-queries and Nested Selects
 
-## Lab: Load data into the IBM Db2 database from a CSV file
+**Estimated time needed:** 20 minutes
 
-### **Lab Overview:**
+## Objectives
 
-Now that you have learned about the process of importing data into a data repository from varied sources, you will load data from a CSV file into the IBM Db2 database instance you created in the previous lab.
+After completing this lab, you will be able to:
 
-**Estimated time needed:** 15 minutes
+*   Write SQL queries that demonstrate the necessity of using sub-queries
+*   Compose sub-queries in the where clause
+*   Build column expressions (for example, sub-query in place of a column)
+*   Write table expressions (for example, sub-query in place of a table)
 
-### **Dataset used in this exercise:**
 
-The dataset used in this exercise comes from the following source: [https://www.kaggle.com/antfarol/car-sale-advertisements](https://www.kaggle.com/antfarol/car-sale-advertisements) under a [CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/). We are using a modified subset of that dataset for this lab. To follow the lab instructions successfully, please use the dataset provided with this exercise rather than the dataset from the original source.
+## Software Used in this Lab
 
-**NOTE:** The lab assumes that you have downloaded this CSV file: [exercise03_car_sales_data.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/exercise03_car_sales_data.csv) to your local system.
+In this lab, you will use <a href="https://www.mysql.com/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0110ENSkillsNetwork24601058-2021-01-01" target="_blank">MySQL</a>. MySQL is a Relational Database Management System (RDBMS) designed to store, manipulate, and retrieve data efficiently.
 
-Please follow the steps given below to provision your instance of IBM Db2 on Cloud.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Create%20Tables%20and%20Load%20Data%20in%20MySQL%20using%20phpMyAdmin/images/mysql.png" width="100" height="100">
+<p></p>
 
-**Step1:** Go to: [https://cloud.ibm.com/catalog/services/db2](https://cloud.ibm.com/catalog/services/db2?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-DB0100EN-SkillsNetwork) to access your Db2 dashboard on Cloud.
+To complete this lab, you will use MySQL relational database service available as part of IBM Skills Network Labs (SN Labs) Cloud IDE. SN Labs is a virtual lab environment used in this course.
 
-**Step2:** If you’re not already logged in to your IBM Cloud Lite account, click on **Log in** at the bottom right of the screen to log in.
+## Database Used in this Lab
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-1.png" width="400"></div>
+The database used in this lab is internal. You will be working on a sample HR database. This HR database schema consists of 5 tables: **EMPLOYEES**, **JOB_HISTORY**, **JOBS**, **DEPARTMENTS**, and **LOCATIONS**. Each table has a few rows of sample data. The following diagram shows the tables for the HR database:
 
-**Step3:** Logging in will take you to your **Db2 service dashboard**.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20Create%20tables%20using%20SQL%20scripts%20and%20Load%20data%20into%20tables/images/Sample_1.PNG" width="670" height="400">
 
-Click on **view existing** link in the **Existing Lite plan instance** box.
+::page{title="Load the database"}
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-2.png" width="400"></div> 
+Using the skills acquired in the previous modules, you should first create the database in MySQL. Follow the steps below.
 
-**Step4:** The **Manage** tab will be active by default in your services dashboard. Click on **Go to UI**.
+1. Open the phpMyAdmin interface from the Skills Network Toolbox in Cloud IDE. 
+2. Create a blank database named \'HR\'. Use the script shared in the link below to create the required tables.
+[Script_Create_Tables.sql](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%202/scripts/Script_Create_Tables.sql "Script_Create_Tables.sql")
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-3.png" width="800"></div> 
+3. Download the files in the links below to your local device (if not already done in previous labs)
+[Departments.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a1r9zp7U4g-W3L05Zcsxsg/Departments.csv)
+[Jobs.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%202/data/Jobs.csv)
+[JobsHistory.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%202/data/JobsHistory.csv)
+[Locations.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%202/data/Locations.csv)
+[Employees.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%202/data/Employees.csv)
 
-**Step5:** Now click on the menu bar icon in the top left corner of your Db2 service dashboard.
+4. Use these files in the phpMyAdmin interface as the data for the respective tables  in the \'HR\' database.
 
-Click on **Load** **>** **Load Data**.
+::page{title="Sub-queries and Nested Selects"}
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-4.png" width="800"></div> 
+Say you are asked to retrieve all employee records whose salary is lower than the average salary. You might use the following query to do this.
 
-**Step6:** You can either drag and drop the CSV file into the **File selection** box, or you can click on the **browse files** link, also provided in the **File selection** box to browse your local folders to find and open the downloaded CSV file.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-5.png" width="800"></div> 
-
-The name of the CSV file you have uploaded will appear in the **Selected file** section on the right.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-6.png" width="800"></div> 
-
-Click **Next** to proceed.
-
-**Step7:** You will be asked to select a **Schema** from a list of schema names.
-
-**NOTE:** Select the schema name with a random mix of alphabets and numbers. It will be similar to, but not the same as, the one you see in the screenshot below (_MGJ73335_). The ones that you do NOT have to select are AUDIT, DB2INST1, ERRORSCHEMA, and ST_INFORMTN_SCHEMA (and sometimes you might also see SQLxxxxx as well).
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-7.png" width="800"></div>
-
-**Step8:** Click on **New Table**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-8.png" width="800"></div> 
-
-**Step9:** Enter the name **CARSALESTABLE** in the input box prompting you with **_NEW TABLE NAME_**.
-
-**Note:** You will be using this table name in the SQL queries you will execute in the next exercise.
-
-Now click on **Create** to create the new table.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-9.png" width="800"></div> 
-
-**Step10:** A table by the name of **CARSALESTABLE** has been created.
-
-Click **Next** at the bottom right of the page to proceed.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-10.png" width="800"></div> 
-
-**Step11:** Click **Next** to proceed.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-11.png" width="800"></div>
-
-**Step12:** Then click **Begin Load** to begin the process of loading the data from the CSV into your database.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-12.png" width="800"></div> 
-
-**Step13:** Data from your CSV file is now loaded into your Db2 instance.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-13.png" width="800"></div> 
-
-Congratulations! You have successfully loaded data from a CSV file into the IBM Db2 instance you created in the previous lab.
-
-
----
-
-## Create an IBM Cloud Account
-
-1. Once you are on the [account creation](https://cloud.ibm.com/registration?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) page, follow the below instructions to create an IBM cloud trial account.
-
-2. Enter your **Email** address [preferably use Gmail ID or Yahoo ID] and a strong **Password**, as per criteria, and then click the **Next** button.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png" width="800"></div>
-
-> **NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
-
-3. An email is sent to the address you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_3.png" width="800"></div>
-
-4. Once your email is successfully verified, enter your **First name** and **Last name**, and select your country (for example, United States) under **Country or region** then click **Next**.
-
->**Note:** Kindly use your full last name instead of just using single letters/initials. For example:
-First Name: Ada
-Last Name: Lovelace
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_4.png" width="800"></div>
-
-5. Go through the Account Notice. If you wish, you can opt for email updates. Then accept the Terms and Conditions and click **Continue**.  
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_5.png" width="800"></div>
-
-6. Before creating your account, review the account privacy notice and acknowledge that you have read and understood by checking the checkbox and clicking **Continue**.  
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png" width="800"></div>
-
-> It takes a few seconds to create and set up your account.
-
-7. On the next screen, you will be asked to verify your identity where you will see the feature code has been applied for you already. Then click on **Create account**. 
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png" width="800"></div>
-
-> **Note:** It might take a couple of minutes to create your account.
-
-> **Note:** Please ensure you do not use the Credit Card option to verify your account for coursework as that can result in unnecessary charges and delays in activating your account.
-
-8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM-dashboard.png" width="800"></div>
-
-9. Now you may explore the [IBM Catalog](https://cloud.ibm.com/catalog?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) for exploring the services and resources offered by IBM Cloud.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/catalog.png" width="800"></div>
-
----
-
-## Ways To Troubleshoot
-
-If you encounter any of the below errors while activating your IBM Cloud trial account, please follow the steps as instructed below.
-
-- Ooops snap! The promotional codes for IBM Cloud are very popular and have temporarily run out. Please check back soon.
-
-    **Reason** - It takes 24 to 48 hours to populate news feature codes.
-
-    **Solution** - Please try again later
-
-- Something went wrong error.
-
-    **Reason** - This could be because you have already applied a code to this email earlier or your domain/country/IP is restricted.
-
-    **Solution** - Try from another email id
-
-- Feature code expired.
-
-    **Reason** - You may have applied the feature code already once.
-
-    **Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
-
-- If your trial ends.
-
-    **Reason** - Trial accounts are valid only for 6 months, and the same feature code cannot be applied again.
-
-    **Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
-
----
-
-## Other Possible Solutions:
-
-- Try clearing your browser\'s cache and cookies
-- Try from a different browser on an incognito mode.
-
-If you still face any issues, please write an email to support@cognitiveclass.ai with the following details
-
-**Subject Line:** Feature Code Issue
-
-**Email Content:**
-
-- Name of the course you are undertaking.
-- The course link where you obtained the feature code.
-- The feature code you are trying to apply.
-- The error message that it is shown.
-- The email ID used to create the IBM Cloud account.
-- Your username.
-
-Once you obtain a new feature code, you can create a new account using a different Email ID.
-
-Congratulations! You have successfully created your IBM Cloud Account!
-
-
----
-
-## Practice exercise
-
-Create a script named `greetnew.sh` that takes the first and last names of the user, saves them in corresponding variables `firstname` and `lastname`, and prints a welcome message, such as `"Hello <firstname> <lastname>"`.
-
-Use the `read` command and `echo` commands. Write comments. Make sure to add the shebang line.
-
-Step 1: Create a new file named `greetnew.sh`.
-
-Step 2: Add the following lines to the file:
-
-<pre><code>
-      #! /bin/bash
-      
-      # This script accepts the user's name and prints 
-      # a message greeting the user
-      
-      echo -n "Enter your firstname :"	  	
-</code></pre>
-
-Step 3: Save the file.
-
-Step 4: Add the execute permission to `greetnew.sh` for the owner:
-
+```SQL
+SELECT * 
+FROM EMPLOYEES 
+WHERE salary < AVG(salary);
 ```
-chmod u+x greetnew.sh
+However, this query will generate an error stating, \"Illegal use of group function.\" Here, the group function is `AVG` and cannot be used directly in the condition since it has not been retrieved from the data. Therefore, the condition will use a sub-query to retrieve the average salary information to compare the existing salary. The modified query would become:
+
+```SQL
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY < (SELECT AVG(SALARY) FROM EMPLOYEES);
 ```
 
-Step 5: Execute the file from the command prompt using the following command:
+Now, consider executing a query that retrieves all employee records with EMP_ID, SALARY, and maximum salary as MAX_SALARY in every row. For this, the maximum salary must be queried and used as one of the columns. This can be done using the query below.
 
 ```
-./greetnew.sh
+SELECT EMP_ID, SALARY, (SELECT MAX(SALARY) FROM EMPLOYEES) AS MAX_SALARY 
+FROM EMPLOYEES;
 ```
 
-### Summary
+Now, consider that you wish to extract the first and last names of the oldest employee. Since the oldest employee will be the one with the smallest date of birth, the query can be written as:
 
-In this lab, you learned how to:
-- Create and execute a simple Bash shell script
-- Implement the shebang directive `#! /bin/bash` in a Bash shell script
+```SQL
+SELECT F_NAME, L_NAME
+FROM EMPLOYEES
+WHERE B_DATE = (SELECT MIN(B_DATE) FROM EMPLOYEES);
+```
+
+You may also use sub-queries to create derived tables, which can then be used to query specific information. Say you want to know the average salary of the top 5 earners in the company. You will first have to extract a table of the top five salaries as a table. From that table, you can query the average value of the salary. The query can be written as follows.
+
+```SQL
+SELECT AVG(SALARY) 
+FROM (SELECT SALARY 
+	  FROM EMPLOYEES 
+	  ORDER BY SALARY DESC 
+	  LIMIT 5) AS SALARY_TABLE;
+```
+Note that it is necessary to give an alias to any derived tables.
+
+::page{title="Practice Problems"}
+
+1. Write a query to find the average salary of the five least-earning employees.
+
+
+
+You need to order the data in ascending salary order and limit it to the top five entries, treating this as a derived table. Take the average of these entries.
+
+
+
+<summary>Click here for the solution</summary>
+
+```SQL
+SELECT AVG(SALARY) 
+FROM (SELECT SALARY 
+	  FROM EMPLOYEES 
+	  ORDER BY SALARY 
+	  LIMIT 5) AS SALARY_TABLE;
+```
+
+
+2. Write a query to find the records of employees older than the average age of all employees.
+
+
+
+Age in years can be calculated as the year component in the difference between DOB and current date. You need to compare the age in years with average age in years. The average age in years will be evaluated as a sub-query.
+
+
+
+<summary>Click here for the solution</summary>
+
+```SQL
+SELECT * 
+FROM EMPLOYEES 
+WHERE YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE,B_DATE))) > 
+	(SELECT AVG(YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE,B_DATE)))) 
+	FROM EMPLOYEES);
+```
+
+
+3. From the Job_History table, display the list of Employee IDs, years of service, and average years of service for all entries.
+
+
+
+For this, you need to calculate the years of service as a difference between the date of joining and the current date. Average years of service need to be queried separately to be displayed.
+
+
+
+
+```SQL
+SELECT EMPL_ID, YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE))), 
+	(SELECT AVG(YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE)))) 
+	FROM JOB_HISTORY)
+FROM JOB_HISTORY;
+```
+
+
+::page{title="Conclusion"}
+
+Congratulations! You have completed this lab and are ready for the next topic.
