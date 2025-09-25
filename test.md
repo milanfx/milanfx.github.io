@@ -4,11 +4,11 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-# Hands-on Lab: Sub-queries and Nested Selects
+## Sub-queries and Nested Selects
 
 **Estimated time needed:** 20 minutes
 
-## Objectives
+### Objectives
 
 After completing this lab, you will be able to:
 
@@ -17,23 +17,21 @@ After completing this lab, you will be able to:
 *   Build column expressions (for example, sub-query in place of a column)
 *   Write table expressions (for example, sub-query in place of a table)
 
-
-## Software Used in this Lab
+### Software Used in this Lab
 
 In this lab, you will use <a href="https://www.mysql.com/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0110ENSkillsNetwork24601058-2021-01-01" target="_blank">MySQL</a>. MySQL is a Relational Database Management System (RDBMS) designed to store, manipulate, and retrieve data efficiently.
 
 <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Create%20Tables%20and%20Load%20Data%20in%20MySQL%20using%20phpMyAdmin/images/mysql.png" width="100" height="100">
-<p></p>
 
 To complete this lab, you will use MySQL relational database service available as part of IBM Skills Network Labs (SN Labs) Cloud IDE. SN Labs is a virtual lab environment used in this course.
 
-## Database Used in this Lab
+### Database Used in this Lab
 
 The database used in this lab is internal. You will be working on a sample HR database. This HR database schema consists of 5 tables: **EMPLOYEES**, **JOB_HISTORY**, **JOBS**, **DEPARTMENTS**, and **LOCATIONS**. Each table has a few rows of sample data. The following diagram shows the tables for the HR database:
 
 <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20Create%20tables%20using%20SQL%20scripts%20and%20Load%20data%20into%20tables/images/Sample_1.PNG" width="670" height="400">
 
-::page{title="Load the database"}
+## Load the database
 
 Using the skills acquired in the previous modules, you should first create the database in MySQL. Follow the steps below.
 
@@ -50,7 +48,7 @@ Using the skills acquired in the previous modules, you should first create the d
 
 4. Use these files in the phpMyAdmin interface as the data for the respective tables  in the \'HR\' database.
 
-::page{title="Sub-queries and Nested Selects"}
+## Sub-queries and Nested Selects
 
 Say you are asked to retrieve all employee records whose salary is lower than the average salary. You might use the following query to do this.
 
@@ -59,6 +57,7 @@ SELECT *
 FROM EMPLOYEES 
 WHERE salary < AVG(salary);
 ```
+
 However, this query will generate an error stating, \"Illegal use of group function.\" Here, the group function is `AVG` and cannot be used directly in the condition since it has not been retrieved from the data. Therefore, the condition will use a sub-query to retrieve the average salary information to compare the existing salary. The modified query would become:
 
 ```SQL
@@ -93,17 +92,11 @@ FROM (SELECT SALARY
 ```
 Note that it is necessary to give an alias to any derived tables.
 
-::page{title="Practice Problems"}
+## Practice Problems
 
-1. Write a query to find the average salary of the five least-earning employees.
-
-
+Step 1: Write a query to find the average salary of the five least-earning employees.
 
 You need to order the data in ascending salary order and limit it to the top five entries, treating this as a derived table. Take the average of these entries.
-
-
-
-
 
 ```SQL
 SELECT AVG(SALARY) 
@@ -113,16 +106,9 @@ FROM (SELECT SALARY
 	  LIMIT 5) AS SALARY_TABLE;
 ```
 
-
-2. Write a query to find the records of employees older than the average age of all employees.
-
-
+Step 2: Write a query to find the records of employees older than the average age of all employees.
 
 Age in years can be calculated as the year component in the difference between DOB and current date. You need to compare the age in years with average age in years. The average age in years will be evaluated as a sub-query.
-
-
-
-
 
 ```SQL
 SELECT * 
@@ -132,10 +118,7 @@ WHERE YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE,B_DATE))) >
 	FROM EMPLOYEES);
 ```
 
-
-3. From the Job_History table, display the list of Employee IDs, years of service, and average years of service for all entries.
-
-
+Step 3: From the Job_History table, display the list of Employee IDs, years of service, and average years of service for all entries.
 
 For this, you need to calculate the years of service as a difference between the date of joining and the current date. Average years of service need to be queried separately to be displayed.
 
@@ -146,7 +129,6 @@ SELECT EMPL_ID, YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE))),
 FROM JOB_HISTORY;
 ```
 
-
-::page{title="Conclusion"}
+### Conclusion
 
 Congratulations! You have completed this lab and are ready for the next topic.
