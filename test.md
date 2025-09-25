@@ -36,19 +36,19 @@ Please use the following steps to create an account on GitHub:
 
 Step 1: Create an account: https://github.com/join 
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="400">
 
 <b>NOTE:</b> If you already have a GitHub account, you can skip this step and simply log in to your account.
 
 Step 2: Provide the necessary details to create an account as shown below:
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="400">
 
 Click `Continue`.
 
 Step 3: Click `Visual puzzle` to verify the account. 
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="400">
 
 ---
 
@@ -62,11 +62,11 @@ Step 1: Once the repository is created, the root folder of your repository is li
 
 Step 2: Add some text to the file.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="600">
 
 Step 3: After adding the text and click `Commit Changes`.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="400">
 
 Now, check that your file is edited with the new text.
 
@@ -84,7 +84,7 @@ Step 2: Click `Add file` and select `Create New file` to create a file in the re
 
 Step 3: Provide the file name and the extension of the file. For example, firstpython.py and add the lines.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="400">
 
 ---
 
@@ -104,7 +104,7 @@ Step 3: Once the file finishes uploading, click `Commit changes`.
 
 Step 4: Now, your file is uploaded in the repository.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="300">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="600">
 
 ---
 
