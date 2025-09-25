@@ -47,7 +47,7 @@ Please ensure you click on the **\"Launch App\"** button from the previous secti
 
 <p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png" width="600"></p>
 
-> **NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
+**NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
 
 3. An email is sent to the address you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
 
@@ -55,7 +55,7 @@ Please ensure you click on the **\"Launch App\"** button from the previous secti
 
 4. Once your email is successfully verified, enter your **First name** and **Last name**, and select your country (for example, United States) under **Country or region** then click **Next**.
 
->**Note:** Kindly use your full last name instead of just using single letters/initials. For example:
+**Note:** Kindly use your full last name instead of just using single letters/initials. For example:
 First Name: Ada
 Last Name: Lovelace
 
@@ -69,15 +69,15 @@ Last Name: Lovelace
 
 <p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png" width="600"></p>
 
-> It takes a few seconds to create and set up your account.
+It takes a few seconds to create and set up your account.
 
 7. On the next screen, you will be asked to verify your identity where you will see the feature code has been applied for you already. Then click on **Create account**. 
 
 <p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png" width="600"></p>
 
-> **Note:** It might take a couple of minutes to create your account.
+**Note:** It might take a couple of minutes to create your account.
 
-> **Note:** Please ensure you do not use the Credit Card option to verify your account for coursework as that can result in unnecessary charges and delays in activating your account.
+**Note:** Please ensure you do not use the Credit Card option to verify your account for coursework as that can result in unnecessary charges and delays in activating your account.
 
 8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
 
@@ -150,11 +150,11 @@ The `.` here refers to the current directory. You are telling Linux to execute t
 
 1.  Create a script named `greetnew.sh` that takes the first and last names of the user, saves them in corresponding variables `firstname` and `lastname`, and prints a welcome message, such as `"Hello <firstname> <lastname>"`.
 
-> Use the `read` command and `echo` commands. Write comments. Make sure to add the shebang line.
+Use the `read` command and `echo` commands. Write comments. Make sure to add the shebang line.
 
-> Step 1: Create a new file named `greetnew.sh`.
+Step 1: Create a new file named `greetnew.sh`.
 
-> Step 2: Add the following lines to the file:
+Step 2: Add the following lines to the file:
 
 ```
 #! /bin/bash
@@ -176,16 +176,15 @@ read lastname
 
 # Print the welcome message followed by the name	
 echo "Hello $firstname $lastname."
-
 ```
 
 > Step 3: Save the file.
 
 > Step 4: Add the execute permission to `greetnew.sh` for the owner:
 
-```
-chmod u+x greetnew.sh
-```
+      ```
+      chmod u+x greetnew.sh
+      ```
 
 > Step 5: Execute the file from the command prompt using the following command:
 
