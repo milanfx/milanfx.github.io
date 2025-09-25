@@ -34,25 +34,23 @@ First, let\'s introduce you to GitHub. GitHub is a collection of folders and fil
 
 Please use the following steps to create an account on GitHub:
 
-<p align="center">
-  <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300">
-</p>
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="300"></p>
 
 Step 1: Create an account: https://github.com/join 
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="400">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9ybBtTMN11pv0EJSo8sSZA/Create-account.PNG" alt="Create your account." width="400"></p>
 
 <b>NOTE:</b> If you already have a GitHub account, you can skip this step and simply log in to your account.
 
 Step 2: Provide the necessary details to create an account as shown below:
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="400">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/tpap84Ayqkc8z8seDaRnMw/Fill-details.PNG" alt="Create your account." width="400"></p>
 
 Click `Continue`.
 
 Step 3: Click `Visual puzzle` to verify the account. 
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="400">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CxivN76MadvjvkWA38BVXg/Verify.PNG" alt="Verify your account." width="400"></p>
 
 ---
 
@@ -62,15 +60,15 @@ Step 3: Click `Visual puzzle` to verify the account.
 
 Step 1: Once the repository is created, the root folder of your repository is listed by default, and has just one file, `ReadMe.md`. Click the pencil icon to edit the file.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/I3qFPUkPzVKQbJOTXmsTJg/Edit-file.PNG" alt="Edit file." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/I3qFPUkPzVKQbJOTXmsTJg/Edit-file.PNG" alt="Edit file." width="600"></p>
 
 Step 2: Add some text to the file.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6quTOHLyvPrj8Km9WpV-Yg/Add-text.PNG" alt="Add some text." width="600"></p>
 
 Step 3: After adding the text and click `Commit Changes`.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="400">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a-nv_APEDwQoCtXucqbOmQ/Commit.PNG" alt="Commit changes." width="400"></p>
 
 Now, check that your file is edited with the new text.
 
@@ -80,15 +78,15 @@ Now, check that your file is edited with the new text.
 
 Step 1: Click the repository name to return to the master branch, like in this testrepo.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/8djlv1HcKvXNEB5ZUWKB4g/File-updated.PNG" alt="Commit changes." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/8djlv1HcKvXNEB5ZUWKB4g/File-updated.PNG" alt="Commit changes." width="600"></p>
 
 Step 2: Click `Add file` and select `Create New file` to create a file in the repository.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Id6vkES1XdpxtQqnyi9bOg/Create-new-file.PNG" alt="Create new file." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Id6vkES1XdpxtQqnyi9bOg/Create-new-file.PNG" alt="Create new file." width="600"></p>
 
 Step 3: Provide the file name and the extension of the file. For example, firstpython.py and add the lines.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="400">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="400"></p>
 
 ---
 
@@ -96,19 +94,19 @@ Step 3: Provide the file name and the extension of the file. For example, firstp
 
 Step 1: Click `Add file` and select `Upload files` to upload a file (any .txt, .ipynb, .png file) in the repository from the local computer.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/c3mA45CpiA_5MuF1K4OSQw/Upload.png" alt="Upload files." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/c3mA45CpiA_5MuF1K4OSQw/Upload.png" alt="Upload files." width="600"></p>
 
 Step 2: Click `choose your files` and select any files from your computer.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/4HSqlEOnZxjo06fMJTXrfQ/select-files.PNG" alt="Select files." width="600">
+><p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/4HSqlEOnZxjo06fMJTXrfQ/select-files.PNG" alt="Select files." width="600"></p>
 
 Step 3: Once the file finishes uploading, click `Commit changes`.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Njphq1g3PQGwNmtQj0pOuA/commit-upload.PNG" alt="Commit uplaoded files." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Njphq1g3PQGwNmtQj0pOuA/commit-upload.PNG" alt="Commit uplaoded files." width="600"></p>
 
 Step 4: Now, your file is uploaded in the repository.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="600">
+<p align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="600"></p>
 
 ---
 
