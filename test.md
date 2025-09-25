@@ -84,7 +84,7 @@ Step 2: Click `Add file` and select `Create New file` to create a file in the re
 
 Step 3: Provide the file name and the extension of the file. For example, firstpython.py and add the lines.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="600">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BHD0orNXDJvWzOlP80leNg/Add-filename.PNG" alt="Add filename." width="300">
 
 ---
 
@@ -104,7 +104,7 @@ Step 3: Once the file finishes uploading, click `Commit changes`.
 
 Step 4: Now, your file is uploaded in the repository.
 
-><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="600">
+><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/N1JILJwOU4yxSueB2fcM0g/check-change.PNG" alt="Check change." width="300">
 
 ---
 
