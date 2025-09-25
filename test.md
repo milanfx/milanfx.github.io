@@ -6,7 +6,7 @@ permalink: /xxx/
 
 ---
 
-# Getting Started with GitHub
+## Getting Started with GitHub
 
 Estimated time: **20 min**
 
