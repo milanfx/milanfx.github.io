@@ -4,311 +4,189 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-# Hands-on Lab: Advanced Bash Scripting
 
-Estimated time needed: **30** minutes
+# Lab: MySQL User Management, Access Control, and Encryption
 
-Welcome to this hands-on lab, where you will take your Bash scripting chops to the next level. The skills you practice here will serve as logical building blocks for an endless variety of scripting applications. These concepts will also be essential for demonstrating your new skills in the Final Project for this course.
+**Estimated time needed:** 30 minutes
 
-As you develop your Bash scripts, it\'s always recommended that you test your results at each stage to ensure your logic is behaving as expected. Think of each stage as a building block of your final script that accomplishes an easily digestible sub-task.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/SN_web_lightmode.png" width="300">
 
-## Learning Objectives
+## Objectives
 
 After completing this lab, you will be able to:
-- Run sets of commands using conditional statements
-- Create `true`/`false` comparisons with logical operators
-- Use arithmetic operators to perform basic mathematical calculations
-- Use list-like arrays to store and access data
-- Execute repetitive tasks with `for` loops
+- Manage MySQL user accounts and roles using the phpMyAdmin graphical user interface (GUI) tool
+- Control access to MySQL databases and their objects
+- Secure your data by adding an extra layer of security using data encryption
 
-## About Skills Network Cloud IDE
+## Database
 
-Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project related labs. Theia is an open-source IDE (Integrated Development Environment) that can be run on a desktop or on the cloud. To complete this lab, we will be using the Cloud IDE based on Theia running in a Docker container.
+In this lab, you will use a customer orders database, which is a modified version of the source database. It is recommended that you use the given database rather than the database from the original source to follow the lab instructions successfully.
+The following ERD diagram shows the schema of the customer orders database.
 
-## Important notice about this lab environment
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/acT-IEy7UHJyGxp8UXNNrQ/1.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-Please be aware that sessions for this lab environment are not persisted. Every time you connect to this lab, a new environment is created for you. Any data you may have saved in the earlier session would get lost. Plan to complete these labs in a single session to avoid losing your data.
+# Exercise 1: Manage MySQL user accounts and roles
 
-# Exercise 1 - Using conditional statements and logical operators
+In this exercise, you will learn how to manage MySQL user accounts and roles using phpMyAdmin.
+User management is the process of controlling which users are allowed to connect to the MySQL server and what permissions they have on each database. phpMyAdmin does not handle user management; rather, it passes the username and password on to MySQL, which then determines whether a user is permitted to perform a particular action. Within phpMyAdmin, administrators have full control over creating users, viewing and editing privileges for existing users, and removing users.
 
-In this exercise, you will create a simple Bash script containing a conditional statement to handle the following tasks:
+## Task 1
 
-- Prompt the user for a `Yes` or `No` response to a question
-- Print a response based on the user\'s answer
+1. Go to **Skills Network Toolbox** by clicking the following icon from the side-by-side launched Cloud IDE.
+2. From the **Databases** drop-down menu, click **MySQL** to open the MySQL service session tab.
+3. Click the **Create** button and wait until the MySQL service session gets launched.
 
-## 1.1. Create a new Bash script
-Create a Bash script file and make it executable.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/-FKNlgJAMBckyNsPIAKKXA/2.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-> Use the `echo` command to redirect a **shebang** to a new Bash script.
-	
-> Alternatively, open a new text file using your favourite text editor and add a **shebang** to it. Remember to make your new script executable.
+The MySQL server will take a few moments to start. Once it is ready, you will see the green \"Active\" label at the top of the window.
 
-Here's a solution using only the command line:  
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/2u_5v_wz-GN3EpQUpgQmQg/3-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-```bash
-echo '#!/bin/bash' > conditional_script.sh
-chmod u+x conditional_script.sh
-```
+4. Whenever you are required to enter your MySQL service session password from the MySQL service session tab at any step of the lab, copy the password by clicking on the small copy button on the right of the password block. Paste the password into the terminal using **Ctrl + V** (Mac: ⌘ + V), and press **Enter** on the keyboard. For security reasons, you will not see the password as it is entered on the terminal.
 
-## 1.2. Query the user and store their response
-Now get your script to:
-1. Ask the user a binary \"yes or no\" question of your choosing
-2. Store the user\'s answer in a variable.
+## Task 2
 
-> Use the `echo` and `read` commands.
+1. Click **phpMyAdmin** button from the mysql service session tab. You will see the phpMyAdmin GUI tool.
 
-> Your Bash script should now look something like this:
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/W-cTbrqqky1nzhc2IeJCgw/4.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-```bash
-#!/bin/bash
+2. In the tree view, click **New** to create a new empty database. Then, enter **customerorders** as the name of the database and click **Create**.
 
-echo 'Are you enjoying this course so far?'
-echo -n "Enter \"y\" for yes, \"n\" for no."
-read response
-```
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Ncl2Q9-57saChyFkbpxg3A/5.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-## 1.3. Use a conditional block to select a response for the user
+3. Go to the **Import** tab. Upload the following SQL script file using the **Choose File** button (first, right-click this [SQL script file](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/jkG6RB4UjneuW3M21S_wcw/customerorders%20-1-.sql "SQL script file") to download it to your local computer storage). Then click the **Import** button at the bottom. You will be notified when the import is successfully finished. Click the **Home** icon.
 
-Finally, use a conditional block to print a message to the user based on their response to your query.
 
-> **Tip**: It\'s best practice to also handle the case where the response doesn\'t match any of the allowable responses.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6LoOCPt1dFLt8XXuNJkUFA/6-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-> Use a conditional `if elif else fi` block that uses a logical operator to compare the user\'s response to the available response options and prints an appropriate message in each case.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/32tZ-8wRx_kX6TRSYbnFVw/7-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-> Now your Bash script should be similar to the following:
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/NzdexL0ShP8_cITanmETOw/7--.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-```
-#!/bin/bash
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/dqaHrdmQcbBMR0KrjZP58w/8-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-echo 'Are you enjoying this course so far?'
-echo -n "Enter \"y\" for yes, \"n\" for no"
-read response
-if [ "$response" = "y" ]
-then
-    echo "I'm pleased to hear you are enjoying the course!"
-	echo "Your feedback regarding what you have been enjoying would be most welcome!"
-elif [ "$response" = "n" ]
-then
-   echo "I'm sorry to hear you are not enjoying the course."
-   echo "Your feedback regarding what we can do to improve the learning experience"
-   echo "for this course would be greatly appreciated!"
-else
-   echo "Your response must be either 'y' or 'n'."
-   echo "Please re-run the script to try again."
-fi
-```
 
-# Exercise 2 - Performing basic mathematical calculations and numerical logical comparisons
+4. Now, you will create a user account with the custom role \"sales_rep.\" sales_rep role will have access to limited tables. Go to the **User accounts** tab and click **Add user account**.
 
-In this exercise, you will create a Bash script that performs basic arithmetic calculations on two integers entered by the user. You will also use logical comparisons to determine which calculation leads to the greatest result.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/iZ9rLo-YCL-F4PmFsjg46A/9.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-## 2.1. Create a Bash script
-Create an executable Bash script that prompts the user for two integers, then stores and prints both the sum and product of the two integers.
 
-> Use the `echo` and `read` commands as in the previous exercise. 
-	
-> Recall the notation for arithmetic calculations.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ghfn21YMT7guEgLXW_JmXw/10.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-```
-#!/bin/bash
+5. Fill in the Login Information as shown in the following image (enter your own password). Under Global privileges, click select option SELECT, INSERT, UPDATE under Data. Scroll down and click **Go**.
 
-echo -n "Enter an integer: "
-read n1
-echo -n "Enter another integer: "
-read n2
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ZPbgyc_jMI0EfoTuWEo_kg/11-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-sum=$(($n1+$n2))
-product=$(($n1*$n2))
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/cgkdoU9oMLboalV7ITMM0A/12-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-echo "The sum of $n1 and $n2 is $sum"
-echo "The product of $n1 and $n2 is $product."
+6. You have successfully created a user account with appropriate privileges.
 
-```
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oDDpw-yIWZ8QTkq7q2aZaA/13-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-## 2.2. Add logic to your script
-Add logic to your script that determines whether the sum is greater than, less than, or equal to the product. Display an appropriate statement corresponding to each possible result.
+# Exercise 2: Control access to MySQL databases and their objects
 
-Assume the user inputs two integers. Don\'t worry about handling the case where the user inputs a non-integer string by mistake.
+In this exercise, you will learn how to control access to MySQL databases and their objects.
 
-> Use a conditional block. Recall the notation for logical operators.
+1. Making an exception to the user definition of the sales_rep role you created earlier, you will modify the privileges of this user. You will remove access to payments tables to sales_rep user and restrict sales_rep from updating all the other columns except the column creditLimit of the table customers of the database customerorders.
+Go to **Home > User accounts** tab. Click the **Edit privileges** option of the **sales_rep** user name.
 
-```
-#!/bin/bash
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/k98LVQGgLXE3h9NhVAZoXg/14-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-echo -n "Enter an integer: "
-read n1
-echo -n "Enter another integer: "
-read n2
+2. Under **Database** sub-tab, select **customerorders** database and click **Go**.
 
-sum=$(($n1+$n2))
-product=$(($n1*$n2))
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/0iIfoMUD2KFNLdQ0uw5msA/15-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-echo "The sum of $n1 and $n2 is $sum"
-echo "The product of $n1 and $n2 is $product."
+3. Under **Database-specific privileges**, select SELECT, INSERT, and UPDATE options and click **Go** at the bottom.
 
-if [ $sum -lt $product ]
-then
-   echo "The sum is less than the product."
-elif [ $sum -eq $product ]
-then
-   echo "The sum is equal to the product."
-elif [ $sum -gt $product ]
-then
-   echo "The sum is greater than the product."
-fi
-```
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/T3GMSRGAM66ZMGO8TdefBg/16-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-# Exercise 3 -  Using arrays for storing and accessing data within *for* loops
+4. Switch to **Table** sub-tab. Select the **table** payments from the drop-down menu and click **Go**.
 
-In this exercise, you will create a report based on a supplied dataset using the CSV format. You will extract the columns of the dataset into separate arrays and create a new column using arithmetic and array logic. Finally, you will combine the dataset with the new column and save the resulting report as a CSV file.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/W5RFMrbIZ9bMaog_QJ6kig/16--.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-## 3.1. Download a CSV file to your current working directory
-The file, `arrays_table.csv`, is located at the following url:
+5. Click None option under all sections of SELECT, INSERT, UPDATE, REFERENCES and click **Go**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Z3ZiM1tKxtJVtsLaeRhWZQ/16---.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
+
+6. As a practice exercise perform steps to remove access to employees, offices tables for **sales_rep** user.
+
+7. Switch to **Table** sub-tab. Select the table **customers** from the drop-down menu and click **Go**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WlGEuK3Pj8RdtMLUm8M_yw/17-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
+
+8. Under **Table-specific privileges**, configure all the SQL commands and their custom access to the columns of the table customers. Then click **Go**. Such table-specific privilege configuration will restrict **sales_rep** from updating all the other columns except the column **creditLimit** of the table **customers** of the database **customerorders**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/dfLXMenqhVycAM6t1mcotA/18-.png" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/cOzW7RhlK4h604-0kaGNuA/19.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
+
+9. As a practice exercise restrict access to update product table \"buyPrice\" column by sales_rep user.
+
+# Exercise 3: Secure data using encryption
+
+In this exercise, you will learn how to secure your data by adding an extra layer of security using data encryption. Certain parts of your database may contain sensitive information that should not be stored in plain text. This is where encryption comes in.
+
+You will implement encryption and decryption of a column in the customerorders database using the official AES (Advanced Encryption Standard) algorithm. AES is a symmetric encryption where the same key is used to encrypt and decrypt the data. The AES standard permits various key lengths. By default, a key length of 128 bits is used. Key lengths of 196 or 256 bits can be used. The key length is a trade-off between performance and security. 
+
+
+1. Click the **MySQL CLI** button from the mysql service session tab.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ITACT7Oo0SwCOOe6W11idA/20.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
+
+2. First, you will need to hash your passphrase (consider your passphrase is **My secret passphrase**) with a specific hash length (consider your hash length is **512**) using a hash function (here you will use the hash function from **SHA-2** family). It is good practice to hash the passphrase you use since storing the passphrase in plaintext is a significant security vulnerability. Use the following command in the terminal to use the SHA2 algorithm to hash your passphrase and assign it to the variable key_str:
 
 ```
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/M3/L2/arrays_table.csv
+SET @key_str = SHA2('My secret passphrase', 512);
 ```
 
-> Use the `wget` command.
-	
-```
-csv_file="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/M3/L2/arrays_table.csv"
-wget $csv_file
-```
-
-## 3.2. Display the CSV file to understand what it looks like
-
-> Use `cat` at the command prompt or open the file using the GUI.
+3. Now, let\'s take a look at the customerorders database. First, you will connect to the database by entering the following command in the CLI:
 
 ```
-cat arrays_table.csv
+USE customerorders;
 ```
 
-## 3.3. Create a Bash script that parses table columns into 3 arrays
-	
-> Use command substitution, the `cut` command, and the notation for creating an array from a list of elements.
-
-> Also, print the first array to validate your logic.
-
+4. Next, let\'s take a quick look at the customers table in our database with the following command.
 ```
-#!/bin/bash
-
-csv_file="./arrays_table.csv"
-
-# parse table columns into 3 arrays
-column_0=($(cut -d "," -f 1 $csv_file))
-column_1=($(cut -d "," -f 2 $csv_file))
-column_2=($(cut -d "," -f 3 $csv_file))
-
-# print first array
-echo "Displaying the first column:"
-echo "${column_0[@]}"
+SELECT * FROM customers LIMIT 5;
 ```
 
-## 3.4. Create a new array as the difference of the third and second columns.
-Initialize your new array with a header (a column name), and remember to validate your results.
-	
-> Use a loop to populate your array.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/L06n882eXcMm9uISK9zTcg/21.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-> Determine the number of elements you need and incorporate within your loop statement.
-	
-> Print both the number of elements and the contents of your new array to validate your logic.
-	
-> Recall the `for` loop notation when you know the number of iterations needed, and that array indexing starts at 0.
+For demonstration purposes, suppose that the last column in the table, labelled addressLine1, contains sensitive data; storing such sensitive data in plain text is an enormous security concern, so let\'s go ahead and encrypt that column.
 
-> To get the number of lines, use command subsitution on a pipeline that uses the `cat` and `wc` commands as filters and store the result in a variable.
+5. To encrypt the addressLine1 column, you will first convert the data in the column into binary byte strings of length 255 by entering the following command into the CLI.
 
 ```
-#!/bin/bash
-
-csv_file="./arrays_table.csv"
-
-# parse table columns into 3 arrays
-column_0=($(cut -d "," -f 1 $csv_file))
-column_1=($(cut -d "," -f 2 $csv_file))
-column_2=($(cut -d "," -f 3 $csv_file))
-
-# print first array
-echo "Displaying the first column:"
-echo "${column_0[@]}"
-
-## Create a new array as the difference of columns 1 and 2
-# initialize array with header
-column_3=("column_3")
-# get the number of lines in each column
-nlines=$(cat $csv_file | wc -l)
-echo "There are $nlines lines in the file"
-# populate the array
-for ((i=1; i<$nlines; i++)); do
-  column_3[$i]=$((column_2[$i] - column_1[$i]))
-done
-echo "${column_3[@]}"
+ALTER TABLE customers MODIFY COLUMN addressLine1 varbinary(255);
 ```
 
-## 3.5. Create a report by combining your new column with the source table
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VpPyQTW8lZkNhQtZ-6o-0g/22.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-Save your report as a CSV file.
-	
-Remember to validate your results.
-	
-> Write the new array to file line-by-line.
-
-> Intitialize the file with a header.
-
-> Use redirection and recall how to merge two files side-by-side.
-
-> Ensure your final report has the correct CSV format.
+6. Now, to encrypt the addressLine1 column, execute the following command using the AES encryption standard and our hashed passphrase.
 
 ```
-#!/bin/bash
+UPDATE customers SET addressLine1  = AES_ENCRYPT(addressLine1 , @key_str);
+```
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/iS0xgzxmLrEt3X8maax33w/23.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-csv_file="./arrays_table.csv"
+7. Let\'s go ahead and see if the column was successfully encrypted by taking another look at the customers table. Run the same command as in step 4.
 
-# parse table columns into 3 arrays
-column_0=($(cut -d "," -f 1 $csv_file))
-column_1=($(cut -d "," -f 2 $csv_file))
-column_2=($(cut -d "," -f 3 $csv_file))
-
-# print first array
-echo "Displaying the first column:"
-echo "${column_0[@]}"
-
-## Create a new array as the difference of columns 1 and 2
-# initialize array with header
-column_3=("column_3")
-# get the number of lines in each column
-nlines=$(cat $csv_file | wc -l)
-echo "There are $nlines lines in the file"
-# populate the array
-for ((i=1; i<$nlines; i++)); do
-  column_3[$i]=$((column_2[$i] - column_1[$i]))
-done
-echo "${column_3[@]}"
-
-## Combine the new array with the csv file
-# first write the new array to file
-# initialize the file with a header
-echo "${column_3[0]}" > column_3.txt
-for ((i=1; i<nlines; i++)); do
-  echo "${column_3[$i]}" >> column_3.txt
-done
-paste -d "," $csv_file column_3.txt > report.csv
+```
+SELECT * FROM customers LIMIT 5;
 ```
 
-## Conclusion
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/kmFTJ2lwHMUOdhgbJFsntA/24.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-Congratulations! You have just completed a hands-on lab using advanced Bash scripting logic.
-	
-In this lab, you learned that you can use:
-- Conditional statements to run commands based on whether a specified condition is `true` or `false`
-- Logical operators to make `true`/`false` operators
-- Arithmetic operators  to perform basic mathematical calculations
-- List-like arrays to store and access data
-- `for` loops to execute repetitive tasks
+8. The supposedly sensitive data is now encrypted and secured from prying eyes. However, we should still have a way to access the encrypted data when needed. To do this, we use the AES_DECRYPT command, and since AES is symmetric, we use the same key for both encryption and decryption. In our case, recall that the key was a passphrase, which was hashed and stored in the variable key_str. Suppose we need to access the sensitive data in that column. We can do so by entering the following command in the CLI:
 
+```
+SELECT cast(AES_DECRYPT(addressLine1 , @key_str) as char(255)) FROM customers;
+```
 
-You covered a lot of material here that will be very useful going forward. You will encounter similar problems in your practice and final projects and, best of all, in your career! Remember - you can always come back and review your labs.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/vLD6t2OTiDLnuYqPGFhWtA/25.jpg" style="width:80%;display:block;margin:auto;margin-bottom:.5cm"/>
 
-> **Tip**: It is worth noting that had we been only interested in efficiency, one of the steps could have been avoided. Specifically, you could have redirected your calculations to a text file line-by-line rather than storing them in an array and then writing the array to file.
+9. As a practice exercise you need to encrypt/decrypt cardNumber column in the payments table.
 
-Finally, we encourage you to post a review and a rating for this course at any time!
+## Summary
+
+Congratulations! In this lab, you learned how to manage MySQL user accounts and roles using the phpMyAdmin graphical user interface (GUI) tool. You also learned how to control access to MySQL databases and their objects. Finally, you learned how to secure your data, adding an extra layer of security using data encryption.
