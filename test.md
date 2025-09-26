@@ -4,204 +4,535 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-# Lab: MySQL User Management, Access Control, and Encryption
+
+# Lab: Automating MySQL Database Tasks Using Shell Scripts
 
 **Estimated time needed:** 30 minutes
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/SN_web_lightmode.png" width="600"></div>
+In this lab, you will use the MySQL command line interface (CLI) to automatically back up the database and restore the database when required.
+
+## Software Used in This Lab
+
+To complete this lab, you will use the MySQL relational database service available as part of the IBM Skills Network Labs (SN Labs). SN Labs is a virtual lab environment used in this course.
+
+## Database Used in This Lab
+
+You will use a modified version of the Sakila database for the lab, which is an adapted version from the following source: [https://dev.mysql.com/doc/sakila/en/](https://dev.mysql.com/doc/sakila/en/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0110ENSkillsNetwork24601058-2021-01-01) under [New BSD license](https://opensource.org/licenses/bsd-license.php?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDB0110ENSkillsNetwork24601058-2021-01-01) \[Copyright 2021 - Oracle Corporation].
 
 ## Objectives
 
-After completing this lab, you will be able to:
-- Manage MySQL user accounts and roles using the phpMyAdmin graphical user interface (GUI) tool
-- Control access to MySQL databases and their objects
-- Secure your data by adding an extra layer of security using data encryption
+After completing this lab, you will be able to use the MySQL command line to:
 
-## Database
+* Create the shell script to back up the database.
+* Create a cron job to run the backup script thereby creating a backup file.
+* Truncate the tables in the database.
+* Restore the database  using the backup file.
 
-In this lab, you will use a customer orders database, which is a modified version of the source database. It is recommended that you use the given database rather than the database from the original source to follow the lab instructions successfully.
-The following ERD diagram shows the schema of the customer orders database.
+## Exercise
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/acT-IEy7UHJyGxp8UXNNrQ/1.png" width="600"></div>
+In this exercise you will create a database, backup the database using an automated script, and finally truncate and restore it back.
 
-# Exercise 1: Manage MySQL user accounts and roles
+# Task A: Create a Database
 
-In this exercise, you will learn how to manage MySQL user accounts and roles using phpMyAdmin.
-User management is the process of controlling which users are allowed to connect to the MySQL server and what permissions they have on each database. phpMyAdmin does not handle user management; rather, it passes the username and password on to MySQL, which then determines whether a user is permitted to perform a particular action. Within phpMyAdmin, administrators have full control over creating users, viewing and editing privileges for existing users, and removing users.
+**Step 1:**  Go to **Terminal > New Terminal** to open a terminal from the side-by-side launched Cloud IDE.
 
-## Task 1
-
-**Step 1:** Go to **Skills Network Toolbox** by clicking the following icon from the side-by-side launched Cloud IDE.
-**Step 2:** From the **Databases** drop-down menu, click **MySQL** to open the MySQL service session tab.
-**Step 3:** Click the **Create** button and wait until the MySQL service session gets launched.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/-FKNlgJAMBckyNsPIAKKXA/2.jpg" width="600"></div>
-
-The MySQL server will take a few moments to start. Once it is ready, you will see the green \"Active\" label at the top of the window.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/2u_5v_wz-GN3EpQUpgQmQg/3-.png" width="600"></div>
-
-**Step 4:** Whenever you are required to enter your MySQL service session password from the MySQL service session tab at any step of the lab, copy the password by clicking on the small copy button on the right of the password block. Paste the password into the terminal using **Ctrl + V** (Mac: ⌘ + V), and press **Enter** on the keyboard. For security reasons, you will not see the password as it is entered on the terminal.
-
-## Task 2
-
-**Step 1:** Click **phpMyAdmin** button from the mysql service session tab. You will see the phpMyAdmin GUI tool.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/W-cTbrqqky1nzhc2IeJCgw/4.jpg" width="600"></div>
-
-**Step 2:** In the tree view, click **New** to create a new empty database. Then, enter **customerorders** as the name of the database and click **Create**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Ncl2Q9-57saChyFkbpxg3A/5.jpg" width="600"></div>
-
-**Step 3:** Go to the **Import** tab. Upload the following SQL script file using the **Choose File** button (first, right-click this [SQL script file](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/jkG6RB4UjneuW3M21S_wcw/customerorders%20-1-.sql "SQL script file") to download it to your local computer storage). Then click the **Import** button at the bottom. You will be notified when the import is successfully finished. Click the **Home** icon.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/6LoOCPt1dFLt8XXuNJkUFA/6-.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/A.1.png" width="600"></div>
 
 <br>
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/32tZ-8wRx_kX6TRSYbnFVw/7-.png" width="600"></div>
+**Step 2:**  Copy the command below and run it on the terminal to fetch the [sakila_mysql_dump.sql](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_mysql_dump.sql) file to the Cloud IDE.
+
+```
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_mysql_dump.sql
+```
+
+**Step 3:** Start the MySQL service session  using the `Start MySQL in IDE  button` directive.
+
+(::openDatabase{db="MySQL" start="false"}) 
+
+**Step 4:** On the launching page, click on the **Create** button.
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nS9RnIfS89iFZs7oQ2onnQ/k2-1.png" width="600"></div>
+
+**Step 5:** Open the `.my.cnf` as root user, with nano editor in terminal to configure your mysql password .
+
+```sh
+sudo nano ~/.my.cnf
+```
+
+**Step 6:** Add the password you noted in the previous step to the `.my.cnf` file. This aids in not entering the password over and over again and keeps the password hidden in the config file.
+
+> Note: Once you open the ~/.my.cnf file enter the line ```password = <Your MySQL Password>``` and replace the password with your password noted before.
+
+```
+[client]
+host = mysql
+port = 3306
+user = root
+password = <Your MySQL Password>
+
+```
+
+**Step 7:** Press Ctrl+O, next followed by the Enter key to save the file.
+
+**Step 8:** Press Ctrl+X to quit the nano editor.
+
+**Step 9:** Initiate the mysql command prompt session within the MySQL service session using the command below in the terminal:
+
+```
+mysql
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/mysql.png" width="600"></div>
+
+ Here you find that you are able to login to mysql without entering the password as it is already configured in the ~/.my.cnf file.
+
+**Step 9:**  Create a new database **sakila** using the command below in the terminal and proceed to Task B:
+
+```
+create database sakila;
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/sakila.png" width="600"></div>
 
 <br>
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/NzdexL0ShP8_cITanmETOw/7--.png" width="600"></div>
+# Task B: Restore the Structure and Data of a Table
 
-<br>
+**Step 1:**  To use the newly created empty sakila database, use the command below in the terminal:
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/dqaHrdmQcbBMR0KrjZP58w/8-.png" width="600"></div>
+    ```
+    use sakila;
+    ```
 
-**Step 4:** Now, you will create a user account with the custom role \"sales_rep.\" sales_rep role will have access to limited tables. Go to the **User accounts** tab and click **Add user account**.
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/B.1.png" width="600"></div>
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/iZ9rLo-YCL-F4PmFsjg46A/9.png" width="600"></div>
+**Step 2:**  Restore the sakila mysql dump file (containing the sakila database table definitions and data) to the newly created empty sakila database using the command below in the terminal:
 
-<br>
+    ```
+    source sakila_mysql_dump.sql;
+    ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ghfn21YMT7guEgLXW_JmXw/10.jpg" width="600"></div>
+**Step 3:**  To check, list all the table names from the sakila database using the command below in the terminal
 
-**Step 5:** Fill in the Login Information as shown in the following image (enter your own password). Under Global privileges, click select option SELECT, INSERT, UPDATE under Data. Scroll down and click **Go**.
+    ```
+    SHOW FULL TABLES WHERE table_type = 'BASE TABLE';
+    ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ZPbgyc_jMI0EfoTuWEo_kg/11-.png" width="600"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.1.png" width="600"></div>
 
-<br>
+# Task C: Understanding the Process Involved in Creating MySQL Database Backups
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/cgkdoU9oMLboalV7ITMM0A/12-.png" width="600"></div>
+You will create a shell script  that does the following:
 
-**Step 6:** You have successfully created a user account with appropriate privileges.
+ *  Writes the database to an sqlfile created with a timestamp, using the `mysqldump` command
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oDDpw-yIWZ8QTkq7q2aZaA/13-.png" width="600"></div>
+ *  Zips the sqlfile into a zip file using the `gzip` command
 
-# Exercise 2: Control access to MySQL databases and their objects
+ *  Removes the sqlfile using rm command
 
-In this exercise, you will learn how to control access to MySQL databases and their objects.
+ *  Deletes the backup after 30 days
 
-**Step 1:** Making an exception to the user definition of the sales_rep role you created earlier, you will modify the privileges of this user. You will remove access to payments tables to sales_rep user and restrict sales_rep from updating all the other columns except the column creditLimit of the table customers of the database customerorders.
-Go to **Home > User accounts** tab. Click the **Edit privileges** option of the **sales_rep** user name.
+Before you create the script, let's understand each of the command blocks you will be adding to the file. 
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/k98LVQGgLXE3h9NhVAZoXg/14-.png" width="600"></div>
-
-**Step 2:** Under **Database** sub-tab, select **customerorders** database and click **Go**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/0iIfoMUD2KFNLdQ0uw5msA/15-.png" width="600"></div>
-
-**Step 3:** Under **Database-specific privileges**, select SELECT, INSERT, and UPDATE options and click **Go** at the bottom.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/T3GMSRGAM66ZMGO8TdefBg/16-.png" width="600"></div>
-
-**Step 4:** Switch to **Table** sub-tab. Select the **table** payments from the drop-down menu and click **Go**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/W5RFMrbIZ9bMaog_QJ6kig/16--.png" width="600"></div>
-
-**Step 5:** Click None option under all sections of SELECT, INSERT, UPDATE, REFERENCES and click **Go**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Z3ZiM1tKxtJVtsLaeRhWZQ/16---.png" width="600"></div>
-
-**Step 6:** As a practice exercise perform steps to remove access to employees, offices tables for **sales_rep** user.
-
-**Step 7:** Switch to **Table** sub-tab. Select the table **customers** from the drop-down menu and click **Go**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WlGEuK3Pj8RdtMLUm8M_yw/17-.png" width="600"></div>
-
-**Step 8:** Under **Table-specific privileges**, configure all the SQL commands and their custom access to the columns of the table customers. Then click **Go**. Such table-specific privilege configuration will restrict **sales_rep** from updating all the other columns except the column **creditLimit** of the table **customers** of the database **customerorders**.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/dfLXMenqhVycAM6t1mcotA/18-.png" width="600"></div>
-
-<br>
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/cOzW7RhlK4h604-0kaGNuA/19.jpg" width="600"></div>
-
-**Step 9:** As a practice exercise restrict access to update product table \"buyPrice\" column by sales_rep user.
-
-# Exercise 3: Secure data using encryption
-
-In this exercise, you will learn how to secure your data by adding an extra layer of security using data encryption. Certain parts of your database may contain sensitive information that should not be stored in plain text. This is where encryption comes in.
-
-You will implement encryption and decryption of a column in the customerorders database using the official AES (Advanced Encryption Standard) algorithm. AES is a symmetric encryption where the same key is used to encrypt and decrypt the data. The AES standard permits various key lengths. By default, a key length of 128 bits is used. Key lengths of 196 or 256 bits can be used. The key length is a trade-off between performance and security. 
-
-
-**Step 1:** Click the **MySQL CLI** button from the mysql service session tab.
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ITACT7Oo0SwCOOe6W11idA/20.jpg" width="600"></div>
-
-**Step 2:** First, you will need to hash your passphrase (consider your passphrase is **My secret passphrase**) with a specific hash length (consider your hash length is **512**) using a hash function (here you will use the hash function from **SHA-2** family). It is good practice to hash the passphrase you use since storing the passphrase in plaintext is a significant security vulnerability. Use the following command in the terminal to use the SHA2 algorithm to hash your passphrase and assign it to the variable key_str:
-
-```
-SET @key_str = SHA2('My secret passphrase', 512);
+- To start with, you have a database that you want to back up. You will store the name of the database in a variable.
+  
+```sh
+DATABASE='sakila'
 ```
 
-**Step 3:** Now, let\'s take a look at the customerorders database. First, you will connect to the database by entering the following command in the CLI:
+- It is always a good practice to print some logs, which can help in debugging.
 
-```
-USE customerorders;
-```
-
-**Step 4:** Next, let\'s take a quick look at the customers table in our database with the following command.
-```
-SELECT * FROM customers LIMIT 5;
+```sh
+echo "Pulling Database: This may take a few minutes"
 ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/L06n882eXcMm9uISK9zTcg/21.jpg" width="600"></div>
+- You will also set the backup folder where the SQL and zipped files will be stored.
 
-For demonstration purposes, suppose that the last column in the table, labelled addressLine1, contains sensitive data; storing such sensitive data in plain text is an enormous security concern, so let\'s go ahead and encrypt that column.
-
-**Step 5:** To encrypt the addressLine1 column, you will first convert the data in the column into binary byte strings of length 255 by entering the following command into the CLI.
-
-```
-ALTER TABLE customers MODIFY COLUMN addressLine1 varbinary(255);
+```sh
+backupfolder=/home/theia/backups
 ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VpPyQTW8lZkNhQtZ-6o-0g/22.jpg" width="600"></div>
+- You will decide and set the number of days the backup will need to be kept.
 
-**Step 6:** Now, to encrypt the addressLine1 column, execute the following command using the AES encryption standard and our hashed passphrase.
-
-```
-UPDATE customers SET addressLine1  = AES_ENCRYPT(addressLine1 , @key_str);
+```sh
+keep_day=30
 ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/iS0xgzxmLrEt3X8maax33w/23.jpg" width="600"></div>
+- You will set the name of the SQL file where you will dump the database as "all-database-" suffixed with the current timestamp and .sql extension, and the zip file in which you will compress the SQL file as "all-database-" suffixed with the current timestamp and .gz extension.
 
-**Step 7:** Let\'s go ahead and see if the column was successfully encrypted by taking another look at the customers table. Run the same command as in step 4.
-
-```
-SELECT * FROM customers LIMIT 5;
-```
-
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/kmFTJ2lwHMUOdhgbJFsntA/24.jpg" width="600"></div>
-
-**Step 8:** The supposedly sensitive data is now encrypted and secured from prying eyes. However, we should still have a way to access the encrypted data when needed. To do this, we use the AES_DECRYPT command, and since AES is symmetric, we use the same key for both encryption and decryption. In our case, recall that the key was a passphrase, which was hashed and stored in the variable key_str. Suppose we need to access the sensitive data in that column. We can do so by entering the following command in the CLI:
-
-```
-SELECT cast(AES_DECRYPT(addressLine1 , @key_str) as char(255)) FROM customers;
+```sh
+sqlfile=$backupfolder/all-database-$(date +%d-%m-%Y_%H-%M-%S).sql
+zipfile=$backupfolder/all-database-$(date +%d-%m-%Y_%H-%M-%S).gz
 ```
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/vLD6t2OTiDLnuYqPGFhWtA/25.jpg" width="600"></div>
+- Now that all the placeholders are created, you will create the SQL backup. In MySQL, it can be accomplished with the `mysqldump` command. Depending on whether the operation is successful or not, a log is printed. If the operation is successful, you will compress the .sql file into a .gz and delete the the .sql file.
 
-**Step 9:** As a practice exercise you need to encrypt/decrypt cardNumber column in the payments table.
+```sh
+if mysqldump  $DATABASE > $sqlfile ; then
+   echo 'Sql dump created'
+    # Compress backup 
+    if gzip -c $sqlfile > $zipfile; then
+        echo 'The backup was successfully compressed'
+    else
+        echo 'Error compressing backupBackup was not created!' 
+        exit
+    fi
+    rm $sqlfile 
+else
+   echo 'pg_dump return non-zero code No backup was created!' 
+   exit
+fi
+```
 
-## Summary
+- Finally, you will remove any backups that are in the system for longer than the time you decided to retain the backup.
 
-Congratulations! In this lab, you learned how to manage MySQL user accounts and roles using the phpMyAdmin graphical user interface (GUI) tool. You also learned how to control access to MySQL databases and their objects. Finally, you learned how to secure your data, adding an extra layer of security using data encryption.
+```
+find $backupfolder -mtime +$keep_day -delete
+```
 
+Now that you have examined the components and understood what the shell script does, let's create a file and save the script in it.
 
-## Summary
+# Task D: Creating a Shell Script for MySQL Database Backups
 
-Congratulations! In this lab, you learned how to manage MySQL user accounts and roles using the phpMyAdmin graphical user interface (GUI) tool. You also learned how to control access to MySQL databases and their objects. Finally, you learned how to secure your data, adding an extra layer of security using data encryption.
+**Step 1:** Select **File** menu and then select **New File** to create a new shell script named `sqlbackup.sh`.
+ 
+<div align="center"><div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/one.png" width="600"></div></div>
 
+Enter the following code in the new file:
+
+```sh
+#!/bin/sh
+# The above line tells the interpreter this code needs to be run as a shell script.
+
+# Set the database name to a variable. 
+DATABASE='sakila'
+
+# This will be printed on to the screen. In the case of cron job, it will be printed to the logs.
+echo "Pulling Database: This may take a few minutes"
+
+# Set the folder where the database backup will be stored
+backupfolder=/home/theia/backups
+
+# Number of days to store the backup 
+keep_day=30
+
+sqlfile=$backupfolder/all-database-$(date +%d-%m-%Y_%H-%M-%S).sql
+zipfile=$backupfolder/all-database-$(date +%d-%m-%Y_%H-%M-%S).gz
+
+# Create a backup
+
+if mysqldump  $DATABASE > $sqlfile ; then
+   echo 'Sql dump created'
+    # Compress backup 
+    if gzip -c $sqlfile > $zipfile; then
+        echo 'The backup was successfully compressed'
+    else
+        echo 'Error compressing backupBackup was not created!' 
+        exit
+    fi
+    rm $sqlfile 
+else
+   echo 'pg_dump return non-zero code No backup was created!' 
+   exit
+fi
+
+# Delete old backups 
+find $backupfolder -mtime +$keep_day -delete
+```
+
+**Step 2:** Save your script using the**Save** option or pressing Commands+S (in Mac) or Ctrl+S (Windows).
+
+**Step 3:** Now you need to give executable permission for the shell script file, to the owner (yourself), by running the following command in the terminal. `u` stands for user or creator, `x` stands for execute, and `r` stands for read permission:
+
+```sh
+sudo chmod u+x+r sqlbackup.sh
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/three.png" width="600"></div>
+
+**Step 4:** You decided to create the backups in a folder, but that folder doesn't exist in the environment. You need to create it by running the following command:
+
+```sh
+  mkdir /home/theia/backups
+```
+
+# Task E: Setting Up a Cron Job
+
+* Cron is a system that helps Linux users schedule any task. It can be a shell script or a simple bash command. 
+
+* A cron job helps us automate our routine tasks and it can be hourly, daily, monthly, etc.
+
+* A crontab (cron table) is a text file that specifies the schedule of cron jobs.
+
+* Each line in the crontab file contains six fields separated by a space followed by the command to be run.
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/crontabimage.png" width="600"></div>
+
+The first five fields may contain one or more values separated by a comma or a range of values separated by a hyphen.
+
+\*  The asterisk operator means any value or always. If you have the asterisk symbol in the Hour field, it means the task will be performed each hour.
+
+\,  The comma operator allows you to specify a list of values for repetition. For example, if you have 1,3,5 in the Hour field, the task will run at 1 a.m., 3 a.m. and 5 a.m.
+
+\-  The hyphen operator allows you to specify a range of values. If you have 1-5 in the Day of week field, the task will run every weekday (from Monday to Friday).
+
+/  The slash operator allows you to specify values that will be repeated over a certain interval between them. For example, if you have */4 in the Hour field, it means the action will be performed every four hours. It is same as specifying 0,4,8,12,16,20. Instead of an asterisk before the slash operator, you can also use a range of values. For example, 1-30/10 means the same as 1,11,21.
+
+To understand how a crontab works, let's set up a cron job that happens every 2 minutes.
+
+**Step 1:** To start the crontab, run the following command in the terminal:
+
+```
+crontab -e
+
+```
+
+This will open a crontab editor as follows.
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/seven.png" width="600"></div>
+
+**Step 2:** Scroll to the bottom of the editor page using the down arrow key and copy and paste the following code:
+
+```
+*/2 * * * * /home/project/sqlbackup.sh > /home/project/backup.log
+```
+
+**Step 3:** Press Ctrl+O followed by the Enter key to save the file.
+
+**Step 4:** Press Ctrl+X to quit the cron editor.
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/eight.png" width="600"></div>
+
+**Step 5:** The cron service needs to be explicitly started. Start the cron service by executing the following command:
+
+```sh
+sudo service cron start
+```
+
+**Step 6:** After 2 minutes, execute the following command to check whether the backup file are created:
+
+```sh
+ls -l /home/theia/backups
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/nine.png" width="600"></div>
+
+>In a real-life scenario, the cron service is a long-running service that runs in the background. To stop the cron job you can run `sudo service cron stop`. 
+
+**Step 7:** In this example, the cron is set for backup every 2 minutes. Stop the cron service using the below command:
+
+ ```sh
+ sudo service cron stop
+ ```
+
+# Practice Exercise
+
+<ol>
+  <li> Change the crontab schedule to create a backup every week on Monday at 12:00 a.m.
+        <details style="margin-left:50px"><summary>Click here for solution</summary>
+        0 0 * * 1 /home/project/sqlbackup.sh > /home/project/backup.log
+        </details>
+    </li>
+    <li> Change the crontab schedule to create a backup every day at 6:00 a.m.
+        <details style="margin-left:50px"><summary>Click here for solution</summary>
+        0 6 * * * /home/project/sqlbackup.sh > /home/project/backup.log
+        </details>
+    </li>
+</ol>
+
+# Task F: Truncate the Tables in the Database
+
+Now that you have automated the backup task, let's replicate a scenario where the data is corrupted or lost and you will remove all the data in the database and restore the data from the backup.
+
+We will create a truncate script that does the following:
+
+* Connects to mysql RDBMS using the credentials.
+
+* Lists tables using `show tables` and feeds the output using pipe(|) operator to the next command.
+
+* Iterates through each table using a while loop and truncates the table.
+
+**Step 1:** Create a new file named **truncate.sh** under home/project.
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/ten.png" width="600"></div>
+
+**Step 2:** Copy this script and paste it in the new file.
+
+```sh
+#!/bin/sh
+ 
+DATABASE=sakila
+
+mysql -Nse 'show tables' sakila | \
+    while read table; do mysql \
+    -e "use sakila;SET FOREIGN_KEY_CHECKS=0;truncate table $table;SET FOREIGN_KEY_CHECKS=1;" ;done
+
+```
+
+**Step 3:** Change the permission of the file by running the following command:
+
+ ```
+sudo chmod u+x+r truncate.sh
+ ```
+
+**Step 4:** Execute the script to truncate the tables.
+
+```
+bash truncate.sh
+```
+
+**Step 5:** To check whether the tables in the database are truncated, log in to the database with the credentials.
+
+ ```
+mysql
+
+ ```
+
+The mysql interface appears
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/eleven.png" width="600"></div>
+
+**Step 6:** Switch to the **sakila** database.
+
+```
+ use sakila;
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/twelve.png" width="600"></div>
+
+**Step 7:** Check all the tables in the database.
+
+```
+show tables;
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/twelvea.png" width="600"></div>
+
+**Step 8:** Retrieve all the rows from staff table. If the `truncate` was successful, the output should be an **Empty set**.
+
+```
+  select * from staff;
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/thirteen.png" width="600"></div>
+
+**Step 9:** Quit the mysql prompt.
+
+```
+\q
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.4.png" width="600"></div>
+
+# Task G: Restore the Database
+
+To restore the database:
+
+* You pick up a compressed zip file present in the backup folder and unzip it to extract the sql file using the gunzip command.
+
+* You connect to the mysql database and restore the database with the sqlfile.
+
+**Step 1:** In the terminal window, run the following command to find the list of backup files that have been created.
+
+```
+ls -l /home/theia/backups
+```
+
+**Step 2:** Select the file that you want to restore the data from and copy the file name. 
+
+**Step 3:** Unzip the file and extract the SQL file from the backup file.
+
+```sh
+gunzip /home/theia/backups/<backup zip file name>
+```
+
+**Step 4:** Populate and restore the database with the sqlfile that results from the unzip operation.
+
+```
+mysql sakila < /home/theia/backups/<backup sql file name>
+```
+
+Once the command is executed, you will be prompted to enter your mysql login password. Paste the password that you have copied before using Ctrl+V  and press Enter.
+
+**Step 5:** To check the restored database, go to the mysql prompt.
+
+```
+mysql
+```
+
+**Step 6:** Use the **sakila** database:
+
+```
+ use sakila;
+```
+
+**Step 7:** Select all the rows from any one of the tables, as given below. You should find that the database is restored.
+
+```
+  select * from staff;
+```
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/MySQL/Lab%20-%20Automate%20Backup%20in%20MySQL/images/sixteen.png" width="600"></div>
+
+**Step 8:** Quit the MySQL command prompt session using the command below in the terminal and proceed to Task D:
+
+```
+\q 
+```
+
+## Practice Exercise
+
+**Step 1:** Create a shell script which takes the database name and back up directory as parameters and backs up the database as ```&lt;dbname&gt;_timestamp.sql``` in the backup directory. If the database doesn't exist, it should display appropriate message. If the backup dir doesn't exist, it should create one.
+
+<details><summary>Click here for the solution</summary>
+
+```sh
+dbname=$(mysql -e "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$1'" | grep $1)
+
+if [ ! -d $2 ]; then 
+    mkdir $2
+fi
+
+if [ $1 == $dbname ]; then
+    sqlfile=$2/$1-$(date +%d-%m-%Y).sql
+    if mysqldump  $1 > $sqlfile ; then
+    echo 'Sql dump created'
+    else
+        echo 'Error creating backup!'
+    fi
+else
+    echo "Database doesn't exist"
+fi
+```
+
+</details>
+
+**Step 2:** Write a shell script which takes the database name and the script file as parameters and restores the database from the sql file.
+
+<details><summary>Click here for the solution</summary>
+
+```sh
+
+if [ -f $2 ]; then 
+    dbname=$(mysql -e "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$1'" | grep $1)
+    if [ $1 != $dbname ]; then
+        echo "Created DB as it didn't exist"
+        mysql -e "Create database $1"
+    fi
+    mysql -e "use $1"
+    mysql $1 < $2
+else
+    echo "File doesn't exist"
+fi
+```
+
+</details>
+
+## Optional Exercise
+
+**Step 1:** You can clean up the backups folder by using the following command:
+
+```
+sudo rm -rfv /home/theia/backups
+```
