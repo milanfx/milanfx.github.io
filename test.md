@@ -4,358 +4,245 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-# Hands-on Lab: Create a DAG for Apache Airflow with BashOperator
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/images/SN_web_lightmode.png" width="800"></div><br/>
+# Download-Install-Anaconda-on-Windows
 
-Estimated time needed: **40** minutes
+Time efforts: **15** minutes
 
-## Introduction
+## Objectives of exercise 
 
-In this lab, you will create workflows using BashOperator in Airflow DAGs and simulate an ETL process using bash commands that are scheduled to run once a day.
+* Download &amp; install Anaconda
+* Create Anaconda Environment for R and Python
+* Install and run Jupyter Notebook
 
-## Objectives
+## Overview of Anaconda
 
-After completing this lab, you will be able to:
+There are several cloud-based data science tools that can make team collaboration more accessible. At times it\'s useful to work directly on your desktop.
 
-- Explore the Airflow Web UI
-- Create a DAG with BashOperator
-- Submit a DAG and run it through Web UI
+Anaconda Distribution is an Open Source distribution of Python and R languages. It comes with a repository of a large number of packages for data science and machine learning, with the most popular and commonly used ones pre-installed. It includes Anaconda Navigator, a graphical interface (GUI) that contains several tools, and IDEs such as Jupyter Notebooks and R Studio. It has binaries for major platforms, including Windows, Linux, and macOS. This lab includes instructions for downloading and installing Anaconda on Windows.
 
-## Prerequisites
+# Exercise 1: Download & Install Anaconda Distribution
 
-Please ensure that you have completed the reading on the [Airflow DAG Operators](https://cf-courses-data.static.labs.skills.network/8ht2jNU5AoqAJRbFpm67Cw/AirflowDAGStructureAndOperators-v1.md.html) before proceeding with this lab. It is highly recommended that you are familiar with `bash` commands to do this lab.
+**Step 1**: Use the below link to download the Anaconda distribution:
 
-# About Skills Network Cloud IDE
+**Link for Download Anaconda Distribution:** https://www.anaconda.com/products/distribution
 
-Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project-related labs. Theia is an open-source IDE (Integrated Development Environment) that can be run on a desktop or on the cloud. To complete this lab, you will be using the Cloud IDE based on Theia, running in a Docker container.
+![Anaconda download](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/1.Anaconda_download.PNG)
 
-## Important notice about this lab environment
+***Note**: Depending on your **Operating system**, it would show the download link specific to your OS. Click the **Download** button to download it to your local machine.*
 
-Please be aware that sessions for this lab environment are not persistent. A new environment is created for you every time you connect to this lab. Any data you may have saved in an earlier session will get lost. To avoid losing your data, please plan to complete these labs in a single session.
+**Step 2**: Once the download completes, right-click the downloaded file and run it as **Administrator**.
 
-# Exercise 1: Start Apache Airflow
+![Run as admin](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/2.Run_as_admin.png)
 
-**Step 1:**Click on **Skills Network Toolbox**.
+**Step 3**: At the beginning of the welcome window, you need to click **Next** to confirm the installation.
 
-**Step 2:**From the **BIG DATA** section, click **Apache Airflow**.
+![Confirm installation](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/3.confirm_installation.png)
 
-**Step 3:**Click **Start** to start the Apache Airflow.
+**Step 4**: Agree to the license.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rOoPp-qlthLQovD65RWl7A/airflow-start.jpg" width="800"></div>
+![License Agreenent](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/4.Agree_license.png)
 
-**Note**: Please be patient, it will take a few minutes for Airflow to start.
+**Step 5**: In the installation window, select **Just me**, and click **Next**.
 
-# Exercise 2: Open the Airflow Web UI
+![Installation window](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/5.Installation_window.png)
 
-**Step 1:**When Airflow starts successfully, you should see an output similar to the one below.  Once **Apache Airflow** has started, click on the highlighted icon to open **Apache Airflow Web UI** in the new window.
+**Step 6**: Select the folder where you would like to **Install Anaconda**, or retain the **Default** installation location and click **Next**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oOEvvbiaEKB_S_izc8BZLg/airflow-active.jpg" width="800"></div>
+![Install location](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/6.Location.PNG)
 
-You should land on a page that looks like this.
+**Step 7**: In the **Advanced Installation Options** window, select **Register Anaconda3 as the default Python 3.9** option, and click **Install**.
+ 
+![Advanced Installation Options](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/7.Install.png)
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/REjhlZPZksRQQK9mwX8AyA/airflowhomepage.jpg" width="800"></div>
+**Step 8**: You need to wait for the installation to complete. Once installation completes, click **Next**. 
 
-# Exercise 3: Create a DAG
+![Installation complete](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/8.Install_click_next.png)
 
-Let\'s create a DAG that runs daily, and extracts user information from */etc/passwd* file, transforms it, and loads it into a file. 
+**Step 9**: Click **Next**.
 
-This DAG will have two tasks `extract` that extracts fields from `/etc/passwd` file and `transform_and_load` that transforms and loads data into a file.
+![DataSpell for Anaconda availab-lity](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/9.Click_next.png)
 
-```python
-# import the libraries
+**Step 10**: Click **Finish** to complete the installation of the Anaconda distribution.
 
-from datetime import timedelta
-# The DAG object; we'll need this to instantiate a DAG
-from airflow.models import DAG
-# Operators; you need this to write tasks!
-from airflow.operators.bash_operator import BashOperator
-# This makes scheduling easy
-from airflow.utils.dates import days_ago
+![Finish setup](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/10.Finish.png)
 
-#defining DAG arguments
+# Exercise 2: Create Anaconda Environment
 
-# You can override them on a per-task basis during operator initialization
-default_args = {
+Anaconda environment is a directory containing a specific collection of conda packages you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies and another environment with NumPy 1.6 for legacy testing.
 
-'owner': 'your_name_here',
+**Ref**: https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html
 
-'start_date': days_ago(0),
+**Step 1**: Open the **Anaconda Navigator** from the Windows Start menu.
 
-'email': ['your_email_here'],
+![Anaconda Navigator (anaconda3) App](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/11.Anaconda_Navigator.png)
 
-'retries': 1,
+![Navigator UI](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/12.Navigator_UI.PNG)
 
-'retry_delay': timedelta(minutes=5),
-}
+**Step 2**: Create an environment using Anaconda Navigator. Go to the **Environments** tab and click **Create** (at the bottom menu as highlighted below) to create an icon on the Anaconda environment.
 
-# defining the DAG
+![Create icon on Anaconda environment](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/13.Create.png)
 
-# define the DAG
-dag = DAG(
+**Note**: All the macOS users, select Update index and all your packages will be updated.
 
-'my-first-dag',
+***Note**: It is always helpful to create a separate environment because different projects require different packages.* 
 
-default_args=default_args,
+**Step 3**: **Give a name** for your environment, select the suitable version and language and click **Create**.
 
-description='My first DAG',
+![Create environment and name it](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/14.Create_env.png)
 
-schedule_interval=timedelta(days=1),
-)
+**Note**: The macOS users must uncheck Python and then create the environment.
 
-# define the tasks
+**Step 4**: Once you create an Anaconda environment, go back to the **Home Page** and **Launch Jupyter** and create a **Python Notebook** (make sure to select the right environment). 
 
-# define the first task
+**Note**: The macOS users need to restart their Anaconda prompt first and then launch their Jupyter Notebook.
 
-extract = BashOperator(
+![Launch jupyter and create Python Notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/15.Launch_jupyter.png)
 
-task_id='extract',
+**Step 5**: This opens **Jupyter Notebook** in the default browser, and now you can select the **kernel** and create a **Notebook**.
 
-bash_command='cut -d":" -f1,3,6 /etc/passwd > /home/project/airflow/dags/extracted-data.txt',
+![Select kernel and create notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/16.Kernel.png)
 
-dag=dag,
-)
+# Exercise 3: Create and execute Python Jupyter Notebook
 
-# define the second task
-transform_and_load = BashOperator(
+**Step 1**: **Create markdown cells and add text**
 
-task_id='transform',
+In your notebook, **click any code cell**, and in the drop-down menu, change the cell type from Code to Markdown. You will notice that you cannot create Markdown cells without first creating and converting them from Code to Markdown.
 
-bash_command='tr ":" "," < /home/project/airflow/dags/extracted-data.txt > /home/project/airflow/dags/transformed-data.csv',
+![Markdown cell creation](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/17.markdown_creation.png)
 
-dag=dag,
-)
+In the Markdown cell, write some text like **My First Program**.
 
-# task pipeline
-extract >> transform_and_load
-```
+To render the Markdown text, make sure the cell is selected (by clicking within it), and press **Play** in the menu or **Shift+Enter**.
 
-**Step 1:**Create a new file by choosing File->New File and naming it `my_first_dag.py`.
+ ```
+ # My First Program
+ ```
+ 
 
-**Step 2:**Then, copy the code above and paste it into `my_first_dag.py`.
+ Your Markdown cell should now be rendered!
 
-# Exercise 4: Submit a DAG
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/18.Md_Output.PNG">
 
-Submitting a DAG is as simple as copying the DAG Python file into the `dags` folder in the `AIRFLOW_HOME` directory.
+***Note:** To edit your Markdown cell, double-click anywhere within the cell. Note you can use the keyboard shortcut: [m] - Convert Cell to Markdown.*
 
-Airflow searches for Python source files within the specified `DAGS_FOLDER`. The location of `DAGS_FOLDER` can be located in the airflow.cfg file, where it has been configured as `/home/project/airflow/dags`.
+**Step 2**: **Create new cells**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/Screenshot%202023-11-21%20182008.png" width="800"></div>
+* In your Jupyter Notebook, click any of the existing cells to select the cell. 
 
-Airflow will load the Python source files from this designated location. It will process each file, execute its contents, and subsequently load any DAG objects present in the file.
+* Click **Insert Cell Above** or **Insert Cell Below** to insert the cell from the Insert menu. 
 
-Therefore, when submitting a `DAG`, it is essential to position it within this directory structure. Alternatively, the `AIRFLOW_HOME` directory, representing the structure `/home/project/airflow`, can also be utilized for DAG submission.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/19.Insert_cell.png" alt="Insert cell">
 
-**Step 1:**Open a terminal and run the command below to set the `AIRFLOW_HOME`.
+***Note:** You can use the keyboard shortcuts: [a] - Insert a Cell Above; [b] - Insert a Cell Below.*
+
+**Step 3**: **Write and execute code**.
+
+* In your new empty notebook, click within the gray code cell and write some code, like.
 
 ```
-
-export AIRFLOW_HOME=/home/project/airflow
-
-echo $AIRFLOW_HOME
-
-```
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/0hPgqlGivWfTnxjNlkH-kg/airflow-home.jpg" width="800"></div>
-
-**Step 2:**Run the command below to submit the DAG that was created in the previous exercise.
-
+1+1
 ```
 
-export AIRFLOW_HOME=/home/project/airflow
+* Execute the code by clicking the **Play** button in the menu above the notebook or pressing **Shift+Enter** on your notebook.
 
-cp my_first_dag.py $AIRFLOW_HOME/dags
+* You should see the output 2.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/20.Code1.PNG" alt="My First Program, output code">
+
+**Step 4**: **Rename, Shutdown kernel, and Save your Notebook**
+
+1 - Click **Rename** from the **File** menu to rename your notebook like ***My_Notebook.ipynb***.
+
+![Rename and Save](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Rename_Save.png)
+
+2 - To shut down the kernel, click **Shutdown** from the **Kernel** menu.
+
+![Shutdown kernel](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Rename_Shutdown.png)
+
+3 - Click **Save Notebook** or **Save Notebook as** to save the notebook from the **File** menu.
+
+![Save notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Save.png)
+
+**Step 5**: **Open the recently created notebook.**
+
+1 - Open **Anaconda Navigator**  from the Windows **Start** menu and **launch Jupyter**.
+
+ ![Launch jupyter notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/15.Launch_jupyter.png)
+
+2 - Go to the **directory** where you **saved** your file and **click** to open it.
+
+ ![Open closed File](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/24.Open_closed_File.png) 
+
+# Practice Exercise
+
+Let us try executing simple math operations 
+
+## Problem 1: Find the minimum and maximum values.
 
 ```
+x = min(5, 10, 25)
+y = max(5, 10, 25)
 
-**Step 3:**Verify that your DAG actually got submitted.
-
-**Step 4:**Run the command below to list out all the existing DAGs.
-
+print(x)
+print(y)
 ```
 
-airflow dags list
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/21.Code2.PNG" alt="Minimum and maximum output">
+
+## Problem 2: Find the value of 4 to the power 3.
 
 ```
+x = pow(4, 3)
 
-**Step 5:**Verify that `my-first-dag` is a part of the output.
-
+print(x)
 ```
 
-airflow dags list|grep "my-first-dag"
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/22.Code3.PNG" alt="Value of 4 to the power of 3">
+
+# Exercise 4: Create and execute R Jupyter Notebook
+
+Select the **kernel** and create a **Notebook**.
+
+![Open R Notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/25.Open_R_Notebook.png) 
+
+## Problem 1: Find the Multiplication of 2 numbers. 
 
 ```
-
-You should see your DAG name in the output.
-
-**Step 6:**Run the command below to list out all the tasks in `my-first-dag`.
-
+2 * 3 # Multiplication
 ```
 
-airflow tasks list my-first-dag
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/27.R_Code2.PNG" alt="Multiplication output">
+
+## Problem 2: Find the Subtraction of 2 numbers.
 
 ```
-
-You should see 2 tasks in the output.
-
-# Practice exercise
-
-Write a DAG named `ETL_Server_Access_Log_Processing.py`.
-
-**Step 1:**Create the imports block.
-
-**Step 2:**Create the DAG Arguments block. You can use the default settings
-
-**Step 3:**Create the DAG definition block. The DAG should run daily.
-
-**Step 4:**Create the download task. The download task must download the server access log file, which is available at the URL:
-
-`
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt
-`
-
-**Step 5:**Create the extract task.
-
-The server access log file contains these fields.
-
-a. `timestamp` - TIMESTAMP
-
-b. `latitude` - float
-
-c. `longitude` - float
-
-d. `visitorid` - char(37)
-
-e. `accessed_from_mobile` - boolean
-
-f. `browser_code` - int
-
-The `extract` task must extract the fields `timestamp` and `visitorid`.
-
-**Step 6:**Create the transform task. The `transform` task must capitalize the `visitorid`.
-
-**Step 7:**Create the load task. The `load` task must compress the extracted and transformed data.
-
-**Step 8:**Create the task pipeline block. The pipeline block should schedule the task in the order listed below:
-
-**Step 1:**download
-
-**Step 2:**extract
-
-**Step 3:**transform
-
-**Step 4:**load
-
-**Step 9:**Submit the DAG.
-
-**Step 10:**Verify if the DAG is submitted.
-
-Follow the example Python code given in the lab and make necessary changes to create the new DAG.
-
-Add to the file the following parts of code to `ETL_Server_Access_Log_Processing.py` to complete the tasks given in the problem.
-
-```python
-# import the libraries
-
-from datetime import timedelta
-# The DAG object; we'll need this to instantiate a DAG
-from airflow.models import DAG
-# Operators; you need this to write tasks!
-from airflow.operators.bash_operator import BashOperator
-# This makes scheduling easy
-from airflow.utils.dates import days_ago
-
-#defining DAG arguments
-
-# You can override them on a per-task basis during operator initialization
-default_args = {
-
-'owner': 'your_name',
-
-'start_date': days_ago(0),
-
-'email': ['your email'],
-
-'retries': 1,
-
-'retry_delay': timedelta(minutes=5),
-}
-
-# defining the DAG
-
-# define the DAG
-dag = DAG(
-
-'ETL_Server_Access_Log_Processing',
-
-default_args=default_args,
-
-description='My first DAG',
-
-schedule_interval=timedelta(days=1),
-)
-
-# define the tasks
-
-# define the task 'download'
-
-download = BashOperator(
-
-task_id='download',
-
-bash_command='curl "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt" -o web-server-access-log.txt',
-
-dag=dag,
-)
-
-# define the task 'extract'
-
-extract = BashOperator(
-
-task_id='extract',
-
-bash_command='cut -f1,4 -d"#" web-server-access-log.txt > /home/project/airflow/dags/extracted.txt',
-
-dag=dag,
-)
-
-# define the task 'transform'
-
-transform = BashOperator(
-
-task_id='transform',
-
-bash_command='tr "[a-z]" "[A-Z]" < /home/project/airflow/dags/extracted.txt > /home/project/airflow/dags/capitalized.txt',
-
-dag=dag,
-)
-
-# define the task 'load'
-
-load = BashOperator(
-
-task_id='load',
-
-bash_command='zip log.zip capitalized.txt' ,
-
-dag=dag,
-)
-
-# task pipeline
-
-download >> extract >> transform >> load
+4 - 1 # Subtraction
 ```
 
-Submit the DAG by running the following command.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/28.R_Code3.PNG" alt="Subtraction output">
+
+## Problem 3: Add 2 to the given number. 
+
+```
+a <- 1 # Assigning 1 to the variable called "a"
+a + 2 # Adding 2
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/26.R_Code1.PNG" alt="Adding two to given number output">
+
+## Problem 4: Create a data frame
+
+```
+df = data.frame(Emp_Name = c("Jai", "David", "Michael"),
+                Job_role = c("Manager", "Team Lead", "Developer" )
+               )
+
+print(df)
 
 ```
 
-cp  ETL_Server_Access_Log_Processing.py $AIRFLOW_HOME/dags
-```
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/29.R_Code4.PNG" alt="Data frame output">
 
-Verify if the DAG is submitted on the Web UI or the CLI using the below command.
-
-```
-airflow dags list
-```
-
+Congratulations! You have learned how to download and install Anaconda on your local machine and create a new environment. You have also created a Jupyter Notebook and saved it.
 
