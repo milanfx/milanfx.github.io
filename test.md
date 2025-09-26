@@ -4,7 +4,9 @@ title: Milanfx Study Notes
 permalink: /xxx/
 ---
 
-# Lab: Create a DAG for Apache Airflow with BashOperator
+# Hands-on Lab: Create a DAG for Apache Airflow with BashOperator
+
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/images/SN_web_lightmode.png" width="800"></div><br/>
 
 Estimated time needed: **40** minutes
 
@@ -24,7 +26,7 @@ After completing this lab, you will be able to:
 
 Please ensure that you have completed the reading on the [Airflow DAG Operators](https://cf-courses-data.static.labs.skills.network/8ht2jNU5AoqAJRbFpm67Cw/AirflowDAGStructureAndOperators-v1.md.html) before proceeding with this lab. It is highly recommended that you are familiar with `bash` commands to do this lab.
 
-## About Skills Network Cloud IDE
+# About Skills Network Cloud IDE
 
 Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project-related labs. Theia is an open-source IDE (Integrated Development Environment) that can be run on a desktop or on the cloud. To complete this lab, you will be using the Cloud IDE based on Theia, running in a Docker container.
 
@@ -35,10 +37,12 @@ Please be aware that sessions for this lab environment are not persistent. A new
 # Exercise 1: Start Apache Airflow
 
 **Step 1:** Click on **Skills Network Toolbox**.
+
 **Step 2:** From the **BIG DATA** section, click **Apache Airflow**.
+
 **Step 3:** Click **Start** to start the Apache Airflow.
 
-<div align="center"><div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rOoPp-qlthLQovD65RWl7A/airflow-start.jpg" width="800"></div></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rOoPp-qlthLQovD65RWl7A/airflow-start.jpg" width="800"></div>
 
 > **Note**: Please be patient, it will take a few minutes for Airflow to start.
 
@@ -46,7 +50,7 @@ Please be aware that sessions for this lab environment are not persistent. A new
 
 **Step 1:** When Airflow starts successfully, you should see an output similar to the one below.  Once **Apache Airflow** has started, click on the highlighted icon to open **Apache Airflow Web UI** in the new window.
 
-<div align="center"><div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oOEvvbiaEKB_S_izc8BZLg/airflow-active.jpg" width="800"></div></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oOEvvbiaEKB_S_izc8BZLg/airflow-active.jpg" width="800"></div>
 
 You should land on a page that looks like this.
 
@@ -112,6 +116,7 @@ extract >> transform_and_load
 ```
 
 **Step 1:** Create a new file by choosing File->New File and naming it `my_first_dag.py`.
+
 **Step 2:** Then, copy the code above and paste it into `my_first_dag.py`.
 
 # Exercise 4: Submit a DAG
@@ -170,8 +175,11 @@ Therefore, when submitting a `DAG`, it is essential to position it within this d
 Write a DAG named `ETL_Server_Access_Log_Processing.py`.
 
 **Step 1:** Create the imports block.
+
 **Step 2:** Create the DAG Arguments block. You can use the default settings
+
 **Step 3:** Create the DAG definition block. The DAG should run daily.
+
 **Step 4:** Create the download task. The download task must download the server access log file, which is available at the URL:
 
 `
@@ -203,6 +211,7 @@ https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-
 	4. load
 
 **Step 9:** Submit the DAG.
+
 **Step 10:** Verify if the DAG is submitted.
 
 > Follow the example Python code given in the lab and make necessary changes to create the new DAG.
@@ -291,5 +300,6 @@ Verify if the DAG is submitted on the Web UI or the CLI using the below command.
 ```
 airflow dags list
 ```
+
 
 
