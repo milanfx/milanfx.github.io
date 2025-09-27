@@ -5,244 +5,80 @@ permalink: /xxx/
 ---
 
 
-# Download-Install-Anaconda-on-Windows
+# Db2 Explore Your Dataset Using SQL Queries
 
-Time efforts: **15** minutes
+**Estimated Time Needed: 15 Minutes**
 
-## Objectives of exercise 
+## Overview
 
-* Download &amp; install Anaconda
-* Create Anaconda Environment for R and Python
-* Install and run Jupyter Notebook
+Now that you have learned how querying techniques can help you to explore and analyze your data, you will run some basic SQL queries on the data you loaded into your database instance in the previous lab. For this, you will use the in-built SQL editor available in your Lite account.
 
-## Overview of Anaconda
+---
 
-There are several cloud-based data science tools that can make team collaboration more accessible. At times it\'s useful to work directly on your desktop.
+# Practice
 
-Anaconda Distribution is an Open Source distribution of Python and R languages. It comes with a repository of a large number of packages for data science and machine learning, with the most popular and commonly used ones pre-installed. It includes Anaconda Navigator, a graphical interface (GUI) that contains several tools, and IDEs such as Jupyter Notebooks and R Studio. It has binaries for major platforms, including Windows, Linux, and macOS. This lab includes instructions for downloading and installing Anaconda on Windows.
+Please follow the steps given below to explore your dataset using SQL queries.
 
-# Exercise 1: Download & Install Anaconda Distribution
+1.  Click on [https://cloud.ibm.com/catalog/services/db2](https://cloud.ibm.com/catalog/services/db2?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-DB0100EN-SkillsNetwork) to access your Db2 dashboard on Cloud.
 
-**Step 1**: Use the below link to download the Anaconda distribution:
+2.  If you’re not already logged in to your IBM Cloud Lite account, click on **Log in** at the bottom right of the screen to log in.
 
-**Link for Download Anaconda Distribution:** https://www.anaconda.com/products/distribution
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-1.png" width="25%"><br> 
 
-![Anaconda download](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/1.Anaconda_download.PNG)
+3.  Logging in will take you to your **Db2 service dashboard**.
 
-***Note**: Depending on your **Operating system**, it would show the download link specific to your OS. Click the **Download** button to download it to your local machine.*
+Click on **view existing** link in the **Existing Lite plan instance** box.
 
-**Step 2**: Once the download completes, right-click the downloaded file and run it as **Administrator**.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-2.png" width="50%"><br> 
 
-![Run as admin](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/2.Run_as_admin.png)
+4.  The **Manage** tab will be active by default in your services dashboard. Click on the **Go to UI** button.
 
-**Step 3**: At the beginning of the welcome window, you need to click **Next** to confirm the installation.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-3.png" width="50%"><br> 
 
-![Confirm installation](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/3.confirm_installation.png)
+5.  Click on the 3-bar menu at the top left of the screen and select **RUN SQL** from the dropdown menu.
 
-**Step 4**: Agree to the license.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-4.png" width="50%"><br> 
 
-![License Agreenent](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/4.Agree_license.png)
+6.  On the next screen click on **Create new**.
 
-**Step 5**: In the installation window, select **Just me**, and click **Next**.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-5.png" width="50%"><br> 
 
-![Installation window](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/5.Installation_window.png)
+7.  The **SQL editor** will open.
 
-**Step 6**: Select the folder where you would like to **Install Anaconda**, or retain the **Default** installation location and click **Next**.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-6.png" width="50%"><br> 
 
-![Install location](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/6.Location.PNG)
+8.  Click on the highlighted row and copy-paste the following query into the highlighted row.
 
-**Step 7**: In the **Advanced Installation Options** window, select **Register Anaconda3 as the default Python 3.9** option, and click **Install**.
- 
-![Advanced Installation Options](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/7.Install.png)
+select count(*) from CARSALESTABLE;
 
-**Step 8**: You need to wait for the installation to complete. Once installation completes, click **Next**. 
+Click on **Run all** at the bottom left of the screen to run the query.
 
-![Installation complete](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/8.Install_click_next.png)
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-7.png" width="75%"><br> 
 
-**Step 9**: Click **Next**.
+9.  Close the Result Set window and then copy and paste the following query into the **SQL editor**, replacing the existing query text.
 
-![DataSpell for Anaconda availab-lity](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/9.Click_next.png)
+select max(price) as max_price from CARSALESTABLE;
 
-**Step 10**: Click **Finish** to complete the installation of the Anaconda distribution.
+Click on **Run all** at the bottom left of the screen to run the query.
 
-![Finish setup](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/10.Finish.png)
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-9.png" width="75%"><br> 
 
-# Exercise 2: Create Anaconda Environment
+10.  Click on the **arrow** <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_7A.png" width="50"> on the right side of the screen to view the result of your query.
 
-Anaconda environment is a directory containing a specific collection of conda packages you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies and another environment with NumPy 1.6 for legacy testing.
+A pop-window will open with the result.
 
-**Ref**: https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-10.png" width="25%"><br> 
 
-**Step 1**: Open the **Anaconda Navigator** from the Windows Start menu.
+11.  Close the Result Set window and then copy and paste the following query into the **SQL editor**, replacing the existing query text.
 
-![Anaconda Navigator (anaconda3) App](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/11.Anaconda_Navigator.png)
+select distinct(model) from CARSALESTABLE;
 
-![Navigator UI](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/12.Navigator_UI.PNG)
+Click on **Run all** at the bottom left of the screen to run the query.
 
-**Step 2**: Create an environment using Anaconda Navigator. Go to the **Environments** tab and click **Create** (at the bottom menu as highlighted below) to create an icon on the Anaconda environment.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-11.png" width="75%"><br> 
 
-![Create icon on Anaconda environment](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/13.Create.png)
+**Congratulations!** 
 
-**Note**: All the macOS users, select Update index and all your packages will be updated.
+You have successfully run some SQL queries to help you explore and understand your dataset.
 
-***Note**: It is always helpful to create a separate environment because different projects require different packages.* 
-
-**Step 3**: **Give a name** for your environment, select the suitable version and language and click **Create**.
-
-![Create environment and name it](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/14.Create_env.png)
-
-**Note**: The macOS users must uncheck Python and then create the environment.
-
-**Step 4**: Once you create an Anaconda environment, go back to the **Home Page** and **Launch Jupyter** and create a **Python Notebook** (make sure to select the right environment). 
-
-**Note**: The macOS users need to restart their Anaconda prompt first and then launch their Jupyter Notebook.
-
-![Launch jupyter and create Python Notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/15.Launch_jupyter.png)
-
-**Step 5**: This opens **Jupyter Notebook** in the default browser, and now you can select the **kernel** and create a **Notebook**.
-
-![Select kernel and create notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/16.Kernel.png)
-
-# Exercise 3: Create and execute Python Jupyter Notebook
-
-**Step 1**: **Create markdown cells and add text**
-
-In your notebook, **click any code cell**, and in the drop-down menu, change the cell type from Code to Markdown. You will notice that you cannot create Markdown cells without first creating and converting them from Code to Markdown.
-
-![Markdown cell creation](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/17.markdown_creation.png)
-
-In the Markdown cell, write some text like **My First Program**.
-
-To render the Markdown text, make sure the cell is selected (by clicking within it), and press **Play** in the menu or **Shift+Enter**.
-
- ```
- # My First Program
- ```
- 
-
- Your Markdown cell should now be rendered!
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/18.Md_Output.PNG">
-
-***Note:** To edit your Markdown cell, double-click anywhere within the cell. Note you can use the keyboard shortcut: [m] - Convert Cell to Markdown.*
-
-**Step 2**: **Create new cells**.
-
-* In your Jupyter Notebook, click any of the existing cells to select the cell. 
-
-* Click **Insert Cell Above** or **Insert Cell Below** to insert the cell from the Insert menu. 
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/19.Insert_cell.png" alt="Insert cell">
-
-***Note:** You can use the keyboard shortcuts: [a] - Insert a Cell Above; [b] - Insert a Cell Below.*
-
-**Step 3**: **Write and execute code**.
-
-* In your new empty notebook, click within the gray code cell and write some code, like.
-
-```
-1+1
-```
-
-* Execute the code by clicking the **Play** button in the menu above the notebook or pressing **Shift+Enter** on your notebook.
-
-* You should see the output 2.
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/20.Code1.PNG" alt="My First Program, output code">
-
-**Step 4**: **Rename, Shutdown kernel, and Save your Notebook**
-
-1 - Click **Rename** from the **File** menu to rename your notebook like ***My_Notebook.ipynb***.
-
-![Rename and Save](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Rename_Save.png)
-
-2 - To shut down the kernel, click **Shutdown** from the **Kernel** menu.
-
-![Shutdown kernel](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Rename_Shutdown.png)
-
-3 - Click **Save Notebook** or **Save Notebook as** to save the notebook from the **File** menu.
-
-![Save notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/23.Save.png)
-
-**Step 5**: **Open the recently created notebook.**
-
-1 - Open **Anaconda Navigator**  from the Windows **Start** menu and **launch Jupyter**.
-
- ![Launch jupyter notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/15.Launch_jupyter.png)
-
-2 - Go to the **directory** where you **saved** your file and **click** to open it.
-
- ![Open closed File](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/24.Open_closed_File.png) 
-
-# Practice Exercise
-
-Let us try executing simple math operations 
-
-## Problem 1: Find the minimum and maximum values.
-
-```
-x = min(5, 10, 25)
-y = max(5, 10, 25)
-
-print(x)
-print(y)
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/21.Code2.PNG" alt="Minimum and maximum output">
-
-## Problem 2: Find the value of 4 to the power 3.
-
-```
-x = pow(4, 3)
-
-print(x)
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/22.Code3.PNG" alt="Value of 4 to the power of 3">
-
-# Exercise 4: Create and execute R Jupyter Notebook
-
-Select the **kernel** and create a **Notebook**.
-
-![Open R Notebook](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/25.Open_R_Notebook.png) 
-
-## Problem 1: Find the Multiplication of 2 numbers. 
-
-```
-2 * 3 # Multiplication
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/27.R_Code2.PNG" alt="Multiplication output">
-
-## Problem 2: Find the Subtraction of 2 numbers.
-
-```
-4 - 1 # Subtraction
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/28.R_Code3.PNG" alt="Subtraction output">
-
-## Problem 3: Add 2 to the given number. 
-
-```
-a <- 1 # Assigning 1 to the variable called "a"
-a + 2 # Adding 2
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/26.R_Code1.PNG" alt="Adding two to given number output">
-
-## Problem 4: Create a data frame
-
-```
-df = data.frame(Emp_Name = c("Jai", "David", "Michael"),
-                Job_role = c("Manager", "Team Lead", "Developer" )
-               )
-
-print(df)
-
-```
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DS0105EN-SkillsNetwork/labs/Module2/Installation%20markdowns/Anaconda%20Download%20and%20Installation/images/29.R_Code4.PNG" alt="Data frame output">
-
-Congratulations! You have learned how to download and install Anaconda on your local machine and create a new environment. You have also created a Jupyter Notebook and saved it.
 
