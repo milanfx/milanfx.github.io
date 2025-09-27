@@ -5,80 +5,301 @@ permalink: /xxx/
 ---
 
 
-# Db2 Explore Your Dataset Using SQL Queries
+
+# Getting Started with IDE 
 
 **Estimated Time Needed: 15 Minutes**
 
 ## Overview
 
-Now that you have learned how querying techniques can help you to explore and analyze your data, you will run some basic SQL queries on the data you loaded into your database instance in the previous lab. For this, you will use the in-built SQL editor available in your Lite account.
+In this lab, you will become familiar with using an Integrated Development Environment (IDE). The IDE you will be using is Skills Network Cloud IDE, based on an open-source project called Theia.  This IDE is similar to the popular Visual Studio (VS) Code IDE. In this lab, you will explore the IDE and use it to create and run a simple Python program. You will install a library, create a code file, save it, and edit it to make changes.
+
+## Objectives
+
+- Explore the IDE interface.
+- Install a package using terminal.
+- Create a simple Python program using the IDE.
+- Execute the program.
+- Edit the source code and re-run the program.
+
+## Environment
+
+**Two Components of the Skills Network Lab environment:**
+
+- The instructions that you will follow to complete this lab are displayed on the left side of the screen.
+
+- The area on the right side of the screen is the actual IDE, where you will use the menus, terminals, and tools to develop your code.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" width="75%"> 
 
 ---
 
-# Practice
+# Exercise 1: Explore the IDE interface
 
-Please follow the steps given below to explore your dataset using SQL queries.
+## Explore the menus, terminals, and tools
 
-1.  Click on [https://cloud.ibm.com/catalog/services/db2](https://cloud.ibm.com/catalog/services/db2?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-DB0100EN-SkillsNetwork) to access your Db2 dashboard on Cloud.
+Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
-2.  If you’re not already logged in to your IBM Cloud Lite account, click on **Log in** at the bottom right of the screen to log in.
+**1.** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-1.png" width="25%"><br> 
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" width="75%"> 
 
-3.  Logging in will take you to your **Db2 service dashboard**.
+**2.** In the **Search** menu, you can search for particular folders or files that were created or cloned.
 
-Click on **view existing** link in the **Existing Lite plan instance** box.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" width="75%"> 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-2.png" width="50%"><br> 
+**3.** In the **Source Control** menu, you will find the cloned repository.
 
-4.  The **Manage** tab will be active by default in your services dashboard. Click on the **Go to UI** button.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" width="75%"> 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-3.png" width="50%"><br> 
+**4.** In the **Debug** menu, you can debug and troubleshoot your code.
 
-5.  Click on the 3-bar menu at the top left of the screen and select **RUN SQL** from the dropdown menu.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" width="75%"> 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-4.png" width="50%"><br> 
+**5.** In the **Extensions** menu, you can check the recommended, installed, and built-in software already provided as the pre-requisitesprerequisites. 
 
-6.  On the next screen click on **Create new**.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" width="75%"> 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-5.png" width="50%"><br> 
+**6.** In the **Skills Network Toolbox**, you will find options to use database, big data, cloud, and other tools to complete lab exercises in other courses.
 
-7.  The **SQL editor** will open.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" width="75%"> 
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-6.png" width="50%"><br> 
+**7.** Explore the menu options at the top of the IDE: File, Edit, Selection, View, Go, Run, Terminal, Help. You will be using some of these menu items in subsequent exercises. A summary of what they are used for is provided below.
 
-8.  Click on the highlighted row and copy-paste the following query into the highlighted row.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" width="75%"> 
 
-select count(*) from CARSALESTABLE;
+- **File:** This menu is used to create a new file or folder and save the file.
 
-Click on **Run all** at the bottom left of the screen to run the query.
+- **Edit:** This menu is used to undo, redo, cut, paste, and find the file.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-7.png" width="75%"><br> 
+- **Selection:** This menu is used to Select All, Copy line up or down and Move line up or down in the file.
 
-9.  Close the Result Set window and then copy and paste the following query into the **SQL editor**, replacing the existing query text.
+- **View:** This menu is used to view the other menus like explorer, extensions, and search.
 
-select max(price) as max_price from CARSALESTABLE;
+- **Go:** This menu is used to Go back, view the last edit location, and go to the files.
 
-Click on **Run all** at the bottom left of the screen to run the query.
+- **Run:** This menu is used for debugging and Adding configurations.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-9.png" width="75%"><br> 
+- **Terminal:** This menu is used to open the New terminal and run the tasks.
 
-10.  Click on the **arrow** <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_7A.png" width="50"> on the right side of the screen to view the result of your query.
+- **Help:** This menu is used to view the list of extensions and get started a file.
 
-A pop-window will open with the result.
+Click on each menu and explore them.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-10.png" width="25%"><br> 
+**You will learn about folder and file creation and how to use the terminal to run the commands later in this lab.**
 
-11.  Close the Result Set window and then copy and paste the following query into the **SQL editor**, replacing the existing query text.
+---
 
-select distinct(model) from CARSALESTABLE;
+# Exercise 2: Create a simple Python program using the IDE
 
-Click on **Run all** at the bottom left of the screen to run the query.
+**1.** On the window to the right, click on the File menu and select **"New Folder"** option, as shown in the image below.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_4-11.png" width="75%"><br> 
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" width="75%"> 
+
+Name the folder **"welcome101"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" width="75%"> 
+
+*Note: Ensure that the folder is created within the /home/project directory. If you\'re encountering any issues, right-click on an empty area and select New Folder*
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" width="75%"> 
+
+**2.** Right-click on the folder welcome101 and click on **"New File"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" width="75%">
+
+Create a new file and name it **"welcome.py"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" width="75%">
+
+**3.** Paste the below code to the welcome.py file and save it using Ctrl+S.
+
+```Python
+import numpy as np
+
+a = np.array([1,2])
+b = np.array([3,4])
+c = a + b
+print(c)
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png">
+
+---
+
+# Exercise 3: Execute the program
+
+**1.** Open a terminal window using the editor New  Terminal.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" width="75%">
+
+In the terminal, you will run all the commands to complete the lab.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" width="75%"> 
+
+**2.** Verify that python is installed.
+
+```bash
+python3.11 --version
+```
+
+You should see output similar to this, though the versions may be different:
+
+```
+Python 3.11.11
+```
+
+**3.** Install the numpy package.
+
+```bash
+python3.11 -m pip install numpy
+```
+You should see the an output similar to this.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png">
+
+**4.** Change the directory for this lab by using the command shown below in the terminal.
+
+```bash
+cd welcome101
+```
+
+**5.** Run the program in the terminal using the below command:
+
+```bash
+python3.11 welcome.py
+```
+
+**You will get the following output!**
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png">
+
+---
+
+# Exercise 4: Edit the source code and re-run the program
+
+**1.** Replace the source code with the code shown below:
+
+```python
+message= "Welcome to the world of programming!"
+print (message)
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" width="75%"> 
+
+**2.** Run the program in the terminal using the command below:
+
+```bash
+python3.11 welcome.py
+```
+
+You should see an output similar to this.
+
+```
+Welcome to the world of programming!
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" width="75%">
+
+---
+
+# Practice Exercises
+
+**1.** Create a new folder called "software101".
+
+<details>
+<summary>Click here for Hint</summary>
+
+On the window to the right, click on the File menu and select the **"New Folder"** option, as shown in the image below. Name the folder **"software101"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" width="75%">
+
+</details>
+
+**2.** In software101, create a new file called "software.py".
+
+<details>
+<summary>Click here for Hint</summary>
+
+Right-click on the folder software101, click on **"New File"**, create a new file, and name it **"software.py"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" width="75%">
+
+</details>
+
+**3.** Write code to add two arrays using Numpy library.
+
+* Note: Since the library is already installed in the practice, there is no need to install it again.
+
+<details>
+<summary>Click here for Hint</summary>
+
+Import the numpy library, create two numpy arrays, and add them.
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+Paste the code below to the software.py file and save it using Ctrl+S.
+
+```Python
+import numpy as np
+
+a = np.array([2,3,4])
+b = np.array([3,2,1])
+c = a + b
+print (c)
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" width="75%">
+
+</details>
+
+**4.** Run the program.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Run the program in the terminal using the below command. Make sure you are in the correct folder.
+
+```bash
+cd software101
+python3.11 software.py
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" width="75%">
+
+</details>
+
+**5.** Edit the software.py file and change one of the arrays.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Change the array 'a' to [5,3,1] and save the file.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" width="75%">
+
+</details>
+
+**6.** Run the updated file.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Run the program in the terminal using the below command:
+
+```bash
+python3.11 software.py
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png">
+
+</details>
 
 **Congratulations!** 
 
-You have successfully run some SQL queries to help you explore and understand your dataset.
+You have completed this lab and know how to run python programs in an IDE.
+
 
 
