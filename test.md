@@ -5,207 +5,185 @@ permalink: /xxx/
 ---
 
 
-# PostgreSQL Views using pgAdmin
+# MySQL Getting Started Command Line
 
-**Estimated Time Needed: 15 Minutes**
+**Estimated Time Needed: 20 Minutes**
 
 ## Overview
 
-In this lab, you will learn how to create, execute, and materialize views in the PostgreSQL database service using the pgAdmin graphical user interface (GUI) tool. Materialized views behave differently compared to regular views. The result set is materialized or saved for future use in the materialized views. You can not insert, update, or delete rows like in regular views. Materialized views store the results of a database query as a separate table-like object so that someone can access the results later without having to re-run the query. As a result, materialized views can improve database performance compared to regular views.
-
-## Software
-
-In this lab, you will use the <a target="_blank" href="https://www.postgresql.org/">PostgreSQL Database</a>. PostgreSQL is a relational database management system (RDBMS) designed to store, manipulate, and retrieve data efficiently.
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/postgresql.png" width="130" height="100">
-
-To complete this lab, you will utilize the PostgreSQL relational database service available as part of IBM Skills Network Labs (SN Labs) Cloud IDE. SN Labs is a virtual lab environment used in this course.
-
-## Database
-
-You will use the eBooks database in the lab.
-
-The following ERD diagram shows the schema of the complete eBooks database used in this lab:
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/eBooks/eBooks_schema_complete.png" width="630" height="500">
+In this lab, you will use the MySQL command line interface (CLI) to create a database, restore the structure and contents of tables, explore and query tables, and finally, learn how to dump/backup tables from the database.
 
 ## Objectives
 
-After completing this lab, you will be able to use pgAdmin with PostgreSQL to:
+After completing this lab, you will be able to use the MySQL command line to:
 
-- Restore a database schema and data
-- Create and execute a view
-- Create and execute a materialized view
+- Create a database.
+- Restore the structure and data of a table.
+- Explore and query tables.
+- Dump/backup tables from a database.
 
-## Lab structure
+## Software
 
-In this exercise, you will go through three tasks to learn how to create and execute views and materialized views in the PostgreSQL database service using the pgAdmin graphical user interface (GUI) tool.
+In this lab, you will use <a href="https://www.mysql.com/">MySQL</a>. MySQL is a Relational Database Management System (RDBMS) designed to efficiently store, manipulate, and retrieve data.
 
----
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/mysql.png" width="100" height="100">
 
-# Task A: Restore a database schema and data
+To complete this lab you will utilize the MySQL relational database service available as part of the IBM Skills Network Labs (SN Labs) Cloud IDE. SN Labs is a virtual lab environment used in this course.
 
-To get started with this lab, you will first download the relevant **eBooks** database dump file, then launch PostgreSQL and pgAdmin using the Cloud IDE. You can do this by following these steps:
+## Database
 
-1. Download the following **eBooks** PostgreSQL dump file (containing the eBooks database schema and data) to your local computer.
+The Sakila database used in this lab comes from the following source: https://dev.mysql.com/doc/sakila/en/ under [New BSD license](https://opensource.org/licenses/bsd-license.php) [Copyright 2021 - Oracle Corporation].
 
-- [eBooks_pgsql_dump.tar](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/eBooks/eBooks_pgsql_dump.tar)
+You will use a modified version of the database for the lab, so to follow the lab instructions successfully please use the database provided with the lab, rather than the database from the original source.
 
-2. Click the Skills Network extension button on the left side of the window.
+The following entity relationship diagram (ERD) shows the schema of the Sakila database:
 
-3. Open the **DATABASES**  menu and click **PostgreSQL**.
-
-4. Click **Create**. PostgreSQL may take a few moments to start.
-
-![postgres start pic.png](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/4zLhpz5CI5tmSl-DH7NRXQ/postgres%20start%20pic.png)
-
-5. Next, open the pgAdmin Graphical User Interface by clicking **pgAdmin** in the Cloud IDE interface.
-
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ZnZiQafAH3ZwT4V6Wz7fYw/pgadmin%20.png)
-
-6. Once the pgAdmin GUI opens, click **Servers** tab on the left side of the page. You will be prompted to enter a password.
-
-![pgAdmin_2](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Create%20Tables%20and%20Load%20Data%20in%20PostgreSQL%20using%20pgAdmin/images/pgAdmin_2.png)
-
-7. To retrieve your password, click **PostgreSQL** tab near the top of the interface and select **Connection Information** tab.
-
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/priMDdmsl6kx9EFaQ2kHGA/pgadmin-pass1.png)
-
-8. Scroll down and click the Copy icon on the left of your password to copy the session password onto your clipboard.
-
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/EfhCH4BlDAZOTsvjRhHw3Q/pgadmin-pass2.png)
-
-9. Navigate back to the **pgAdmin** tab and paste your password, then click **OK**.
-
-10. You will then be able to access the pgAdmin GUI tool.
-
-![pgAdmin GUI tool](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/1.5.png)
-
-11. In the tree view, expand **Servers** > **postgres** > **Databases**. Enter your PostgreSQL service session password if prompted during the process. Right-click on **Databases** and go to **Create > Database**. Type **eBooks** as the  database name and click **Save**.
-
-![Servers** > postgres > **Databases](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/1.6.1.png)
-
-![Create > Database](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/1.6.2.png)
-
-12. In the tree-view, expand **eBooks**. Right-click **eBooks** and select **Restore**.
-
-![tree-view](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/1.7.png)
-
-13. Follow the instructions below to restore and proceed to Task B:
-
-- On the **General** tab, click **Select file** by the **Filename** box.
-
-![General tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/b-xbFvgUwclATKK8I5grog/1-8-1.png)
-
-- Ensure that you upload the files to this path: /var/lib/pgadmin/. To do this, you can either manually navigate to the path (or) copy /var/lib/pgadmin/, replace /home/ with it, and press Enter. You should then see some default files in that path, as shown below.
-
-![General tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ewH2MCoByP4XxV7MVsHmNA/default-files.png)
-
-- Click on the three dots, then select **Upload**.
-
-![Upload file](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/xnZ4AHriciZG7a522bEUlQ/1-8-2.png)
-
-- Double-click on the drop files area and load the **eBooks_pgsql_dump.tar** you downloaded earlier on your local computer.
-
-![Drop files area](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/a2VVrYt0CSJe-i8jJ-Y6_g/1-8-3.png)
-
-- When the upload is complete, close the drop files area by clicking **X**.
-
-![Drop files area](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Jp9EWspBTSsZXKPZtKuuHQ/1-8-4.png)
-
-- Ensure **Format** is set to **All Files**, select the uploaded **eBooks_pgsql_dump.tar** file from the list, and then click **Select**.
-
-![Format](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mbW6cKrapGgNjtOjgStrmw/1-8-5.png)
-
-- In the General tab, ensure the filename path matches the one shown below. If you see a different path that includes "None," modify it accordingly.
-
-![Restore options](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/q93FepMgL0EsosgO0cM0Qg/1-8-6.png)
-
-- Now switch to the **Options** tab. Under **Disable**, toggle on the **Triggers** option, and then click Restore.
-
-![ Restore*](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/7EhYMgQUhnvOeiuOrD7-2Q/1-8-7.png)
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_ERD.jpg" width="500" height="592">
 
 ---
 
-# Task B: Create and execute a view
+# Task A: Create a database
 
-1. In the tree-view, expand **eBooks > Schemas > public**. Right-click **Views** and go to **Create > View**.
+1. Go to **Terminal > New Terminal** to open a terminal from the side by side launched Cloud IDE.
 
-![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/2.1.png)
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/A.1.png)
 
-2. On the **General** tab, type **publisher_and_rating_view** as the name of the view. Then, switch to the **Code** tab.
-
-![General tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/2.2.png)
-
-3. On the **Code** tab, copy and paste the following code. Then click **Save**.
+2. Copy the command below by clicking on the little copy button on the bottom right of the codeblock and then paste it into the terminal using **Ctrl + V** (Mac: ⌘ + V) to fetch the [sakila_mysql_dump.sql](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_mysql_dump.sql) file to the Cloud IDE.
 
 ```
-SELECT books.title, books.rating, publishers.name
-FROM books INNER JOIN publishers ON books.publisher_id = publishers.publisher_id
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_mysql_dump.sql
 ```
 
-![Code tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/2.3.png)
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/A.2.png)
 
-4. In the tree view, expand **Views**. Right-click **publisher_and_rating_view** and go to **View/Edit Data > All Rows**.
+3. Start the MySQL service session  using the `Start MySQL in IDE  button` directive.
 
-![PgAdmin](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/2.4.png)
+If the icon doesn\'t start the MySQL database, follow the steps below.
 
-5. You will access the view you created. This action allows you to access and view the tables in your database.
+- Click the Skills Network extension button on the left side of the window.
+- Open the DATABASES menu and click MySQL.
+- Click Create. MySQL may take a few moments to start.
 
-![tables in database](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/2.5.png)
+![mysql create.png](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/gyIwHX5xAx6ZFXw2ZINfkg/mysql%20create.png)
+
+5. Initiate the mysql command prompt session using the command below in the terminal:
+
+```
+mysql --host=mysql --port=3306 --user=root --password
+```
+When prompted, enter the password that was displayed under the **Connection Information** section when MySQL started up.
+![connection pwd-mysql.png](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Tp4gGmE7jW37rrlgblZidQ/connection%20pwd-mysql.png)
+
+Please note, you won\'t be able to see your password when typing it in. Not to worry, this is expected!!
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BrNUnjaHjLBjGNKBow6mlA/sql%20start%20cli.png)
+
+6. Note down your MySQL service session password because you may need to use it later in the lab.
+
+7. Create a new database **sakila** using the command below in the terminal and proceed to Task B:
+
+```
+create database sakila;
+```
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/JTZin5ivCySAIbQFI7QfGw/create%20sakila.png)
 
 ---
 
-# Task C: Create and execute a materialized view
+# Task B: Restore the structure and data of a table
 
-1. In the tree view, expand **eBooks > Schemas > public**. Right-click **Materialized Views** and go to **Create > Materialized View**.
-
-![eBooks > Schemas > public](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/3.1.png)
-
-2. On the **General** tab, type **publisher_and_rating_materialized_view** as name of the view. Then switch to the **Code** tab.
-
-![General tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/KJxPhJHOtP3fIBRawlKxIA/3-2.png)
-
-3. On the **code** tab, copy and paste the following code. Then click **Save**.
+1. To use the newly created empty sakila database, use the command below in the terminal:
 
 ```
-SELECT books.title, books.rating, publishers.name
-FROM books INNER JOIN publishers ON books.publisher_id = publishers.publisher_id
+use sakila;
 ```
 
-![Definition tab](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/eHpb35GPfVHUuzaaoNjqZg/3-3.png)
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/B.1.png)
 
-4. In the tree-view, expand **Materialized Views**. Right-click **publisher_and_rating_materialized_view** and go to **Refresh View > With data**.
+2. Restore the sakila mysql dump file (containing the sakila database table definitions and data) to the newly created empty sakila database. A dump file is a text file that contains the data from a database in the form of SQL statements. This file can be imported using the command line with the following command:
 
-![Materialized Views](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/3.4.png)
+```
+source sakila_mysql_dump.sql;
+```
 
-5. Right-click **publisher_and_rating_materialized_view** again and go to **View/Edit Data > All Rows**.
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/B.2.png)
 
-![publisher_and_rating_materialized_view](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/3.5.png)
+**Note:** You can use the **source** command to restore the database dump file within the mysql command prompt. To restore the database dump file outside of the mysql command prompt, you can use the `mysql --host=mysql --port=3306 --user=root --password sakila < sakila_mysql_dump.sql` command after quitting the mysql command prompt session with command `\q`. <!---->
 
-6. You will access the materialized view you created.
+---
 
-![your materialized view](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Views%20in%20PostgreSQL/images/3.6.png)
+# Task C: Explore and query tables
 
-At first glance, it does not look too different from the regular view you created earlier in this lab. From the user perspective, it is essentially the same: you see the results of a query displayed in a table-like format. The difference is that this materialized view is cached in the database so someone can reaccess the data in the future without re-running the database query.
+1. To list all the tables names from the sakila database, use the command below in the terminal:
 
-## Conclusion
+```
+SHOW FULL TABLES WHERE table_type = 'BASE TABLE';
+```
 
-**Congratulations!** 
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.1.png)
 
-You have completed this lab and learned how to restore a database schema and data, create and execute a view, and create and execute a materialized view.
+The **Table_type** for these tables is **BASE TABLE**. **BASE TABLE** means that it is a table as opposed to a view (**VIEW**) or an `INFORMATION_SCHEMA` view (**SYSTEM VIEW**).
 
+2. Explore the structure of the **staff** table using the command below in the terminal:
 
-8. Download the **HR_pgsql_dump_data.tar** PostgreSQL dump file (containing the complete HR database data) below to your local computer. Use the dump file to restore/import the data to the **HR_Complete** database.
+```
+DESCRIBE staff;
+```
 
-- [HR_pgsql_dump_data.tar](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/HR_Database/HR_Proper/HR_pgsql_dump_data.tar)
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.2.png)
 
+To understand the output, see the following table:
 
-**Tip:** Follow Example Exercise Task C.
+| Column Name  | Definition  |
+|--------------|---|
+| Field        | Name of the column.  |
+| Type         | Data type of the column.  |
+| Null         | Displays **YES** if column can contain NULL values and **NO** if not. Notice how the primary key displays **NO**.|
+| Key          | Displays the value **PRI** if the column is a primary key, **UNI** if the column is a unique key, and **MUL** if the column is a non-unique index in which one value can appear multiple times. If there is no value displayed, then the column isn&apos;t indexed or it&apos;s indexed as a secondary column. Please note, that if more than one of these values applies to the column, the value that appears will be displayed based on the following order: **PRI**, **UNI**, and **MUL**. |
+| Default      | The default value of the column. If the column&apos;s value has specifically been set as NULL, then the value that appears will be NULL.  |
+| Extra        | Any additional information about a column. |
 
-## Conclusion
+3. Now retrieve all the records from the **staff** table using the command below in the terminal:
 
-**Congratulations!** 
+```
+SELECT * FROM staff;
+```
 
-You have completed this lab, and you have learned how to create an ERD of a database, generate and execute an SQL script from an ERD to create a schema, and load the database schema with data. 
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.3.png)
+
+4. Quit the MySQL command prompt session using the command below in the terminal and proceed to Task D:
+
+```
+\q
+```
+
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/C.4.png)
+
+---
+
+# Task D: Dump/backup tables from a database
+
+1. Finally, dump/backup the **staff** table from the database using the command below in the terminal:
+
+```
+mysqldump --host=mysql --port=3306 --user=root --password sakila staff > sakila_staff_mysql_dump.sql
+```
+
+This command will backup the **staff** table from the **sakila** database into a file called **sakila_staff_mysql_dump.sql**.
+
+2. Enter your MySQL service session password.
+
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ZjRiGqB6_KOwTLtmEWZSjg/D-2.png)
+
+3. To view the contents of the dump file within the terminal, use the command below:
+
+```
+cat sakila_staff_mysql_dump.sql
+```
+
+![image](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/labs/Lab%20-%20Getting%20started%20with%20MySQL%20command%20line/images/D.3.png)
+
+**Congratulations!**
+
+You have completed this lab, and you are ready for the next topic.
 
