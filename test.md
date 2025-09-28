@@ -5,135 +5,289 @@ permalink: /xxx/
 ---
 
 
-# Create your IBM Cloud Account
+# Getting Started with IDE 
 
 **Estimated Time Needed: 15 Minutes**
 
 ### Overview
 
-To access the resources and services that the IBM Cloud provides, you need an IBM Cloud Account. This lab will take you through step-by-step instructions to create one.
+In this lab, you will become familiar with using an Integrated Development Environment (IDE). The IDE you will be using is Skills Network Cloud IDE, based on an open-source project called Theia.  This IDE is similar to the popular Visual Studio (VS) Code IDE. In this lab, you will explore the IDE and use it to create and run a simple Python program. You will install a library, create a code file, save it, and edit it to make changes.
 
 ### Objectives
 
-After completing this lab, you will be able to:
+- Explore the IDE interface.
+- Install a package using terminal.
+- Create a simple Python program using the IDE.
+- Execute the program.
+- Edit the source code and re-run the program.
 
-- Create an IBM Cloud Trial Account using a Feature Code
+### Environment
 
-### Prerequisite
+**Two Components of the Skills Network Lab environment:**
 
-Please ensure you click on the **\"Launch App\"** button from the previous section of this lab to get a feature code and activate the trial account before moving forward with the lab instructions. These instructions will help you create an IBM Cloud account.
+- The instructions that you will follow to complete this lab are displayed on the left side of the screen.
 
-> **Note:** These instructions only apply to creating a **NEW** IBM Cloud account using an email address that you have not used previously to create another IBM Cloud account. If you have already used your IBM Cloud feature code in another course/lab to create an IBM Cloud account, please skip this lab, as the code can only be used once.
+- The area on the right side of the screen is the actual IDE, where you will use the menus, terminals, and tools to develop your code.
 
-### Activate Trial Account
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" width="75%"> 
 
-- The previous section of the lab is the first step for activating your IBM Cloud trial account using Feature Code.
-- On clicking on the `Launch App` button, you will get a unique code.
-- Next, click on Activate Your Trial. It will redirect you to the IBM Cloud registration page, to create an account on IBM Cloud.
+## Exercise 1: Explore the IDE interface
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/activate_trial_account.png)
+### Explore the menus, terminals, and tools
 
-## Create an IBM Cloud Account
+Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
-1. Once you are on the [account creation](https://cloud.ibm.com/registration?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) page, follow the below instructions to create an IBM cloud trial account.
+**Step 1:** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
 
-2. Enter your **Email** address [preferably use Gmail ID or Yahoo ID] and a strong **Password**, as per criteria, and then click the **Next** button.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" width="75%"> 
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM_signup.png)
+**Step 2:** In the **Search** menu, you can search for particular folders or files that were created or cloned.
 
-> **NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you can readily access your email to retrieve the verification code required in the next step.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" width="75%"> 
 
-3. An email is sent to the address you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
+**Step 3:** In the **Source Control** menu, you will find the cloned repository.
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_3.png)
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" width="75%"> 
 
-4. Once your email is successfully verified, enter your **First name** and **Last name**, and select your country (for example, United States) under **Country or region** then click **Next**.
+**Step 4:** In the **Debug** menu, you can debug and troubleshoot your code.
 
-> **Note:** Kindly use your full last name instead of just using single letters/initials. For example:
-First Name: Ada
-Last Name: Lovelace
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" width="75%"> 
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_4.png)
+**Step 5:** In the **Extensions** menu, you can check the recommended, installed, and built-in software already provided as the pre-requisitesprerequisites. 
 
-5. Go through the Account Notice. If you wish, you can opt for email updates. Then accept the Terms and Conditions and click **Continue**.  
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" width="75%"> 
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_5.png)
+**Step 6:** In the **Skills Network Toolbox**, you will find options to use database, big data, cloud, and other tools to complete lab exercises in other courses.
 
-6. Before creating your account, review the account privacy notice and acknowledge that you have read and understood by checking the checkbox and clicking **Continue**.  
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" width="75%"> 
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/Step_6.png)
+**Step 7:** Explore the menu options at the top of the IDE: File, Edit, Selection, View, Go, Run, Terminal, Help. You will be using some of these menu items in subsequent exercises. A summary of what they are used for is provided below.
 
-It takes a few seconds to create and set up your account.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" width="75%"> 
 
-7. On the next screen, you will be asked to verify your identity where you will see the feature code has been applied for you already. Then click on **Create account**. 
+- **File:** This menu is used to create a new file or folder and save the file.
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/verify_identity.png)
+- **Edit:** This menu is used to undo, redo, cut, paste, and find the file.
 
-> **Note:** It might take a couple of minutes to create your account.
+- **Selection:** This menu is used to Select All, Copy line up or down and Move line up or down in the file.
 
-> **Note:** Please ensure you do not use the Credit Card option to verify your account for coursework as that can result in unnecessary charges and delays in activating your account.
+- **View:** This menu is used to view the other menus like explorer, extensions, and search.
 
-8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
+- **Go:** This menu is used to Go back, view the last edit location, and go to the files.
 
-![IBM Cloud Dashboard](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/images/IBM-dashboard.png "IBM Cloud Dashboard")
+- **Run:** This menu is used for debugging and Adding configurations.
 
-9. Now you may explore the [IBM Catalog](https://cloud.ibm.com/catalog?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-CC0100EN-SkillsNetwork) for exploring the services and resources offered by IBM Cloud.
+- **Terminal:** This menu is used to open the New terminal and run the tasks.
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CC0100EN-SkillsNetwork/labs/IBMCloud_accountCreation/images/catalog.png)
+- **Help:** This menu is used to view the list of extensions and get started a file.
 
-## Ways To Troubleshoot
+Click on each menu and explore them.
 
-If you encounter any of the below errors while activating your IBM Cloud trial account, please follow the steps as instructed below.
+**You will learn about folder and file creation and how to use the terminal to run the commands later in this lab.**
 
-- Ooops snap! The promotional codes for IBM Cloud are very popular and have temporarily run out. Please check back soon.
+## Exercise 2: Create a simple Python program using the IDE
 
-**Reason** - It takes 24 to 48 hours to populate news feature codes.
+**Step 1:** On the window to the right, click on the File menu and select **"New Folder"** option, as shown in the image below.
 
-**Solution** - Please try again later
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" width="75%"> 
 
-- Something went wrong error.
+Name the folder **"welcome101"**.
 
-**Reason** - This could be because you have already applied a code to this email earlier or your domain/country/IP is restricted.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" width="75%"> 
 
-**Solution** - Try from another email id
+**Note:** Ensure that the folder is created within the /home/project directory. If you\'re encountering any issues, right-click on an empty area and select New Folder*
 
-- Feature code expired.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" width="75%"> 
 
-**Reason** - You may have applied the feature code already once.
+**Step 2:** Right-click on the folder welcome101 and click on **"New File"**.
 
-**Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" width="75%">
 
-- If your trial ends.
+Create a new file and name it **"welcome.py"**.
 
-**Reason** - Trial accounts are valid only for 6 months, and the same feature code cannot be applied again.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" width="75%">
 
-**Solution** - Create a new IBM cloud account and write to the support team as per the instructions below.
+**Step 3:** Paste the below code to the welcome.py file and save it using Ctrl+S.
 
-## Other Possible Solutions:
+```Python
+import numpy as np
 
-- Try clearing your browser\'s cache and cookies
-- Try from a different browser on an incognito mode.
+a = np.array([1,2])
+b = np.array([3,4])
+c = a + b
+print(c)
+```
 
-If you still face any issues, please write an email to support@cognitiveclass.ai with the following details
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png">
 
-**Subject Line:** Feature Code Issue
+## Exercise 3: Execute the program
 
-**Email Content:**
+**Step 1:** Open a terminal window using the editor New  Terminal.
 
-- Name of the course you are undertaking.
-- The course link where you obtained the feature code.
-- The feature code you are trying to apply.
-- The error message that it is shown.
-- The email ID used to create the IBM Cloud account.
-- Your username.
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" width="75%">
 
-Once you obtain a new feature code, you can create a new account using a different Email ID.
+In the terminal, you will run all the commands to complete the lab.
 
-**Congratulations!**
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" width="75%"> 
 
-You have successfully created your IBM Cloud Account!
+**Step 2:** Verify that python is installed.
 
+```bash
+python3.11 --version
+```
 
+You should see output similar to this, though the versions may be different:
 
+```
+Python 3.11.11
+```
+
+**Step 3:** Install the numpy package.
+
+```bash
+python3.11 -m pip install numpy
+```
+You should see the an output similar to this.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png">
+
+**Step 4:** Change the directory for this lab by using the command shown below in the terminal.
+
+```bash
+cd welcome101
+```
+
+**Step 5:** Run the program in the terminal using the below command:
+
+```bash
+python3.11 welcome.py
+```
+
+**You will get the following output!**
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png">
+
+## Exercise 4: Edit the source code and re-run the program
+
+**Step 1:** Replace the source code with the code shown below:
+
+```python
+message= "Welcome to the world of programming!"
+print (message)
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" width="75%"> 
+
+**Step 2:** Run the program in the terminal using the command below:
+
+```bash
+python3.11 welcome.py
+```
+
+You should see an output similar to this.
+
+```
+Welcome to the world of programming!
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" width="75%">
+
+## Practice Exercises
+
+**Step 1:** Create a new folder called "software101".
+
+<details>
+<summary>Click here for Hint</summary>
+
+On the window to the right, click on the File menu and select the **"New Folder"** option, as shown in the image below. Name the folder **"software101"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" width="75%">
+
+</details>
+
+**Step 2:** In software101, create a new file called "software.py".
+
+<details>
+<summary>Click here for Hint</summary>
+
+Right-click on the folder software101, click on **"New File"**, create a new file, and name it **"software.py"**.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" width="75%">
+
+</details>
+
+**Step 3:** Write code to add two arrays using Numpy library.
+
+- Note: Since the library is already installed in the practice, there is no need to install it again.
+
+<details>
+<summary>Click here for Hint</summary>
+
+Import the numpy library, create two numpy arrays, and add them.
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+Paste the code below to the software.py file and save it using Ctrl+S.
+
+```Python
+import numpy as np
+
+a = np.array([2,3,4])
+b = np.array([3,2,1])
+c = a + b
+print (c)
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" width="75%">
+
+</details>
+
+**Step 4:** Run the program.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Run the program in the terminal using the below command. Make sure you are in the correct folder.
+
+```bash
+cd software101
+python3.11 software.py
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" width="75%">
+
+</details>
+
+**Step 5:** Edit the software.py file and change one of the arrays.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Change the array 'a' to [5,3,1] and save the file.
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" width="75%">
+
+</details>
+
+**Step 6:** Run the updated file.
+
+<details>
+<summary>Click here for Solution</summary>
+
+Run the program in the terminal using the below command:
+
+```bash
+python3.11 software.py
+```
+
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png">
+
+</details>
+
+**Congratulations!** 
+
+You have completed this lab and know how to run python programs in an IDE.
 
 
