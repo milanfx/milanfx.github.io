@@ -40,6 +40,8 @@ In this lab, you will become familiar with using an Integrated Development Envir
 
 Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
+> **Note:** Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
+
 **1.** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
 
 <div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" width="800"></div> 
@@ -47,6 +49,8 @@ Let us now explore the IDE interface. Please click on each of the icons and menu
 **2.** In the **Search** menu, you can search for particular folders or files that were created or cloned.
 
 <div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" width="800"></div> 
+
+> **Note:** Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
 **3.** In the **Source Control** menu, you will find the cloned repository.
 
@@ -97,6 +101,8 @@ Click on each menu and explore them.
 <div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" width="800"></div> 
 
 Name the folder **"welcome101"**.
+
+> **Note:** Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
 <div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" width="800"></div> 
 
