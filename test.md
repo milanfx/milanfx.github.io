@@ -5,461 +5,505 @@ permalink: /xxx/
 ---
 
 
-# Extract Transform Load
+# Navigating and Managing Files and Directories
 
-**Estimated Time Needed: 15 Minutes**
+**Estimated Time Needed: 30 Minutes**
 
-### Overview
-
-Extract, Transform and Load (ETL) operations are of extreme importance in the role of a Data engineer. A data engineer extracts data from multiple sources and different file formats, transforms the extracted data to predefined settings and then loads the data to a database for further processing. In this lab, you will get hands-on practice of performing these operations.
-
-### Objectives
+### Learning Objectives
 
 After completing this lab, you will be able to:
 
-- Read CSV, JSON, and XML file types. 
-- Extract the required data from the different file types. 
-- Transform data to the required format. 
-- Save the transformed data in a ready-to-load format, which can be loaded into an RDBMS.
+- Get the location of your present working directory
+- List the files and directories within a directory
+- Create a new directory
+- Change your present working directory
+- Create a new file
+- Search for and locate files
+- Remove, rename, move, or copy a file
 
-### Initial steps
+### About Skills Network Cloud IDE
 
-The first step in this process is to create a new file in the default `project` folder in the IDE. To create the new file, you can press the button below (recommended).
+Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands on labs for course and project related labs. Theia is an open source IDE (Integrated Development Environment), that can be run on desktop or on the cloud. To complete this lab, you will be using the Cloud IDE based on Theia.
 
-**Step 1:** Create a new `etl_code.py` file
+### Important notice about this lab environment
+
+Please be aware that sessions for this lab environment are not persisted. Thus, every time you connect to this lab, a new environment is created for you and any data or files you may have saved in a previous session will be lost. To avoid losing your data, plan to complete these labs in a single session.
+
+## Exercise 1 - Navigating Files and Directories
+
+In these exercises, you will practice using commands for navigating and managing files and directories.
+
+### 1.1. Get the location of the present working directory
+
+**`pwd`**
+
+When working in a Linux terminal, you will always be working from a directory. By default, you will start in your home directory. To get the absolute path of your present working directory, enter the following:
+
+```
+pwd
+```
+
+This will print the name of the directory you are currently working in.
+
+### 1.2. List the files and directories in a directory
+
+**`ls`**
+
+To list the files and directories in the current directory, enter the following:
+
+```
+ls
+```
+
+If your directory happens to be empty, `ls` will not return anything.
+
+The following command will list the many binary and executable files which are present in your `/bin` (binaries) directory.
+
+```
+ls /bin
+```
+
+The `/bin` directory happens to be where Linux commmands such as `ls` and `pwd` are stored. For example, you can see that `ls` is present by entering the following:
+
+```
+ls /bin/ls
+```
+
+To list all files starting with `b` in the  `/bin` directory, try entering the following:
+
+```
+ls /bin/b*
+```
+
+**Tip:** The asterisk `*` is a special character called a *wildcard*. It is used to represent any string of characters.
+
+To list all files ending in `r` in the  `/bin` directory, enter the following:
+
+```
+ls /bin/*r
+```
+
+To print a longer list of files with additional information, such as the last-modified date, enter the following:
+
+```
+ls  -l
+```
+
+Here are some common options that you can try with the `ls` command:
+
+| Option | Description                                                               |
+| ------ | ------------------------------------------------------------------------- |
+| `-a`   | list all files, including hidden files                                    |
+| `-d`   | list directories only, do not include files                               |
+| `-h`   | with `-l` and `-s`, print sizes like 1K, 234M, 2G                         |
+| `-l`   | include attributes like permissions, owner, size, and last-modified date  |
+| `-S`   | sort by file size, largest first                                          |
+| `-t`   | sort by last-modified date, newest first                                  |
+| `-r`   | reverse the sort order                                                    |
+
+To get a long list of all files in `/etc`, including any hidden files, enter the following:
+
+```
+ls -la /etc
+```
+
+Here we combined the options `-l` and `-a` by using the shorter notation, `-la`.
+
+## Exercise 2 - Creating Files and Directories
+
+### 2.1. Create a directory
+
+**`mkdir`**
+
+The `mkdir` command is used to create a new directory. 
+
+To create a directory named `scripts` in your current directory, run the following command:
+
+```
+mkdir scripts 
+```
+
+Use the `ls` command to verify whether the `scripts` directory was created:
+
+```
+ls 
+```
+
+You should see a directory named `scripts` listed.
+
+### 2.2. Change your current working directory
+
+**`cd`**
+
+To change your present working directory to the `scripts` directory, run the following command:
+
+```
+cd scripts
+```
+
+Now use the `pwd` command to verify whether your current working directory has changed as expected:
+
+```
+pwd
+```
+
+You can enter `cd` without any directory name to move back to your home directory:
+
+```
+cd
+```
+
+Then, enter the `pwd` command to verify whether your current working directory has changed:
+
+```
+pwd
+```
+
+The syntax `..` is a shortcut that refers to the parent directory of your current directory. Run the following command to move the directories up one level:
+
+```
+cd ..
+```
+
+### 2.3. Create an empty file
+
+**`touch`**
+
+First, return to your home directory by entering:
+
+```
+cd
+```
+
+Next, use the `touch` command to create an empty file named `myfile.txt`:
+
+```
+touch myfile.txt
+```
+
+Now use the `ls` command to verify the creation of `myfile.txt`:
+
+```
+ls
+```
+
+If the file already exists, the `touch` command updates the access timestamp, or last-modified date of the file. To see this, enter:
+
+```
+touch myfile.txt
+```
+
+And use the `date` command to verify the date change:
+
+```
+date -r myfile.txt
+```
+
+## Exercise 3 - Managing Files and Directories
+
+### 3.1. Search for and locate files
+
+**`find`**
+
+The `find` command is used to search for files in a directory. You can search for files based on different attributes, such as the file\'s name, type, owner, size, or timestamp. <br>
+
+The `find` command conducts a search of the entire directory tree starting from the given directory name.
+
+For example, the following command finds all `.txt` files in the `/etc` directory and all of its subdirectories:
+
+```
+find /etc -name '*.txt'
+```
+You can also search for .conf files using the below command:
+```
+find /etc -name '*.conf'
+```
+**Note:** Along with listing all the `.txt` files, the terminal may return \"Permission denied\" errors.
+
+These errors are normal, as you have limited access permissions on the lab machine.
+
+### 3.2. Remove files
+
+**`rm`**
+
+The `rm` command is used to delete files, ideally with the `-i` option, which creates a prompt to ask for confirmation before every deletion. 
+
+To remove the file `myfile.txt`, enter the following command and press `y` to confirm deletion, or `n` to deny deletion:  
+
+```
+rm -i myfile.txt
+```
+
+Use the `ls` command to verify removal:
+
+```
+ls
+```
+
+**Tip:** When you are only removing one file with the `rm` command, the `-i` option is redundant. But if you want to remove multiple files, for example by using a wildcard to find all filenames matching a pattern, it\'s best practice to confirm or deny each deletion by including the `-i` option. 
+
+Be careful when deleting files or directories! There is normally no way to restore a deleted file once it is deleted, as there is no trash folder. This is why you should always back up, or *archive*, your important files. You will learn more about archiving files soon.
+
+### 3.3. Move and rename a file
+
+**`mv`**
+
+You can use the `mv` command to move files from one directory to another and/or rename them.
+
+Before doing so, let\'s first create a new file called `users.txt`:
+
+```
+touch users.txt
+```
+
+You should always use caution when moving a file. If the target file already exists, it will be overwritten, or replaced, by the source file.
+
+Conveniently, however, when the source and target directories are the same, you can use `mv` to rename a file.
+
+To illustrate this, use `mv` to rename `users.txt` to `user-info.txt` by entering the following command:
+
+```
+mv users.txt user-info.txt
+```
+
+Because the source and target directories are the same (your present working directory), the `mv` command will rename the file.
+
+Now use the `ls` command to verify the name change:
+
+```
+ls
+```
+
+Now, you can move `user-info.txt` to the `/tmp` directory as follows:
+
+```
+mv user-info.txt /tmp
+```
+
+Use the `ls` command twice to verify the move:
+
+```
+ls
+```
+
+```
+ls -l /tmp
+```
+
+### 3.4. Copy files
+
+**`cp`**
+
+You can use the `cp` command to copy `user-info.txt`, which is now in your `/tmp` directory, to your current working directory:
+
+```
+cp /tmp/user-info.txt user-info.txt
+```
+
+Use the `ls` command to verify that the copy was successful:
+
+```
+ls
+```
+
+At times, you may want to copy the contents of an existing file into a new one.
+
+The following command copies the content of `/etc/passwd` to a file named `users.txt` within the current directory:
+
+```
+cp /etc/passwd users.txt
+```
+
+Again, use the `ls` command to verify if the copy was successful:
+
+```
+ls
+```
+
+## Practice exercises
+
+### 1. Display the contents of the `/home` directory.
 
 <details>
+<summary>Click here for Hint</summary>
 
-<summary>Alternatively, we can do it the hard way</summary>
+Use the `ls` command.
 
-Navigate to the `File` tab in the menu bar and click `New File`. Save this file in the path `\home\project` as `etl_code.py`. These steps are shown in the following images.
-
-a. Create New File
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_file.png" width="400" alt="IDE folder File menu and New File higlighted.">
-
-b. Save the file as `etl_code.py`.
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file.png" width="400" alt="IDE folder File menu and Save button highlighted.">
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file_2.png" width="500" alt="IDE folder save path with project and saved name etl_code.py highlighted.">
-
-The file is now ready in the `project` folder and further steps will be done in the file.
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/etl_code.png" width="500" alt="IDE folder with Project and etl_code.py file open.">
-
-### Gather the data files
-
-Before you start the extraction of data, you need the files containing the data to be available in the `project` folder. For the purpose of this lab, perform the following steps to gather the required data:
 </details>
 
-**Step 2:** Open a new terminal window
+<details>
+<summary>Click here for Solution</summary>
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_terminal.png" alt="Terminal menu with New Terminal higlighted.">
-
-**Step 3:** Run the following commands in the terminal shell: <br>
-
-a. Download the zip file containing the required data in multiple formats.
-
-```bash
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/source.zip
+```
+ls /home
 ```
 
-b. Unzip the downloaded file.
+</details>    
 
-```bash
-unzip source.zip
+### 2. Ensure that you are in your home directory.
+
+<details>
+<summary>Click here for Hint</summary>
+
+Use `cd` to move to your home directory and then use `pwd` to verify.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```
+cd
+pwd
 ```
 
-After you complete the above steps, the folder structure should appear as shown in the following image.
+</details>
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/folder_structure.png" width="200" alt="Project folder with downloaded zip files.">
+### 3. Create a new directory called `tmp` and verify its creation.
 
-### Importing Libraries and setting paths
+<details>
+<summary>Click here for Hint</summary>
 
-The required files are now available in the `project` folder.
+Use the `mkdir` and `ls` commands.
 
-In this lab, you will extract data from `CSV`, `JSON`, and `XML` formats. First, you need to import the appropriate Python libraries to use the relevant functions.
+</details>
 
-The `xml` library can be used to parse the information from an `.xml` file format. The `.csv` and `.json` file formats can be read using the `pandas` library. You will use the `pandas` library to create a data frame format that will store the extracted data from any file.
+<details>
+<summary>Click here for Solution</summary>
 
-To call the correct function for data extraction, you need to access the file format information. For this access, you can use the `glob` library.
-
-To log the information correctly, you need the date and time information at the point of logging. For this information, you require the `datetime` package.
-
-While `glob`, `xml`, and `datetime` are inbuilt features of Python, you need to install the `pandas` library to your IDE.
-
-Run the following command in a terminal shell to install `pandas` for `python3.11`.
-
-```bash
-python3.11 -m pip install pandas
+```
+mkdir tmp
+ls
 ```
 
-After the installation is complete, you can import all the libraries in `etl_code.py` using the following commands.
+</details>
 
-```python
-import glob 
-import pandas as pd 
-import xml.etree.ElementTree as ET 
-from datetime import datetime 
+### 4. Create a new, empty file named `display.sh` in the `tmp` directory, and verify its creation.
+
+<details>
+<summary>Click here for Hint</summary>
+
+Use the `cd`, `touch`, and `ls` commands.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```
+cd tmp
+touch display.sh
+ls -l
 ```
 
-Note that you import only the ElementTree function from the `xml.etree` library because you require that function to parse the data from an `XML` file format.
+</details>
 
-You also require two file paths that will be available globally in the code for all functions. These are `transformed_data.csv`, to store the final output data that you can load to a database, and `log_file.txt`, that stores all the logs.
+### 5. Create a copy of `display.sh`, called `report.sh`, within the same directory.
 
-Introduce these paths in the code by adding the following statements:
+<details>
+<summary>Click here for Hint</summary>
 
-```python
-log_file = "log_file.txt" 
-target_file = "transformed_data.csv" 
+Use the `cp` command.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```
+cp display.sh report.sh
 ```
 
-Remember to save your file! You may use `Ctrl+S` to save the file or click `Save` in the `File` tab.
+</details>
 
-## Task 1: Extraction
+### 6. Move your copied file, `report.sh`, up one level in the directory tree to the parent directory. Verify your changes.
 
-Next, you will develop the functions to extract the data from different file formats. As there will be different functions for the file formats, you\'ll have to write one function each for the `.csv`, `.json`, and the `.xml` filetypes.
+<details>
+<summary>Click here for Hint</summary>
 
-You can name these three functions as `extract_from_csv()`, `extract_from_json()`, and `extract_from_xml()`. You need to pass the data file as an argument, `file_to_process`, to each function.
+Use the `mv` and `ls` commands, and recall the shortcut notation for the relative path to the parent directory of the present working directory.
 
-To extract from a `CSV` file, you can define the function `extract_from_csv()`as follows using the `pandas` function `read_csv`:
+</details>
 
-```python
-def extract_from_csv(file_to_process): 
-    dataframe = pd.read_csv(file_to_process) 
-    return dataframe 
+<details>
+<summary>Click here for Solution</summary>
+
+```
+mv report.sh ../
+ls 
+ls ../
 ```
 
-To extract from a `JSON` file, you can define the function `extract_from_json()`using the `pandas` function `read_json`. It requires an extra argument `lines=True` to enable the function to read the file as a `JSON` object on line to line basis as follows.
+</details>
 
-```python 
-def extract_from_json(file_to_process): 
-    dataframe = pd.read_json(file_to_process, lines=True) 
-    return dataframe 
+### 7. Delete the file `display.sh`.
+
+<details>
+<summary>Click here for Hint</summary>
+
+Use the `rm` command.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```
+rm -i display.sh
 ```
 
-To extract from an `XML` file, you need first to parse the data from the file using the `ElementTree` function. You can then extract relevant information from this data and append it to a pandas dataframe as follows.
+</details>
 
-> ### Note: Adding Data to DataFrames using `pd.concat`
-> In this lab, we use `pd.concat` to append data to an existing DataFrame. This method is recommended because the `append` method is deprecated. `pd.concat` offers better efficiency and flexibility, especially when combining multiple DataFrames.
->
-> **Why use `pd.concat`:**
-> - `pd.concat` is more efficient when adding rows or combining multiple DataFrames.
-> - It provides better control over the operation, allowing you to concatenate along rows or columns.
-> - It also includes the `ignore_index=True` argument, which resets the index to avoid duplication when combining DataFrames.
->
-> **Example:**
-> ```python
-> import pandas as pd
->
-> # Create DataFrames
-> df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
-> df2 = pd.DataFrame({'A': [5], 'B': [6]})
->
-> # Use concat
-> result = pd.concat([df1, df2], ignore_index=True)
-> print(result)
-> ```
->
-> **Output:**
->
->  ``  A  B``
-> ``0 1  3``
-> ``1  2  4``
-> ``2  5  6``
+### 8. List the files in `/etc` directory in the ascending order of their access time.
 
-**Note:** You must know the headers of the extracted data to write this function. In this data, you extract \"name\", \"height\", and \"weight\" headers for different persons.
+<details>
+<summary>Click here for Hint</summary>
 
-This function can be written as follows:
+Use the `ls` command with the right options.
 
-```python
-def extract_from_xml(file_to_process): 
-    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
-    tree = ET.parse(file_to_process) 
-    root = tree.getroot() 
-    for person in root: 
-        name = person.find("name").text 
-        height = float(person.find("height").text) 
-        weight = float(person.find("weight").text) 
-        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name, "height":height, "weight":weight}])], ignore_index=True) 
-    return dataframe 
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```
+ls -ltr /etc/
 ```
 
-Now you need a function to identify which function to call on basis of the filetype of the data file. To call the relevant function, write a function `extract`, which uses the `glob` library to identify the filetype. This can be done as follows: 
+</details>
 
-```python 
-def extract(): 
-    extracted_data = pd.DataFrame(columns=['name','height','weight']) # create an empty data frame to hold extracted data 
 
-# process all csv files, except the target file
-    for csvfile in glob.glob("*.csv"): 
-        if csvfile != target_file:  # check if the file is not the target file
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
+### 9. Copy the file `/var/log/bootstrap.log` to your current directory.
 
-# process all json files 
-    for jsonfile in glob.glob("*.json"): 
-        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
+<details>
+<summary>Click here for Hint</summary>
 
-# process all xml files 
-    for xmlfile in glob.glob("*.xml"): 
-        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
+Use the `cp` command to copy the file to your current directory `.`
 
-    return extracted_data 
-``` 
-After adding these functions to `etl_code.py` you complete the implementation of the extraction part. 
+</details>
 
-Remember to save your file using `Ctrl+S`. 
+<details>
+<summary>Click here for Solution</summary>
 
-## Task 2 - Transformation
+```
+cp /var/log/bootstrap.log .
+```
 
-The height in the extracted data is in inches, and the weight is in pounds. However, for your application, the height is required to be in meters, and the weight is required to be in kilograms, rounded to two decimal places. Therefore, you need to write the function to perform the unit conversion for the two parameters. 
+</details>
 
-The name of this function will be `transform()`, and it will receive the extracted dataframe as the input. Since the dataframe is in the form of a dictionary with three keys, \"name\", \"height\", and \"weight\", each of them having a list of values, you can apply the transform function on the entire list at one go. 
+### Summary
 
-The function can be written as follows: 
+In this lab, you learned that you can use the commands:
 
-```python 
-def transform(data): 
-'''Convert inches to meters and round off to two decimals 
-1 inch is 0.0254 meters '''
-    data['height'] = round(data.height * 0.0254,2) 
-
-'''Convert pounds to kilograms and round off to two decimals 
-1 pound is 0.45359237 kilograms '''
-    data['weight'] = round(data.weight * 0.45359237,2) 
-
-    return data 
-``` 
-The output of this function will now be a dataframe where the \"height\" and \"weight\" parameters will be modified to the required format. 
-
-You can add the `transform()` function to the `etl_code.py` file, thus completing the transform operation. 
-
-Remember to save your file using `Ctrl+S`. 
-
-## Task 3 - Loading and Logging
-
-You need to load the transformed data to a `CSV` file that you can use to load to a database as per requirement. 
-
-To load the data, you need a function `load_data()` that accepts the transformed data as a dataframe and the `target_file` path. You need to use the `to_csv` attribute of the dataframe in the function as follows: 
-
-```python 
-def load_data(target_file, transformed_data): 
-    transformed_data.to_csv(target_file) 
-``` 
-
-Finally, you need to implement the logging operation to record the progress of the different operations. For this operation, you need to record a message, along with its timestamp, in the `log_file`. 
-
-To record the message, you need to implement a function `log_progress()` that accepts the log message as the argument. The function captures the current date and time using the `datetime` function from the `datetime` library. The use of this function requires the definition of a date-time format, and you need to convert the timestamp to a string format using the `strftime` attribute. The following code creates the log operation: 
-
-```python 
-def log_progress(message): 
-    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
-    now = datetime.now() # get current timestamp 
-    timestamp = now.strftime(timestamp_format) 
-    with open(log_file,"a") as f: 
-        f.write(timestamp + ',' + message + '\n') 
-``` 
-
-After you add these functions to `etl_code.py`, you will complete the implementation of the loading and logging operations. With this, all the functions for Extract, Transform, and Load (ETL) are ready for testing. 
-
-Remember to save your file using `Ctrl+S`. 
-
-## Testing ETL operations and log progress
-
-Now, test the functions you have developed so far and log your progress along the way. Insert the following lines into your code to complete the process. Note the comments on every step of the code. 
-
-```python 
-# Log the initialization of the ETL process 
-log_progress("ETL Job Started") 
-
-# Log the beginning of the Extraction process 
-log_progress("Extract phase Started") 
-extracted_data = extract() 
-
-# Log the completion of the Extraction process 
-log_progress("Extract phase Ended") 
-
-# Log the beginning of the Transformation process 
-log_progress("Transform phase Started") 
-transformed_data = transform(extracted_data) 
-print("Transformed Data") 
-print(transformed_data) 
-
-# Log the completion of the Transformation process 
-log_progress("Transform phase Ended") 
-
-# Log the beginning of the Loading process 
-log_progress("Load phase Started") 
-load_data(target_file,transformed_data) 
-
-# Log the completion of the Loading process 
-log_progress("Load phase Ended") 
-
-# Log the completion of the ETL process 
-log_progress("ETL Job Ended") 
-``` 
-
-Remember to save your file using `Ctrl+S`. 
-
-## Execution of code
-
-Execute `etl_code.py` from a terminal shell using the command 
-
-```bash 
-python3.11 etl_code.py 
-``` 
-
-Upon execution, you can view the output of the print command on the terminal as shown in the image below. 
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/code_output.png" width="400" alt="Print command output"> <br>
-
-The contents of the log file will appear as shown in the image below. 
-
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/log_file.png" alt="Log file contents."> 
-
-## Lab Solution
-
-In case you face some issue while you execute the created code, it might be because of missing a step in the process somewhere. The complete code of all the steps is given below to help you resolve the issue. Please note that you should refer to this only if you are unable to achieve the desired results yourself or get an error during the execution in the next step.  
-
-<details><summary>Click here for the code</summary> 
-
-```python 
-import glob 
-import pandas as pd 
-import xml.etree.ElementTree as ET 
-from datetime import datetime 
-
-log_file = "log_file.txt" 
-target_file = "transformed_data.csv" 
-
-def extract_from_csv(file_to_process): 
-    dataframe = pd.read_csv(file_to_process) 
-    return dataframe 
-
-def extract_from_json(file_to_process): 
-    dataframe = pd.read_json(file_to_process, lines=True) 
-    return dataframe 
-
-def extract_from_xml(file_to_process): 
-    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
-    tree = ET.parse(file_to_process) 
-    root = tree.getroot() 
-    for person in root: 
-        name = person.find("name").text 
-        height = float(person.find("height").text) 
-        weight = float(person.find("weight").text) 
-        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name,"height":height, "weight":weight}])], ignore_index=True) 
-    return dataframe 
-
-def extract(): 
-    extracted_data = pd.DataFrame(columns=['name','height','weight'])  # create an empty data frame to hold extracted data
-
-# process all csv files, except the target file
-    for csvfile in glob.glob("*.csv"): 
-        if csvfile != target_file:  # check if the file is not the target file
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
-
-# process all json files 
-    for jsonfile in glob.glob("*.json"): 
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
-
-# process all xml files 
-    for xmlfile in glob.glob("*.xml"): 
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
-
-    return extracted_data 
-
-def transform(data): 
-# Convert inches to meters and round off to two decimals 
-# 1 inch is 0.0254 meters 
-    data['height'] = round(data.height * 0.0254,2) 
-
-# Convert pounds to kilograms and round off to two decimals 
-# 1 pound is 0.45359237 kilograms 
-    data['weight'] = round(data.weight * 0.45359237,2) 
-
-    return data 
-
-def load_data(target_file, transformed_data): 
-    transformed_data.to_csv(target_file) 
-
-def log_progress(message): 
-    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
-    now = datetime.now() # get current timestamp 
-    timestamp = now.strftime(timestamp_format) 
-    with open(log_file,"a") as f: 
-        f.write(timestamp + ',' + message + '\n') 
-
-# Log the initialization of the ETL process 
-log_progress("ETL Job Started") 
-
-# Log the beginning of the Extraction process 
-log_progress("Extract phase Started") 
-extracted_data = extract() 
-
-# Log the completion of the Extraction process 
-log_progress("Extract phase Ended") 
-
-# Log the beginning of the Transformation process 
-log_progress("Transform phase Started") 
-transformed_data = transform(extracted_data) 
-print("Transformed Data") 
-print(transformed_data) 
-
-# Log the completion of the Transformation process 
-log_progress("Transform phase Ended") 
-
-# Log the beginning of the Loading process 
-log_progress("Load phase Started") 
-load_data(target_file,transformed_data) 
-
-# Log the completion of the Loading process 
-log_progress("Load phase Ended") 
-
-# Log the completion of the ETL process 
-log_progress("ETL Job Ended") 
-``` 
-</details> 
-
-## Practice Exercises
-
-Follow the process learned in this lab to perform ETL operations on the data available in the link below. 
-
-``` 
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/datasource.zip 
-``` 
-
-Complete the following practice exercises: 
-
-**Step 1:** Create a folder `data_source` and use the terminal shell to change the current directory to `\home\project\data_source`. Create a file `etl_practice.py` in this folder.  
-
-**Step 2:** Download and unzip the data available in the link shared above. 
-
-**Step 3:** The data available has four headers: \'car_model\', \'year_of_manufacture\', \'price\', \'fuel\'. Implement the extraction process for the `CSV`, `JSON`, and `XML` files.  
-
-**Step 4:** Transform the values under the \'price\' header such that they are rounded to 2 decimal places. 
-
-**Step 5:** Implement the loading function for the transformed data to a target file, `transformed_data.csv`. 
-
-**Step 6:** Implement the logging function for the entire process and save it in `log_file.txt`. 
-
-**Step 7:** Test the implemented functions and log the events as done in the lab. 
-
-Please note that the solutions for this practice exercise are not provided to motivate you to try them yourself. However, feel free to share your opinions on the solutions as well as your questions in the discussion forums. 
-
-### Conclusion
-
-In this lab, you practiced the implementation of: 
-
-- Extraction of data from `CSV`, `JSON`, and `XML` file formats. 
-
-- Transformation of data as per requirement. 
-
-- Loading the transformed data to a `CSV` file. 
-
-- Logging the progress of the said operations. 
-
+- `pwd` to get the location of your present working directory
+- `ls` to list the files and directories within a directory
+- `mkdir` to create a new directory
+- `cd` to change your present working directory
+- `touch` to create a new file
+- `find` to search for and locate files
+- `rm` to remove a file
+- `mv` to rename or move a file
+- `cp` to copy a file
 
 
 
