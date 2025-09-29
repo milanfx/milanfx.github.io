@@ -5,250 +5,489 @@ permalink: /xxx/
 ---
 
 
-# User Management and Access Control in PostgreSQL
+# Cloudant Practice
 
-**Estimated Time Needed: 15 Minutes**
+**Estimated Time Needed: 45 Minutes**
 
 ### Overview
 
-For much of the routine tasks involved with interacting with a database, such as reading the content of a table or adding new entries, the postgres superuser may not be appropriate as it bypasses all permission checks, which carries inherent risk. Furthermore, as a database administrator, you will almost certainly not be the only one who will need to access the database in some capacity. For this reason, you will need a way to add new users to the database and give them the proper privileges that is appropriate for their use cases.
+You\'ll now put into practice the skills you learnt working with Cloudant.
 
 ### Objectives
 
-After completing this lab, you will be able to:
+- Export data from a Cloudant database
+- Import data into a Cloudant database
+- Replicate a Cloudant database
+- Create indexes on a Cloudant database
+- Query data in a Cloudant database
 
-- Create roles in a database and grant them select permissions
-- Create new users in the database and assign them the appropriate role
-- Revoke and deny access to the database from a user
+### About This SN Labs Cloud IDE
 
-### Software used in this Lab
+This Skills Network Labs Cloud IDE provides a hands-on environment for course and project-related labs. It utilizes Theia, an open-source IDE (Integrated Development Environment) platform that can be run on a desktop or the cloud. To complete this lab, you will also need an instance of Cloudant running in IBM Cloud.
 
-In this lab, you will be using PostgreSQL. It is a popular open-source object Relational Database Management System (RDBMS) capable of performing a wealth of database administration tasks, such as storing, manipulating, retrieving, and archiving data.
+### Important notice about this lab environment
 
-To complete this lab, you will be accessing the PostgreSQL service through the IBM Skills Network (SN) Cloud IDE, which is a virtual development environnement you will utilize throughout this course.
+Please be aware that sessions for this lab environment are not persisted. Every time you connect to this lab, a new environment is created for you. Any data you may have saved in the earlier session would get lost. Plan to complete these labs in a single session to avoid losing your data.
 
-### Database used in this Lab
+### Working with Files in Cloud IDE
 
-In this lab, you will use a database from https://postgrespro.com/education/demodb distributed under the [PostgreSQL licence](https://www.postgresql.org/about/licence/). It stores a month of data about airline flights in Russia and is organized according to the following schema:
+If you are new to Cloud IDE, this section will show you how to create and edit files that are part of your project in Cloud IDE.
 
-![Schema fn demo database for PostgreSQL](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20User%20Management%20and%20Access%20Control/images/DB_schema.png)
+To view your files and directories inside Cloud IDE, click the file icon to reveal it.
 
-### Launching PostgreSQL in Cloud IDE
+![Files icon highlighted to reveal project directory](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/empty-project-directory-icon-selected.png "Files icon highlighted to reveal project directory")
 
-To get started with this lab, launch PostgreSQL using the Cloud IDE. You can do this by following these steps:
+If you have cloned (using the `git clone` command) boilerplate/starting code, then it will look like the image below:
 
-1. Click on the **Skills Network extension** button on the left side of the window.
+![Project directory showing boilerplate code](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/boilerplate-code.png "Project directory showing boilerplate code")
 
-2. Open the **DATABASES** drop-down menu and click on **PostgreSQL**.
+If you have not cloned and are starting with a blank project, it will look like this:
 
-3. Click on the **Create** button. PostgreSQL may take a few moments to start.
+![Empty project directory](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/empty-project-directory.png "Empty project directory")
 
-![Screenshot for launching PostgreSQL](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/SIe6YjlLjbFsXxU-km3VBg/k2-postgre-create.png)
+### Create a New File
 
-### Downloading and Creating the Database
+To create a new file in your project, right-click and select the New File option.  You can also choose `File -> New File` to do the same.
 
-**First, we will need to download the database.**
+![Create new file menu](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-new-file-menu.png "Create new file menu")
 
-1. Open a new terminal by clicking on the **New Terminal** button near the bottom of the interface.
 
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/RvGiIJmBE-pV6KzlfQ7ETA/k2-postgre-terminal.png)
+You will then be prompted to name the new file. In this scenario, let\'s name it  `sample.html`.
 
-2. Run the following command in the terminal.
+![New file name](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/new-file-name.png "New file name")
+
+Clicking the file name `sample.html` in the directory structure will open the file on the right pane. You can create all different types of files. For example, `FILE_NAME.js` for JavaScript files.
+
+![Viewing sample file](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/viewing-sample-file.png "Viewing sample file")
+
+In the example below, we pasted some basic HTML code and then saved the file.
+
+![Editing sample file](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/editing-sample-file.png "Editing sample file")
+
+We save this file by:
+- Going in the menu
+- Press `Command + S` on Mac or `CTRL + S` on Windows
+- Alternatively, it will Autosave your work as well
+
+![Save file menu](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/save-file.png "Save file menu")
+
+
+## Set-up: Create IBM Cloud Account
+
+To access the resources and services that the IBM Cloud provides, you need an IBM Cloud Account. This lab will take you through step-by-step instructions to create IBM Cloud Account.
+
+### Activate Trial Account
+
+1. The previous section of the lab is the first step for activating your IBM Cloud trial account using Feature Code.
+
+2. On clicking on `Open Tool` button, you will get a unique code.
+
+3. Next, click on Activate Your Trial. It will redirect you to the IBM Cloud registration page, to create an account on IBM Cloud.
+
+![activate trial account](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/activate_trial_account.png "activate trial account")
+
+### Create an IBM Cloud Account
+
+1. Once you are on the [account creation](https://cloud.ibm.com/registration?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DB0151EN-edX) page, follow the below instructions to create an IBM cloud trial account.
+
+2. Enter your **Email** address [preferably use Gmail ID or Yahoo ID] and a strong **Password**, as per criteria and then click the **Next** button.
+
+![enter email address and password](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/enter_details.png "enter email address and password")
+
+**NOTE:** Please ensure that you provide an email address that you have not used previously to create any other IBM Cloud account, and you are able to readily access your email to retrieve the verification code required in the next step.
+
+3. An email is sent to the address that you signed up with to confirm your email address. Check your email and copy and paste **Verification code**. Then click **Next**.
+
+![verify email](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/verify-email.png "verify email")
+
+4. Once your email is successfully verified, enter your **First name**, **Last name**, and preferably select **United States** under **Country or region** then click **Next**.
+
+**Note:** Kindly use your full last name instead of just using single letter/initials.
+
+Example: 
+
+First Name: test
+
+Last Name: skillup
+
+![personal information](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/personal-information.png "personal information")
+
+5. Go through the Account Notice and opt for Email updates if you desire, accept the terms and conditions and click on **Continue**.
+
+![accept and continue](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/accept-and-continue.png "accept and continue")
+
+6. Before creating your account, review the account privacy notice and acknowledge that you have read and understood by checking the checkbox and click on Continue
+
+![accept privacy notice](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/accept-privacy-notice.png "accept privacy notice")
+
+It takes a few seconds to create and set up your account.
+
+7. On the next screen, you will be asked to verify identity where you will see the feature code has been applied for you already. Then click on **Create account**.
+
+![verify identity](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/verify_identity.png "verify identity")
+
+**Note:** It might take a couple of minutes to create your account.
+
+**Note:** Please ensure you should not use the Credit Card option to verify your account for course work as that can result in unnecessary charges and delays in activating your account.
+
+8. Once you have successfully created your IBM Cloud account, you should see the dashboard.
+
+![ibm cloud dashboard](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/ibm-cloud-dashboard.png "ibm cloud dashboard")
+
+9. Now you may explore the [IBM Catalog](https://cloud.ibm.com/catalog?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DB0151EN-edX) for exploring the services and resources offered by IBM Cloud.
+
+![ibm cloud catalog](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/catalog.png "ibm cloud catalog")
+
+## Set-up: Create IBM Cloudant Instance
+
+### Create an IBM Cloudant instance
+
+- Click on [cloud.ibm.com/catalog/services/cloudant](https://cloud.ibm.com/catalog/services/cloudant?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DB0151EN-edX) to create a Cloudant instance.
+
+Or you can alternatively click on `Create Resource`, search for Cloudant on the Dashboard page.
+
+You will be taken to the Cloudant instance creation page.
+
+![cloudant create instance](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-create-instance.png "cloudant create instance")
+
+- Select the region under the \"Available regions.\"
+
+It is OK to go with the default option, if you cannot figure out which region to choose.
+
+- Scroll down to configure Cloudant instance.
+
+![cloudant create instance steps](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-create-instance-steps.png "cloudant create instance steps")
+
+- Set your instance name to `mycloudant` or anything else that you prefer.
+
+- Authentication Method is a critical setting. Select \"IAM and legacy Credentials\" as your Authentication Method. If you choose any other Authentication Method, some labs will not work.
+
+- Select the **Lite** plan.
+
+- Click on `Create`
+
+You should see a screen like this:
+
+![service created](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-instance-create2.png "service created")
+
+Your Cloudant service will be created and you will be redirected to the Resource list page.
+
+- If you are not redirected, you can click on this link [cloud.ibm.com/resources?groups=resource-instance](https://cloud.ibm.com/resources?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DB0151EN-edX&groups=resource-instance)
+
+You may see a screen like this, indicating the Provision in progress.
+
+![resources list](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-instance-create3.png "resources list")
+
+- Wait till the status turns \'Active\' and click on `mycloudant` or your custom instance name.
+
+![mycloudant resource created](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-instance-create4.png "mycloudant resource created")
+
+You will be taken to the Cloudant instance page.
+
+You have successfully created the Cloudant instance.
+
+### Create Cloudant Service credentials
+
+- On the Cloudant instance page, click on `Service Credentials`
+
+![cloudant instance page](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/cloudant-instance-page.png "cloudant instance page")
+
+- Click on `New Credential`
+
+![new credentials button](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-credentials1.png "new credentials button")
+
+- Create credential pop up appears. Accept the default values for Name and Role and click on `Add`
+
+![add credentials](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-credentials2.png "add credentials")
+
+- Your Cloudant Service credentials will be created. Click on the chevron to view the credentials.
+
+DO NOT attempt to use the credentials shown here. These are expired credentials.
+
+![view credentials](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-credentials3.png "view credentials")
+
+- You will be using the username, password and url in the next labs.
+
+![credential details](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-credentials4.png "credential details")
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/labs/Cloudant/images/create-credentials4.png)
+
+You have successfully created a Cloudant instance and Service credentials for your instance.
+
+Note: If you do not see the password field in your credentials, it is because in Exercise 2, Step 5 you have not selected \"IAM and legacy credentials.\" You can fix it by deleting your current Cloudant instance and following this lab from the beginning to create a new instance of Cloudant.
+
+## Set-up: Using HTTP API to create and query Cloudant databases
+
+Before you start working with the HTTP API to access the Cloudant, you need to collect the below details of your Cloudant instance, from the Service Credentials.
+
+1. Your Cloudant username
+
+2. Your Cloudant password
+
+3. Your Cloudant URL
+
+![credential details](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/create-credentials4.png "credential details")
+
+Copy the `url` without the double quotes on either side.
+
+Replace the value of `CLOUDANTURL` given below with yours.
+
+DO NOT use the values given below. They are all expired credentials.
+
+After replacing with your credentials, copy and paste the below command on the terminal.
+
+This url contains your Cloudant username and password. DO NOT MAKE IT PUBLIC OR SHARE IT WITH ANYONE.
+
+```bash
+export CLOUDANTURL="<COPIED_VALUE>"
+```
+
+Test if you can reach your Cloudant server from the lab environment.
+
+Run the below command on the terminal.
+
+```bash
+curl $CLOUDANTURL
+```
+
+If you get an output similiar to the one below, it means you are able to reach your Cloudant server.
+
+
+![curl cloudant outcome](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/output2.png "curl cloudant outcome")
+
+Test your credentials.
 
 ```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/example-guided-project/flights_RUSSIA_small.sql
-``` 
-
-The file which you downloaded is a full database backup of a month of flight data in Russia. Now, you can perform a full restoration of the dataset by first opening the PostgreSQL CLI. 
-
-3. Near the bottom of the window, click on the **PostgreSQL CLI** button to launch the Command Line Interface.
-
-![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/B6FH9Nojw_-IePJMUSkIMA/k2-6-postgresqlCLI.png)
-
-4. In the PostgreSQL CLI, type in the command `\i <file_name>.` In your case, the filename will be the name of the file you downloaded, `flights_RUSSIA_small.sql`. This will restore the data into a new database called `demo`.
+curl $CLOUDANTURL/_all_dbs
 
 ```
-\i flights_RUSSIA_small.sql
-```    
 
-The restorations may take a few moments to complete.
+![all dbs outcome](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DB0151EN-edX/images/output3.png "all dbs outcome")
 
-5. Verify that the database was properly created by entering the following command:
+If you get a list of your databases, it indicates that your credentials are correct. Now we can proceed with the rest.
 
-```
-\dt
-```
+## Exercise 1 - Cloudant export data
 
-You should see the following output showing all the tables that are part of the `bookings` schema in the `demo` database.
+Before going ahead set the environment varible `CLOUDANTURL` to your actual cloudant url from your service credentials.
 
-![Command line shows all tables that belong to bookings schema in demo database](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20User%20Management%20and%20Access%20Control/images/SC_3.png)
+### Create sample data
 
-## Exercise 1: Create New Roles and Grant them Relevant Privileges
+Let\'s create some data if you don\'t have already.
 
-In PostgreSQL, users, groups, and roles are all the same entity, with the difference being that users can log in by default.
+```bash
+curl -X DELETE $CLOUDANTURL/diamonds
+curl -X PUT $CLOUDANTURL/diamonds
 
-In this exercise, you will create two new roles: `read_only` and `read_write`, then grant them the relevant privileges.
+curl -X PUT $CLOUDANTURL/diamonds/1 -d '{
+    "carat": 0.31,
+    "cut": "Ideal",
+    "color": "J",
+    "clarity": "SI2",
+    "depth": 62.2,
+    "table": 54,
+    "price": 339
+  }'
 
-To begin, ensure that you have the PostgreSQL Command Line Interface open and connected to the `demo` database, as such:
-
-![PostgreSQL CLI](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20User%20Management%20and%20Access%20Control/images/pg_CLI.png)
-
-### Task A: Create a `read_only` role and grant it privileges
-
-1. To create a new role named `read_only`, enter the following command into the CLI:
-
-```
-CREATE ROLE read_only;
-```
-
-2. First, this role needs the privilege to connect to the `demo` database itself. To grant this privilege, enter the following command into the CLI:
-
-```
-GRANT CONNECT ON DATABASE demo TO read_only;
-```
-
-3. Next, the role needs to be able to use the schema in use in this database. In our example, this is the `bookings` schema. Grant the privilege for the `read_only` role to use the schema by entering the following:
-
-```
-GRANT USAGE ON SCHEMA bookings TO read_only;
+curl -X PUT $CLOUDANTURL/diamonds/2 -d '{
+    "carat": 0.2,
+    "cut": "Premium",
+    "color": "E",
+    "clarity": "SI2",
+    "depth": 60.2,
+    "table": 62,
+    "price": 351
+  }'
 ```
 
-4. To access the information in tables in a database, the `SELECT` command is used. For the `read_only` role, we want it to be able to access the contents of the database but not to edit or alter it. So for this role, only the `SELECT` privilege is needed. To grant this privilege, enter the following command:
+### Export in CSV format
+
+Export data from the `diamonds` database into csv format.
 
 ```
-GRANT SELECT ON ALL TABLES IN SCHEMA bookings TO read_only;
+couchexport --url $CLOUDANTURL --db diamonds --delimiter ","
 ```
 
-This allows the `read_only` role to execute the `SELECT` command on **all** tables in the bookings schema.
+You should see all the documents in the `diamonds` database printed in csv format.
 
-### Task B: Create a `read_write` role and grant it privileges
+### Export in JSON format
 
-1. Similarly, create a new role called `read_write` with the following command in the PostgreSQL CLI:
-
-```
-CREATE ROLE read_write;
-```
-
-2. As in Task A, this role should first be given the privileges to connect to the `demo` database. Grant this privilege by entering the following command:
+Export data from the `diamonds` database into json format (one document per line).
 
 ```
-GRANT CONNECT ON DATABASE demo TO read_write;
+couchexport --url $CLOUDANTURL --db diamonds --type jsonl
 ```
 
-3. Give the role the privileges to use the `bookings` schema that is used in the `demo` database with the following:
+You should see all the documents in the `diamonds` database printed in json format.
+
+Export data from the `diamonds` database into json format and save to a file named `diamonds.json`.
 
 ```
-GRANT USAGE ON SCHEMA bookings TO read_write;
+couchexport --url $CLOUDANTURL --db diamonds --type jsonl > diamonds.json
 ```
 
-4. So far the commands for the `read_write` role have been essentially the same as for the `read_only` role. However, the `read_write` role should have the privileges to not only access the contents of the database, but also to create, delete, and modify entries. The corresponding commands for these actions are `SELECT`, `INSERT`, `DELETE`, and `UPDATE`, respectively. Grant this role these privileges by entering the following command into the CLI:
+Export data from the `diamonds` database into csv format and save to a file named `diamonds.csv`.
 
 ```
-GRANT SELECT, INSERT, DELETE, UPDATE ON ALL TABLES IN SCHEMA bookings TO read_write;
+couchexport --url $CLOUDANTURL --db diamonds --delimiter "," > diamonds.csv
 ```
 
-## Exercise 2: Add a New User and Assign them a Relevant Role
+## Exercise 2 - Import data into Cloudant
 
-In this exercise, you will create a new user for the database and assign them the one of the roles you created in Exercise 1. This method streamlines the process of adding new users to the database since you don't have to go through the process of granting custom privileges to each one. Instead, you can assign them a role and the user inherits the privileges of that role.
+Right-click on the link and \"open in a new tab\" to obtain the content of the json file and copy the entire content: <a href="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0151EN-SkillsNetwork/labs/Final%20Assignment/data/movie.json" target="_blank">movies.json</a>
 
-Suppose you wish to add a new user, `user_a`, for use by an information and help desk at an airport. In this case, assume that there is no need for this user to modify the contents of the database. As you may have guessed, the appropriate role to assign is the `read_only` role.
+Now, go to the lab environment by clicking on the Launch/Open Tool button, and create a new file named movie.json under the project directory and paste the entire content copied earlier into the newly created json file.
 
-1. To create a new user named `user_a`, enter the following command into the PostgreSQL CLI:
+### Import data from json into your Cloudant Database
 
-```
-CREATE USER user_a WITH PASSWORD 'user_a_password';
-```
+Go to your Cloudant Service created on IBM Cloud and then click on Launch Dashboard to launch the cloudant databases. Then, click on New database on the top-right corner and create a Non-patitioned database named movies.
 
-In practice, you would enter a secure password in place of 'user_a_password', which will be used to access the database through this user.
+Run the given command in the terminal to import `movies.json` into your Cloudant database `movies`:
 
-2. Next, assign `user_a` the `read_only` role by executing the following command in the CLI:
-
-```
-GRANT read_only TO user_a;
+```bash
+curl -XPOST $CLOUDANTURL/movies/_bulk_docs -Hcontent-type:application/json -d @movies.json
 ```
 
-3. You can list all the roles and users by typing the following command:
+## Exercise 3 - Replicate a local database into your Cloudant instance
 
-```
-\du
-```
+Using the replication page in the Cloudant dashboard, replicate the below source database using one time replication.
 
-You will see the following output:
-![PostgreSQL CLI output](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20User%20Management%20and%20Access%20Control/images/UAM_1.png)
-Notice that `user_a` was successfully created and that it is a member of `read_only`.
+Source
 
-## Exercise 3: Revoke and Deny Access
+- Type: Local Database
 
-In this exercise, you will learn how to revoke a user's privilege to access specific tables in a database.
+- Name: movies
 
-Suppose there is no need for the information and help desk at the airport to access information stored in the `aircrafts_data` table. In this exercise, you will revoke the `SELECT` privilege on the `aircrafts_data` table in the `demo` database from `user_a`.
+- Authentication : IAM Authentication
 
-1. You can use the `REVOKE` command in the Command Line Interface to remove specific privileges from a role or user in PostgreSQL. Enter the following command into the PostgreSQL CLI to remove the privileges to access the `aircrafts_data` table from `user_a`:
+Add your Cloudant API key below (you can find it in the service credentials tab).
 
-```
-REVOKE SELECT ON aircrafts_data FROM user_a;
-```
+Target
 
-2. Now suppose `user_a` is transferred departments within the airport and no longer needs to be able to access the `demo` database at all. You can remove all their `SELECT` privileges by simply revoking the `read_only` role you assigned to them earlier. You can do this by entering the following command in the CLI:
+- Type: New local database
 
-```
-REVOKE read_only FROM user_a;
-```
+- Authentication : IAM Authentication
 
-3. Now you can check all the users and their roles again to see that the `read_only` role was successfully revoked from `user_a` by entering the following command again:
+Add your Cloudant API key below (you can find it in the service credentials tab).
 
-```
-\du
-```
+Options
 
-You will see the following output:
+- Replication type: One time
 
-![PostgreSQL CLI shows results of revoking read only privileges](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20User%20Management%20and%20Access%20Control/images/UAM_2.png)
+Click on Start Replication
 
-Notice that `user_a` is still present but it is no longer a member of the `read_only` role.
+## Exercise 4 - Create indexes using HTTP API
 
-## Practice Exercise
-
-Now it's time to implement some of what you learned! In this practice exercise, you will use what you learned in the previous exercises to create a new user and assign them a relevant role.
-
-**Scenario**: _Suppose there is a new employee at the airline in which you are the database administrator for. They interact directly with clients to create new bookings for flights. As such, they will need to not only access the information in the database, but also to create new bookings._
-
-To complete this exercise, create a new user called `user_b` and grant it the privileges to both read and write to the `demo` database.
+### Create an index for the \"Director"
 
 <details>
-<summary>Hint (Click Here)</summary>
+<summary>Click here for Hint</summary>
 
-- For a refresher on how to create a user, feel free to take a look back at Exercise 2.
-- Recall that in this lab, you created a `read_write` role. This could be an appropriate role to assign to `user_b`.
+use curl command with the POST and use the index key in the  JSON document.
+
 </details>
 
 <details>
-<summary>Solution (Click Here)</summary>
+<summary>Click here for Solution</summary>
 
-1. First, you can create a new user using the following command:
+```bash
+curl -X POST $CLOUDANTURL/movies/_index \
+-H"Content-Type: application/json" \
+-d'{
+    "index": {
+        "fields": ["Director"]
+    }
+}'
 
-```
-CREATE USER user_b WITH PASSWORD 'user_b_password';
-```
-
-2. Next, you can grant the user you just created the `read_write` role by entering the following command into the CLI:
-
-```
-GRANT read_write TO user_b;
 ```
 
 </details>
 
-### Conclusion
+### Create an index for the \"title"
+
+<details>
+<summary>Click here for Hint</summary>
+
+use curl command with the POST and use the index key in the  JSON document.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```bash
+curl -X POST $CLOUDANTURL/movies/_index \
+-H"Content-Type: application/json" \
+-d'{
+    "index": {
+        "fields": ["title"]
+    }
+}'
+
+```
+
+</details>
+
+## Exercise 5 - Query data using HTTP API
+
+### Find movies by Director
+
+Write a query to find all movies directed by \'Richard Gage\' using the HTTP API
+
+<details>
+<summary>Click here for Hint</summary>
+
+use curl command with the POST and include the field `Director` in the query JSON document.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```bash
+curl -X POST $CLOUDANTURL/movies/_find \
+-H"Content-Type: application/json" \
+-d'{ "selector":
+        {
+            "Director":"Richard Gage"
+        }
+    }'
+
+```
+
+</details>
+
+### Find movie by title
+
+Write a query to list only the `year` and `Director` keys for the `title` \'Top Dog\' movies using the HTTP API.
+
+<details>
+<summary>Click here for Hint</summary>
+
+use curl command with the POST and include the field `title` in the query JSON document.
+
+</details>
+
+<details>
+<summary>Click here for Solution</summary>
+
+```bash
+curl -X POST $CLOUDANTURL/movies/_find \
+-H"Content-Type: application/json" \
+-d'{ "selector":
+        {
+            "title":"Top Dog"
+        },
+	"fields": ["year", "Director"]
+    }'
+
+```
+</details>
+
+### Summary
 
 **Congratulations!**
 
-You have completed this lab on user management and access control in PostgreSQL. You now have some foundational knowledge on how to create new roles for your database, add new users, and assign those users relevant roles. In addition, you also have the capability to revoke privileges from users in the database.
-
-
-
-
-
+In this lab, you have practiced the skills you learnt using IBM Cloudant.
 
 
 
