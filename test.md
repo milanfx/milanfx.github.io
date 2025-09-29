@@ -61,7 +61,7 @@ In this exercise, you will learn how to format data as a table, how to create a 
 
 **Step 3:** Click **OK**.
 
-<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div>
+<div style="text-align: center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div>
 
 **Step 4:** Double-click **Sheet1**, type **Pivot1** and click **OK**.
 
