@@ -5,13 +5,14 @@ permalink: /xxx/
 ---
 
 
-# Excel Entering and Formatting Data
+
+# Excel Using Pivot Tables
 
 **Estimated Time Needed: 30 Minutes**
 
 ### Overview
 
-In this lab, first you will learn some of the viewing options in Excel, and then learn how to enter and edit data in cells. Then, you will learn how to move, copy, paste, and fill data, and how to format cells and cell data in a worksheet.
+In this lab, first you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data. Next, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
 
 ### Software Used in this Lab
 
@@ -21,112 +22,155 @@ Although you can use the Excel Desktop software if you have access to this versi
 
 ### Dataset Used in this Lab
 
-The first dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
+The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
+Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
 
 We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
-
-The second dataset used in this lab is an internal dataset.
 
 ### Objectives
 
 After completing this lab, you will be able to:
 
-- Use viewing options, and enter and edit data
-- Copy and fill data, and format cells and data
+- Format data as a table
+- Create a Pivot Table and use fields to arrange data in a Pivot Table
+- Perform calculations using Pivot Table data
+- Use the Recommended Charts feature (does not work with the 'Basic' Office for the web plan.)
+- Use the Filters feature
+- Use the Slicers feature
+- Use the Timelines feature 
 
-## Exercise 1: Viewing, Entering and Editing Data
+## Exercise 1: Introduction to Creating Pivot Tables in Excel
 
-In this exercise, you will learn some of the viewing options in Excel, how to enter and edit data in cells.
+In this exercise, you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data.
 
-### Task A: Viewing Data
+### Task A: Format data as a table
 
-**Step 1:** Download the file **[indian_startup_funding_Lab3.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/indian_startup_funding_Lab3.xlsx)**. Upload and open it using Excel for the web.
+**Step 1:** Download the file **[indian_startup_funding_Lab7.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7.xlsx)**. Upload and open it using Excel for the web.
 
-**Step 2:** Select **F20:H26** (if required, use the vertical and horizontal scroll bars to bring the selected cell range area to the center of the screen). Hold **CTRL and +** to zoom in closer to the specific area of the data. Then hold **CTRL and -** to zoom the worksheet back out to its original size. (**NOTE:** **Zoom to Selection** which is found under the **View** tab of Excel Desktop, is not available for Excel for the web)
+**Step 2:** Select cell **A2**.
 
-**Step 3:** On the ribbon, click **View, Freeze Panes, Freeze Top Row**. Now you have headings in your columns like a header row, which will remain static on screen while you move down the worksheet. Next, click **Unfreeze Panes**, and click **Freeze First Column**. The *Sr No* column will remain static on the screen while you move right across the worksheet. Lastly, click **Unfreeze Panes** to end this step.
+**Step 3:** On the **Home** tab, in the **Tables** group, click **Format as Table**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/1A.3.png" width="400"></div>
+**Step 4:** Select **Light Gray, Table Style Medium 15**.
 
-**Step 4:** To freeze both the top row and the first column at the same time, select cell **B2** and click **View, Freeze Panes, Freeze Panes**.
+### Task B: Create a pivot table and use fields to arrange data in a pivot table
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/1A.4.gif" width="800"></div>
+**Step 1:** Select cell **D4**
 
-**Step 5:** You can open multiple workbooks in multiple browser tabs in Excel for the web, and to switch between them, you just click each browser tab. (In Excel Desktop you have to click the **View** tab, then click **Switch Windows**)
+**Step 2:** On the **Insert** tab, click **PivotTable**.
 
-### Task B: Entering Data
+**Step 3:** Click **OK**.
 
-**Step 1:** Download the file **[Personal_Monthly_Expenditure_Lab3.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/Personal_Monthly_Expenditure_Lab3.xlsx)**(This is a blank worksheet where you are required to complete the tasks outlined below). Upload and open it using Excel for the web. Go to the **Expense - 2018** worksheet.
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div>
 
-**Step 2:** In cell **A1**, type **Month** and press **Tab**. Then type **Housing** and press **Tab**, type **Food & Dining**, and press **Tab**, type **Personal**, and press **Tab**, type **Auto & Transport**, then press **Tab**, type **Health & Fitness**, then press **Tab**. You are now done with the header row.
+**Step 4:** Double-click **Sheet1**, type **Pivot1** and click **OK**.
 
-**Step 3:** To enter some data as rows in column **A**, in **A2**, type **Jan** and press **Enter**. Then type **Feb**, and press **Enter**, type **Mar**, and press **Enter**, type **Apr**, and press **Enter**.
+**Step 5:** In the fields list, drag **Industry Vertical** to **Rows**.
 
-**Step 4:** To add another column between the **Housing** and **Food & Dining**, select column **C**, then right-click column **C**, and choose **Insert Columns**. In the top row header cell **C1**, type **Bills & Utilities**.
+**Step 6:** In the fields list, drag **City Location** to **Rows** above **Industry Vertical**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/1B.4.png" width="800"></div>
+**Step 7:** In the fields list, drag **Startup Name** to **Rows** below **Industry Vertical**.
 
-**Step 5:** Select columns **A to G**, then double-click the divider between **A** and **B** to adjust the column widths.
+**Step 8:** In the fields list, drag **Amount in USD** to **Values**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/1B.5.gif" width="800"></div>
+**Step 9:** Use the drop down arrow for the **City Location** and Sort By Value  in descending order (Largest to smallest) by the **Count of Amount in USD**.
 
-### Task C: Editing Data
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting1.png" width="400"></div> 
 
-**Step 1:** Select cell **C1** and press **Backspace** to clear the contents. Then type **Bills**. 
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting2.png" width="400"></div>
 
-**Step 2:** Click **Undo** to undo the change.
+**Step 10:** In the ribbon, select the **PivotTable** tab, click **Settings**, then in the **PivotTable Settings** pane, under **Layout**, select **Single column**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/1C.2.png" width="400"></div>
+**Step 11:** Right-click on the row label Amritsar and select **Expand/Collapse** and **Collapse Entire Field**. 
 
-## Exercise 2: Copying, Filling, and Formatting Cells and Data
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/collapse.png" width="600"></div>
 
-In this exercise, you will learn how to move, copy, paste, and fill data, and how to format cells and cell data in a worksheet.
+### Task C: Perform a simple calculation in a pivot table
 
-### Task A: Copying and Filling Data
+**Step 1:** In the **PivotTable Fields** pane, in the **Values** section, click the drop-down arrow next to **Count of Amount in USD**, and click **Value Field Settings**.
 
-**Step 1:** Select **A2:A5**. Hover over the edge of the selected cells to get the **Move** pointer and then drag the selection to move the selected cells to **B6**. Click **Undo**.
+**Step 2:** Select **Summarize value field by > Sum**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/2A.1.png" width="400"></div>
+<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.C.2.png" width="400"></div>
 
-**Step 2:** Select cell **A5**. Hover over the bottom right corner of cell **A5** to get the **+ (Fill Handle)** symbol, then drag to **A13**.
+**Step 3:** Click **OK**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/2A.2.gif" width="400"></div>
+**Step 4:** Select the column called **Sum of Amount in USD** and then on the **Home** tab, select **Accounting Number Format > $ English (United States)**.
 
-**Step 3:** On the **Expense - 2018** sheet, select **A1:G13** and press **CTRL+C**. Then on the **Expense - 2019** sheet, select cell **A1** and press **CTRL+V**. 
+## Exercise 2: Pivot Table Features
 
-**Step 4:** Select cell **A1** and press **CTRL+A** to select the whole datasheet. On the **Home** tab, in the **Cells** group, click the drop-down arrow under **Format**, and click **Auto-Fit Column Width**.
+In this exercise, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/2A.4.png" width="800"></div>
+**NOTE:** The 'Recommended Charts' feature only works with 'full' Office for the web plans (those plans that come with an Office 365 subscription). Recommended Charts do not work with the 'basic' plan that comes with a Microsoft Account.
 
-### Task B: Formatting Cells and Data
+### Task A: Use of the Recommended Charts feature (Optional: If you have a full Office for the web plan)
 
-Download the file **[Data_for_Personal_Monthly_Expenditure_Lab3.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/wjEWjWZpHIiN7j5Ch8L00Q/Data-for-Personal-Monthly-Expenditure-Lab3.xlsx)**, which contains data for the Expense - 2019 sheet.
+**Step 1:** Switch to worksheet **indian-startup-funding**.
 
-Copy the values from **B2:G13** and paste them into your existing Expense - 2019 sheet, which should then look like this:
+**Step 2:** Select column **F (City Location)**.
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/xhT2_hoVf0M570gIRQTWDw/data-table.png" width="800"></div>
+**Step 3:** On the **Insert** tab, select **Recommended Charts**.
 
-**Step 1:** <ins>Formatting Cells:</ins>
+**Step 4:** Click **+ Insert PivotChart**.
 
-- a. Select **A1:G13**. On the **Home**, in the **Tables** group, click **Format as Table**, and choose a table style from the list. In the pop-up dialog box, ensure that the option **My table has headers**, is checked and then click **OK**.
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.A.4.png" width="600"></div>
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/2B.1a.png" width="800"></div>
+**Step 5:** Switch to worksheet **indian-startup-funding** again.
 
-- b. Select **A2:A13**. In the **Font** group click **Italic**. In the font size box, select **10**. In the font style drop-down box, select **Arial**.
+**Step 6:** Select column **C, D, E**.
 
-**Step 2:** <ins>Formatting Cell Data:</ins>
+**Step 7:** On the **Insert** tab, select **Recommended Charts**.
 
-- a. Select column **B**, and use **SHIFT+right arrow** to select across to include column **G**. On the **Home** tab, in the **Number** group, click the **Number Format** drop-down list and choose **Currency**.
+**Step 8:** Choose the recommended chart, and click **+ Insert PivotChart**.
 
-- b. Select columns **B** to **G** again. On the **Home** tab, in the **Number** group, click **Decrease Decimal** once. 
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/recommend1.png" width="600"></div>
 
-- c. Select columns **B** to **G** again. On the **Home** tab, in the **Number** group, click the **Accounting Number Format ($)** drop-down list, and select **£ English (United Kingdom)**.
+### Task B: Use of the Filters feature
 
-<div align="center"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%203%20-%20Entering%20and%20Formatting%20Data/images/2B.2c.png" width="800"></div>
+**Step 1:** Switch to worksheet **Pivot1**.
+
+**Step 2:** In the Pivot Table, click the **Row Labels** arrow.
+
+**Step 3:** Select **City Location**, then **Filter...**.
+
+**Step 4:** Just select **Burnsville**, **Delhi**, **New York**, then click **OK** to display the amounts for startups in these three cities only.
+
+**Step 5:** In the Pivot Table, click the **Row Labels** arrow.
+
+**Step 6:** Select **City Location**, then click **Clear Filter From 'City Location'** to display the startups in all cities again.
+
+### Task C: Use of the Slicers feature
+
+**Step 1:** Download the file **[indian_startup_funding_Lab7_with_slicers_timelines.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7_with_slicers_timelines.xlsx)**. Upload and open it using Excel for the web.
+
+**Step 2:** Switch to worksheet **Pivot1** if you are not there.
+
+**Step 3:** In the **City Location** slicer, select **Burnsville**, then **Delhi**, then **New York**.
+
+**Step 4:** To filter by multiple selection in the **City Location** slicer, with **New York** still selected, press **CTRL** and select **Burnsville**, and then **Delhi**.
+
+**Step 5:** To filter using more than one slicer, in the **Investors Name** slicer, select **Amour Infrastructure**, then press **CTRL** and select **Westbridge Capital**, and then **Breakthrough Energy Ventures**.
+
+**Step 6:** In the **City Location** slicer, click the **Clear Filter** button, then in the **Investors Name** slicer, click the **Clear Filter** button.
+
+### Task D: Use of the Timelines feature
+
+**Step 1:** In the Date timeline, click **top right drop-down** and select **DAYS**, then scroll **left and right**.
+
+<div style="text-align: center; border: 1px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.D.1.png" width="600"></div>
+
+**Step 2:** In the Date timeline, click **top right drop-down** and select **QUARTERS**.
+
+**Step 3:** In the Date Timeline, select **2019 Q1**, then drag **2019 Q1 to 2019 Q3**.
+
+**Step 4:** In the Date timeline, click the **Clear Filter** icon.
+
+**Step 5:** In the Date timeline, click **top right drop-down** and select **YEARS**, then select **2020** only.
 
 **Congratulations!**
 
-You have completed Lab 3, and you are ready for the next topic.
+You have completed Lab 7, and you are ready for the next topic.
+
 
 
 
