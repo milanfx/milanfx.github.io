@@ -5,505 +5,225 @@ permalink: /xxx/
 ---
 
 
-# Navigating and Managing Files and Directories
+# Scheduling Jobs using crontab
 
-**Estimated Time Needed: 30 Minutes**
+**Estimated Time Needed: 20 Minutes**
 
-### Learning Objectives
+### Objectives
 
-After completing this lab, you will be able to:
+After completing this lab you will be able to:
 
-- Get the location of your present working directory
-- List the files and directories within a directory
-- Create a new directory
-- Change your present working directory
-- Create a new file
-- Search for and locate files
-- Remove, rename, move, or copy a file
+- List existing cron jobs
+- Add a cron job
+- Remove cron jobs
 
 ### About Skills Network Cloud IDE
 
-Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands on labs for course and project related labs. Theia is an open source IDE (Integrated Development Environment), that can be run on desktop or on the cloud. To complete this lab, you will be using the Cloud IDE based on Theia.
+Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands on labs for course and project related labs. Theia is an open source IDE (Integrated Development Environment), that can be run on desktop or on the cloud. to complete this lab, we will be using the Cloud IDE based on Theia running in a Docker container.
 
-### Important notice about this lab environment
+### Important Notice about this lab environment
 
-Please be aware that sessions for this lab environment are not persisted. Thus, every time you connect to this lab, a new environment is created for you and any data or files you may have saved in a previous session will be lost. To avoid losing your data, plan to complete these labs in a single session.
+Please be aware that sessions for this lab environment are not persisted. Every time you connect to this lab, a new environment is created for you. Any data you may have saved in the earlier session would get lost. Plan to complete these labs in a single session, to avoid losing your data.
 
-## Exercise 1 - Navigating Files and Directories
+## Exercise 1 - Understand crontab file syntax
 
-In these exercises, you will practice using commands for navigating and managing files and directories.
+**Cron** is a system daemon used to execute desired tasks in the background at designated times.
 
-### 1.1. Get the location of the present working directory
+A crontab file is a simple text file containing a list of commands meant to be run at specified times. It is edited using the `crontab` command.
 
-**`pwd`**
+Each line in a crontab file has five time-and-date fields, followed by a command, followed by a newline character (`\n`). The fields are separated by spaces. 
 
-When working in a Linux terminal, you will always be working from a directory. By default, you will start in your home directory. To get the absolute path of your present working directory, enter the following:
+The five time-and-date fields cannot contain spaces and their allowed values are as follows: 
 
-```
-pwd
-```
-
-This will print the name of the directory you are currently working in.
-
-### 1.2. List the files and directories in a directory
-
-**`ls`**
-
-To list the files and directories in the current directory, enter the following:
-
-```
-ls
-```
-
-If your directory happens to be empty, `ls` will not return anything.
-
-The following command will list the many binary and executable files which are present in your `/bin` (binaries) directory.
-
-```
-ls /bin
-```
-
-The `/bin` directory happens to be where Linux commmands such as `ls` and `pwd` are stored. For example, you can see that `ls` is present by entering the following:
-
-```
-ls /bin/ls
-```
-
-To list all files starting with `b` in the  `/bin` directory, try entering the following:
-
-```
-ls /bin/b*
-```
-
-**Tip:** The asterisk `*` is a special character called a *wildcard*. It is used to represent any string of characters.
-
-To list all files ending in `r` in the  `/bin` directory, enter the following:
-
-```
-ls /bin/*r
-```
-
-To print a longer list of files with additional information, such as the last-modified date, enter the following:
-
-```
-ls  -l
-```
-
-Here are some common options that you can try with the `ls` command:
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| `-a`   | list all files, including hidden files                                    |
-| `-d`   | list directories only, do not include files                               |
-| `-h`   | with `-l` and `-s`, print sizes like 1K, 234M, 2G                         |
-| `-l`   | include attributes like permissions, owner, size, and last-modified date  |
-| `-S`   | sort by file size, largest first                                          |
-| `-t`   | sort by last-modified date, newest first                                  |
-| `-r`   | reverse the sort order                                                    |
-
-To get a long list of all files in `/etc`, including any hidden files, enter the following:
-
-```
-ls -la /etc
-```
-
-Here we combined the options `-l` and `-a` by using the shorter notation, `-la`.
-
-## Exercise 2 - Creating Files and Directories
-
-### 2.1. Create a directory
-
-**`mkdir`**
-
-The `mkdir` command is used to create a new directory. 
-
-To create a directory named `scripts` in your current directory, run the following command:
-
-```
-mkdir scripts 
-```
-
-Use the `ls` command to verify whether the `scripts` directory was created:
-
-```
-ls 
-```
-
-You should see a directory named `scripts` listed.
-
-### 2.2. Change your current working directory
+| Field | Allowed values |
+|---|---|
+| minute | 0-59 |
+| hour | 0-23, 0 = midnight |
+| day | 1-31 |
+| month | 1-12 |
+| weekday | 0-6, 0 = Sunday |
 
-**`cd`**
+## Exercise 2 - List cron jobs
 
-To change your present working directory to the `scripts` directory, run the following command:
-
-```
-cd scripts
-```
+Open a new terminal, by clicking on the menu bar and selecting **Terminal**->**New Terminal**, as in the image below.
 
-Now use the `pwd` command to verify whether your current working directory has changed as expected:
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/new-terminal.png)
 
-```
-pwd
-```
+This will open a new terminal at the bottom of the screen as in the image below.
 
-You can enter `cd` without any directory name to move back to your home directory:
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/terminal_bottom_screen.png)
 
-```
-cd
-```
+Run the commands below on the newly opened terminal.
 
-Then, enter the `pwd` command to verify whether your current working directory has changed:
+The `-l` option of the `crontab` command prints the current crontab.
 
 ```
-pwd
+crontab -l
 ```
-
-The syntax `..` is a shortcut that refers to the parent directory of your current directory. Run the following command to move the directories up one level:
 
-```
-cd ..
-```
+You may get a message `no crontab for theia` if your crontab is empty.
 
-### 2.3. Create an empty file
+## Exercise 3 - Add a job in the crontab file
 
-**`touch`**
+### 3.1. Add a job to crontab
 
-First, return to your home directory by entering:
+To add a cron job, run the command below:
 
 ```
-cd
+crontab -e
 ```
-
-Next, use the `touch` command to create an empty file named `myfile.txt`:
 
-```
-touch myfile.txt
-```
+This will create a new crontab file for you (if you don\'t have one already). Now you are ready to add a new cron job.
 
-Now use the `ls` command to verify the creation of `myfile.txt`:
+Your crontab file will be opened in an editor as shown in the image below:
 
-```
-ls
-```
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/crontab1.png)
 
-If the file already exists, the `touch` command updates the access timestamp, or last-modified date of the file. To see this, enter:
+Scroll down to the end of the file using the arrow keys:
 
-```
-touch myfile.txt
-```
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/crontab2.png)
 
-And use the `date` command to verify the date change:
+Add the below line at the end of the crontab file:
 
 ```
-date -r myfile.txt
+0 21 * * * echo "Welcome to cron" >> /tmp/echo.txt
 ```
-
-## Exercise 3 - Managing Files and Directories
-
-### 3.1. Search for and locate files
 
-**`find`**
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/crontab3.png)
 
-The `find` command is used to search for files in a directory. You can search for files based on different attributes, such as the file\'s name, type, owner, size, or timestamp. <br>
+The above job specifies that the `echo` command should run when the minute is 0 and the hour is 21. It effectively means the  job  runs at 9.00 p.m every day.
 
-The `find` command conducts a search of the entire directory tree starting from the given directory name.
-
-For example, the following command finds all `.txt` files in the `/etc` directory and all of its subdirectories:
-
-```
-find /etc -name '*.txt'
-```
-You can also search for .conf files using the below command:
-```
-find /etc -name '*.conf'
-```
-**Note:** Along with listing all the `.txt` files, the terminal may return \"Permission denied\" errors.
+The output of the command should be sent to a file `/tmp/echo.txt`. 
 
-These errors are normal, as you have limited access permissions on the lab machine.
+Press `Ctrl` + `x` to save the changes.
 
-### 3.2. Remove files
+Press `y` to confirm.
 
-**`rm`**
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/crontab4.png)
 
-The `rm` command is used to delete files, ideally with the `-i` option, which creates a prompt to ask for confirmation before every deletion. 
+Press Enter to come out of the editor.
 
-To remove the file `myfile.txt`, enter the following command and press `y` to confirm deletion, or `n` to deny deletion:  
+Check if the job is added to the crontab by running the following command.
 
 ```
-rm -i myfile.txt
+crontab -l
 ```
 
-Use the `ls` command to verify removal:
+You should see the newly added job in the output.
 
-```
-ls
-```
-
-**Tip:** When you are only removing one file with the `rm` command, the `-i` option is redundant. But if you want to remove multiple files, for example by using a wildcard to find all filenames matching a pattern, it\'s best practice to confirm or deny each deletion by including the `-i` option. 
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Bash%20Scripting/Lab%20Scheduling%20Tasks%20Using%20Crontab/images/crontab5.png)
 
-Be careful when deleting files or directories! There is normally no way to restore a deleted file once it is deleted, as there is no trash folder. This is why you should always back up, or *archive*, your important files. You will learn more about archiving files soon.
+### 3.2. Schedule a shell script
 
-### 3.3. Move and rename a file
+Let us create a simple shell script that prints the current time and the current disk usage statistics.
 
-**`mv`**
+Step 1: On the menu on the lab screen, use **File->New File** to create a new file:
 
-You can use the `mv` command to move files from one directory to another and/or rename them.
+Step 2: Give the file name as `diskusage.sh` and click \'OK\'
 
-Before doing so, let\'s first create a new file called `users.txt`:
+Step 3: Save the following commands into the shell script:
 
 ```
-touch users.txt
+#! /bin/bash
+# print the current date time
+date
+# print the disk free statistics
+df -h
 ```
 
-You should always use caution when moving a file. If the target file already exists, it will be overwritten, or replaced, by the source file.
+Step 4: Save the file using the **File->Save** menu option.
 
-Conveniently, however, when the source and target directories are the same, you can use `mv` to rename a file.
+Step 5: Verify that the script is working:
 
-To illustrate this, use `mv` to rename `users.txt` to `user-info.txt` by entering the following command:
-
 ```
-mv users.txt user-info.txt
+chmod u+x diskusage.sh
+./diskusage.sh
 ```
 
-Because the source and target directories are the same (your present working directory), the `mv` command will rename the file.
+The script should print the current timestamp and the disk usage stats.
 
-Now use the `ls` command to verify the name change:
-
-```
-ls
-```
+Let us schedule this script to be run everyday at midnight 12:00 (when the hour is 0 on the 24 hour clock).
+We want the output of this script to be appended to `/home/project/diskusage.log`.
 
-Now, you can move `user-info.txt` to the `/tmp` directory as follows:
+Edit the crontab:
 
+```	
+crontab -e
 ```
-mv user-info.txt /tmp
-```
 
-Use the `ls` command twice to verify the move:
+Add the following line to the end of the file:
 
 ```
-ls
+0 0 * * * /home/project/diskusage.sh >>/home/project/diskusage.log
 ```
 
-```
-ls -l /tmp
-```
+Press `Ctrl` + `x` to save the changes.
 
-### 3.4. Copy files
+Press `y` to confirm.
 
-**`cp`**
+Press `Enter` to come out of the editor.
 
-You can use the `cp` command to copy `user-info.txt`, which is now in your `/tmp` directory, to your current working directory:
+Check if the job is added to the crontab by running the following command:
 
 ```
-cp /tmp/user-info.txt user-info.txt
+crontab -l
 ```
 
-Use the `ls` command to verify that the copy was successful:
+You should see the newly added job in the output.
 
-```
-ls
-```
+## Exercise 4 - Remove the current crontab
 
-At times, you may want to copy the contents of an existing file into a new one.
+The `-r` option causes the current crontab to be removed.
 
-The following command copies the content of `/etc/passwd` to a file named `users.txt` within the current directory:
+**Caution:** This removes all your cron jobs. Be extra cautious when you use this command on a production server.
 
 ```
-cp /etc/passwd users.txt
+crontab -r
 ```
 
-Again, use the `ls` command to verify if the copy was successful:
+Verify if your crontab is removed:
 
 ```
-ls
+crontab -l
 ```
 
 ## Practice exercises
 
-### 1. Display the contents of the `/home` directory.
+### 1. Create a cron job that runs the task `date >> /tmp/everymin.txt` every minute.
 
 <details>
 <summary>Click here for Hint</summary>
 
-Use the `ls` command.
+Refer to the crontab syntax description.
 
 </details>
 
 <details>
 <summary>Click here for Solution</summary>
 
-```
-ls /home
-```
-
-</details>    
-
-### 2. Ensure that you are in your home directory.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use `cd` to move to your home directory and then use `pwd` to verify.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
+Edit the crontab file:
 
 ```
-cd
-pwd
+crontab -e
 ```
 
-</details>
-
-### 3. Create a new directory called `tmp` and verify its creation.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `mkdir` and `ls` commands.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
+Add the following line at the end of the file:
 
 ```
-mkdir tmp
-ls
+- * * * * date >> /tmp/everymin.txt
 ```
 
-</details>
-
-### 4. Create a new, empty file named `display.sh` in the `tmp` directory, and verify its creation.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `cd`, `touch`, and `ls` commands.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-cd tmp
-touch display.sh
-ls -l
-```
-
-</details>
-
-### 5. Create a copy of `display.sh`, called `report.sh`, within the same directory.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `cp` command.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-cp display.sh report.sh
-```
-
-</details>
-
-### 6. Move your copied file, `report.sh`, up one level in the directory tree to the parent directory. Verify your changes.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `mv` and `ls` commands, and recall the shortcut notation for the relative path to the parent directory of the present working directory.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-mv report.sh ../
-ls 
-ls ../
-```
-
-</details>
-
-### 7. Delete the file `display.sh`.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `rm` command.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-rm -i display.sh
-```
-
-</details>
-
-### 8. List the files in `/etc` directory in the ascending order of their access time.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `ls` command with the right options.
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-ls -ltr /etc/
-```
-
-</details>
-
-
-### 9. Copy the file `/var/log/bootstrap.log` to your current directory.
-
-<details>
-<summary>Click here for Hint</summary>
-
-Use the `cp` command to copy the file to your current directory `.`
-
-</details>
-
-<details>
-<summary>Click here for Solution</summary>
-
-```
-cp /var/log/bootstrap.log .
-```
+Save the file and quit the editor.
 
 </details>
 
 ### Summary
 
-In this lab, you learned that you can use the commands:
+In this lab, you learned how to:
+- List cron jobs using `crontab -l`
+- Add cron jobs using `crontab -e`
+- Remove your current crontab using `crontab -r`
 
-- `pwd` to get the location of your present working directory
-- `ls` to list the files and directories within a directory
-- `mkdir` to create a new directory
-- `cd` to change your present working directory
-- `touch` to create a new file
-- `find` to search for and locate files
-- `rm` to remove a file
-- `mv` to rename or move a file
-- `cp` to copy a file
 
 
 
