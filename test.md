@@ -46,49 +46,49 @@ In this exercise, you will start a new dashboard for working with advanced Cogno
 
 **Step 3:** Scroll down and click **Launch**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png "Lab3_Cognos_launch"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png" style="width:auto; height:450px;"></div>
 
 **Step 4:** From the **Recent** section, click the uploaded data file **CustomerLoyaltyProgram.csv**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png "Lab3_Cognos_recent"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png" style="width:auto; height:450px;"></div>
 
 **Step 5:** The template window will be displayed, allowing you to select the type of dashboard and the template style. Select the **Tabbed** dashboard style. This will allow you to have multiple pages for your dashboards. Select the *five-panel template*, then click **Create**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png "Lab3_Cognos_template"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png" style="width:auto; height:450px;"></div>
 
 **Step 6:** To save the newly created dashboard, press **CTRL+S** or click the **Save** icon and then click **Save as**. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png "Lab3_Cognos_save"" style="width:auto; height:450px;"></div> 
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png" style="width:auto; height:450px;"></div> 
 
 **Step 7:** A new **Save as** window will pop up. Follow the steps as displayed below to save your dashboard as **Advanced Dashboard** in the **My content** section.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png "Lab3_Cognos_Save1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png" style="width:auto; height:450px;"></div>
 
 **Step 8:** As you build the dashboard, the location placement for visualization widgets in the dashboard template will be referenced using the following Panel numbers.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png "Lab3_cognos_template1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png" style="width:auto; height:450px;"></div>
 
 **Step 9:** From the **Navigation** panel, select **Sources** to ensure the data source panel is open in the left pane.
 
 **Step 10:** From the data source panel, select **Revenue** and drag it to the center of **Panel 1**, releasing it once you see the drop zone turn blue.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png "Lab3_Cognos_9"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png" style="width:auto; height:450px;"></div>
 
 **Step 11:** Click the summary chart in Panel 1 to bring it into focus. From the on-demand toolbar that appears in the main toolbar, click **Summarize**, and then select **Average**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png "Lab3_Cognos_average"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png" style="width:auto; height:450px;"></div>
 
 **Step 12:** In the summary chart in Panel 1, select the title of the visualization and change it to *Average Revenue*.
 
 **Step 13:** From the **Navigation** panel, select **Widgets** to open the widgets panel. Drag and drop **Money coin** from **Shapes** to the center of Panel 1.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png "Lab3_Cognos_moneycoin"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png" style="width:auto; height:450px;"></div>
 
 **Step 14:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the toolbar.
 
 **Step 15:** Your Panel 1 visualization should look similar to the one below:
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png "Lab3_Cognos_1.13"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png" style="width:auto; height:450px;"></div>
 
 ## Exercise 2: Working with Advanced Cognos Analytics dashboard capabilities
 
@@ -105,13 +105,13 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 2:** Right-click the **CustomerLoyaltyProgram.csv** data source and select **Calculation**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png "Lab3_Cognos_2.A.3"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png" style="width:auto; height:450px;"></div>
 
 **Step 3:** Change the calculation name to **Margin**. From the **Components** panel, drag **Unit Sale Price** to the **Expression** field, type a space, then the minus sign, **-**, to the right of it, and then drag **Unit Cost** to the right of that. Click **OK**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png "LAb3_Cognos_exp1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png "Lab3_Cognos_exp2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png" style="width:auto; height:450px;"></div>
 
 **Step 4:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed, and drag **Margin** to the center of **Panel 2**, releasing it once you see the drop zone turn blue.
 
@@ -119,15 +119,15 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 6:** From the data source panel, right-click on **Margin** and click **Format data**. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png "Lab3_Cognos_margin"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png" style="width:auto; height:450px;"></div>
 
 **Step 7:** In the **Format type** list, select **Currency**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png "Lab3_Cognos_currency1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png" style="width:auto; height:450px;"></div>
 
 **Step 8:** Select **$ (USD) - United States of America, dollar** as the currency and click **OK** at the bottom.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png "Lab3_Cognos_currency2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png" style="width:auto; height:450px;"></div>
 
 **Step 9:** In the margin chart in Panel 2, select the title of the visualization and change it to *Average Margin*.
 
@@ -135,7 +135,7 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 11:** Your Panel 2 visualization should look similar to the one below:
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png "Lab3_cognos_2.a.3"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png" style="width:auto; height:450px;"></div>
 
 ### Task B: Keep/Exclude Data Points from a Visualization
 
@@ -143,17 +143,17 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 2:** From the data source panel, drag **Location Code** to the **Color** drop zone of **Panel 3**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png "Lab3_Cognos_2.B.2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png" style="width:auto; height:450px;"></div>
 
 **Step 3:** Right-click the **Suburban** data point in the Panel 3 visualization, and select **Exclude**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png "Lab3_Cognos_2.B.3"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png" style="width:auto; height:450px;"></div>
 
 **Step 4:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
 
 **Step 5:** Your Panel 3 visualization should look similar to the one below:
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png "Lab3_Cognos_2.B.5"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png" style="width:auto; height:450px;"></div>
 
 ### Task C: Set Top/Bottom on a Visualization
 
@@ -165,11 +165,11 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 4:** In Panel 4, right-click the axis label **Quantity Sold (Sum)** down the left side of the chart and select **Top or bottom**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png "Lab3_Cognos_2.C.4"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png" style="width:auto; height:450px;"></div>
 
 **Step 5:** Ensure the value of **Number of results** is set to **10**, then select **Top count**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png "Lab3_Cognos_2.C.5"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png" style="width:auto; height:450px;"></div>
 
 **Step 6:** In the column chart in Panel 4, select the title of the visualization and change it to *Top 10 Quantity Sold by City*.
 
@@ -177,17 +177,17 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 8:** Your Panel 4 visualization should look similar to the one below:
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png "Lab3_Cognos_2.C.8"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png" style="width:auto; height:450px;"></div>
 
 ### Task D: Create and leverage navigation paths
 
 **Step 1:** In the data source panel on the left, scroll to the top of the list and click the **plus sign** labeled **Create navigation path** to the right of **Navigation paths**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png "Lab3_Cognos_2.D.1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png" style="width:auto; height:450px;"></div>
 
 **Step 2:** In the **Create navigation path** dialog box, expand CustomerLoyaltyProgram.csv, if needed. Drag **Order Year**, **Quarter**, **Country**, and **City** sequentially to the right hand panel of the dialog box, maintaining the order (shown in the image below). Once done, click **OK**. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png "Lab3_Cognos_2.D.2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png" style="width:auto; height:450px;"></div>
 
 **Step 3:** From the data source panel, press the **CTRL** key and select **Margin**, **Product Line**, and **Order Year** and drag them to the center of **Panel 5**, releasing them once you see the drop zone turn blue.
 
@@ -197,44 +197,44 @@ In this exercise, you will practice some advanced Cognos Analytics dashboard cap
 
 **Step 6:** In Panel 5, right-click the axis label **Order Year** down the left side of the chart, and select **Navigate**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png "Lab3_Cognos_2.D.6"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png" style="width:auto; height:450px;"></div>
 
 **Step 7:** One by one, select the **Order Year**, **Quarter**, **Country**, and **City** options in the **Navigate** dialog box to view the different navigation paths and observe the resulting visualization in Panel 5 as you select each one. Lastly, keep the **Order Year** option selected.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png "Lab3_Cognos_2.D.7"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png" style="width:auto; height:450px;"></div>
 
 **Step 8:** <ins>Alternative interactive way with Drill down/back:</ins>
 - In the bar chart in Panel 5, right-click the **2016** - **Smart Electronics** bar of the bar chart, and select **Drill down**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png "Lab3_Cognos_2.D.8.1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png" style="width:auto; height:450px;"></div>
 
 - Now right-click the **Q1** - **Smart Electronics** bar of the bar chart, and select **Back**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png "Lab3_Cognos_2.D.8.2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png" style="width:auto; height:450px;"></div>
 
 **Step 9:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
 
 **Step 10:** Your Panel 5 visualization should look similar to the one below:
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png "Lab3_Cognos_2.D.10"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png" style="width:auto; height:450px;"></div>
 
 ### Task E: Filter Data in the Current Tab
 
 **Step 1:** If required, click **Filters** in the **Dashboard Toolbar** to display the filters pane.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png "Lab3_Cognos_2.E.1"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png" style="width:auto; height:450px;"></div>
 
 **Step 2:** From the data source panel, select **Product Line** and drag it to the **This tab** filter panel on the right hand side.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png "Lab3_Cognos_2.E.2"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png" style="width:auto; height:450px;"></div>
 
 **Step 3:** Click the **Product Line** filter tab of the **This tab** filter panel. Select **Computers and Home Office**, **Photography**, and **TV and Video Gaming**, then click **Done**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png "Lab3_Cognos_2.E.3"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png" style="width:auto; height:450px;"></div>
 
 Your final dashboard should look similar to the one below. To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png "Lab3_Cognos_2.final"" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png" style="width:auto; height:450px;"></div>
 
 Feel free to change the appearance and layout of the dashboard you have just created. 
 
