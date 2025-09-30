@@ -5,138 +5,242 @@ permalink: /xxx/
 ---
 
 
-# Excel Getting Started
+# Cognos Advanced Dashboard Capabilities
 
-**Estimated Time Needed: 20 Minutes**
+**Estimated Time Needed: 45 Minutes**
 
-### Overview
+### Purpose of the Lab: 
 
+This lab focuses on enhancing skills in utilizing advanced features of IBM Cognos Analytics to create more dynamic and interactive dashboards. It delves into creating calculations, manipulating data points within visualizations, applying top/bottom settings on visualizations, and constructing navigation paths. Additionally, the lab provides hands-on experience in filtering data within a dashboard. The exercises are designed to provide a deeper understanding of how to leverage Cognos Analytics for more complex data analysis and visualization tasks, moving beyond basic dashboard creation. 
 
-# Excel Getting Started
+### Benefits of Learning the Lab: 
 
-**Estimated Time Needed: 20 Minutes**
-
-### Overview
-
-Microsoft Excel is the most widely used spreadsheet software even three decades after its initial release. For all these years it has been available as a standard application that needed to be installed on your desktop; but it is not just a desktop app anymore. Now, you can even use Excel when you're online by using 'Excel for the web' - and run it right in your web browser without installing anything on your desktop!
-
-'Excel for the web' (sometimes referred to as Excel Online) can be used at no charge as part of a free Microsoft account. Although it does not have all of the capabilities of the desktop and paid online versions, the free web version provides many of the key features.
+Engaging in this lab offers several key benefits for those interested in data analytics and visualization.You will acquire practical skills in advanced dashboarding techniques, such as creating custom calculations, effectively filtering and manipulating data, and utilizing Cognos Analytics to its full potential for comprehensive data analysis. These skills are vital for professionals in data analysis, business intelligence, and decision-making roles, as they allow for more nuanced and insightful analysis of data. The ability to create interactive and detailed dashboards enhances one's capability to present data in a more engaging and informative manner. This knowledge is particularly beneficial for those seeking to improve their data presentation skills, making complex data more accessible and actionable for decision-makers. Overall, the lab provides a strong foundation in advanced data visualization techniques, making it a valuable learning experience for advancing one’s career in the field of data analytics. 
 
 ### Software Used in this Lab
 
-The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
-
-Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
+Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 30 days), as this is available at no charge.
 
 ### Dataset Used in this Lab
 
-The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
-Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
-
-We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
+The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
 
 ### Objectives
 
 After completing this lab, you will be able to:
 
-- Sign up for a Microsoft Account to use Excel for the web
-- Sign in, upload and open a workbook in Excel for the web
+- Start a new dashboard
+- Create calculations
+- Keep/exclude data points from a visualization
+- Set top/bottom on a visualization
+- Create and leverage navigation paths
+- Filter data in a dashboard
 
-## Exercise 1: Sign-up for a Microsoft Account to Use Excel for the web
+## Exercise 1: Start a New Dashboard
 
-In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
+In this exercise, you will start a new dashboard for working with advanced Cognos Analytics dashboard capabilities.
 
-- <ins>If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.</ins>
+**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
+**Step 2:** Enter your IBMid and password.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div></div>
+**Step 3:** Scroll down and click **Launch**.
 
-**Step 2:** Click **Create one!**
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png "Lab3_Cognos_launch"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.2.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div></div>
+**Step 4:** From the **Recent** section, click the uploaded data file **CustomerLoyaltyProgram.csv**.
 
-**Step 3:** Enter your existing email id with which you want to create a Microsoft account. Click **Next**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png "Lab3_Cognos_recent"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.3.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 5:** The template window will be displayed, allowing you to select the type of dashboard and the template style. Select the **Tabbed** dashboard style. This will allow you to have multiple pages for your dashboards. Select the *five-panel template*, then click **Create**.
 
-**Step 4:** Enter your password and click **Next**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png "Lab3_Cognos_template"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.4.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 6:** To save the newly created dashboard, press **CTRL+S** or click the **Save** icon and then click **Save as**. 
 
-**Step 5:** Enter the code you received by email. Click **Next**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png "Lab3_Cognos_save"" style="width:auto; height:450px;"></div> 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.5.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 7:** A new **Save as** window will pop up. Follow the steps as displayed below to save your dashboard as **Advanced Dashboard** in the **My content** section.
 
-**Step 6:** Enter your phone number and click **Send Code**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png "Lab3_Cognos_Save1"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.6.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 8:** As you build the dashboard, the location placement for visualization widgets in the dashboard template will be referenced using the following Panel numbers.
 
-**Step 7:** Enter the access code you received as a text on your phone, then click **Next**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png "Lab3_cognos_template1"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.7.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 9:** From the **Navigation** panel, select **Sources** to ensure the data source panel is open in the left pane.
 
-**Step 8:** You are now done with the sign up procedure. Now since you are signed in after sign up at this stage, you can proceed directly to **Task B** of **Exercise 2**.
+**Step 10:** From the data source panel, select **Revenue** and drag it to the center of **Panel 1**, releasing it once you see the drop zone turn blue.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png "Lab3_Cognos_9"" style="width:auto; height:450px;"></div>
 
-## Exercise 2: Sign-in, Upload and Open a Workbook in Excel for the web
+**Step 11:** Click the summary chart in Panel 1 to bring it into focus. From the on-demand toolbar that appears in the main toolbar, click **Summarize**, and then select **Average**.
 
-In this exercise, you will sign in to Excel for the web, open a new workbook and then upload and open a workbook.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png "Lab3_Cognos_average"" style="width:auto; height:450px;"></div>
 
-### Task A: Sign in to Excel for the web
+**Step 12:** In the summary chart in Panel 1, select the title of the visualization and change it to *Average Revenue*.
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**.
+**Step 13:** From the **Navigation** panel, select **Widgets** to open the widgets panel. Drag and drop **Money coin** from **Shapes** to the center of Panel 1.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png "Lab3_Cognos_moneycoin"" style="width:auto; height:450px;"></div>
 
-**Step 2:** Enter your sign in email.
+**Step 14:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the toolbar.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.2.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 15:** Your Panel 1 visualization should look similar to the one below:
 
-**Step 3:** Enter your password.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png "Lab3_Cognos_1.13"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.3.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+## Exercise 2: Working with Advanced Cognos Analytics dashboard capabilities
 
-**Step 4:** You are now signed in.
+In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
+- Task A: Create calculations 
+- Task B: Keep/Exclude Data Points from a visualization
+- Task C: Set Top/Bottom on a visualization
+- Task D: Create and Leverage navigation paths
+- Task E: Filter Data in the current tab
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+### Task A: Create Calculations 
 
-### Task B: Open a new workbook in Excel for the web
+**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
 
-**Step 1:** Click on the **Excel** icon.
+**Step 2:** Right-click the **CustomerLoyaltyProgram.csv** data source and select **Calculation**.
 
-**Step 2:** Click **New blank workbook**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png "Lab3_Cognos_2.A.3"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blankwb.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 3:** Change the calculation name to **Margin**. From the **Components** panel, drag **Unit Sale Price** to the **Expression** field, type a space, then the minus sign, **-**, to the right of it, and then drag **Unit Cost** to the right of that. Click **OK**.
 
-**Step 3:** You have successfully opened a new workbook in Excel for the web.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png "LAb3_Cognos_exp1"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blanlwb.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png "Lab3_Cognos_exp2"" style="width:auto; height:450px;"></div>
 
-### Task C: Upload and Open a workbook in Excel for the web
+**Step 4:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed, and drag **Margin** to the center of **Panel 2**, releasing it once you see the drop zone turn blue.
 
-**Step 1:** Download the file **[indian_startup_funding_Lab1.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/indian_startup_funding_Lab1.xlsx)**.
+**Step 5:** Right-click the margin chart in Panel 2, point to **Summarize**, and then select **Average**.
 
-**Step 2:** To upload and open a workbook in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel** icon. Then click **Upload and open...** and select the **indian_startup_funding_Lab1.xlsx** file.
+**Step 6:** From the data source panel, right-click on **Margin** and click **Format data**. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/select_excel.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png "Lab3_Cognos_margin"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/upload.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 7:** In the **Format type** list, select **Currency**.
 
-**Step 3:** The file will be uploaded to your OneDrive of the Microsoft Account you signed up and used to open Excel for the web.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png "Lab3_Cognos_currency1"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/uploading.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 8:** Select **$ (USD) - United States of America, dollar** as the currency and click **OK** at the bottom.
 
-**Step 4:** You have successfully uploaded and opened a workbook in Excel for the web.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png "Lab3_Cognos_currency2"" style="width:auto; height:450px;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/indianstartupwb.png" style="max-width:800px; max-height:450px; height:auto; width:auto;"></div>
+**Step 9:** In the margin chart in Panel 2, select the title of the visualization and change it to *Average Margin*.
 
-**Congratulations!** 
+**Step 10:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
 
-You have completed Lab 1, and you are ready for the next topic.
+**Step 11:** Your Panel 2 visualization should look similar to the one below:
 
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png "Lab3_cognos_2.a.3"" style="width:auto; height:450px;"></div>
 
+### Task B: Keep/Exclude Data Points from a Visualization
+
+**Step 1:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed. Press the **CTRL** key and select **Revenue** and **Product Line** and drag them both to the center of **Panel 3**, releasing them once you see the drop zone turn blue.
+
+**Step 2:** From the data source panel, drag **Location Code** to the **Color** drop zone of **Panel 3**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png "Lab3_Cognos_2.B.2"" style="width:auto; height:450px;"></div>
+
+**Step 3:** Right-click the **Suburban** data point in the Panel 3 visualization, and select **Exclude**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png "Lab3_Cognos_2.B.3"" style="width:auto; height:450px;"></div>
+
+**Step 4:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 5:** Your Panel 3 visualization should look similar to the one below:
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png "Lab3_Cognos_2.B.5"" style="width:auto; height:450px;"></div>
+
+### Task C: Set Top/Bottom on a Visualization
+
+**Step 1:** From the data source panel, press the **CTRL** key and select **Quantity Sold** and **City**, and drag them both to the center of **Panel 4**, releasing them once you see the drop zone turn blue.
+
+**Step 2:** Click the chart in Panel 4 to bring it into focus and render the on-demand toolbar.
+
+**Step 3:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Map**), then expand **All visualizations**, if needed, and select **Column**.
+
+**Step 4:** In Panel 4, right-click the axis label **Quantity Sold (Sum)** down the left side of the chart and select **Top or bottom**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png "Lab3_Cognos_2.C.4"" style="width:auto; height:450px;"></div>
+
+**Step 5:** Ensure the value of **Number of results** is set to **10**, then select **Top count**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png "Lab3_Cognos_2.C.5"" style="width:auto; height:450px;"></div>
+
+**Step 6:** In the column chart in Panel 4, select the title of the visualization and change it to *Top 10 Quantity Sold by City*.
+
+**Step 7:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 8:** Your Panel 4 visualization should look similar to the one below:
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png "Lab3_Cognos_2.C.8"" style="width:auto; height:450px;"></div>
+
+### Task D: Create and leverage navigation paths
+
+**Step 1:** In the data source panel on the left, scroll to the top of the list and click the **plus sign** labeled **Create navigation path** to the right of **Navigation paths**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png "Lab3_Cognos_2.D.1"" style="width:auto; height:450px;"></div>
+
+**Step 2:** In the **Create navigation path** dialog box, expand CustomerLoyaltyProgram.csv, if needed. Drag **Order Year**, **Quarter**, **Country**, and **City** sequentially to the right hand panel of the dialog box, maintaining the order (shown in the image below). Once done, click **OK**. 
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png "Lab3_Cognos_2.D.2"" style="width:auto; height:450px;"></div>
+
+**Step 3:** From the data source panel, press the **CTRL** key and select **Margin**, **Product Line**, and **Order Year** and drag them to the center of **Panel 5**, releasing them once you see the drop zone turn blue.
+
+**Step 4:** Click the line chart in Panel 5 to bring it into focus and render the on-demand toolbar.
+
+**Step 5:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Line**), then expand **All visualizations**, if needed, and select **Bar**.
+
+**Step 6:** In Panel 5, right-click the axis label **Order Year** down the left side of the chart, and select **Navigate**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png "Lab3_Cognos_2.D.6"" style="width:auto; height:450px;"></div>
+
+**Step 7:** One by one, select the **Order Year**, **Quarter**, **Country**, and **City** options in the **Navigate** dialog box to view the different navigation paths and observe the resulting visualization in Panel 5 as you select each one. Lastly, keep the **Order Year** option selected.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png "Lab3_Cognos_2.D.7"" style="width:auto; height:450px;"></div>
+
+**Step 8:** <ins>Alternative interactive way with Drill down/back:</ins>
+- In the bar chart in Panel 5, right-click the **2016** - **Smart Electronics** bar of the bar chart, and select **Drill down**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png "Lab3_Cognos_2.D.8.1"" style="width:auto; height:450px;"></div>
+
+- Now right-click the **Q1** - **Smart Electronics** bar of the bar chart, and select **Back**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png "Lab3_Cognos_2.D.8.2"" style="width:auto; height:450px;"></div>
+
+**Step 9:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 10:** Your Panel 5 visualization should look similar to the one below:
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png "Lab3_Cognos_2.D.10"" style="width:auto; height:450px;"></div>
+
+### Task E: Filter Data in the Current Tab
+
+**Step 1:** If required, click **Filters** in the **Dashboard Toolbar** to display the filters pane.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png "Lab3_Cognos_2.E.1"" style="width:auto; height:450px;"></div>
+
+**Step 2:** From the data source panel, select **Product Line** and drag it to the **This tab** filter panel on the right hand side.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png "Lab3_Cognos_2.E.2"" style="width:auto; height:450px;"></div>
+
+**Step 3:** Click the **Product Line** filter tab of the **This tab** filter panel. Select **Computers and Home Office**, **Photography**, and **TV and Video Gaming**, then click **Done**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png "Lab3_Cognos_2.E.3"" style="width:auto; height:450px;"></div>
+
+Your final dashboard should look similar to the one below. To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar. 
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png "Lab3_Cognos_2.final"" style="width:auto; height:450px;"></div>
+
+Feel free to change the appearance and layout of the dashboard you have just created. 
+
+**Congratulations!**
+
+You have completed this Lab.
 
 
 
