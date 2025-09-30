@@ -5,93 +5,129 @@ permalink: /xxx/
 ---
 
 
-# Db2 Load Data from a CSV file
+# Excel Getting Started
 
-**Estimated Time Needed: 15 Minutes**
+**Estimated Time Needed: 20 Minutes**
 
 ### Overview
 
-Now that you have learned about the process of importing data into a data repository from varied sources, you will load data from a CSV file into the IBM Db2 database instance you created in the previous lab.
+Microsoft Excel is the most widely used spreadsheet software even three decades after its initial release. For all these years it has been available as a standard application that needed to be installed on your desktop; but it is not just a desktop app anymore. Now, you can even use Excel when you're online by using 'Excel for the web' - and run it right in your web browser without installing anything on your desktop!
 
-### Datasets
+'Excel for the web' (sometimes referred to as Excel Online) can be used at no charge as part of a free Microsoft account. Although it does not have all of the capabilities of the desktop and paid online versions, the free web version provides many of the key features.
 
-The dataset used in this exercise comes from the following source: [https://www.kaggle.com/antfarol/car-sale-advertisements](https://www.kaggle.com/antfarol/car-sale-advertisements) under a [CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/). We are using a modified subset of that dataset for this lab. To follow the lab instructions successfully, please use the dataset provided with this exercise rather than the dataset from the original source.
+### Software Used in this Lab
 
-**NOTE:** The lab assumes that you have downloaded this CSV file: [exercise03_car_sales_data.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/exercise03_car_sales_data.csv) to your local system.
+The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
 
-## Practice
+Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
 
-Please follow the steps given below to provision your instance of IBM Db2 on Cloud.
+### Dataset Used in this Lab
 
-**Step 1:**  Go to: [https://cloud.ibm.com/catalog/services/db2](https://cloud.ibm.com/catalog/services/db2?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-DB0100EN-SkillsNetwork) to access your Db2 dashboard on Cloud.
-**Step 2:**  If you’re not already logged in to your IBM Cloud Lite account, click on **Log in** at the bottom right of the screen to log in.
+The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
+Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-1.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
+We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
 
-**Step 3:**  Logging in will take you to your **Db2 service dashboard**.
+### Objectives
 
-Click on **view existing** link in the **Existing Lite plan instance** box.
+After completing this lab, you will be able to:
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-2.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+- Sign up for a Microsoft Account to use Excel for the web
+- Sign in, upload and open a workbook in Excel for the web
 
-**Step 4:**  The **Manage** tab will be active by default in your services dashboard. Click on **Go to UI**.
+## Exercise 1: Sign-up for a Microsoft Account to Use Excel for the web
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-3.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
 
-**Step 5:**  Now click on the menu bar icon in the top left corner of your Db2 service dashboard.
+- <ins>If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.</ins>
 
-Click on **Load** **>** **Load Data**.
+**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-4.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 6:**  You can either drag and drop the CSV file into the **File selection** box, or you can click on the **browse files** link, also provided in the **File selection** box to browse your local folders to find and open the downloaded CSV file.
+**Step 2:** Click **Create one!**
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-5.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-The name of the CSV file you have uploaded will appear in the **Selected file** section on the right.
+**Step 3:** Enter your existing email id with which you want to create a Microsoft account. Click **Next**.
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-6.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-Click **Next** to proceed.
+**Step 4:** Enter your password and click **Next**.
 
-**Step 7:**  You will be asked to select a **Schema** from a list of schema names.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-**NOTE:** Select the schema name with a random mix of alphabets and numbers. It will be similar to, but not the same as, the one you see in the screenshot below (_MGJ73335_). The ones that you do NOT have to select are AUDIT, DB2INST1, ERRORSCHEMA, and ST_INFORMTN_SCHEMA (and sometimes you might also see SQLxxxxx as well).
+**Step 5:** Enter the code you received by email. Click **Next**.
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-7.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
-**Step 8:**  Click on **New Table**.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.5.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-8.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+**Step 6:** Enter your phone number and click **Send Code**.
 
-**Step 9:**  Enter the name **CARSALESTABLE** in the input box prompting you with **_NEW TABLE NAME_**.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.6.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-**NOTE:** You will be using this table name in the SQL queries you will execute in the next exercise.
+**Step 7:** Enter the access code you received as a text on your phone, then click **Next**.
 
-Now click on **Create** to create the new table.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.7.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-9.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+**Step 8:** You are now done with the sign up procedure. Now since you are signed in after sign up at this stage, you can proceed directly to **Task B** of **Exercise 2**.
 
-**Step 10:**  A table by the name of **CARSALESTABLE** has been created.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-Click **Next** at the bottom right of the page to proceed.
+## Exercise 2: Sign-in, Upload and Open a Workbook in Excel for the web
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-10.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+In this exercise, you will sign in to Excel for the web, open a new workbook and then upload and open a workbook.
 
-**Step 11:**  Click **Next** to proceed.
+### Task A: Sign in to Excel for the web
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-11.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
+**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**.
 
-**Step 12:**  Then click **Begin Load** to begin the process of loading the data from the CSV into your database.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-12.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+**Step 2:** Enter your sign in email.
 
-**Step 13:**  Data from your CSV file is now loaded into your Db2 instance.
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-13.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+**Step 3:** Enter your password.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+**Step 4:** You are now signed in.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+### Task B: Open a new workbook in Excel for the web
+
+**Step 1:** Click on the **Excel** icon.
+
+**Step 2:** Click **New blank workbook**.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blankwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+**Step 3:** You have successfully opened a new workbook in Excel for the web.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blanlwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+### Task C: Upload and Open a workbook in Excel for the web
+
+**Step 1:** Download the file **[indian_startup_funding_Lab1.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/indian_startup_funding_Lab1.xlsx)**.
+
+**Step 2:** To upload and open a workbook in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel** icon. Then click **Upload and open...** and select the **indian_startup_funding_Lab1.xlsx** file.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/select_excel.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/upload.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+**Step 3:** The file will be uploaded to your OneDrive of the Microsoft Account you signed up and used to open Excel for the web.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/uploading.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+
+**Step 4:** You have successfully uploaded and opened a workbook in Excel for the web.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/indianstartupwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
 
 **Congratulations!** 
 
-You have successfully loaded data from a CSV file into the IBM Db2 instance you created in the previous lab.
+You have completed Lab 1, and you are ready for the next topic.
 
 
 
