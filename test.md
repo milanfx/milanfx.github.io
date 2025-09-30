@@ -5,149 +5,231 @@ permalink: /xxx/
 ---
 
 
+# Cognos Getting Started
 
-# Excel Spreadsheet Basics
-
-**Estimated Time Needed: 20 Minutes**
+**Estimated Time Needed: 40 Minutes**
 
 ### Overview
 
-To get started with a spreadsheet app, you need to know:
+IBM Cognos Analytics is an AI-fueled business intelligence platform that supports the entire data analytics cycle, from discovery to operationalization. It provides users with data discovery capabilities to visually explore and interact with their data to identify the key insights for improving data driven decisions. Users can perform data discovery and then quickly assemble that information into interactive, visually appealing dashboards; all without the need of formal training.
 
-- Some of the common terminology around it
-- What its key features are
-- How to use some basic tools on the ribbon
-- How to move around a worksheet
-- How to select data in it. 
-
-In this lab, you will go through some basic spreadsheet elements, explore the ribbon, navigate around a worksheet and select data.
+In this lab, first you will learn how to sign up for IBM Cognos Analytics trial plan, and learn general navigation around the Cognos Analytics user interface (UI). Next, you will learn how to upload external data files to Cognos Analytics, and then learn how to start a new dashboard with templates. Lastly, you will learn how to create a simple dashboard.
 
 ### Software Used in this Lab
 
-The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
-
-Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
+Like the videos in the course, for the hands-on labs we will be using IBM Cognos Analytics trial version (currently limited to 90 days) as this is available at no charge.
 
 ### Dataset Used in this Lab
 
-The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
-Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
-
-We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
+The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
 
 ### Objectives
 
 After completing this lab, you will be able to:
+- Sign up for a Cognos Analytics trial plan and navigate around the Cognos Analytics user interface.
+- Upload external data files to the Cognos Analytics platform.
+- Start a new dashboard with dashboard templates.
+- Create a simple dashboard.
 
-- Understand and use the basic elements of a spreadsheet.
-- Explore the ribbon, navigate around a worksheet and select data.
+## Exercise 1: Sign up for Cognos Analytics Trial Plan
+In this exercise, you will learn how to sign up for an IBM Cognos Analytics trial plan.
 
-## Exercise 1: Introduction to Basic Spreadsheet Elements
+**Step 1:** Go to [Try IBM Cognos Analytics](https://www.ibm.com/account/reg/us-en/signup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork&formid=urx-48178).
 
-In this exercise, you will learn about some common spreadsheet elements.
+**NOTE:** If you use your existing cloud account, you will get only 30 days trial for Cognos Analytics. 
 
-**Step 1:** Open **Excel for the web** (https://excel.cloud.microsoft/). Click on **Create blank workbook**.
+**Step 2:** Fill out section **1. Account information** with your information and click **Next**. The email address you are going to use here, will be called IBMid. <ins> If you already have an IBMid, click **Log in**. Enter your IBMid and password. </ins>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IUozSPx1qIfrFUfHow33_g/Lab2-Spreadsheet%20Basics-NewBlankWorksheet.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.2.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 2:** The new blank workbook will automatically be saved in Excel for the web as **Book 1**. To rename the workbook to something more meaningful, click **File**, **Save As**, then choose **Rename**.
+**Step 3:** Fill out section **2. Additional information** with your information. In the case of the Data Center, select one which is nearest to your location. Then click **Next**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.2.jpg" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.3.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 3:** In the file name box, type **Personal_Monthly_Expenditure_Lab2** and click **OK**.
+**Step 4:** Now enter the 7 digit code you received on your email address and click **Create account**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.3.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.4.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 4:** In the saved workbook, you will have one worksheet opened, named *Sheet1*. Click **+** once to add another worksheet. Then, double-click the sheet name tab for **Sheet1** and rename it to **Expense - 2019**. Similarly, rename **Sheet2** as **Expense - 2018**.
+**Step 5:** Click **Proceed**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.4.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.5.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 5:** To maintain an appropriate worksheet tab sequence, click on the worksheet tab **Expense - 2018**, then drag and drop it before the **Expense - 2019** tab.
+**Step 6:** You are now done with the sign up procedure. You will be redirected to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork) automatically. Wait for some moment until the Coursera on-line training -  Data Visualizations trial offering becomes active.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.5.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.6.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 6:** Click on the **Expense - 2018** tab. Select an entire column by clicking on **B** in the top of the worksheet, then select an entire row by clicking on the number **5** in the left of the worksheet. Click cell **B5**, and a green outline will appear around the cell. Now check if you have clicked the correct cell by looking at the cell name box in the top left corner, circled in red below.
+**Step 7:** Click on the **Launch** button of this offering.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.6.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.7.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 7:** Select several cells in the same row, such as A1:D1 by clicking cell **A1** and then drag the cursor across to **D1**. Similarly, select a cell range in the same column, such as A1:A5 by clicking **A1** and dragging the cursor down to **A5**.
+If it has been more than 72 hours since you initiated your Cognos Trial activation, but its still showing Activation in Progress, please let us know on the forum so we can follow up with the Cognos team on your behalf.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.7.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+**NOTE:** The trial will not be activated for learners in countries under US sanctions.
 
-**Step 8:** Now select a cell range which includes several rows and columns together, such as A1:C5 by clicking **A1** and then dragging the cursor across and down to cell **C5**.
+**Step 8:** You have successfully launched the Cognos Analytics platform.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.8.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.8.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-## Exercise 2:  Explore the Ribbon, Navigate around a Worksheet, and Select Data
+**Step 9:** From now on, if you want to sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com](https://myibm.ibm.com/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork). Enter your IBMid and password. Repeat step 7 and 8.
 
-In this exercise, you will explore the ribbon, then navigate around a worksheet, and select data.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.9.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-### Task A: Explore the ribbon
+## Exercise 2: Navigate around Cognos Analytics UI 
 
-**Step 1:** Download the file **[indian_startup_funding_Lab2.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/indian_startup_funding_Lab2.xlsx)**.
+In this exercise, you will learn general navigation around the Cognos Analytics user interface.
 
-**Step 2:** To open a sample file in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel**, and then click **Upload and open...** and select the **indian_startup_funding_Lab2.xlsx** file.
+**Step 1:** The goal of the Cognos Analytics user interface (UI) is to provide you with a streamlined way to get started using Cognos Analytics and view content and activities pertinent to them. You will begin your general navigation here. 
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2A.1.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.A.1.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 3:** Click each of the following tabs in the ribbon; **File, Home, Insert, Formulas, Data, Review, View** to explore each of them and get acquainted with the ribbon. Double-click any of the tabs to hide the ribbon, then do the same again to unhide it.
+**Step 2:** Click on the **Navigation Bar**, you can use the **Content** to work on different **Samples** The canvas now shows the Recently used files in the **Recent** section, if any, along with the **File drop zone** where you can easily upload your external data files.
 
-### Task B: Navigate around a worksheet
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.A.2.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 1:** Click on **any cell** and move around the worksheet using the arrow keys; **Up, Down, Left, Right**.
+**Step 3:** Once you begin working with content, the canvas will update with your recently used items. In your Cognos Analytics instance, you may see recent content on the canvas.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2B.1.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+## Exercise 3: Create a Simple Dashboard with Cognos Analytics
 
-**Step 2:** Click **Page Down** twice, and then **Page Up** twice to move around a bit faster, which is useful if you have lots of rows of data.
+In this exercise, you will learn how to upload external data files to Cognos Analytics, and then learn how to start a new dashboard with templates. Lastly, you will learn how to create a simple dashboard.
 
-**Step 3:** Click and drag the **horizontal scroll bar** and then the **vertical scroll bar** to move even quicker up, down, and across a large datasheet.
+### Task A: Upload External Data Files
 
-**Step 4:** Try out these useful shortcuts in your worksheet:
+In this task, you will learn how to upload external data files to Cognos Analytics.
 
-- Press **CTRL+End** to take you to the cell at the end of your data in the worksheet.
-- Press **CTRL+Home** to take you back to the start of the data in the worksheet (i.e. cell A2).
-- Press **CTRL+Down Arrow** to take you to the end of the column you’re in
-- Press **CTRL+Up Arrow** to take you back to the top of the column.
+**Step 1:** Download the file [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv).
 
-### Task C: Select data
+**Step 2:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork).
 
-Perform the following steps to learn how to select different parts of your data (you can use the mouse to select cells if you prefer):
+**Step 3:** Enter your IBMid and password.
 
-**Step 1:** <ins>To select cells in a single row:</ins> Select cell **A1**, then select cells **A1 to D1** by using **SHIFT+right arrow**.
+**Step 4:** Scroll down and click **Launch**.
 
-- <ins>To select cells in a single column:</ins> Select cell **A1**, then select cells **A1 to A10** by using **SHIFT+down arrow**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.A.1.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2C.1.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+**Step 5:** To upload a file, you may either drag and drop this file into the File Drop Zone (highlighted in the image above), or you may click **Upload files** at the bottom left corner to navigate to where the file is saved. For this lab, we will use the second option. Click **New > Upload files**. 
 
-**Step 2:** <ins>To select multiple contiguous cols/rows:</ins>  Select column **A**, and use **SHIFT+ right arrow** to reach column **E**.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/upload.PNG" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-**Step 3:** <ins>To select multiple non-contiguous cols/rows:</ins> Select column **A**, then hold **CTRL** and select column **E**.
+**Step 6:** Click on Drag and drop file here or click to upload, aupdated new file browser window will open. Navigate to where the file is saved, select the file, and click Open.*.
 
-**Step 4:** <ins>To select the entire worksheet:</ins> Click the **corner button** (small grey triangle in top left corner of the worksheet).
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/upload-data.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
-- <ins>To select all your data:</ins> Select any cell in the data, then press **CTRL+A**.
+**Step 7:** As the file uploads, status bars will be visible as the upload process reads and analyzes the data being brought in. Once it completes, the status bar will update to show the successful completion before closing.
 
-**NOTE:** The first time you press CTRL+A, it selects the current region if the worksheet contains data, the second time it selects the current data region and its header row, and the third time it selects the entire worksheet.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/Complete_upload.PNG" style="width:800px; max-height:800px; object-fit:contain;"></div>    
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2C.4.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
-</div>
+**Step 8:** Convert the **CustomerLoyaltyProgram.csv** to **Data module** by selecting the **Data module** in **Other options** and click  **Create** .
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/data-module.PNG" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+### Task B: Edit Data Module and view the table on IBM cognos. 
+
+In this task we will learn how to view the dataset on IBM Cognos.
+
+**Step 1:** Navigate to the **CustomerLoyaltyProgram data module**. Click **Action Menu** (repesented by three dots) under it. Next click the **Edit Data Module** to create a **Data Module**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/edit_module.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 2:** A New Data Module will be created.Click on the Action Menu (represented by three dots) of **New data Module**.Next click the **Table** option under the **Action Menu** to launch the **Create Table** window.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.2.png" style="width:800px; max-height:800px; object-fit:contain;"></div> 
+
+**Step 3:** Click on the **Select Tables** button in the **Create table** screen. Select the uploaded dataset **CustomerLoyaltyProgram.csv**. Finally, click the **Next** button to proceed with the creation of the table.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.3.png" style="width:800px; max-height:800px; object-fit:contain;"></div> 
+
+**Step 4:**  Click the **Refresh** button in the **Create a view of a table** window to view the data.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.4.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 5:** Now you will be able to see view the data in the table,click on the **Finish** button.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.5.png" style="width:800px; max-height:800px; object-fit:contain;"></div> 
+
+**Step 6:** The new table view will be added in source panel now save this Data Module using the **Save** option.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.6.png" style="width:800px; max-height:800px; object-fit:contain;"></div> 
+
+**Step 7:** In the new popup window labeled **Save as**, Give the name **Customer Loyalty Program data module** and select **My content** tab, click on the 'Save' button to proceed.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.7.png" style="width:800px; max-height:800px; object-fit:contain;"></div>  
+
+**Step 8:** Next, please navigate to the menu option of IBM Cognos, which is represented by three horizontal lines. Click on the menu and select the 'Content' option from the available choices.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.8.png" style="width:800px; max-height:800px; object-fit:contain;"></div>	
+
+**Step 9:** You will now be  able to locate the **Customer Loyalty Program data module** under the **My Content** tab.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.9.png" style="width:800px; max-height:800px; object-fit:contain;"></div>	
+
+### Task C: Start a New Dashboard with Templates
+
+In this task, you will learn how to start a new dashboard with templates.
+
+**Step 1:** Click on the uploaded data file **CustomerLoyaltyProgram.csv**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.1.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 2:** The Template window will display allowing you to select the type of dashboard and the template style. Select the **tabbed dashboard style**. This will allow you to have multiple pages for your dashboards. Select the **three-panel template**. Click **Create**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.2.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 3:** Now you have created a new dashboard using the dashboard template.
+updat
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.3.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 4:** To save the newly created dashboard, press **CTRL+S**. Select **My content** as **Destination**. On the **Save as:** text field, write "Simple dashboard", and click **Save**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.4.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+### Task D: Create a Simple Dashboard
+
+In this task, you will learn how to create a simple dashboard with Cognos Analytics.
+
+**Step 1:** As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the following Panel numbers.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.1.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 2:** From the **Navigation** panel, select **Sources** to open the data source panel, if it is not already open. The **Data Source** panel displays the uploaded file **샵stomerLoyaltyProgram.csv� as the Selected Source.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.2.New.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 3:** From the **Data Source** panel, press **CTRL** and select **Order Year, Quantity Sold, Product Line** and drag it to the center of **Panel 1**, releasing them once you see the **drop zone turn blue**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.3.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 4:** Click on the **Line chart in panel 1** to bring it into focus and render the **on-demand toolbar**.
+
+**Step 5:** From the on-demand toolbar, select the title and enter the title "Product Line Performance by Year" to the visualization.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.5.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 6:** Highlight the **Title** to open the **Title on-demand toolbar**. From here, you can change the various properties on the title.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.6.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 7:** Click the **Color picker** icon, and change the color to **Red**, then click the font size drop-down and choose **18**.
+
+**Step 8:** From the **Data Source** panel, select **Quantity Sold** and drag it to the center of **Panel 2**, releasing it once you see the **drop zone turn blue**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.8.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 9:** From the **Data Source** panel, select **Revenue** and drag it to the center of **Panel 3**, releasing it once you see the **drop zone turn blue**.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.9.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 10:** Click on the tab name **Tab 1** to bring up the Tab鳠on-demand toolbar. Select the **Edit** icon.
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.10.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
+
+**Step 11:** **Rename** the tab to "A - Product Sales�12. To save the current work of the dashboard, press **CTRL+S**.
+
+Finally, your dashboard "A - Product Sales" should look like below:
+
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.png" style="width:800px; max-height:800px; object-fit:contain;"></div>
 
 **Congratulations!**
 
-You have completed Lab 2, and you are ready for the next topic.
-
-
-
+You have completed Lab 4, and you are ready for the next topic.
 
 
