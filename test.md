@@ -5,13 +5,15 @@ permalink: /xxx/
 ---
 
 
-# Excel Using Pivot Tables
+# Excel Getting Started
 
-**Estimated Time Needed: 30 Minutes**
+**Estimated Time Needed: 20 Minutes**
 
 ### Overview
 
-In this lab, first you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data. Next, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
+Microsoft Excel is the most widely used spreadsheet software even three decades after its initial release. For all these years it has been available as a standard application that needed to be installed on your desktop; but it is not just a desktop app anymore. Now, you can even use Excel when you're online by using 'Excel for the web' - and run it right in your web browser without installing anything on your desktop!
+
+'Excel for the web' (sometimes referred to as Excel Online) can be used at no charge as part of a free Microsoft account. Although it does not have all of the capabilities of the desktop and paid online versions, the free web version provides many of the key features.
 
 ### Software Used in this Lab
 
@@ -30,145 +32,104 @@ We are using a modified subset of that dataset for the lab, so to follow the lab
 
 After completing this lab, you will be able to:
 
-- Format data as a table
-- Create a Pivot Table and use fields to arrange data in a Pivot Table
-- Perform calculations using Pivot Table data
-- Use the Recommended Charts feature (does not work with the 'Basic' Office for the web plan.)
-- Use the Filters feature
-- Use the Slicers feature
-- Use the Timelines feature 
+- Sign up for a Microsoft Account to use Excel for the web
+- Sign in, upload and open a workbook in Excel for the web
 
-## Exercise 1: Introduction to Creating Pivot Tables in Excel
+## Exercise 1: Sign-up for a Microsoft Account to Use Excel for the web
 
-In this exercise, you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data.
+In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
 
-### Task A: Format data as a table
+- <ins>If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.</ins>
 
-**Step 1:** Download the file **[indian_startup_funding_Lab7.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7.xlsx)**. Upload and open it using Excel for the web.
+**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
 
-**Step 2:** Select cell **A2**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" width="600"></div></div>
 
-**Step 3:** On the **Home** tab, in the **Tables** group, click **Format as Table**.
+**Step 2:** Click **Create one!**
 
-**Step 4:** Select **Light Gray, Table Style Medium 15**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.2.png" width="400"></div></div>
 
-### Task B: Create a pivot table and use fields to arrange data in a pivot table
+**Step 3:** Enter your existing email id with which you want to create a Microsoft account. Click **Next**.
 
-**Step 1:** Select cell **D4**
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.3.png" width="400"></div></div>
 
-**Step 2:** On the **Insert** tab, click **PivotTable**.
+**Step 4:** Enter your password and click **Next**.
 
-**Step 3:** Click **OK**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.4.png" width="400"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div></div>
+**Step 5:** Enter the code you received by email. Click **Next**.
 
-**Step 4:** Double-click **Sheet1**, type **Pivot1** and click **OK**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.5.png" width="400"></div></div>
 
-**Step 5:** In the fields list, drag **Industry Vertical** to **Rows**.
+**Step 6:** Enter your phone number and click **Send Code**.
 
-**Step 6:** In the fields list, drag **City Location** to **Rows** above **Industry Vertical**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.6.png" width="400"></div></div>
 
-**Step 7:** In the fields list, drag **Startup Name** to **Rows** below **Industry Vertical**.
+**Step 7:** Enter the access code you received as a text on your phone, then click **Next**.
 
-**Step 8:** In the fields list, drag **Amount in USD** to **Values**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.7.png" width="400"></div></div>
 
-**Step 9:** Use the drop down arrow for the **City Location** and Sort By Value  in descending order (Largest to smallest) by the **Count of Amount in USD**.
+**Step 8:** You are now done with the sign up procedure. Now since you are signed in after sign up at this stage, you can proceed directly to **Task B** of **Exercise 2**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting1.png" width="400"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" width="600"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting2.png" width="400"></div></div>
+## Exercise 2: Sign-in, Upload and Open a Workbook in Excel for the web
 
-**Step 10:** In the ribbon, select the **PivotTable** tab, click **Settings**, then in the **PivotTable Settings** pane, under **Layout**, select **Single column**.
+In this exercise, you will sign in to Excel for the web, open a new workbook and then upload and open a workbook.
 
-**Step 11:** Right-click on the row label Amritsar and select **Expand/Collapse** and **Collapse Entire Field**. 
+### Task A: Sign in to Excel for the web
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/collapse.png" width="600"></div></div>
+**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**.
 
-### Task C: Perform a simple calculation in a pivot table
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" width="600"></div></div>
 
-**Step 1:** In the **PivotTable Fields** pane, in the **Values** section, click the drop-down arrow next to **Count of Amount in USD**, and click **Value Field Settings**.
+**Step 2:** Enter your sign in email.
 
-**Step 2:** Select **Summarize value field by > Sum**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.2.png" width="400"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.C.2.png" width="400"></div></div>
+**Step 3:** Enter your password.
 
-**Step 3:** Click **OK**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.3.png" width="400"></div></div>
 
-**Step 4:** Select the column called **Sum of Amount in USD** and then on the **Home** tab, select **Accounting Number Format > $ English (United States)**.
+**Step 4:** You are now signed in.
 
-## Exercise 2: Pivot Table Features
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" width="600"></div></div>
 
-In this exercise, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
+### Task B: Open a new workbook in Excel for the web
 
-**NOTE:** The 'Recommended Charts' feature only works with 'full' Office for the web plans (those plans that come with an Office 365 subscription). Recommended Charts do not work with the 'basic' plan that comes with a Microsoft Account.
+**Step 1:** Click on the **Excel** icon.
 
-### Task A: Use of the Recommended Charts feature (Optional: If you have a full Office for the web plan)
+**Step 2:** Click **New blank workbook**.
 
-**Step 1:** Switch to worksheet **indian-startup-funding**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blankwb.png" width="600"></div></div>
 
-**Step 2:** Select column **F (City Location)**.
+**Step 3:** You have successfully opened a new workbook in Excel for the web.
 
-**Step 3:** On the **Insert** tab, select **Recommended Charts**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blanlwb.png" width="600"></div></div>
 
-**Step 4:** Click **+ Insert PivotChart**.
+### Task C: Upload and Open a workbook in Excel for the web
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.A.4.png" width="600"></div></div>
+**Step 1:** Download the file **[indian_startup_funding_Lab1.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/indian_startup_funding_Lab1.xlsx)**.
 
-**Step 5:** Switch to worksheet **indian-startup-funding** again.
+**Step 2:** To upload and open a workbook in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel** icon. Then click **Upload and open...** and select the **indian_startup_funding_Lab1.xlsx** file.
 
-**Step 6:** Select column **C, D, E**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/select_excel.png" width="600"></div></div>
 
-**Step 7:** On the **Insert** tab, select **Recommended Charts**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/upload.png" width="600"></div></div>
 
-**Step 8:** Choose the recommended chart, and click **+ Insert PivotChart**.
+**Step 3:** The file will be uploaded to your OneDrive of the Microsoft Account you signed up and used to open Excel for the web.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/recommend1.png" width="600"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/uploading.png" width="600"></div></div>
 
-### Task B: Use of the Filters feature
+**Step 4:** You have successfully uploaded and opened a workbook in Excel for the web.
 
-**Step 1:** Switch to worksheet **Pivot1**.
+<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/indianstartupwb.png" width="600"></div></div>
 
-**Step 2:** In the Pivot Table, click the **Row Labels** arrow.
+**Congratulations!** 
 
-**Step 3:** Select **City Location**, then **Filter...**.
+You have completed Lab 1, and you are ready for the next topic.
 
-**Step 4:** Just select **Burnsville**, **Delhi**, **New York**, then click **OK** to display the amounts for startups in these three cities only.
 
-**Step 5:** In the Pivot Table, click the **Row Labels** arrow.
-
-**Step 6:** Select **City Location**, then click **Clear Filter From 'City Location'** to display the startups in all cities again.
-
-### Task C: Use of the Slicers feature
-
-**Step 1:** Download the file **[indian_startup_funding_Lab7_with_slicers_timelines.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7_with_slicers_timelines.xlsx)**. Upload and open it using Excel for the web.
-
-**Step 2:** Switch to worksheet **Pivot1** if you are not there.
-
-**Step 3:** In the **City Location** slicer, select **Burnsville**, then **Delhi**, then **New York**.
-
-**Step 4:** To filter by multiple selection in the **City Location** slicer, with **New York** still selected, press **CTRL** and select **Burnsville**, and then **Delhi**.
-
-**Step 5:** To filter using more than one slicer, in the **Investors Name** slicer, select **Amour Infrastructure**, then press **CTRL** and select **Westbridge Capital**, and then **Breakthrough Energy Ventures**.
-
-**Step 6:** In the **City Location** slicer, click the **Clear Filter** button, then in the **Investors Name** slicer, click the **Clear Filter** button.
-
-### Task D: Use of the Timelines feature
-
-**Step 1:** In the Date timeline, click **top right drop-down** and select **DAYS**, then scroll **left and right**.
-
-<div align="center"><div style="display: inline-grid; border: 3px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.D.1.png" width="600"></div></div>
-
-**Step 2:** In the Date timeline, click **top right drop-down** and select **QUARTERS**.
-
-**Step 3:** In the Date Timeline, select **2019 Q1**, then drag **2019 Q1 to 2019 Q3**.
-
-**Step 4:** In the Date timeline, click the **Clear Filter** icon.
-
-**Step 5:** In the Date timeline, click **top right drop-down** and select **YEARS**, then select **2020** only.
-
-**Congratulations!**
-
-You have completed Lab 7, and you are ready for the next topic.
 
 
 
