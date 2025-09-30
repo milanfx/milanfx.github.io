@@ -5,242 +5,148 @@ permalink: /xxx/
 ---
 
 
-# Cognos Advanced Dashboard Capabilities
 
-**Estimated Time Needed: 45 Minutes**
+# Excel Spreadsheet Basics
 
-### Purpose of the Lab: 
+**Estimated Time Needed: 20 Minutes**
 
-This lab focuses on enhancing skills in utilizing advanced features of IBM Cognos Analytics to create more dynamic and interactive dashboards. It delves into creating calculations, manipulating data points within visualizations, applying top/bottom settings on visualizations, and constructing navigation paths. Additionally, the lab provides hands-on experience in filtering data within a dashboard. The exercises are designed to provide a deeper understanding of how to leverage Cognos Analytics for more complex data analysis and visualization tasks, moving beyond basic dashboard creation. 
+### Overview
 
-### Benefits of Learning the Lab: 
+To get started with a spreadsheet app, you need to know:
 
-Engaging in this lab offers several key benefits for those interested in data analytics and visualization.You will acquire practical skills in advanced dashboarding techniques, such as creating custom calculations, effectively filtering and manipulating data, and utilizing Cognos Analytics to its full potential for comprehensive data analysis. These skills are vital for professionals in data analysis, business intelligence, and decision-making roles, as they allow for more nuanced and insightful analysis of data. The ability to create interactive and detailed dashboards enhances one's capability to present data in a more engaging and informative manner. This knowledge is particularly beneficial for those seeking to improve their data presentation skills, making complex data more accessible and actionable for decision-makers. Overall, the lab provides a strong foundation in advanced data visualization techniques, making it a valuable learning experience for advancing one’s career in the field of data analytics. 
+- Some of the common terminology around it
+- What its key features are
+- How to use some basic tools on the ribbon
+- How to move around a worksheet
+- How to select data in it. 
+
+In this lab, you will go through some basic spreadsheet elements, explore the ribbon, navigate around a worksheet and select data.
 
 ### Software Used in this Lab
 
-Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 30 days), as this is available at no charge.
+The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
+
+Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
 
 ### Dataset Used in this Lab
 
-The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
+The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
+Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
+
+We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
 
 ### Objectives
 
 After completing this lab, you will be able to:
 
-- Start a new dashboard
-- Create calculations
-- Keep/exclude data points from a visualization
-- Set top/bottom on a visualization
-- Create and leverage navigation paths
-- Filter data in a dashboard
+- Understand and use the basic elements of a spreadsheet.
+- Explore the ribbon, navigate around a worksheet and select data.
 
-## Exercise 1: Start a New Dashboard
+## Exercise 1: Introduction to Basic Spreadsheet Elements
 
-In this exercise, you will start a new dashboard for working with advanced Cognos Analytics dashboard capabilities.
+In this exercise, you will learn about some common spreadsheet elements.
 
-**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
+**Step 1:** Open **Excel for the web** (https://excel.cloud.microsoft/). Click on **Create blank workbook**.
 
-**Step 2:** Enter your IBMid and password.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IUozSPx1qIfrFUfHow33_g/Lab2-Spreadsheet%20Basics-NewBlankWorksheet.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 3:** Scroll down and click **Launch**.
+**Step 2:** The new blank workbook will automatically be saved in Excel for the web as **Book 1**. To rename the workbook to something more meaningful, click **File**, **Save As**, then choose **Rename**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.2.jpg" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 4:** From the **Recent** section, click the uploaded data file **CustomerLoyaltyProgram.csv**.
+**Step 3:** In the file name box, type **Personal_Monthly_Expenditure_Lab2** and click **OK**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.3.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 5:** The template window will be displayed, allowing you to select the type of dashboard and the template style. Select the **Tabbed** dashboard style. This will allow you to have multiple pages for your dashboards. Select the *five-panel template*, then click **Create**.
+**Step 4:** In the saved workbook, you will have one worksheet opened, named *Sheet1*. Click **+** once to add another worksheet. Then, double-click the sheet name tab for **Sheet1** and rename it to **Expense - 2019**. Similarly, rename **Sheet2** as **Expense - 2018**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.4.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 6:** To save the newly created dashboard, press **CTRL+S** or click the **Save** icon and then click **Save as**. 
+**Step 5:** To maintain an appropriate worksheet tab sequence, click on the worksheet tab **Expense - 2018**, then drag and drop it before the **Expense - 2019** tab.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png" style="width:auto; height:450px;"></div> 
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.5.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 7:** A new **Save as** window will pop up. Follow the steps as displayed below to save your dashboard as **Advanced Dashboard** in the **My content** section.
+**Step 6:** Click on the **Expense - 2018** tab. Select an entire column by clicking on **B** in the top of the worksheet, then select an entire row by clicking on the number **5** in the left of the worksheet. Click cell **B5**, and a green outline will appear around the cell. Now check if you have clicked the correct cell by looking at the cell name box in the top left corner, circled in red below.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.6.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 8:** As you build the dashboard, the location placement for visualization widgets in the dashboard template will be referenced using the following Panel numbers.
+**Step 7:** Select several cells in the same row, such as A1:D1 by clicking cell **A1** and then drag the cursor across to **D1**. Similarly, select a cell range in the same column, such as A1:A5 by clicking **A1** and dragging the cursor down to **A5**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.7.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 9:** From the **Navigation** panel, select **Sources** to ensure the data source panel is open in the left pane.
+**Step 8:** Now select a cell range which includes several rows and columns together, such as A1:C5 by clicking **A1** and then dragging the cursor across and down to cell **C5**.
 
-**Step 10:** From the data source panel, select **Revenue** and drag it to the center of **Panel 1**, releasing it once you see the drop zone turn blue.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/1.8.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png" style="width:auto; height:450px;"></div>
+## Exercise 2:  Explore the Ribbon, Navigate around a Worksheet, and Select Data
 
-**Step 11:** Click the summary chart in Panel 1 to bring it into focus. From the on-demand toolbar that appears in the main toolbar, click **Summarize**, and then select **Average**.
+In this exercise, you will explore the ribbon, then navigate around a worksheet, and select data.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png" style="width:auto; height:450px;"></div>
+### Task A: Explore the ribbon
 
-**Step 12:** In the summary chart in Panel 1, select the title of the visualization and change it to *Average Revenue*.
+**Step 1:** Download the file **[indian_startup_funding_Lab2.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/indian_startup_funding_Lab2.xlsx)**.
 
-**Step 13:** From the **Navigation** panel, select **Widgets** to open the widgets panel. Drag and drop **Money coin** from **Shapes** to the center of Panel 1.
+**Step 2:** To open a sample file in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel**, and then click **Upload and open...** and select the **indian_startup_funding_Lab2.xlsx** file.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png" style="width:auto; height:450px;"></div>
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2A.1.png" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 14:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the toolbar.
+**Step 3:** Click each of the following tabs in the ribbon; **File, Home, Insert, Formulas, Data, Review, View** to explore each of them and get acquainted with the ribbon. Double-click any of the tabs to hide the ribbon, then do the same again to unhide it.
 
-**Step 15:** Your Panel 1 visualization should look similar to the one below:
+### Task B: Navigate around a worksheet
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png" style="width:auto; height:450px;"></div>
+**Step 1:** Click on **any cell** and move around the worksheet using the arrow keys; **Up, Down, Left, Right**.
 
-## Exercise 2: Working with Advanced Cognos Analytics dashboard capabilities
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2B.1.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
-- Task A: Create calculations 
-- Task B: Keep/Exclude Data Points from a visualization
-- Task C: Set Top/Bottom on a visualization
-- Task D: Create and Leverage navigation paths
-- Task E: Filter Data in the current tab
+**Step 2:** Click **Page Down** twice, and then **Page Up** twice to move around a bit faster, which is useful if you have lots of rows of data.
 
-### Task A: Create Calculations 
+**Step 3:** Click and drag the **horizontal scroll bar** and then the **vertical scroll bar** to move even quicker up, down, and across a large datasheet.
 
-**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
+**Step 4:** Try out these useful shortcuts in your worksheet:
 
-**Step 2:** Right-click the **CustomerLoyaltyProgram.csv** data source and select **Calculation**.
+- Press **CTRL+End** to take you to the cell at the end of your data in the worksheet.
+- Press **CTRL+Home** to take you back to the start of the data in the worksheet (i.e. cell A2).
+- Press **CTRL+Down Arrow** to take you to the end of the column you’re in
+- Press **CTRL+Up Arrow** to take you back to the top of the column.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png" style="width:auto; height:450px;"></div>
+### Task C: Select data
 
-**Step 3:** Change the calculation name to **Margin**. From the **Components** panel, drag **Unit Sale Price** to the **Expression** field, type a space, then the minus sign, **-**, to the right of it, and then drag **Unit Cost** to the right of that. Click **OK**.
+Perform the following steps to learn how to select different parts of your data (you can use the mouse to select cells if you prefer):
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png" style="width:auto; height:450px;"></div>
+**Step 1:** <ins>To select cells in a single row:</ins> Select cell **A1**, then select cells **A1 to D1** by using **SHIFT+right arrow**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png" style="width:auto; height:450px;"></div>
+- <ins>To select cells in a single column:</ins> Select cell **A1**, then select cells **A1 to A10** by using **SHIFT+down arrow**.
 
-**Step 4:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed, and drag **Margin** to the center of **Panel 2**, releasing it once you see the drop zone turn blue.
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2C.1.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
-**Step 5:** Right-click the margin chart in Panel 2, point to **Summarize**, and then select **Average**.
+**Step 2:** <ins>To select multiple contiguous cols/rows:</ins>  Select column **A**, and use **SHIFT+ right arrow** to reach column **E**.
 
-**Step 6:** From the data source panel, right-click on **Margin** and click **Format data**. 
+**Step 3:** <ins>To select multiple non-contiguous cols/rows:</ins> Select column **A**, then hold **CTRL** and select column **E**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png" style="width:auto; height:450px;"></div>
+**Step 4:** <ins>To select the entire worksheet:</ins> Click the **corner button** (small grey triangle in top left corner of the worksheet).
 
-**Step 7:** In the **Format type** list, select **Currency**.
+- <ins>To select all your data:</ins> Select any cell in the data, then press **CTRL+A**.
 
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png" style="width:auto; height:450px;"></div>
+**NOTE:** The first time you press CTRL+A, it selects the current region if the worksheet contains data, the second time it selects the current data region and its header row, and the third time it selects the entire worksheet.
 
-**Step 8:** Select **$ (USD) - United States of America, dollar** as the currency and click **OK** at the bottom.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png" style="width:auto; height:450px;"></div>
-
-**Step 9:** In the margin chart in Panel 2, select the title of the visualization and change it to *Average Margin*.
-
-**Step 10:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
-
-**Step 11:** Your Panel 2 visualization should look similar to the one below:
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png" style="width:auto; height:450px;"></div>
-
-### Task B: Keep/Exclude Data Points from a Visualization
-
-**Step 1:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed. Press the **CTRL** key and select **Revenue** and **Product Line** and drag them both to the center of **Panel 3**, releasing them once you see the drop zone turn blue.
-
-**Step 2:** From the data source panel, drag **Location Code** to the **Color** drop zone of **Panel 3**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png" style="width:auto; height:450px;"></div>
-
-**Step 3:** Right-click the **Suburban** data point in the Panel 3 visualization, and select **Exclude**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png" style="width:auto; height:450px;"></div>
-
-**Step 4:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
-
-**Step 5:** Your Panel 3 visualization should look similar to the one below:
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png" style="width:auto; height:450px;"></div>
-
-### Task C: Set Top/Bottom on a Visualization
-
-**Step 1:** From the data source panel, press the **CTRL** key and select **Quantity Sold** and **City**, and drag them both to the center of **Panel 4**, releasing them once you see the drop zone turn blue.
-
-**Step 2:** Click the chart in Panel 4 to bring it into focus and render the on-demand toolbar.
-
-**Step 3:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Map**), then expand **All visualizations**, if needed, and select **Column**.
-
-**Step 4:** In Panel 4, right-click the axis label **Quantity Sold (Sum)** down the left side of the chart and select **Top or bottom**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png" style="width:auto; height:450px;"></div>
-
-**Step 5:** Ensure the value of **Number of results** is set to **10**, then select **Top count**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png" style="width:auto; height:450px;"></div>
-
-**Step 6:** In the column chart in Panel 4, select the title of the visualization and change it to *Top 10 Quantity Sold by City*.
-
-**Step 7:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
-
-**Step 8:** Your Panel 4 visualization should look similar to the one below:
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png" style="width:auto; height:450px;"></div>
-
-### Task D: Create and leverage navigation paths
-
-**Step 1:** In the data source panel on the left, scroll to the top of the list and click the **plus sign** labeled **Create navigation path** to the right of **Navigation paths**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png" style="width:auto; height:450px;"></div>
-
-**Step 2:** In the **Create navigation path** dialog box, expand CustomerLoyaltyProgram.csv, if needed. Drag **Order Year**, **Quarter**, **Country**, and **City** sequentially to the right hand panel of the dialog box, maintaining the order (shown in the image below). Once done, click **OK**. 
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png" style="width:auto; height:450px;"></div>
-
-**Step 3:** From the data source panel, press the **CTRL** key and select **Margin**, **Product Line**, and **Order Year** and drag them to the center of **Panel 5**, releasing them once you see the drop zone turn blue.
-
-**Step 4:** Click the line chart in Panel 5 to bring it into focus and render the on-demand toolbar.
-
-**Step 5:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Line**), then expand **All visualizations**, if needed, and select **Bar**.
-
-**Step 6:** In Panel 5, right-click the axis label **Order Year** down the left side of the chart, and select **Navigate**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png" style="width:auto; height:450px;"></div>
-
-**Step 7:** One by one, select the **Order Year**, **Quarter**, **Country**, and **City** options in the **Navigate** dialog box to view the different navigation paths and observe the resulting visualization in Panel 5 as you select each one. Lastly, keep the **Order Year** option selected.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png" style="width:auto; height:450px;"></div>
-
-**Step 8:** <ins>Alternative interactive way with Drill down/back:</ins>
-- In the bar chart in Panel 5, right-click the **2016** - **Smart Electronics** bar of the bar chart, and select **Drill down**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png" style="width:auto; height:450px;"></div>
-
-- Now right-click the **Q1** - **Smart Electronics** bar of the bar chart, and select **Back**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png" style="width:auto; height:450px;"></div>
-
-**Step 9:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
-
-**Step 10:** Your Panel 5 visualization should look similar to the one below:
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png" style="width:auto; height:450px;"></div>
-
-### Task E: Filter Data in the Current Tab
-
-**Step 1:** If required, click **Filters** in the **Dashboard Toolbar** to display the filters pane.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png" style="width:auto; height:450px;"></div>
-
-**Step 2:** From the data source panel, select **Product Line** and drag it to the **This tab** filter panel on the right hand side.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png" style="width:auto; height:450px;"></div>
-
-**Step 3:** Click the **Product Line** filter tab of the **This tab** filter panel. Select **Computers and Home Office**, **Photography**, and **TV and Video Gaming**, then click **Done**.
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png" style="width:auto; height:450px;"></div>
-
-Your final dashboard should look similar to the one below. To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar. 
-
-<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px; width:max-900px; overflow:hidden;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png" style="width:auto; height:450px;"></div>
-
-Feel free to change the appearance and layout of the dashboard you have just created. 
+<div style="display: inline-grid; border: 3px solid Purple; margin-bottom:20px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/images/2C.4.gif" style="max-height:600px; min-height:300px; max-width:900px; min-width:450px; width:auto; height:auto; object-fit:contain;">
+</div>
 
 **Congratulations!**
 
-You have completed this Lab.
+You have completed Lab 2, and you are ready for the next topic.
+
 
 
 
