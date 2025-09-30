@@ -5,216 +5,94 @@ permalink: /xxx/
 ---
 
 
-# Implementing Data Modeling in Tableau
+# Db2 Load Data from a CSV file
 
-<p>Estimated time needed: <strong>15</strong> minutes.</p>
-<p>In this lab, you will learn how to implement data modeling in
-Tableau.</p>
-<h2 id="required-software">Required Software</h2>
-<p>You can complete this lab using the free, downloadable
-<strong>Tableau Desktop (Public Edition)</strong> desktop software. You
-may also use the free <strong>Tableau Public online platform</strong>,
-but some tasks may not work in exactly the same way or may not be
-supported in that version.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>You need a free Tableau Public account for this lab. If you haven't
-already done so, you can sign up for an account using the steps
-<a href="https://ske-200666-getting-started-with-tableau-sk228091-13e06c0574350f.gitlab.io/labs/v1/m1/Sign%20Up%20for%20Tableau%20Public.md.html" target="_blank">here</a>.</p>
-<p><strong><em>Disclaimer: The screenshots in this lab are taken from
-Tableau Desktop. If you are using Tableau Public, you may notice some
-differences due to version variations.</em></strong></p>
-<h2 id="data-set">Data Set</h2>
-<p>This lab uses several sample data sets called
-<strong>Country.csv</strong>, <strong>Indicators_small.csv</strong>, and
-<strong>Series.csv</strong> to showcase the Tableau features used in
-these lab exercises.</p>
-<p>Hold the CTRL key while you click to download each of the following
-files:</p>
-<p><a href="data/Country.csv">Country.csv</a></p>
-<p><a href="data/Indicators_small.csv">Indicators_small.csv</a></p>
-<p><a href="data/Series.csv">Series.csv</a></p>
-<h2 id="objectives">Objectives</h2>
-<p>The exercises in this lab teach you how to implement data modeling in
-Tableau</p>
-<p>In this hands-on lab, you will:</p>
-<ol type="1">
-<li>Implement data modeling</li>
-</ol>
-<h1 id="exercise-implement-data-modeling">Exercise: Implement Data
-Modeling</h1>
-<p>In this exercise, you will learn how to join tables by joining the
-<strong>Country</strong> table with the
-<strong>Indicators_small</strong> table.</p>
-<ol type="1">
-<li>Under <strong>To a File</strong>, click <strong>Text
-file</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/To_a_File_Text.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="2" type="1">
-<li>Navigate to the folder where you downloaded the data sets to, then
-select <strong>Country.csv</strong>, and click
-<strong>Open</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Country_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="3" type="1">
-<li>Right-click <strong>Country.csv</strong> and click
-<strong>Open</strong>. You are now viewing the physical table that
-defines the logical table of the same name. You need to view the
-physical table as joins are done between physical tables, not logical
-tables.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Open_Country.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="4" type="1">
-<li>Drag <strong>Indicators_small.csv</strong> to the right of
-<strong>Country.csv</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Country_Indicators_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="5" type="1">
-<li><p>Click the <strong>Inner Join</strong> symbol.</p></li>
-<li><p>You can see these two tables are now part of an <em>Inner
-Join</em>, and you can see the four types of join (Inner, Left, Right,
-and Full Outer). The common field in this join is <em>Country
-Code</em>.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Country_Indicators_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="7" type="1">
-<li><p>Close the <strong>Join</strong> window.</p></li>
-<li><p>You'll now join the <em>Indicators_small</em> table with the
-<em>Series</em> table, by dragging <strong>Series.csv</strong> to the
-right of <strong>Indicators_small.csv</strong>.</p></li>
-<li><p>Click the <strong>Inner Join</strong> symbol.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="10" type="1">
-<li>You can see these two tables are now part of another <em>Inner
-Join</em>, and you can see that the common field in this join is
-<em>Indicator Name</em>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="11" type="1">
-<li><p>Close the <strong>Join</strong> window and click
-<strong>X</strong> in the top right corner of the canvas.</p></li>
-<li><p>Hover over the <strong>Country.csv</strong> data file.</p></li>
-<li><p>You can see that Country.csv is one logical table combined with
-three physical tables: Country.csv, Indicators_small.csv, and
-Series.csv.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="14" type="1">
-<li>Click the little arrow to the right of <strong>Country.csv</strong>
-and click Remove.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<p>Having created joins, you will now create a relationship between two
-logical tables.</p>
-<ol start="15" type="1">
-<li><p>Drag the <strong>Country.csv</strong> dimension to the canvas
-area.</p></li>
-<li><p>Drag <strong>Indicators_small.csv</strong> in the canvas area
-just next to <strong>Country.csv</strong>.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="17" type="1">
-<li><p>Hover over the orange line (the noodle) joining
-<strong>Country.csv</strong> and
-<strong>Indicators_small.csv</strong>.</p></li>
-<li><p>You can see that the relationship type (or <em>Cardinality</em>)
-is the default <em>Many to Many</em> relationship, and the common (or
-<em>Related</em>) field is <em>Country Code</em>.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="19" type="1">
-<li>In the bottom-left of the canvas, expand <strong>Performance
-Options</strong>; in <strong>Cardinality</strong>, select
-<strong>One</strong> from the first drop-down list.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="20" type="1">
-<li><p>Hover over the noodle joining <strong>Country.csv</strong> and
-<strong>Indicators_small.csv</strong>.</p></li>
-<li><p>You can see that this relationship is now a <em>One-to-many</em>
-relationship.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<p>Now that you've created a join and a relationship between two or more
-tables, next, you'll visualize the data for presentation.</p>
-<ol start="22" type="1">
-<li>In the data window, click <strong>Update Now</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Update_now.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="23" type="1">
-<li>Click the <strong>Sheet 1</strong> worksheet tab to extract the
-data.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Sheet1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="24" type="1">
-<li><p>Drag <strong>Region</strong> to <strong>Rows</strong>.</p></li>
-<li><p>Click the right arrow of the <strong>Region</strong> pill and
-select <strong>Filter</strong>.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="26" type="1">
-<li>Uncheck <strong>Null</strong> in the list and click
-<strong>OK</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="27" type="1">
-<li>This removes Null from the visualization table.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="28" type="1">
-<li>From the <strong>Indicators_small.csv</strong> table in the
-<strong>Data</strong> pane on the left, drag <strong>Country
-Name</strong> to <strong>Rows</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="29" type="1">
-<li>Drag the <strong>Latest Population Census</strong> measure to
-<strong>Columns</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="30" type="1">
-<li>Click on the right arrow of the <strong>Latest Population
-Census</strong> pill and select <strong>Filter</strong>.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="31" type="1">
-<li><p>On the <strong>Filter</strong> tab, ensure that <strong>Include
-Null Values</strong> is unchecked.</p></li>
-<li><p>Click <strong>OK</strong>.</p></li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<ol start="33" type="1">
-<li>You now have a bar chart visualization of each country's Latest
-Population Census year.</li>
-</ol>
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-</p>
-<h3
-id="congratulations-you-have-completed-this-lab-and-are-ready-for-the-next-topic.">Congratulations!
-You have completed this lab and are ready for the next topic.</h3>
+**Estimated Time Needed: 15 Minutes**
+
+### Overview
+
+Now that you have learned about the process of importing data into a data repository from varied sources, you will load data from a CSV file into the IBM Db2 database instance you created in the previous lab.
+
+### Datasets
+
+The dataset used in this exercise comes from the following source: [https://www.kaggle.com/antfarol/car-sale-advertisements](https://www.kaggle.com/antfarol/car-sale-advertisements) under a [CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/). We are using a modified subset of that dataset for this lab. To follow the lab instructions successfully, please use the dataset provided with this exercise rather than the dataset from the original source.
+
+**NOTE:** The lab assumes that you have downloaded this CSV file: [exercise03_car_sales_data.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/exercise03_car_sales_data.csv) to your local system.
+
+## Practice
+
+Please follow the steps given below to provision your instance of IBM Db2 on Cloud.
+
+**Step 1:**  Go to: [https://cloud.ibm.com/catalog/services/db2](https://cloud.ibm.com/catalog/services/db2?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBM-DB0100EN-SkillsNetwork) to access your Db2 dashboard on Cloud.
+**Step 2:**  If you’re not already logged in to your IBM Cloud Lite account, click on **Log in** at the bottom right of the screen to log in.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-1.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
+
+**Step 3:**  Logging in will take you to your **Db2 service dashboard**.
+
+Click on **view existing** link in the **Existing Lite plan instance** box.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-2.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 4:**  The **Manage** tab will be active by default in your services dashboard. Click on **Go to UI**.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-3.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 5:**  Now click on the menu bar icon in the top left corner of your Db2 service dashboard.
+
+Click on **Load** **>** **Load Data**.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-4.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 6:**  You can either drag and drop the CSV file into the **File selection** box, or you can click on the **browse files** link, also provided in the **File selection** box to browse your local folders to find and open the downloaded CSV file.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-5.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+The name of the CSV file you have uploaded will appear in the **Selected file** section on the right.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-6.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+Click **Next** to proceed.
+
+**Step 7:**  You will be asked to select a **Schema** from a list of schema names.
+
+**NOTE:** Select the schema name with a random mix of alphabets and numbers. It will be similar to, but not the same as, the one you see in the screenshot below (_MGJ73335_). The ones that you do NOT have to select are AUDIT, DB2INST1, ERRORSCHEMA, and ST_INFORMTN_SCHEMA (and sometimes you might also see SQLxxxxx as well).
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-7.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
+**Step 8:**  Click on **New Table**.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-8.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 9:**  Enter the name **CARSALESTABLE** in the input box prompting you with **_NEW TABLE NAME_**.
+
+**NOTE:** You will be using this table name in the SQL queries you will execute in the next exercise.
+
+Now click on **Create** to create the new table.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-9.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 10:**  A table by the name of **CARSALESTABLE** has been created.
+
+Click **Next** at the bottom right of the page to proceed.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-10.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 11:**  Click **Next** to proceed.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-11.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br>
+
+**Step 12:**  Then click **Begin Load** to begin the process of loading the data from the CSV into your database.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-12.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Step 13:**  Data from your CSV file is now loaded into your Db2 instance.
+
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/labs/images/Figure_3-13.png" style="width:880px; max-height:500px; object-fit:contain;"></div><br> 
+
+**Congratulations!** 
+
+You have successfully loaded data from a CSV file into the IBM Db2 instance you created in the previous lab.
+
 
 
 
