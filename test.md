@@ -29,7 +29,7 @@ In this lab, you will become familiar with using an Integrated Development Envir
 
 - The area on the right side of the screen is the actual IDE, where you will use the menus, terminals, and tools to develop your code.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 ## Exercise 1: Explore the IDE interface
 
@@ -39,31 +39,31 @@ Let us now explore the IDE interface. Please click on each of the icons and menu
 
 **Step 1:** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 2:** In the **Search** menu, you can search for particular folders or files that were created or cloned.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 3:** In the **Source Control** menu, you will find the cloned repository.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 4:** In the **Debug** menu, you can debug and troubleshoot your code.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 5:** In the **Extensions** menu, you can check the recommended, installed, and built-in software already provided as the pre-requisitesprerequisites. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 6:** In the **Skills Network Toolbox**, you will find options to use database, big data, cloud, and other tools to complete lab exercises in other courses.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 7:** Explore the menu options at the top of the IDE: File, Edit, Selection, View, Go, Run, Terminal, Help. You will be using some of these menu items in subsequent exercises. A summary of what they are used for is provided below.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 - **File:** This menu is used to create a new file or folder and save the file.
 
@@ -89,23 +89,23 @@ Click on each menu and explore them.
 
 **Step 1:** On the window to the right, click on the File menu and select **"New Folder"** option, as shown in the image below.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 Name the folder **"welcome101"**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **NOTE:** Ensure that the folder is created within the /home/project directory. If you\'re encountering any issues, right-click on an empty area and select New Folder*
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 2:** Right-click on the folder welcome101 and click on **"New File"**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 Create a new file and name it **"welcome.py"**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 **Step 3:** Paste the below code to the welcome.py file and save it using Ctrl+S.
 
@@ -118,17 +118,17 @@ c = a + b
 print(c)
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 ## Exercise 3: Execute the program
 
 **Step 1:** Open a terminal window using the editor New  Terminal.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 In the terminal, you will run all the commands to complete the lab.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 2:** Verify that python is installed.
 
@@ -149,7 +149,7 @@ python3.11 -m pip install numpy
 ```
 You should see the an output similar to this.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 **Step 4:** Change the directory for this lab by using the command shown below in the terminal.
 
@@ -165,7 +165,7 @@ python3.11 welcome.py
 
 **You will get the following output!**
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 ## Exercise 4: Edit the source code and re-run the program
 
@@ -176,7 +176,7 @@ message= "Welcome to the world of programming!"
 print (message)
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div> 
 
 **Step 2:** Run the program in the terminal using the command below:
 
@@ -190,7 +190,7 @@ You should see an output similar to this.
 Welcome to the world of programming!
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 ## Practice Exercises
 
@@ -201,7 +201,7 @@ Welcome to the world of programming!
 
 On the window to the right, click on the File menu and select the **"New Folder"** option, as shown in the image below. Name the folder **"software101"**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
@@ -212,7 +212,7 @@ On the window to the right, click on the File menu and select the **"New Folder"
 
 Right-click on the folder software101, click on **"New File"**, create a new file, and name it **"software.py"**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
@@ -240,7 +240,7 @@ c = a + b
 print (c)
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
@@ -256,7 +256,7 @@ cd software101
 python3.11 software.py
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
@@ -267,7 +267,7 @@ python3.11 software.py
 
 Change the array 'a' to [5,3,1] and save the file.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
@@ -282,7 +282,7 @@ Run the program in the terminal using the below command:
 python3.11 software.py
 ```
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png" style="width:880px; max-height:580px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png" style="width:800px; max-height:500px; object-fit:contain;"></div></div>
 
 </details>
 
