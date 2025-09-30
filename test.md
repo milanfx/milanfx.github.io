@@ -5,129 +5,184 @@ permalink: /xxx/
 ---
 
 
-# Excel Getting Started
 
-**Estimated Time Needed: 20 Minutes**
+# Excel Measure of Dispersion
+	
+**Estimated Time Needed: 30 Minutes**
 
 ### Overview
 
-Microsoft Excel is the most widely used spreadsheet software even three decades after its initial release. For all these years it has been available as a standard application that needed to be installed on your desktop; but it is not just a desktop app anymore. Now, you can even use Excel when you're online by using 'Excel for the web' - and run it right in your web browser without installing anything on your desktop!
-
-'Excel for the web' (sometimes referred to as Excel Online) can be used at no charge as part of a free Microsoft account. Although it does not have all of the capabilities of the desktop and paid online versions, the free web version provides many of the key features.
+In this lab, you will learn to calculate the measure of dispersion and describe the spread or dispersion in the data. Next, you will learn about the different types of measurement of dispersion with the help of real-life examples. You will also be able to calculate a range, quartile range, variance, and standard deviation for the given data set using Excel.
 
 ### Software Used in this Lab
 
-The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
+The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs, we will be using the free "Excel for the web" version as this is available to everyone.
 
-Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
+Although you can use the Excel Desktop software if you have access to this version, <a href="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/instructions.md.html">it is recommended that you use Excel for the web for the hands-on labs</a>, as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
 
-### Dataset Used in this Lab
+### Data set Used in this Lab
 
-The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
-Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
+The data set used in this lab is curated from the following source: https://www.kaggle.com/datasets/anandaramg/nyc-jobs-openings-2022 under the [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/ "CC0: Public Domain") license.
 
-We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
+Acknowledgment and thanks also go to https://trak.in who were generous enough to share the data publicly for free.
 
-### Objectives
+We are using a modified subset of that data set for the lab, so to follow the lab instructions successfully, please use the data set provided in this lab rather than the data set from the original source.
 
-After completing this lab, you will be able to:
+### Learning Objectives:
 
-- Sign up for a Microsoft Account to use Excel for the web
-- Sign in, upload and open a workbook in Excel for the web
+- Describe types of measurement of dispersion
+- Calculate range, variance, and standard deviation using Excel
+- Implement Excel formulas of range, variance, and standard deviation to find dispersion for the given data sets
 
-## Exercise 1: Sign-up for a Microsoft Account to Use Excel for the web
+Welcome to the Lab: Measure of Dispersion!
 
-In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
+## Exercise: Calculate the Measurement of Dispersion using the Range, Variance, and Standard Deviation
 
-If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.
+In this exercise, you\'ll learn to calculate range, variance, and standard deviation for the measurement of dispersion using Excel for the web. You will also learn that the dispersion or variability measures can describe the data\'s spread or dispersion using Excel for the web. You can follow the tasks below to perform this exercise.
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
+### Task A: Calculate Average
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" width="800"></div>
+**Step 1:** To calculate the average, use a data set for which you want to find the average. In this case, let\'s use the data set of [job openings in the years 2022 and 2023](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Mz4niWqEW7nPCOI_0JLNwg/Lab-M1-Lab1-Measure-of-Dispersion.xlsx "job openings in the years 2022 and 2023") (To download the given data set in this lab, right click on the given hyperlink and select Open link in new tab) for business intelligence (BI) roles.
 
-**Step 2:** Click **Create one!**
+|  Number of job openings |2022 | 2023 |
+| ------------ | ------------ | ------------ |
+| Data scientist  | 8500 | 9800  |
+| Data engineer  | 4500 | 6400 |
+| Python developer | 8400 | 5600 |
+| Cyber security expert | 1000 | 900  |
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.2.png" width="800"></div>
+**Step 2:** Copy or transfer the given data set in Excel.
 
-**Step 3:** Enter your existing email id with which you want to create a Microsoft account. Click **Next**.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/1.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.3.png" width="800"></div>
+Let\'s first calculate the average using either of the following two methods:
 
-**Step 4:** Enter your password and click **Next**.
+Method 1: Calculate the average from the **Formulas** tab in Excel.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.4.png" width="800"></div>
+Method 2: Apply the **Average** formula to the given data set in Excel.
 
-**Step 5:** Enter the code you received by email. Click **Next**.
+### Method 1: Calculate the Average from the Formulas tab in Excel
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.5.png" width="800"></div>
+**Step 1:** To calculate the average job openings in the year 2022, select the data column you want to find the average.
 
-**Step 6:** Enter your phone number and click **Send Code**.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/2.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.6.png" width="800"></div>
+**Step 2:** Select the **Formulas** tab and choose **AutoSum** from the ribbon. A drop-down list will appear.
 
-**Step 7:** Enter the access code you received as a text on your phone, then click **Next**.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/3.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.7.png" width="800"></div>
+**Step 3:** From the  drop-down list, select **Average**. You can see that the **Average** value is calculated for job openings in the year 2022. You\'ll  get the value 5600.
 
-**Step 8:** You are now done with the sign up procedure. Now since you are signed in after sign up at this stage, you can proceed directly to **Task B** of **Exercise 2**.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/4.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" width="800"></div>
+### Method 2: Apply the Average formula in Excel
 
-## Exercise 2: Sign-in, Upload and Open a Workbook in Excel for the web
+**Step 1:** Now, let\'s calculate the **Average** for job openings in the year 2023 using the Average formula. To do so, type in the formula **=Average()** below job openings in the 2023 column and select the data range for which you want to calculate the average.
 
-In this exercise, you will sign in to Excel for the web, open a new workbook and then upload and open a workbook.
+**Step 2:** Press **Enter** to get the average value for the job openings in the year 2023. You\'ll get the value 5675.
 
-### Task A: Sign in to Excel for the web
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/5.png" width="800"></div>
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**.
+### Task B: Calculate the Range
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" width="800"></div>
+You can calculate the range for the data by subtracting the minimum value from the maximum value using the Excel formula **=MAX()–MIN()**. However, the formula =MAX() helps to find the maximum value, and the formula =MIN() helps to find the minimum value for the data set in Excel for the web. Perform the following steps to calculate the range in Excel for the web.
 
-**Step 2:** Enter your sign in email.
+**Step 1:** To calculate the maximum value in the given data set for the job openings in the year 2022, type in the formula **=MAX()** and select the range for the data column. Next, press **Enter** to get the maximum value. You\'ll get a maximum value 8500.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.2.png" width="800"></div>
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/6.png" width="800"></div>
 
-**Step 3:** Enter your password.
+**Step 2:** To calculate the minimum value in the given data set for job openings in the year 2023, type in the formula **=MIN()** and select the range for the data column. Next, press **Enter** to get the minimum value. You\'ll get a minimum value 900.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.3.png" width="800"></div>
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/7.png" width="800"></div>
 
-**Step 4:** You are now signed in.
+**Step 3:** To calculate the range for the job opening in the year 2022, type in the formula **=MAX()–MIN()**. Press **Enter** to get the value for Range. You will get a value as 7500. In a similar way, you can calculate the range for the job openings for the year 2023.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" width="800"></div>
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/8.png" width="800"></div>
 
-### Task B: Open a new workbook in Excel for the web
+### Quartile Function
 
-**Step 1:** Click on the **Excel** icon.
+Now, let\'s look at the quartile function.
 
-**Step 2:** Click **New blank workbook**.
+Quartile functions are of two types: Inclusive quartile function and exclusive quartile function. Both functions calculate the quartile by calculating the percentage of the data.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blankwb.png" width="800"></div>
+### Inclusive Quartile Function
 
-**Step 3:** You have successfully opened a new workbook in Excel for the web.
+The inclusive quartile function is a difference between the quartile 3 and quartile 1 values. It also includes the quartiles 0 and 4 to calculate the values of quartiles. Let\'s calculate an inclusive quartile value for the job openings in the year 2022 for the given data set.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blanlwb.png" width="800"></div>
+**Step 1:** To calculate the inclusive quartile for quarter 3, type in the formula **=QUARTILE.INC**, select a range for the job openings in the year 2022 and insert comma 3. Next, press **Enter**. You\'ll get the value for the inclusive quartile for quarter 3 as 8425.
 
-### Task C: Upload and Open a workbook in Excel for the web
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/9.png" width="800"></div>
 
-**Step 1:** Download the file **[indian_startup_funding_Lab1.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/indian_startup_funding_Lab1.xlsx)**.
+**Step 2:** Now, let\'s calculate the inclusive quartile for quarter 1 for the job openings in the year 2023. To do so, type in the formula **=QUARTILE.INC**, select the range for the job openings in the year 2023 and insert comma 1. Next, press **Enter**. You\'ll get the value for the inclusive quartile for quarter 1 as 4425.
 
-**Step 2:** To upload and open a workbook in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel** icon. Then click **Upload and open...** and select the **indian_startup_funding_Lab1.xlsx** file.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/10.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/select_excel.png" width="800"></div>
+**Step 3:** To calculate the inclusive interquartile range, use the minus formula in Excel for Quartile 3 and Quartile 1. Press **Enter**. You\'ll get the interquartile range 4800 and 2825 for the job openings in the year 2022 and 2023, respectively.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/11.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/upload.png" width="800"></div>
+### Exclusive Quartile Function
 
-**Step 3:** The file will be uploaded to your OneDrive of the Microsoft Account you signed up and used to open Excel for the web.
+The exclusive quartile range function cannot calculate quartile 0 or quartile 4. It means that it excludes extreme values. Let\'s calculate an exclusive quartile value for the given data set.
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/uploading.png" width="800"></div>
+**Step 1:** To calculate the exclusive quartile quarter 3 for the job opening in the year 2022, type in the formula **=QUARTILE.EXC**, select the range for the job opening in the year 2022 and insert comma 3. Next, press **Enter**. You\'ll get the value 8475.
 
-**Step 4:** You have successfully uploaded and opened a workbook in Excel for the web.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/12.png" width="800"></div>
 
-<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/indianstartupwb.png" width="800"></div>
+**Step 2:** In a similar way, to calculate the exclusive quartile value for quarter 1 for the job openings in the year 2023, type in the formula **=QUARTILE.EXC**, select a range for the year 2023 and insert comma 1. Press **Enter**. You\'ll get the value 2075.
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/13.png" width="800"></div>
+
+**Step 3:** To calculate the exclusive interquartile range, use the minus formula in Excel for Quartile 3 and Quartile 1. Press **Enter**. You\'ll get the interquartile range 6600 and 6875 for the job openings in the year 2022 and 2023, respectively.
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/14.png" width="800"></div>
+
+### Task C: Calculate the Variance
+
+Variance is the average of the squared deviations and measures the distance from the mean or average for each data in the data set. Variance calculations depend on whether the data set describes the sample or the entire population. Let\'s review these two types of variances.
+
+### Calculate Population Variance
+
+**Step 1:** To calculate the population variance, you\'ll use the same data set for job openings in the year 2022 and 2023. You can manually calculate variance by dividing the squared deviations sum by \'n.\'
+
+**Step 2:** Let\'s first calculate the population variance for the job opening in the year 2022 using Excel. To do so, type in the formula **=VAR.P()** and select the range for the job opening in the year 2022. Press **Enter**. You\'ll get a value of 965,5000.
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/15.png" width="800"></div>
+
+### Calculate Sample Variance
+
+**Step 1:** To calculate the sample variance, use the given data set of job openings in the years 2022 and 2023. You can manually calculate variance by dividing the squared deviations sum by \'(n − 1)\'.
+
+**Step 2:** Now, let\'s calculate the sample variance for the job openings in the year 2023 using Excel. To do so, type in the formula **=VAR.S()** and select the range for the job openings in the year 2023. Press **Enter**. You\'ll get a value 134,491,66.67.
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/16.png" width="800"></div>
+
+### Task 4: Calculate the Standard Deviation
+
+Standard deviation is the square root of variance. However, the standard deviation can also differ if the calculated variance differs for the population and the sample variance. You can calculate the standard deviation using the equation,
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Formula1.png" width="800"></div>
+
+Where
+
+- *x<sub>i</sub>* = Each value in the data set
+- *x&#772;* = Mean of all values in the data set
+- *N* = Number of values in the data set
+
+Excel provides two functions for the standard deviation: Population and sample. Let\'s perform the steps to calculate the standard deviation using Excel.
+
+**Step 1:** To calculate the population standard deviation for the job openings in the year 2022, use the Excel formula **=STDEV.P()** and select the range for the data set.
+
+**Step 2:** Next, press **Enter**. You\'ll get a value 3107.25.
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/17.png" width="800"></div>
+
+**Step 3:** To calculate the sample standard deviation for the job openings in the year 2023, use the Excel formula **=STDEV.S()** and select the range for the data set. Then, press Enter to get the value for the sample standard deviation. You\'ll get the value 3667.31.
+
+<div style="display: inline-grid; border: 3px solid Gray;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Measure_of_Dispersion/18.png" width="800"></div>
 
 **Congratulations!**
 
-You have completed Lab 1, and you are ready for the next topic.
+You\'ve completed lab activity measure of dispersion, and you are ready to move to the next topic.
+
 
 
 
