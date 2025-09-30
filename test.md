@@ -5,243 +5,216 @@ permalink: /xxx/
 ---
 
 
-# Cognos Getting Started
-
-**Estimated Time Needed: 40 Minutes**
-
-### Overview
-
-IBM Cognos Analytics is an AI-fueled business intelligence platform that supports the entire data analytics cycle, from discovery to operationalization. It provides users with data discovery capabilities to visually explore and interact with their data to identify the key insights for improving data driven decisions. Users can perform data discovery and then quickly assemble that information into interactive, visually appealing dashboards; all without the need of formal training.
-
-In this lab, first you will learn how to sign up for IBM Cognos Analytics trial plan, and learn general navigation around the Cognos Analytics user interface (UI). Next, you will learn how to upload external data files to Cognos Analytics, and then learn how to start a new dashboard with templates. Lastly, you will learn how to create a simple dashboard.
-
-### Software Used in this Lab
-
-Like the videos in the course, for the hands-on labs we will be using IBM Cognos Analytics trial version (currently limited to 90 days) as this is available at no charge.
-
-### Dataset Used in this Lab
-
-The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
-
-### Objectives
-
-After completing this lab, you will be able to:
-- Sign up for a Cognos Analytics trial plan and navigate around the Cognos Analytics user interface.
-- Upload external data files to the Cognos Analytics platform.
-- Start a new dashboard with dashboard templates.
-- Create a simple dashboard.
-
-## Exercise 1: Sign up for Cognos Analytics Trial Plan
-In this exercise, you will learn how to sign up for an IBM Cognos Analytics trial plan.
-
-**Step 1:** Go to [Try IBM Cognos Analytics](https://www.ibm.com/account/reg/us-en/signup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork&formid=urx-48178).
-
-**NOTE:** If you use your existing cloud account, you will get only 30 days trial for Cognos Analytics. 
-
-**Step 2:** Fill out section **1. Account information** with your information and click **Next**. The email address you are going to use here, will be called IBMid. <ins> If you already have an IBMid, click **Log in**. Enter your IBMid and password. </ins>
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 3:** Fill out section **2. Additional information** with your information. In the case of the Data Center, select one which is nearest to your location. Then click **Next**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 4:** Now enter the 7 digit code you received on your email address and click **Create account**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.4.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 5:** Click **Proceed**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 6:** You are now done with the sign up procedure. You will be redirected to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork) automatically. Wait for some moment until the Coursera on-line training -  Data Visualizations trial offering becomes active.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.6.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 7:** Click on the **Launch** button of this offering.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.7.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-If it has been more than 72 hours since you initiated your Cognos Trial activation, but its still showing Activation in Progress, please let us know on the forum so we can follow up with the Cognos team on your behalf.
-
-**NOTE:** The trial will not be activated for learners in countries under US sanctions.
-
-**Step 8:** You have successfully launched the Cognos Analytics platform.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.8.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 9:** From now on, if you want to sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com](https://myibm.ibm.com/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork). Enter your IBMid and password. Repeat step 7 and 8.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/1.9.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-## Exercise 2: Navigate around Cognos Analytics UI 
-
-In this exercise, you will learn general navigation around the Cognos Analytics user interface.
-
-**Step 1:** The goal of the Cognos Analytics user interface (UI) is to provide you with a streamlined way to get started using Cognos Analytics and view content and activities pertinent to them. You will begin your general navigation here. 
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.A.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 2:** Click on the **Navigation Bar**, you can use the **Content** to work on different **Samples** The canvas now shows the Recently used files in the **Recent** section, if any, along with the **File drop zone** where you can easily upload your external data files.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.A.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 3:** Once you begin working with content, the canvas will update with your recently used items. In your Cognos Analytics instance, you may see recent content on the canvas.
-
-## Exercise 3: Create a Simple Dashboard with Cognos Analytics
-
-In this exercise, you will learn how to upload external data files to Cognos Analytics, and then learn how to start a new dashboard with templates. Lastly, you will learn how to create a simple dashboard.
-
-### Task A: Upload External Data Files
-
-In this task, you will learn how to upload external data files to Cognos Analytics.
-
-**Step 1:** Download the file [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv).
-
-**Step 2:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork).
-
-**Step 3:** Enter your IBMid and password.
-
-**Step 4:** Scroll down and click **Launch**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.A.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 5:** To upload a file, you may either drag and drop this file into the File Drop Zone (highlighted in the image above), or you may click **Upload files** at the bottom left corner to navigate to where the file is saved. For this lab, we will use the second option. Click **New > Upload files**. 
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/upload.PNG" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 6:** Click on Drag and drop file here or click to upload, aupdated new file browser window will open. Navigate to where the file is saved, select the file, and click Open.*.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/upload-data.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 7:** As the file uploads, status bars will be visible as the upload process reads and analyzes the data being brought in. Once it completes, the status bar will update to show the successful completion before closing.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/Complete_upload.PNG" style="width:880px; max-height:600px; object-fit:contain;"></div>    
-
-**Step 8:** Convert the **CustomerLoyaltyProgram.csv** to **Data module** by selecting the **Data module** in **Other options** and click  **Create** .
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/data-module.PNG" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-### Task B: Edit Data Module and view the table on IBM cognos. 
-
-In this task we will learn how to view the dataset on IBM Cognos.
-
-**Step 1:** Navigate to the **CustomerLoyaltyProgram data module**. Click **Action Menu** (repesented by three dots) under it. Next click the **Edit Data Module** to create a **Data Module**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/edit_module.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 2:** A New Data Module will be created.Click on the Action Menu (represented by three dots) of **New data Module**.Next click the **Table** option under the **Action Menu** to launch the **Create Table** window.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div> 
-
-**Step 3:** Click on the **Select Tables** button in the **Create table** screen. Select the uploaded dataset **CustomerLoyaltyProgram.csv**. Finally, click the **Next** button to proceed with the creation of the table.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div> 
-
-**Step 4:**  Click the **Refresh** button in the **Create a view of a table** window to view the data.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.4.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 5:** Now you will be able to see view the data in the table,click on the **Finish** button.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div> 
-
-**Step 6:** The new table view will be added in source panel now save this Data Module using the **Save** option.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.6.png" style="width:880px; max-height:600px; object-fit:contain;"></div> 
-
-**Step 7:** In the new popup window labeled **Save as**, Give the name **Customer Loyalty Program data module** and select **My content** tab, click on the 'Save' button to proceed.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.7.png" style="width:880px; max-height:600px; object-fit:contain;"></div>  
-
-**Step 8:** Next, please navigate to the menu option of IBM Cognos, which is represented by three horizontal lines. Click on the menu and select the 'Content' option from the available choices.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.8.png" style="width:880px; max-height:600px; object-fit:contain;"></div>	
-
-**Step 9:** You will now be  able to locate the **Customer Loyalty Program data module** under the **My Content** tab.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/2.new.9.png" style="width:880px; max-height:600px; object-fit:contain;"></div>	
-
-### Task C: Start a New Dashboard with Templates
-
-In this task, you will learn how to start a new dashboard with templates.
-
-**Step 1:** Click on the uploaded data file **CustomerLoyaltyProgram.csv**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 2:** The Template window will display allowing you to select the type of dashboard and the template style. Select the **tabbed dashboard style**. This will allow you to have multiple pages for your dashboards. Select the **three-panel template**. Click **Create**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 3:** Now you have created a new dashboard using the dashboard template.
-updat
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 4:** To save the newly created dashboard, press **CTRL+S**. Select **My content** as **Destination**. On the **Save as:** text field, write "Simple dashboard", and click **Save**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.B.4.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-### Task D: Create a Simple Dashboard
-
-In this task, you will learn how to create a simple dashboard with Cognos Analytics.
-
-**Step 1:** As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the following Panel numbers.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 2:** From the **Navigation** panel, select **Sources** to open the data source panel, if it is not already open. The **Data Source** panel displays the uploaded file **샵stomerLoyaltyProgram.csv� as the Selected Source.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.2.New.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 3:** From the **Data Source** panel, press **CTRL** and select **Order Year, Quantity Sold, Product Line** and drag it to the center of **Panel 1**, releasing them once you see the **drop zone turn blue**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 4:** Click on the **Line chart in panel 1** to bring it into focus and render the **on-demand toolbar**.
-
-**Step 5:** From the on-demand toolbar, select the title and enter the title "Product Line Performance by Year" to the visualization.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 6:** Highlight the **Title** to open the **Title on-demand toolbar**. From here, you can change the various properties on the title.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.6.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 7:** Click the **Color picker** icon, and change the color to **Red**, then click the font size drop-down and choose **18**.
-
-**Step 8:** From the **Data Source** panel, select **Quantity Sold** and drag it to the center of **Panel 2**, releasing it once you see the **drop zone turn blue**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.8.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 9:** From the **Data Source** panel, select **Revenue** and drag it to the center of **Panel 3**, releasing it once you see the **drop zone turn blue**.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.9.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 10:** Click on the tab name **Tab 1** to bring up the Tab鳠on-demand toolbar. Select the **Edit** icon.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.C.10.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Step 11:** **Rename** the tab to "A - Product Sales�12. To save the current work of the dashboard, press **CTRL+S**.
-
-Finally, your dashboard "A - Product Sales" should look like below:
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/images/3.png" style="width:880px; max-height:600px; object-fit:contain;"></div>
-
-**Congratulations!**
-
-You have completed Lab 4, and you are ready for the next topic.
-
-
-
-
-
-
-
-
-
-
-
+# Implementing Data Modeling in Tableau
+
+<p>Estimated time needed: <strong>15</strong> minutes.</p>
+<p>In this lab, you will learn how to implement data modeling in
+Tableau.</p>
+<h2 id="required-software">Required Software</h2>
+<p>You can complete this lab using the free, downloadable
+<strong>Tableau Desktop (Public Edition)</strong> desktop software. You
+may also use the free <strong>Tableau Public online platform</strong>,
+but some tasks may not work in exactly the same way or may not be
+supported in that version.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You need a free Tableau Public account for this lab. If you haven't
+already done so, you can sign up for an account using the steps
+<a href="https://ske-200666-getting-started-with-tableau-sk228091-13e06c0574350f.gitlab.io/labs/v1/m1/Sign%20Up%20for%20Tableau%20Public.md.html" target="_blank">here</a>.</p>
+<p><strong><em>Disclaimer: The screenshots in this lab are taken from
+Tableau Desktop. If you are using Tableau Public, you may notice some
+differences due to version variations.</em></strong></p>
+<h2 id="data-set">Data Set</h2>
+<p>This lab uses several sample data sets called
+<strong>Country.csv</strong>, <strong>Indicators_small.csv</strong>, and
+<strong>Series.csv</strong> to showcase the Tableau features used in
+these lab exercises.</p>
+<p>Hold the CTRL key while you click to download each of the following
+files:</p>
+<p><a href="data/Country.csv">Country.csv</a></p>
+<p><a href="data/Indicators_small.csv">Indicators_small.csv</a></p>
+<p><a href="data/Series.csv">Series.csv</a></p>
+<h2 id="objectives">Objectives</h2>
+<p>The exercises in this lab teach you how to implement data modeling in
+Tableau</p>
+<p>In this hands-on lab, you will:</p>
+<ol type="1">
+<li>Implement data modeling</li>
+</ol>
+<h1 id="exercise-implement-data-modeling">Exercise: Implement Data
+Modeling</h1>
+<p>In this exercise, you will learn how to join tables by joining the
+<strong>Country</strong> table with the
+<strong>Indicators_small</strong> table.</p>
+<ol type="1">
+<li>Under <strong>To a File</strong>, click <strong>Text
+file</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/To_a_File_Text.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="2" type="1">
+<li>Navigate to the folder where you downloaded the data sets to, then
+select <strong>Country.csv</strong>, and click
+<strong>Open</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Country_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="3" type="1">
+<li>Right-click <strong>Country.csv</strong> and click
+<strong>Open</strong>. You are now viewing the physical table that
+defines the logical table of the same name. You need to view the
+physical table as joins are done between physical tables, not logical
+tables.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Open_Country.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="4" type="1">
+<li>Drag <strong>Indicators_small.csv</strong> to the right of
+<strong>Country.csv</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Country_Indicators_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="5" type="1">
+<li><p>Click the <strong>Inner Join</strong> symbol.</p></li>
+<li><p>You can see these two tables are now part of an <em>Inner
+Join</em>, and you can see the four types of join (Inner, Left, Right,
+and Full Outer). The common field in this join is <em>Country
+Code</em>.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Country_Indicators_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="7" type="1">
+<li><p>Close the <strong>Join</strong> window.</p></li>
+<li><p>You'll now join the <em>Indicators_small</em> table with the
+<em>Series</em> table, by dragging <strong>Series.csv</strong> to the
+right of <strong>Indicators_small.csv</strong>.</p></li>
+<li><p>Click the <strong>Inner Join</strong> symbol.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="10" type="1">
+<li>You can see these two tables are now part of another <em>Inner
+Join</em>, and you can see that the common field in this join is
+<em>Indicator Name</em>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="11" type="1">
+<li><p>Close the <strong>Join</strong> window and click
+<strong>X</strong> in the top right corner of the canvas.</p></li>
+<li><p>Hover over the <strong>Country.csv</strong> data file.</p></li>
+<li><p>You can see that Country.csv is one logical table combined with
+three physical tables: Country.csv, Indicators_small.csv, and
+Series.csv.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="14" type="1">
+<li>Click the little arrow to the right of <strong>Country.csv</strong>
+and click Remove.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Join_Indicators_Series_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<p>Having created joins, you will now create a relationship between two
+logical tables.</p>
+<ol start="15" type="1">
+<li><p>Drag the <strong>Country.csv</strong> dimension to the canvas
+area.</p></li>
+<li><p>Drag <strong>Indicators_small.csv</strong> in the canvas area
+just next to <strong>Country.csv</strong>.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="17" type="1">
+<li><p>Hover over the orange line (the noodle) joining
+<strong>Country.csv</strong> and
+<strong>Indicators_small.csv</strong>.</p></li>
+<li><p>You can see that the relationship type (or <em>Cardinality</em>)
+is the default <em>Many to Many</em> relationship, and the common (or
+<em>Related</em>) field is <em>Country Code</em>.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="19" type="1">
+<li>In the bottom-left of the canvas, expand <strong>Performance
+Options</strong>; in <strong>Cardinality</strong>, select
+<strong>One</strong> from the first drop-down list.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="20" type="1">
+<li><p>Hover over the noodle joining <strong>Country.csv</strong> and
+<strong>Indicators_small.csv</strong>.</p></li>
+<li><p>You can see that this relationship is now a <em>One-to-many</em>
+relationship.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Relationship_Country_Indicators_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<p>Now that you've created a join and a relationship between two or more
+tables, next, you'll visualize the data for presentation.</p>
+<ol start="22" type="1">
+<li>In the data window, click <strong>Update Now</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Update_now.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="23" type="1">
+<li>Click the <strong>Sheet 1</strong> worksheet tab to extract the
+data.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Sheet1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="24" type="1">
+<li><p>Drag <strong>Region</strong> to <strong>Rows</strong>.</p></li>
+<li><p>Click the right arrow of the <strong>Region</strong> pill and
+select <strong>Filter</strong>.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="26" type="1">
+<li>Uncheck <strong>Null</strong> in the list and click
+<strong>OK</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="27" type="1">
+<li>This removes Null from the visualization table.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Region_filter_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="28" type="1">
+<li>From the <strong>Indicators_small.csv</strong> table in the
+<strong>Data</strong> pane on the left, drag <strong>Country
+Name</strong> to <strong>Rows</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="29" type="1">
+<li>Drag the <strong>Latest Population Census</strong> measure to
+<strong>Columns</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="30" type="1">
+<li>Click on the right arrow of the <strong>Latest Population
+Census</strong> pill and select <strong>Filter</strong>.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="31" type="1">
+<li><p>On the <strong>Filter</strong> tab, ensure that <strong>Include
+Null Values</strong> is unchecked.</p></li>
+<li><p>Click <strong>OK</strong>.</p></li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<ol start="33" type="1">
+<li>You now have a bar chart visualization of each country's Latest
+Population Census year.</li>
+</ol>
+<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://ske-200668-advanced-data-visualization-with-tabl-b07ed2d9623e6b.gitlab.io/labs/v1/m1/images/Population_census_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+</p>
+<h3
+id="congratulations-you-have-completed-this-lab-and-are-ready-for-the-next-topic.">Congratulations!
+You have completed this lab and are ready for the next topic.</h3>
 
 
 
