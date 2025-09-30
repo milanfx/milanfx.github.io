@@ -5,7 +5,6 @@ permalink: /xxx/
 ---
 
 
-
 # Excel Using Pivot Tables
 
 **Estimated Time Needed: 30 Minutes**
@@ -61,7 +60,7 @@ In this exercise, you will learn how to format data as a table, how to create a 
 
 **Step 3:** Click **OK**.
 
-<div align="left"><div style="display: inline-grid; border: 2px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div></div>
+<div align="left"><div style="display: inline-grid; border: 4px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" width="400"></div></div>
 
 **Step 4:** Double-click **Sheet1**, type **Pivot1** and click **OK**.
 
@@ -75,15 +74,15 @@ In this exercise, you will learn how to format data as a table, how to create a 
 
 **Step 9:** Use the drop down arrow for the **City Location** and Sort By Value  in descending order (Largest to smallest) by the **Count of Amount in USD**.
 
-<div align="left"><div style="display: inline-grid; border: 2px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting1.png" width="400"></div> </div>
+<div align="left"><div style="display: inline-grid; border: 4px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting1.png" width="400"></div> </div>
 
-<div align="left"><div style="display: inline-grid; border: 2px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting2.png" width="400"></div></div>
+<div align="left"><div style="display: inline-grid; border: 4px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting2.png" width="400"></div></div>
 
 **Step 10:** In the ribbon, select the **PivotTable** tab, click **Settings**, then in the **PivotTable Settings** pane, under **Layout**, select **Single column**.
 
 **Step 11:** Right-click on the row label Amritsar and select **Expand/Collapse** and **Collapse Entire Field**. 
 
-<div align="left"><div style="display: inline-grid; border: 2px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/collapse.png" width="600"></div></div>
+<div align="left"><div style="display: inline-grid; border: 4px solid DarkGreen;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/collapse.png" width="600"></div></div>
 
 ### Task C: Perform a simple calculation in a pivot table
 
@@ -170,11 +169,6 @@ In this exercise, you will learn some other features that we can use with Pivot 
 **Congratulations!**
 
 You have completed Lab 7, and you are ready for the next topic.
-
-
-
-
-
 
 
 
