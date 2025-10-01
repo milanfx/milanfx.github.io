@@ -6,131 +6,129 @@ permalink: /xxx/
 
 
 
+# Static Code Analysis
 
-# Excel Getting Started
-
-**Estimated Time Needed: 20 Minutes**
-
-### Overview
-
-Microsoft Excel is the most widely used spreadsheet software even three decades after its initial release. For all these years it has been available as a standard application that needed to be installed on your desktop; but it is not just a desktop app anymore. Now, you can even use Excel when you're online by using 'Excel for the web' - and run it right in your web browser without installing anything on your desktop!
-
-'Excel for the web' (sometimes referred to as Excel Online) can be used at no charge as part of a free Microsoft account. Although it does not have all of the capabilities of the desktop and paid online versions, the free web version provides many of the key features.
-
-### Software
-
-The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
-
-Although you can use the Excel Desktop software if you have access to this version, it is recommended that you use Excel for the web for the hands-on labs as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
-
-### Dataset
-
-The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
-Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
-
-We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
+**Estimated Time Needed: 30 Minutes**
 
 ### Objectives
 
-After completing this lab, you will be able to:
+After completing this lab you will be able to:
 
-- Sign up for a Microsoft Account to use Excel for the web
-- Sign in, upload and open a workbook in Excel for the web
+- Install pylint package
+- Run Static Code Analysis on a python program
+- Check the compliance score of a python program.
+- Fix common mistakes and improve the compliance score.
 
-## Exercise 1: Sign-up for a Microsoft Account to Use Excel for the web
+### Install the pylint package
 
-In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
+**Step 1:** Open a new terminal.
 
-- If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/new-terminal.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
+**Step 2:** At the terminal run the following command to install pylint.
 
-![Step 1](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png)
+```
+pip3 install pylint==2.11.1
+```
 
-**Step 2:** Click **Create one!**
+**Step 3:** This should install the pylint package.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/pylint_pip.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+### Create a sample python file for static code analysis
 
-**Step 3:** Enter your existing email id with which you want to create a Microsoft account. Click **Next**.
+Create a new file named **sample1.py**
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+Copy and paste the below code into **sample1.py**
 
-**Step 4:** Enter your password and click **Next**.
+```
+# Define a function named 'add' that takes two arguments, 'number1' and 'number2'.
+def add(number1, number2):
+    # The function returns the sum of 'number1' and 'number2'.
+    return number1 + number2
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.4.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+# Initialize the variable 'num1' with the value 4.
+num1 = 4
 
-**Step 5:** Enter the code you received by email. Click **Next**.
+# Initialize the variable 'num2' with the value 5.
+num2 = 5
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.5.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+# Call the 'add' function with 'num1' and 'num2' as arguments and store the result in 'total'.
+total = add(num1, num2)
 
-**Step 6:** Enter your phone number and click **Send Code**.
+# Print the result of adding 'num1' and 'num2' using the 'format' method to insert the values into the string.
+print("The sum of {} and {} is {}".format(num1, num2, total))
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.6.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+```
 
-**Step 7:** Enter the access code you received as a text on your phone, then click **Next**.
+Save the file **sample1.py**
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/1.7.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+### Run pylint
 
-**Step 8:** You are now done with the sign up procedure. Now since you are signed in after sign up at this stage, you can proceed directly to **Task B** of **Exercise 2**.
+- Open a terminal
+- Run the below command
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+```
+pylint sample1.py
+```
 
-## Exercise 2: Sign-in, Upload and Open a Workbook in Excel for the web
+- Pylint goes through every line of code and gives you a list all the non-compliant lines.
+- Pylint gives you a compliance score (10 being maximum).
 
-In this exercise, you will sign in to Excel for the web, open a new workbook and then upload and open a workbook.
+### Correct the mistakes identified by pylint.
 
-### Task A: Sign in to Excel for the web
+- Based on the report given by pylint changes were made to this code to address the following issues.
+    * Exactly one space required after comma
+    * Exactly one space required around assignment
+- Create a new file named **sample2.py**
+- Copy and paste the below code into **sample2.py**
 
-**Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**.
+```
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+# Define a function named 'add' that takes two arguments, 'number1' and 'number2'.
+# The purpose of this function is to add the two numbers and return the result.
+def add(number1, number2):
+    # Return the sum of 'number1' and 'number2'.
+    # This line computes the addition of the two input numbers and outputs the result.
+    return number1 + number2
 
-**Step 2:** Enter your sign in email.
+# Initialize the constant variable 'NUM1' with the value 4.
+# Constants are usually written in uppercase letters to indicate that they should not be changed.
+NUM1 = 4
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+# Initialize the variable 'num2' with the value 5.
+# This variable will be used as the second input to the 'add' function.
+num2 = 5
 
-**Step 3:** Enter your password.
+# Call the 'add' function with 'NUM1' and 'num2' as arguments.
+# The result of this addition operation is stored in the variable 'total'.
+total = add(NUM1, num2)
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/images/2.A.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+# Print a formatted string that displays the sum of 'NUM1' and 'num2'.
+# The 'format' method is used to insert the values of 'NUM1', 'num2', and 'total' into the string.
+print("The sum of {} and {} is {}".format(NUM1, num2, total))
 
-**Step 4:** You are now signed in.
+```
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/home.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+Save the file **sample2.py**
 
-### Task B: Open a new workbook in Excel for the web
+### Run pylint
 
-**Step 1:** Click on the **Excel** icon.
+- Open a terminal
+- Run the below command
 
-**Step 2:** Click **New blank workbook**.
+```
+pylint sample2.py
+```
+- This will give you the compliance score.
+- This time you should see the score improve.
 
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blankwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+### Your task
 
-**Step 3:** You have successfully opened a new workbook in Excel for the web.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/blanlwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-
-### Task C: Upload and Open a workbook in Excel for the web
-
-**Step 1:** Download the file **[indian_startup_funding_Lab1.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/indian_startup_funding_Lab1.xlsx)**.
-
-**Step 2:** To upload and open a workbook in Excel for the web, click the **App Launcher** (cube of dots) in the top left corner. Click **Excel** icon. Then click **Upload and open...** and select the **indian_startup_funding_Lab1.xlsx** file.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/select_excel.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/upload.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-
-**Step 3:** The file will be uploaded to your OneDrive of the Microsoft Account you signed up and used to open Excel for the web.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/uploading.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
-
-**Step 4:** You have successfully uploaded and opened a workbook in Excel for the web.
-
-<div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/indianstartupwb.png" style="width:880px; max-height:500px; object-fit:contain;"></div>
+Improve the score in sample2.py to a perfect 10 by correcting all the issues pointed out by pylint. If cant figure out how to solve some issues it is helpful to google the pylint message.
 
 **Congratulations!**
 
 You have completed this lab!
-
 
 
 
