@@ -1,227 +1,183 @@
 ---
 layout: page
-permalink: /BI03Lab05/
+permalink: /BI03Lab09/
 ---
 
-# Lab05 - Cognos Different Dashboard
+# Lab09 - Looker Advanced Dashboard
 
-**Estimated Time Needed: 45 Minutes**
+**Estimated Time Needed: 60 Minutes**
 
-### Purpose of the Lab: 
+### Purpose of the lab:
 
-This lab is meticulously designed to enhance skills in utilizing IBM Cognos Analytics for creating sophisticated dashboard visualizations. The primary objectives include working with tabs, initiating new dashboards within these tabs, and mastering different methods for crafting dashboard visualizations. The lab guides users through automatic and manual techniques for visualization creation, as well as leveraging Cognos Analytics Assistant for this purpose. The focus is on practical application, enabling users to navigate through various features of Cognos Analytics, such as employing various visualization styles (like radial charts and packed bubble charts), and understanding how to effectively use data to create meaningful and interactive dashboards. 
-
-### Benefits of Learning the Lab: 
-
-Participating in this lab provides invaluable benefits, particularly for those aspiring to excel in data analytics and visualization.You will gain hands-on experience in using IBM Cognos Analytics, a leading tool in the business intelligence domain. The skills acquired include creating diverse types of visualizations, understanding the application of different visualization methods, and effectively presenting data in an interactive and engaging manner. This knowledge is crucial for professionals in data analytics, marketing, business intelligence, and other fields that rely heavily on data visualization for decision-making and presentation purposes. The lab offers a robust foundation for those aiming to build or enhance their expertise in using advanced business intelligence software, thereby increasing their proficiency and employability in the rapidly evolving field of data analytics. 
+This hands-on lab focuses on enhancing skills in utilizing advanced features of Google Looker Studio to create dynamic and interactive dashboards. It covers creating calculated fields, manipulating data points within visualizations, applying filters, and constructing navigation paths. This lab provides hands-on experience aimed at leveraging Google Looker Studio for complex data analysis and visualization tasks.
 
 ### Software
 
-Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 90 or 30 days), as this is available at no charge.
+Google Looker Studio, available for free.
 
 ### Dataset
 
-The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
+Use data set [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/bXn-QnrBL0Uv_nAaMVWgpw/CustomerLoyaltyProgram%20.csv "CustomerLoyaltyProgram.csv").
 
-### Objectives
+### Objectives:
 
-After completing this lab, you will be able to:
+- Start a new dashboard
+- Use advanced Google Looker Studio dashboard capabilities
+- Create a bar chart using Drill Down 
+- Create another bar chart to implement top/bottom filtering in visualizations
+- Create a horizontal bar chart using Drill Down and a calculated field
+- Create a pie chart
+- Add headings to all the created charts in the dashboard
+- Build an interactive dashboard
+- Save the dashboard and download as a PDF
 
-- Work with tabs
-- Start a new dashboard within tabs
-- Use an automatic method to create a visualization
-- Use Cognos Assistant to create a visualization
-- Use a manual method to create a visualization
+## Step-by-step instructions
 
-## Exercise 1: Work with tabs and start a new dashboard within tabs
+**Step 1:** **Starting a new dashboard**
 
-In this exercise, you will learn how to work with tabs and start a new dashboard within tabs.
+a. Sign in to Google Looker Studio:
 
-**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
+- Go to Google Looker Studio and sign in with your Google account.
 
-**Step 2:** Enter your IBMid and password.
+b. Access the data set
 
-**Step 3:** Scroll down and click **Launch**.
+- Here you are going to use the same data set that you have used in the previous lab and follow the same steps to upload the file.
+- In the top left corner, click **Create**, then select **Data source**.
+- In the **Search** box, type *file upload*, then click the **File Upload** connector.
+- Click the **CLICK TO UPLOAD FILES** button, select the **CustomerLoyaltyProgram.csv** file, and click **Open**.
+- Once the data is uploaded, click **CONNECT**.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mzGSXG9vyEALK3SxzgjDkg/Advanced-Lab-Fig%200.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** From the **Recent** section, double-click **Simple dashboard** to open it.
+c. Create and add the report
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I1.PNG " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- To start creating the report, click **CREATE REPORT**.
+- In the pop-up dialog box, click **ADD TO REPORT**.
 
-**Step 5:** Ensure that **Edit** is turned on in the top left corner. Then click the **Add new tab** button to the right of the **A - Product Sales** tab.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Z7xNUKltE7vl9_sybXJ5gw/Advanced-Lab-Fig%201.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+d. Save the new report
 
-**Step 6:** Select the **four-panel template with 2x2 configuration**. Click **Create**.
+- Click the untitled report at the top and rename it to *Advanced Dashboard*.
+- Save the new report.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I3.PNG " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 2:** **Working with advanced Google Looker Studio dashboard capabilities**
 
-**Step 7:** Click the tab named **Tab 1** and select **Edit the title**. Rename the tab to **B - Customer**.
+a. Create calculations
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I4.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- In your Data Source, click **+ ADD A FIELD**.
+- Then select **Add calculated field**.
 
-## Exercise 2: Differentm methods for creating dashboard visualizations
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/gRkVFXJKzT7LrZ01QK34Wg/Advanced-Lab-Fig%202.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-In this exercise, you will learn different methods for creating dashboard visualizations.
+- Define the calculation for Margin as **Unit Sale Price - Unit Cost**.
 
-As you build the dashboard, the location placement for widgets in the dashboard template will be referenced using the following panel numbers
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mUGB-J0MGqf_hlMtPSRGgQ/Advanced-Lab-Fig%203.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- Name the field **Margin** and save it.
 
-### Task A: Using an automatic method to create a visualization for panel 1
+b. Set up filters and control widgets
+- Add filter controls.
+- From the toolbar, select **Add a control** and choose a drop-down list or slider based on the type of filter you need, such as **City**.
 
-**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/thrVidrnI93XYxo5ctg8cw/Advanced-Lab-Fig%204.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.C.2.New.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- Position the filter control on the dashboard.
 
-**Step 2:** From the data source panel, expand CustomerLoyaltyProgram.csv if needed.
+c. Add score cards
 
-**Step 3:** From the data source panel, press the **CTRL** key, select **Latitude**, **Longitude**, and **Quantity Sold** and drag them to the center of **Panel 1**, releasing them once you see the **drop zone turn blue**.
+- Now you will include two scorecards to display *Margin* and *Revenue* on the top of your dashboard.
+- In the toolbar, click **Add a chart**, and select **Scorecard**.
+- Move it above the line chart visualization and to the left side of the canvas.
+- And pick **Margin** to be displayed on this scorecard.
+- In the Chart – Set Up area, click the left side of the **Margin** field and then you will see the following dialog box.  
+- Select the data type and aggregation.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.3.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BerexUOejqyb2CZeNiFubg/Advanced-Lab-Fig%204A.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-The map will look like the following:
+- You can change the size and position as you like.
+- Use the **STYLE** tab in the scorecard chart\'s **Properties** pane to change the color and change the font size to **28pt** and then select **Background and Border**.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I5.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/peE0c-wQgVmCtK7U-Pp7MA/Advanced-Lab-Fig%204B.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** Click the map chart in Panel 1 to bring it into focus.
+- Now you will add the second scorecard chart above the line chart.
+- In the toolbar, click **Add a chart**, and select **Scorecard**.
+- Place it to the right of the **Revenue** scorecard chart.
+- Select the data type and aggregation.
+- Then use the same size and style as **Margin**.
 
-**Step 5:** To change the map style, open the **Properties** panel and expand **Chart** to see the various options of maps available.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nf9fKqm0hPha_vf6Rm2x8Q/Advanced-Lab-Fig%205.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I6.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 3:** **Creating a bar chart**
 
-**Step 6:** In the **Map base** list, select **Streets**.
+a. Create a bar chart (Revenue By Product Line By Location Code) using Drill Down
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Streets.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- Add a bar chart to your dashboard.
+- Then drag the **Product Line** field to **Dimensions** (in the SET UP area)
+- Then drag the **Location Code** field to **Breakdown Dimension**
+- Then drag the **Revenue** field to **Metric** (change it to Average)
 
-**Step 7:** Open the **Fields** panel to view the data slots. From the data source panel on the left of the screen, drag and drop **Country**, **Province or State**, and **Revenue** into the **Locations**, **Locations**, and **Location color** data slots of the **Regions** section of the Fields panel respectively.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ljFH7Xvn_Ev4rCbohEhbVQ/Advanced-Lab-Fig%206.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.5.1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+b. Exclude data points from the visualization
 
-**Step 8:** Expand the **Latitude/longitude** section of the Fields panel.
+- Add a filter in the **Location Code**
 
-**Step 9:** Ensure that **Quantity Sold** is in the **Point color** data slot of the **Latitude/longitude** section of the Fields panel.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/7sdRuSMD2cmd6DrUX_3Mzg/Advanced-Lab-Fig%207.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.6.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- And exclude **Suburban**
 
-**Step 10:** Click the **Fields** button to close the fields panel.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mapxLLZs5lvkUrbaxsvVbw/Advanced-Lab-Fig%208.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 11:** Click the map chart widget in Panel 1 to bring it into focus if needed. Select the title of the visualization and change it to *Revenue and Quantity Sold by Location*.
+**Step 4:** **Creating another bar chart to implement top/bottom filtering in visualizations**
 
-**Step 12:** Click the **Properties** button in the top right corner to open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
+- Add a bar chart to your dashboard.
+- Sort the data in the chart\'s data properties
+- Limit the number of bars to show top 10
+- Then drag the **City** field to **Dimensions** (in the SET UP area)
+- Then drag the **Quantity Sold** field to **Metric**
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I8.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WCB2GmkdF2ToD3-_IJll3g/Advanced-Lab-Fig%209.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 13:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
+**Step 5:** **Creating a horizontal bar chart (Margin By Order Year Colored By Product Line) using Drill Down**
+- Add a horizontal bar chart to your dashboard
+- Then drag the **Order Year** field to **Dimensions** (in SET UP area)
+- Then drag the **Product Line** field to **Breakdown Dimension**
+- Then drag the **Margin** calculated field to **Metric**
 
-**Step 14:** Ensure that the **Regions** section has the correct fields in the relevant data slots as per the image in step 7 above.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/lJb8hwLfDH3lflk1EEuChg/Advanced-Lab-Fig%2010.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 15:** Your Panel 1 visualization should look similar to the one below:
+**Step 6:** **Creating a pie chart of Loyalty Status Distribution**
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.12.New.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- Add a pie chart to your dashboard
+- Then drag the **Loyalty Status** field to **Dimensions** (in the SET UP area)
+- Then drag the **Loyalty#** field to **Metric**
 
-You can also change the visualization color palette as below:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rCEFhlPo9kfqTHix6ibCfw/Advanced-Lab-Fig%2011.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I9.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 7:** **Adding headings to all the created charts in the dashboard**
 
-For instance, in the below image, we have selected a Magenta palette.
+- On the top of each chart, add a text box and enter the heading and use the text properties to make the text bold and fill it with color and provide a boundary.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_20.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/At88omr4SwspDnKlvjW6RA/Advanced-Lab-Fig%2011A.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-### Task B: Using an automatic method to create a visualization for panel 2
+**Step 8:** **Building an interactive dashboard**
 
-**Step 1:** From the **Navigation** panel, click **Visualizations** and then select **Radial** chart from the visualizations.
+- Filter data in the current tab (selecting a city)
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_21.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/DyKDdY9sgJZlcITeyIRdLA/Advanced-Lab-Fig%2012.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 2:** Click the **Fields** button on the dashboard toolbar to open the **Fields** panel.
+- Filter data in the current tab (selecting a product line)
 
-**Step 3:** Drag and drop **Product Line** to the **Repeat (column)** data slot.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Gt8RMPajm1HLD2inOJdN8g/Advanced-Lab-Fig%2013.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.B.5.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 9:** **Saving the dashboard and downloading as a PDF**
 
-**Step 4:** Next, drag **Coupon Response** to the **Color** data slot. Also, drag **Coupon Response** to the **Bars** data slot, and then drag **Quantity Sold** to the **Length** data slot. 
-
-**Step 5:** Click the **Fields** button to close the Fields panel. 
-
-**Step 6:** Click the radial chart widget in Panel 2 to bring it into focus if needed. Select the title of the visualization and change it to *Product Line by Product Line and Coupon Response colored by Coupon Response*.
-
-**Step 7:** Click the **Properties** button in the top right corner to open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
-
-**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
-
-**Step 9:** Your Panel 2 visualization should look similar to the one below:
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/panel2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-### Task C: Using Cognos Assistant to create a visualization for panel 3
-
-**Step 1:** From the Cognos Analytics main toolbar at the top right of the screen, click the **Assistant** icon to open the **Cognos Assistant** panel.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_23.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 2:** In the **Ask a question** input text box, at the bottom of the right hand pane, type *show Quantity Sold and City* and press **Enter** or click the **Ask question** arrow.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_24.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-It will show you visualizations created automatically based on your question as below: 
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_251.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 3:** Scroll down the pane and click **Show related visualizations**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.C.4.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 4:** Select the second chart visualization.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 5:** From the **Cognos Assistant** panel, select the second chart visualization and drag it to the center of **Panel 3**, releasing it once you see the **drop zone turn blue**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 6:** Click the **Quantity Sold and Unit Cost by City** chart in **Panel 3** to bring it into focus if needed.
-
-**Step 7:** Open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
-
-**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
-
-**Step 9:** Your Panel 3 visualization should look similar to the one below:
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_3.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-### Task D: Using a manual method to create a visualization for panel 4
-
-**Step 1:** From the **Navigation** panel, select **Visualizations** to open the visualizations library.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.1.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 2:** Select the **Packed Bubble** chart from the list.
-
-**Step 3:** The packed bubble chart visualization will be added to Panel 4 of the dashboard template, and its **Fields** panel will be open, ready for you to set up the data definitions for your visualization.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.2.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 4:** From the data source panel on the left of the screen, drag and drop the **Product Line**, **Quantity Sold**, and **Loyalty Status** sources into the **Bubbles**, **Size**, and **Color** data slots of the Fields panel respectively.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.3.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-**Step 5:** Click the **Fields** button to close the panel.
-
-**Step 6:** Click the packed bubble chart visualization in Panel 4 to bring it into focus. Select the title of the visualization and change it to *Department Sales by Loyalty Status*.
-
-**Step 7:** Open the **Properties** panel and click on the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
-
-**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
-
-**Step 9:** Your Panel 4 visualization should look similar to the one below:
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_4.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
-
-Finally, your dashboard **B - Customer** should look similar to the one below:
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/B_customer_dashboard.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+- Finalize the dashboard.
+- Ensure all visualizations are correctly configured and aligned.
+- Preview the dashboard in **View** mode to check interactivity and finalize the design.
+- Save the dashboard.
+- Download as a PDF (you can also share your PDF).
 
 **Congratulations!**
 
