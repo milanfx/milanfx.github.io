@@ -6,238 +6,289 @@ permalink: /xxx/
 
 
 
-# Cognos Advanced Dashboard Capabilities
 
-**Estimated Time Needed: 45 Minutes**
+# Looker Getting Started
 
-### Purpose of the Lab: 
+**Estimated Time Needed: 60 Minutes**
 
-This lab focuses on enhancing skills in utilizing advanced features of IBM Cognos Analytics to create more dynamic and interactive dashboards. It delves into creating calculations, manipulating data points within visualizations, applying top/bottom settings on visualizations, and constructing navigation paths. Additionally, the lab provides hands-on experience in filtering data within a dashboard. The exercises are designed to provide a deeper understanding of how to leverage Cognos Analytics for more complex data analysis and visualization tasks, moving beyond basic dashboard creation. 
+### Overview
 
-### Benefits of Learning the Lab: 
+Looker Studio, from Google, is a data discovery platform available to analyze and perform data-driven functionalities. Looker is known for its data exploration, visualization, and reporting capabilities. It empowers users to seamlessly connect with diverse data sources, enabling them to build interactive dashboards and generate insightful reports, thereby facilitating a comprehensive understanding of their data.
 
-Engaging in this lab offers several key benefits for those interested in data analytics and visualization.You will acquire practical skills in advanced dashboarding techniques, such as creating custom calculations, effectively filtering and manipulating data, and utilizing Cognos Analytics to its full potential for comprehensive data analysis. These skills are vital for professionals in data analysis, business intelligence, and decision-making roles, as they allow for more nuanced and insightful analysis of data. The ability to create interactive and detailed dashboards enhances one's capability to present data in a more engaging and informative manner. This knowledge is particularly beneficial for those seeking to improve their data presentation skills, making complex data more accessible and actionable for decision-makers. Overall, the lab provides a strong foundation in advanced data visualization techniques, making it a valuable learning experience for advancing one’s career in the field of data analytics. 
-
-### Software
-
-Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 30 days), as this is available at no charge.
+In this lab, you will learn how to sign up for Looker Studio and learn general navigation around the Looker user interface (UI). Next, you will learn how to upload external data files to Looker through connectors and then learn how to start a new dashboard with templates. Lastly, you will learn how to create a simple dashboard.
 
 ### Dataset
 
-The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
+The dataset used in this lab is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv).
 
 ### Objectives
 
 After completing this lab, you will be able to:
+- Sign up to use Looker Studio
+- Navigate around the Looker Studio user interface
+- Create a data source using a connector
+- Access report themes and layouts
+- Create a simple dashboard report
 
-- Start a new dashboard
-- Create calculations
-- Keep/exclude data points from a visualization
-- Set top/bottom on a visualization
-- Create and leverage navigation paths
-- Filter data in a dashboard
+## Exercise 1: Sign up for Looker Studio
 
-## Exercise 1: Start a New Dashboard
+In this exercise, you will learn how to sign up for Google\'s Looker Studio
 
-In this exercise, you will start a new dashboard for working with advanced Cognos Analytics dashboard capabilities.
+**Step 1:** Go To [Looker Studio](https://lookerstudio.google.com/u/0/ "Looker Studio")
 
-**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/1_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 2:** Enter your IBMid and password.
+**Step 2:** Click **USE IT FOR FREE**. 
 
-**Step 3:** Scroll down and click **Launch**.
+**Step 3:** A new window will open. If you already have a Google account, enter your credentials and click **Next** as shown below (number 1 and 2). Or click on **Create account** (number 3) and follow the steps.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/1_2_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** From the **Recent** section, click the uploaded data file **CustomerLoyaltyProgram.csv**.
+You are now done with the sign up procedure. You will be redirected to the Looker Studio home page automatically and your screen will appear similar to this:- <br>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/1_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 5:** The template window will be displayed, allowing you to select the type of dashboard and the template style. Select the **Tabbed** dashboard style. This will allow you to have multiple pages for your dashboards. Select the *five-panel template*, then click **Create**.
+## Exercise 2: Navigate around the Looker Studio User Interface
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+In this exercise, you will understand Looker Studio UI components which you\'ll use further to create visuals and dashboards.
 
-**Step 6:** To save the newly created dashboard, press **CTRL+S** or click the **Save** icon and then click **Save as**. 
+The goal of this exercise is to introduce you to the primary components and functionalities within Looker Studio.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div> 
+On the home page of Looker Studio, you can conveniently create and access all your essential assets, including reports, data sources, and explorations.
 
-**Step 7:** A new **Save as** window will pop up. Follow the steps as displayed below to save your dashboard as **Advanced Dashboard** in the **My content** section.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+Let\'s understand the major components available on the homepage.
 
-**Step 8:** As you build the dashboard, the location placement for visualization widgets in the dashboard template will be referenced using the following Panel numbers.
+**Step 1:** From here you can create a new asset such as a Report, a Data source or an Explorer. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 2:** This is where you access your recent Reports, Data sources, and Explorers.
 
-**Step 9:** From the **Navigation** panel, select **Sources** to ensure the data source panel is open in the left pane.
+**Step 3:** With the Report tab selected, this is how you can start to create a blank report. 
 
-**Step 10:** From the data source panel, select **Revenue** and drag it to the center of **Panel 1**, releasing it once you see the drop zone turn blue.
+**Step 4:** This lists any recently worked on assets. You can click the ellipsis button (**...**) next to an asset to perform actions on it, such as sharing, renaming, or removing it.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2_1_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 11:** Click the summary chart in Panel 1 to bring it into focus. From the on-demand toolbar that appears in the main toolbar, click **Summarize**, and then select **Average**.
+**Step 5:** Here you can search and find your Looker Studio assets quickly and the result will appear in the list at section 4.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 6:** You can choose a template from the Template Gallery to start creating an asset from.
 
-**Step 12:** In the summary chart in Panel 1, select the title of the visualization and change it to *Average Revenue*.
+**Step 7:** Here you can take a tutorial on Looker Studio.
 
-**Step 13:** From the **Navigation** panel, select **Widgets** to open the widgets panel. Drag and drop **Money coin** from **Shapes** to the center of Panel 1.
+## Exercise 3: Create a Data Source and Use Report Editor 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+### Task 1: Create a data source
 
-**Step 14:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the toolbar.
+The first thing you need to start creating a report is to acquire some data.
 
-**Step 15:** Your Panel 1 visualization should look similar to the one below:
+To select an existing data source you would click the **Data sources** tab and your existing data sources will be listed. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-## Exercise 2: Working with Advanced Cognos Analytics dashboard capabilities
+However, for this lab, you will create a new data source.
 
-In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
-- Task A: Create calculations 
-- Task B: Keep/Exclude Data Points from a visualization
-- Task C: Set Top/Bottom on a visualization
-- Task D: Create and Leverage navigation paths
-- Task E: Filter Data in the current tab
+**Step 1:** In the top left corner, click **Create**, then select **Data source**. 
 
-### Task A: Create Calculations 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
+The new window that opens displays a lot of options for connecting to your data; these are called *Connectors*. A connector links Looker Studio to your data. Connecting to your data creates a data source within Looker Studio. Looker Studio provides a variety of connectors to connect to different kinds of data to create reports.
 
-**Step 2:** Right-click the **CustomerLoyaltyProgram.csv** data source and select **Calculation**.
+You can use the search field to look for the relevant data connector.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_31.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** Change the calculation name to **Margin**. From the **Components** panel, drag **Unit Sale Price** to the **Expression** field, type a space, then the minus sign, **-**, to the right of it, and then drag **Unit Cost** to the right of that. Click **OK**.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_32.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+For this lab, you will work on  [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)., which you need to download to your computer first. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+You will use the **File Upload** connector to upload the data to Looker Studio to create the data source.
 
-**Step 4:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed, and drag **Margin** to the center of **Panel 2**, releasing it once you see the drop zone turn blue.
+**Step 2:** In the **Search** box, type *file upload*, then click on the **File Upload** connector. 
 
-**Step 5:** Right-click the margin chart in Panel 2, point to **Summarize**, and then select **Average**.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 6:** From the data source panel, right-click on **Margin** and click **Format data**. 
+**Step 3:** Click the **CLICK TO UPLOAD FILES** button, select the *CustomerLoyaltyProgram.csv* file and click **Open**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 7:** In the **Format type** list, select **Currency**.
+**Step 4:** Once the data is uploaded, click **CONNECT**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_6.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 8:** Select **$ (USD) - United States of America, dollar** as the currency and click **OK** at the bottom.
+Here you can see the contents of the uploaded data source. On this page you can verify or modify the data type of each data attribute, modify the default aggregation, include the description for fields, and add new fields and parameters as well.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 5:** To start creating the report, click **CREATE REPORT**.
 
-**Step 9:** In the margin chart in Panel 2, select the title of the visualization and change it to *Average Margin*.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_7.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 10:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+**Step 6:** In the pop-up dialog box, click **ADD TO REPORT**.
 
-**Step 11:** Your Panel 2 visualization should look similar to the one below:
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+The **Report Editor** tool will open.
 
-### Task B: Keep/Exclude Data Points from a Visualization
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_9.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed. Press the **CTRL** key and select **Revenue** and **Product Line** and drag them both to the center of **Panel 3**, releasing them once you see the drop zone turn blue.
+By default, the summary table will appear as per the data source.
 
-**Step 2:** From the data source panel, drag **Location Code** to the **Color** drop zone of **Panel 3**.
+**Step 7:** Select the table visualization and delete it.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 8:** Click the existing report title (*Untitled Report*) and rename the report to *Simple Dashboard*.
 
-**Step 3:** Right-click the **Suburban** data point in the Panel 3 visualization, and select **Exclude**.
+**Step 9:** To give yourself more screen space and expand the canvas window, you can close the **Data** and **Properties** panes on the right side of the page.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_10.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+NOTE: *To work on data in Excel format, upload the .xls file to your computer, and use the 'Google Sheets' connector to create the data source.*
 
-**Step 5:** Your Panel 3 visualization should look similar to the one below:
+### Task 2: Use Report Editor
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+Let\'s see what tools are available in the Report Editor.
 
-### Task C: Set Top/Bottom on a Visualization
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** From the data source panel, press the **CTRL** key and select **Quantity Sold** and **City**, and drag them both to the center of **Panel 4**, releasing them once you see the drop zone turn blue.
+**Step 1:** To add a new chart, click **Add a chart**. Looker Studio provides a variety of charts to be used for creating visualizations such as tables, scorecards, time series charts, bar charts, line charts, pie charts, and maps to name but a few.
 
-**Step 2:** Click the chart in Panel 4 to bring it into focus and render the on-demand toolbar.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Map**), then expand **All visualizations**, if needed, and select **Column**.
+**Step 2:** Scroll down to see all the options. To include data, click **Add data**, then close the **Add data to report** window.
 
-**Step 4:** In Panel 4, right-click the axis label **Quantity Sold (Sum)** down the left side of the chart and select **Top or bottom**.
+**Step 3:** Click **Add a control**. Controls are used to make your visuals interactive. Looker Studio provides several control options including sliders, filters, checklists, drop-down lists, and buttons.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 5:** Ensure the value of **Number of results** is set to **10**, then select **Top count**.
+Controls enable you to adjust the data shown in report components by filtering or modifying it. They serve as a means to collect user input and incorporate it into calculated fields.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 4:** Use the icons to the right of **Add a control** to insert components other than charts and controls to your dashboard or report. These include URLs, images, textboxes, and lines and shapes. To access the **Theme and layout** option, if it is hidden, click the elipsis button (vertical three dots).
 
-**Step 6:** In the column chart in Panel 4, select the title of the visualization and change it to *Top 10 Quantity Sold by City*.
+**Step 5:** The **Share** button lets you share your report with others.
 
-**Step 7:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_6.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 8:** Your Panel 4 visualization should look similar to the one below:
+You can invite your colleagues to work on your dashbboard with you, you can also get the link or embedded code, and you can download the report. You also have the option to schedule the delivery time of your report.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 6:** If you prefer not to make edits to the report and simply want to see how it appears in read-only mode, click **View**. You can click **Pause updates** to pause the data updates for the live data, if used, and you can refresh or make a copy of the data by clicking on the elipsis button (three vertical dots) here.
 
-### Task D: Create and leverage navigation paths
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_7.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** In the data source panel on the left, scroll to the top of the list and click the **plus sign** labeled **Create navigation path** to the right of **Navigation paths**.
+**Step 7:** Click **Add page** to add more pages to your report. You can easily switch amongst pages using the left navigation bar or the arrows in the toolbar.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 2:** In the **Create navigation path** dialog box, expand CustomerLoyaltyProgram.csv, if needed. Drag **Order Year**, **Quarter**, **Country**, and **City** sequentially to the right hand panel of the dialog box, maintaining the order (shown in the image below). Once done, click **OK**. 
+**Step 8:** Looker Studio provides several options to zoom in and out, such as **Fit all**, **Fit width**, and various percentage values.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/4_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** From the data source panel, press the **CTRL** key and select **Margin**, **Product Line**, and **Order Year** and drag them to the center of **Panel 5**, releasing them once you see the drop zone turn blue.
+**Step 9:** Use the **Undo** and **Redo** buttons to fix mistakes or misclicks.
 
-**Step 4:** Click the line chart in Panel 5 to bring it into focus and render the on-demand toolbar.
+**Step 10:** The main work area at position 10 is the **canvas** where you add and layout all your visualizations.
 
-**Step 5:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Line**), then expand **All visualizations**, if needed, and select **Bar**.
+## Exercise 4: Access Report Themes and Layouts
 
-**Step 6:** In Panel 5, right-click the axis label **Order Year** down the left side of the chart, and select **Navigate**.
+Unlike Cognos Analytics, Looker Studio gives you the flexibity to place the visuals where you like to while you prepare the report or dashboard. So you don\'t have to select a fixed dashboard template, as you do in Cognos Analytics. However, Looker Studio does have some inbuilt themes with different color and font combinations for you to choose from. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 1:** To access the *Theme and layout* menu, either click **File** in the main menu, then click **Theme and layout**, or in the toolbar, click **Theme and layout**. If it\'s hidden, click the elipsis button (**...**) to show it. 
 
-**Step 7:** One by one, select the **Order Year**, **Quarter**, **Country**, and **City** options in the **Navigate** dialog box to view the different navigation paths and observe the resulting visualization in Panel 5 as you select each one. Lastly, keep the **Order Year** option selected.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_11.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 2:** Use the **THEME** tab to modify the default theme or select one of the predefined themes for your report. 
 
-**Step 8:** <ins>Alternative interactive way with Drill down/back:</ins>
-- In the bar chart in Panel 5, right-click the **2016** - **Smart Electronics** bar of the bar chart, and select **Drill down**.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_11_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 3:** Use the **LAYOUT** tab to change the layout of your canvas, such as the type of navigation, canvas size, and grid settings.
 
-- Now right-click the **Q1** - **Smart Electronics** bar of the bar chart, and select **Back**.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3_11_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+## Exercise 5: Create a Simple Dashboard Report
 
-**Step 9:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+Let\'s create a simple dashboard on **Product Line Performance by Year**
 
-**Step 10:** Your Panel 5 visualization should look similar to the one below:
+**Step 1:** Click **Add a chart** and select the simple **Line chart**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-### Task E: Filter Data in the Current Tab
+**Step 2:** Click on the canvas where you want it to be positioned. You can move it anywhere on the canvas later by simply clicking and dragging it to a new position. Looker Studio automatically includes data to create the chart based on the data source.
 
-**Step 1:** If required, click **Filters** in the **Dashboard Toolbar** to display the filters pane.
+For your *Product Line Performance by Year* visualization, you place the data as you want it to be displayed. The requirement is to create a line chart for the quantity sold per order year and have separate lines displayed for each product line.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 2:** From the data source panel, select **Product Line** and drag it to the **This tab** filter panel on the right hand side.
+**Step 3:** Click on the line chart in the canvas, and then click **Properties**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+**Step 4:** Click **Data** to open that pane on the right too.
 
-**Step 3:** Click the **Product Line** filter tab of the **This tab** filter panel. Select **Computers and Home Office**, **Photography**, and **TV and Video Gaming**, then click **Done**.
+**Step 5:** From the data pane, drag **Order Year** to the **Dimension** field to replace **First Name**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_3.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-Your final dashboard should look similar to the one below. To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar. 
+**Step 6:** From the data pane, drag **Quantity Sold** to the **Metric** field. Remove the **Record Count** item.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_4.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
-Feel free to change the appearance and layout of the dashboard you have just created. 
+You want to break down the chart by product line, so that it can display a separate line for each product category.
+
+**Step 7:** From the data pane, drag **Product Line** to the **Breakdown dimension** field.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_5.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 8:** To include the x and y axis labels, click the **STYLE** tab in the chart\'s **Properties** pane, and check the box for **Show axis title** in both the **Left Y-axis** and the **X-axis** sections.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_11.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 9:** Hover over the bottom right corner of the chart till you see the white double-headed arrow, then click and drag to make the chart larger.
+
+**Step 10:** In the main toolbar, select the **Text** tool and click above the visualization to insert a text box for the chart title. Click in the text box and type the title as *Product Line Performance by Year*. 
+
+**Step 11:** Select the text in the new title and use the **Text Properties** in the right pane to style the text as **24pt**, **bold**, and **dark blue**. 
+
+**Step 12:** Drag the text box to align it with the center of the line chart visualization, and drag the chart and the title boxes down the page a bit to make some room at the top for the next visualization. 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_6.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+Your line chart should now look similar to the image below.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_7_1.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+Now you will include two scorecards to display the *Total Quantity Sold* and *Revenue* above this line chart.
+
+**Step 13:** In the toolbar, click **Add a chart**, and select **Scorecard**.
+
+**Step 14:** Move it above the line chart visualization and to the left side of the canvas. 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+Looker Studio will automatically pick **Quantity Sold** to be displayed on this scorecard. 
+
+**Step 15:** You can change the size and position as you like. 
+
+**Step 16:** Use the **STYLE** tab in the scorecard chart\'s **Properties** pane to change the font size and color to **48pt** and **dark blue**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_9.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+Now you will add the second scorecard chart above the line chart.
+
+**Step 17:** In the toolbar, click **Add a chart**, and select **Scorecard**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_8.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 18:** Place it to the right of the **Quantity Sold** scorecard chart. 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_10.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
+
+This time Looker Studio has picked **Record Count** to create this scorecard. 
+
+Let\'s change the metric to show *Revenue* instead.
+
+**Step 19:** Select the **SETUP** tab in the scorecard chart\'s **Properties** pane.
+
+**Step 20:** From the **Data** pane, drag **Revenue** to the **Metric** field to replace **Record Count**.
+
+**Step 20:** Use the **STYLE** tab in the scorecard chart\'s **Properties** pane to change the font size and color to **48pt** and **dark blue** as you did for the previous scorecard chart.
+
+The final version of your first dashboard should appear similar to the image below.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/5_12.png" style="width:880px; max-height:500px; object-fit:contain;"></div></div>
 
 **Congratulations!**
 
