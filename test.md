@@ -1,168 +1,227 @@
 ---
 layout: page
-permalink: /BI02Lab07/
+permalink: /BI03Lab05/
 ---
 
-# Lab07 -Excel Pivot Tables
+# Lab05 - Cognos Different Dashboard
 
-**Estimated Time Needed: 30 Minutes**
+**Estimated Time Needed: 45 Minutes**
 
-### Overview
+### Purpose of the Lab: 
 
-In this lab, first you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data. Next, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
+This lab is meticulously designed to enhance skills in utilizing IBM Cognos Analytics for creating sophisticated dashboard visualizations. The primary objectives include working with tabs, initiating new dashboards within these tabs, and mastering different methods for crafting dashboard visualizations. The lab guides users through automatic and manual techniques for visualization creation, as well as leveraging Cognos Analytics Assistant for this purpose. The focus is on practical application, enabling users to navigate through various features of Cognos Analytics, such as employing various visualization styles (like radial charts and packed bubble charts), and understanding how to effectively use data to create meaningful and interactive dashboards. 
+
+### Benefits of Learning the Lab: 
+
+Participating in this lab provides invaluable benefits, particularly for those aspiring to excel in data analytics and visualization.You will gain hands-on experience in using IBM Cognos Analytics, a leading tool in the business intelligence domain. The skills acquired include creating diverse types of visualizations, understanding the application of different visualization methods, and effectively presenting data in an interactive and engaging manner. This knowledge is crucial for professionals in data analytics, marketing, business intelligence, and other fields that rely heavily on data visualization for decision-making and presentation purposes. The lab offers a robust foundation for those aiming to build or enhance their expertise in using advanced business intelligence software, thereby increasing their proficiency and employability in the rapidly evolving field of data analytics. 
 
 ### Software
 
-The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
-
-Although you can use the Excel Desktop software if you have access to this version, it is recommended that you use Excel for the web for the hands-on labs as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
+Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 90 or 30 days), as this is available at no charge.
 
 ### Dataset
 
-The dataset used in this lab comes from the following source: https://www.kaggle.com/sudalairajkumar/indian-startup-funding under a **[CC0: Public Domain license](https://creativecommons.org/publicdomain/zero/1.0/)**. 
-Acknowledgement and thanks also goes to https://trak.in who were generous enough to share the data publicly for free.
-
-We are using a modified subset of that dataset for the lab, so to follow the lab instructions successfully please use the dataset provided with the lab, rather than the dataset from the original source.
+The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%204%20-%20Getting%20Started%20with%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
 
 ### Objectives
 
 After completing this lab, you will be able to:
 
-- Format data as a table
-- Create a Pivot Table and use fields to arrange data in a Pivot Table
-- Perform calculations using Pivot Table data
-- Use the Recommended Charts feature (does not work with the 'Basic' Office for the web plan.)
-- Use the Filters feature
-- Use the Slicers feature
-- Use the Timelines feature 
+- Work with tabs
+- Start a new dashboard within tabs
+- Use an automatic method to create a visualization
+- Use Cognos Assistant to create a visualization
+- Use a manual method to create a visualization
 
-## Exercise 1: Introduction to Creating Pivot Tables in Excel
+## Exercise 1: Work with tabs and start a new dashboard within tabs
 
-In this exercise, you will learn how to format data as a table, how to create a Pivot Table and use fields to arrange data in a Pivot Table, and how to perform calculations using Pivot Table data.
+In this exercise, you will learn how to work with tabs and start a new dashboard within tabs.
 
-### Task A: Format data as a table
+**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
 
-**Step 1:** Download the file **[indian_startup_funding_Lab7.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7.xlsx)**. Upload and open it using Excel for the web.
+**Step 2:** Enter your IBMid and password.
 
-**Step 2:** Select cell **A2**.
+**Step 3:** Scroll down and click **Launch**.
 
-**Step 3:** On the **Home** tab, in the **Tables** group, click **Format as Table**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** Select **Light Gray, Table Style Medium 15**.
+**Step 4:** From the **Recent** section, double-click **Simple dashboard** to open it.
 
-### Task B: Create a pivot table and use fields to arrange data in a pivot table
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I1.PNG " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** Select cell **D4**
+**Step 5:** Ensure that **Edit** is turned on in the top left corner. Then click the **Add new tab** button to the right of the **A - Product Sales** tab.
 
-**Step 2:** On the **Insert** tab, click **PivotTable**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** Click **OK**.
+**Step 6:** Select the **four-panel template with 2x2 configuration**. Click **Create**.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.B.3.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I3.PNG " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** Double-click **Sheet1**, type **Pivot1** and click **OK**.
+**Step 7:** Click the tab named **Tab 1** and select **Edit the title**. Rename the tab to **B - Customer**.
 
-**Step 5:** In the fields list, drag **Industry Vertical** to **Rows**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I4.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 6:** In the fields list, drag **City Location** to **Rows** above **Industry Vertical**.
+## Exercise 2: Differentm methods for creating dashboard visualizations
 
-**Step 7:** In the fields list, drag **Startup Name** to **Rows** below **Industry Vertical**.
+In this exercise, you will learn different methods for creating dashboard visualizations.
 
-**Step 8:** In the fields list, drag **Amount in USD** to **Values**.
+As you build the dashboard, the location placement for widgets in the dashboard template will be referenced using the following panel numbers
 
-**Step 9:** Use the drop down arrow for the **City Location** and Sort By Value  in descending order (Largest to smallest) by the **Count of Amount in USD**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting1.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+### Task A: Using an automatic method to create a visualization for panel 1
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/sorting2.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
 
-**Step 10:** In the ribbon, select the **PivotTable** tab, click **Settings**, then in the **PivotTable Settings** pane, under **Layout**, select **Single column**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.C.2.New.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 11:** Right-click on the row label Amritsar and select **Expand/Collapse** and **Collapse Entire Field**. 
+**Step 2:** From the data source panel, expand CustomerLoyaltyProgram.csv if needed.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/collapse.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 3:** From the data source panel, press the **CTRL** key, select **Latitude**, **Longitude**, and **Quantity Sold** and drag them to the center of **Panel 1**, releasing them once you see the **drop zone turn blue**.
 
-### Task C: Perform a simple calculation in a pivot table
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.3.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** In the **PivotTable Fields** pane, in the **Values** section, click the drop-down arrow next to **Count of Amount in USD**, and click **Value Field Settings**.
+The map will look like the following:
 
-**Step 2:** Select **Summarize value field by - Sum**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I5.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/1.C.2.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 4:** Click the map chart in Panel 1 to bring it into focus.
 
-**Step 3:** Click **OK**.
+**Step 5:** To change the map style, open the **Properties** panel and expand **Chart** to see the various options of maps available.
 
-**Step 4:** Select the column called **Sum of Amount in USD** and then on the **Home** tab, select **Accounting Number Format - $ English (United States)**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I6.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-## Exercise 2: Pivot Table Features
+**Step 6:** In the **Map base** list, select **Streets**.
 
-In this exercise, you will learn some other features that we can use with Pivot Tables, including Recommended Charts, Filters, Slicers, and Timelines.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Streets.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-- **NOTE:** The 'Recommended Charts' feature only works with 'full' Office for the web plans (those plans that come with an Office 365 subscription). Recommended Charts do not work with the 'basic' plan that comes with a Microsoft Account.
+**Step 7:** Open the **Fields** panel to view the data slots. From the data source panel on the left of the screen, drag and drop **Country**, **Province or State**, and **Revenue** into the **Locations**, **Locations**, and **Location color** data slots of the **Regions** section of the Fields panel respectively.
 
-### Task A: Use of the Recommended Charts feature (Optional: If you have a full Office for the web plan)
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.5.1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** Switch to worksheet **indian-startup-funding**.
+**Step 8:** Expand the **Latitude/longitude** section of the Fields panel.
 
-**Step 2:** Select column **F (City Location)**.
+**Step 9:** Ensure that **Quantity Sold** is in the **Point color** data slot of the **Latitude/longitude** section of the Fields panel.
 
-**Step 3:** On the **Insert** tab, select **Recommended Charts**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.6.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** Click **+ Insert PivotChart**.
+**Step 10:** Click the **Fields** button to close the fields panel.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.A.4.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 11:** Click the map chart widget in Panel 1 to bring it into focus if needed. Select the title of the visualization and change it to *Revenue and Quantity Sold by Location*.
 
-**Step 5:** Switch to worksheet **indian-startup-funding** again.
+**Step 12:** Click the **Properties** button in the top right corner to open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
 
-**Step 6:** Select column **C, D, E**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I8.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 7:** On the **Insert** tab, select **Recommended Charts**.
+**Step 13:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
 
-**Step 8:** Choose the recommended chart, and click **+ Insert PivotChart**.
+**Step 14:** Ensure that the **Regions** section has the correct fields in the relevant data slots as per the image in step 7 above.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/recommend1.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 15:** Your Panel 1 visualization should look similar to the one below:
 
-### Task B: Use of the Filters feature
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.A.12.New.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** Switch to worksheet **Pivot1**.
+You can also change the visualization color palette as below:
 
-**Step 2:** In the Pivot Table, click the **Row Labels** arrow.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_I9.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** Select **City Location**, then **Filter...**.
+For instance, in the below image, we have selected a Magenta palette.
 
-**Step 4:** Just select **Burnsville**, **Delhi**, **New York**, then click **OK** to display the amounts for startups in these three cities only.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_20.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 5:** In the Pivot Table, click the **Row Labels** arrow.
+### Task B: Using an automatic method to create a visualization for panel 2
 
-**Step 6:** Select **City Location**, then click **Clear Filter From 'City Location'** to display the startups in all cities again.
+**Step 1:** From the **Navigation** panel, click **Visualizations** and then select **Radial** chart from the visualizations.
 
-### Task C: Use of the Slicers feature
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_21.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 1:** Download the file **[indian_startup_funding_Lab7_with_slicers_timelines.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/indian_startup_funding_Lab7_with_slicers_timelines.xlsx)**. Upload and open it using Excel for the web.
+**Step 2:** Click the **Fields** button on the dashboard toolbar to open the **Fields** panel.
 
-**Step 2:** Switch to worksheet **Pivot1** if you are not there.
+**Step 3:** Drag and drop **Product Line** to the **Repeat (column)** data slot.
 
-**Step 3:** In the **City Location** slicer, select **Burnsville**, then **Delhi**, then **New York**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/2.B.5.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 4:** To filter by multiple selection in the **City Location** slicer, with **New York** still selected, press **CTRL** and select **Burnsville**, and then **Delhi**.
+**Step 4:** Next, drag **Coupon Response** to the **Color** data slot. Also, drag **Coupon Response** to the **Bars** data slot, and then drag **Quantity Sold** to the **Length** data slot. 
 
-**Step 5:** To filter using more than one slicer, in the **Investors Name** slicer, select **Amour Infrastructure**, then press **CTRL** and select **Westbridge Capital**, and then **Breakthrough Energy Ventures**.
+**Step 5:** Click the **Fields** button to close the Fields panel. 
 
-**Step 6:** In the **City Location** slicer, click the **Clear Filter** button, then in the **Investors Name** slicer, click the **Clear Filter** button.
+**Step 6:** Click the radial chart widget in Panel 2 to bring it into focus if needed. Select the title of the visualization and change it to *Product Line by Product Line and Coupon Response colored by Coupon Response*.
 
-### Task D: Use of the Timelines feature
+**Step 7:** Click the **Properties** button in the top right corner to open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
 
-**Step 1:** In the Date timeline, click **top right drop-down** and select **DAYS**, then scroll **left and right**.
+**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%207%20-%20Using%20Pivot%20Tables/images/2.D.1.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+**Step 9:** Your Panel 2 visualization should look similar to the one below:
 
-**Step 2:** In the Date timeline, click **top right drop-down** and select **QUARTERS**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/panel2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
-**Step 3:** In the Date Timeline, select **2019 Q1**, then drag **2019 Q1 to 2019 Q3**.
+### Task C: Using Cognos Assistant to create a visualization for panel 3
 
-**Step 4:** In the Date timeline, click the **Clear Filter** icon.
+**Step 1:** From the Cognos Analytics main toolbar at the top right of the screen, click the **Assistant** icon to open the **Cognos Assistant** panel.
 
-**Step 5:** In the Date timeline, click **top right drop-down** and select **YEARS**, then select **2020** only.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_23.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 2:** In the **Ask a question** input text box, at the bottom of the right hand pane, type *show Quantity Sold and City* and press **Enter** or click the **Ask question** arrow.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_24.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+It will show you visualizations created automatically based on your question as below: 
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L2_251.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 3:** Scroll down the pane and click **Show related visualizations**.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.C.4.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 4:** Select the second chart visualization.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_1.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 5:** From the **Cognos Assistant** panel, select the second chart visualization and drag it to the center of **Panel 3**, releasing it once you see the **drop zone turn blue**.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_2.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 6:** Click the **Quantity Sold and Unit Cost by City** chart in **Panel 3** to bring it into focus if needed.
+
+**Step 7:** Open the **Properties** panel and click the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
+
+**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
+
+**Step 9:** Your Panel 3 visualization should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_3.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+### Task D: Using a manual method to create a visualization for panel 4
+
+**Step 1:** From the **Navigation** panel, select **Visualizations** to open the visualizations library.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.1.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 2:** Select the **Packed Bubble** chart from the list.
+
+**Step 3:** The packed bubble chart visualization will be added to Panel 4 of the dashboard template, and its **Fields** panel will be open, ready for you to set up the data definitions for your visualization.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.2.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 4:** From the data source panel on the left of the screen, drag and drop the **Product Line**, **Quantity Sold**, and **Loyalty Status** sources into the **Bubbles**, **Size**, and **Color** data slots of the Fields panel respectively.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%205%20-%20Different%20Methods%20for%20Creating%20Dashboard%20Visualizations%20with%20Cognos%20Analytics/images/2.D.3.New.png" style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+**Step 5:** Click the **Fields** button to close the panel.
+
+**Step 6:** Click the packed bubble chart visualization in Panel 4 to bring it into focus. Select the title of the visualization and change it to *Department Sales by Loyalty Status*.
+
+**Step 7:** Open the **Properties** panel and click on the **General** tab. Expand **Appearance**, click **Border color** to open the color options for borders, and select a black border.
+
+**Step 8:** To save the current work of the dashboard, press **CTRL+S** or click the **Save** icon in the toolbar.
+
+**Step 9:** Your Panel 4 visualization should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/Assistant_4.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
+
+Finally, your dashboard **B - Customer** should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/B_customer_dashboard.png " style="width:890px; max-height:500px; object-fit:contain;"></div></div>
 
 **Congratulations!**
 
