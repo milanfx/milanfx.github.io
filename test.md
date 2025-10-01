@@ -164,6 +164,6 @@ In this exercise, you will learn some other features that we can use with Pivot 
 
 **Step 5:** In the Date timeline, click **top right drop-down** and select **YEARS**, then select **2020** only.
 
-**Congratulations!**
+### Congratulations!
 
 You have completed this lab!
