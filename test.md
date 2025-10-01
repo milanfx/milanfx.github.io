@@ -23,7 +23,7 @@ After completing this lab you will be able to:
 
 **Step 1:** Open a new terminal.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/new-terminal.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/new-terminal.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 **Step 2:** At the terminal run the following command to install pylint.
 
@@ -32,7 +32,7 @@ pip3 install pylint==2.11.1
 ```
 
 **Step 3:** This should install the pylint package.
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/pylint_pip.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/pylint_pip.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 ### Create a sample python file for static code analysis
 
