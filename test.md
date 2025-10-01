@@ -5,151 +5,242 @@ permalink: /xxx/
 ---
 
 
-# Excel Multiple Linear Regression Analysis
+# Cognos Advanced Dashboard Capabilities
 
-**Estimated Time Needed: 30 Minutes**
+**Estimated Time Needed: 45 Minutes**
 
-### Overview
+### Purpose of the Lab: 
 
-In this lab, you\'ll learn how to perform a multiple linear regression analysis using Microsoft Excel.
+This lab focuses on enhancing skills in utilizing advanced features of IBM Cognos Analytics to create more dynamic and interactive dashboards. It delves into creating calculations, manipulating data points within visualizations, applying top/bottom settings on visualizations, and constructing navigation paths. Additionally, the lab provides hands-on experience in filtering data within a dashboard. The exercises are designed to provide a deeper understanding of how to leverage Cognos Analytics for more complex data analysis and visualization tasks, moving beyond basic dashboard creation. 
+
+### Benefits of Learning the Lab: 
+
+Engaging in this lab offers several key benefits for those interested in data analytics and visualization.You will acquire practical skills in advanced dashboarding techniques, such as creating custom calculations, effectively filtering and manipulating data, and utilizing Cognos Analytics to its full potential for comprehensive data analysis. These skills are vital for professionals in data analysis, business intelligence, and decision-making roles, as they allow for more nuanced and insightful analysis of data. The ability to create interactive and detailed dashboards enhances one's capability to present data in a more engaging and informative manner. This knowledge is particularly beneficial for those seeking to improve their data presentation skills, making complex data more accessible and actionable for decision-makers. Overall, the lab provides a strong foundation in advanced data visualization techniques, making it a valuable learning experience for advancing one’s career in the field of data analytics. 
 
 ### Software
 
-The instruction videos in this course will be using the full Excel Desktop version because it has all the available product features. However, for the hands-on labs, we will use the free \"Excel for the web\" version because this is available to everyone.
-
-Although you can use the Excel Desktop software, <a href="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/instructions.md.html">it is recommended that you use Excel for the web for the hands-on labs</a>, as the lab instructions specifically refer to this version. There are some small differences in the interface and available features.
+Like the videos in the course, for the hands-on labs, we will be using IBM Cognos Analytics trial version (currently limited to 30 days), as this is available at no charge.
 
 ### Dataset
 
-The data set used in this lab is curated from the following source: https://www.kaggle.com/datasets/yasserh/housing-prices-dataset under the [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/ "CC0: Public Domain license") license.
+The dataset used in this lab comes from the VM designed to showcase IBM Cognos Analytics. This dataset is published by IBM. You can download the dataset file directly from here: [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0130EN-SkillsNetwork/Hands-on%20Labs/Lab%206%20-%20%20Advanced%20Dashboard%20Capabilities%20in%20Cognos%20Analytics/CustomerLoyaltyProgram.csv)
 
-Acknowledgment and thanks also go to https://trak.in, who were generous enough to share the data publicly for free.
+### Objectives
 
-**NOTE:** We are using a modified subset of the original data set. Please ensure you use the data set provided in this lab.
+After completing this lab, you will be able to:
 
-#### Learning objectives:
+- Start a new dashboard
+- Create calculations
+- Keep/exclude data points from a visualization
+- Set top/bottom on a visualization
+- Create and leverage navigation paths
+- Filter data in a dashboard
 
-- Perform a multiple linear regression analysis.
-- Assess how well the regression equation predicts the dependent variable.
-- Assess the contribution of each independent variable to the prediction.
+## Exercise 1: Start a New Dashboard
 
-Welcome to the Lab: Multiple Linear Regression Analysis!
+In this exercise, you will start a new dashboard for working with advanced Cognos Analytics dashboard capabilities.
 
-## Configure the XL Miner Analysis ToolPak
+**Step 1:** To sign in to the Cognos Analytics platform with your IBMid, go to [myibm.ibm.com/dashboard/](https://myibm.ibm.com/dashboard/?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-IBMSkillsNetwork-DV0130EN-Coursera).
 
-Before you begin with the lab, let\'s configure the XL Miner Analysis ToolPak in your Excel for the web version. You will need this add-in to perform the regression analysis. If you have already configured the add-in, you may skip this section.
+**Step 2:** Enter your IBMid and password.
 
-**NOTE:** XLMiner Analysis ToolPak is a third-party free statistical analysis ToolPak in Excel for the web. It shows the same functions as the Analysis ToolPak add-in available in Excel for the desktop. You can use this ToolPak to perform descriptive statistics and linear regression for the labs in this course. If you are using Excel for the desktop, you can configure the in-built Data Analysis ToolPak available from Microsoft. 
+**Step 3:** Scroll down and click **Launch**.
 
-To configure this add-in, open a file in Excel for the web and follow the following steps.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/launch.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** Select **File** on the top ribbon.
+**Step 4:** From the **Recent** section, click the uploaded data file **CustomerLoyaltyProgram.csv**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/3.B.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 2:** Select Get **Add-ins** from the left menu bar and choose **More Add-ins**.
+**Step 5:** The template window will be displayed, allowing you to select the type of dashboard and the template style. Select the **Tabbed** dashboard style. This will allow you to have multiple pages for your dashboards. Select the *five-panel template*, then click **Create**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 3:** In the **Office Add-ins** window, type in **Analysis ToolPak** in the search bar and select the search icon. 
+**Step 6:** To save the newly created dashboard, press **CTRL+S** or click the **Save** icon and then click **Save as**. 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_3.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div> 
 
-**Step 4:** Select the **Add** button next to the **XLMiner Analysis ToolPak**.
+**Step 7:** A new **Save as** window will pop up. Follow the steps as displayed below to save your dashboard as **Advanced Dashboard** in the **My content** section.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_4.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 5:** Select the checkbox next to **I agree to all the above terms & conditions**. Select **Continue**.
+**Step 8:** As you build the dashboard, the location placement for visualization widgets in the dashboard template will be referenced using the following Panel numbers.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_5.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.7.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 6:** You\'ll see **XLMiner Analysis ToolPak** on the right side of your Excel sheet. You\'ll also see the **Show ToolPak** button in the ribbon.
+**Step 9:** From the **Navigation** panel, select **Sources** to ensure the data source panel is open in the left pane.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/Rev_Img_6.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 10:** From the data source panel, select **Revenue** and drag it to the center of **Panel 1**, releasing it once you see the drop zone turn blue.
 
-## Exercise: Perform a multiple linear regression analysis to predict the test score
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_5.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-In this exercise, you\'ll learn to identify dependent and independent variables, perform multiple linear regression, evaluate the regression model, and assess the contribution of each independent variable.
+**Step 11:** Click the summary chart in Panel 1 to bring it into focus. From the on-demand toolbar that appears in the main toolbar, click **Summarize**, and then select **Average**.
 
-For this lab, you will use the following data set, [Lab_Multiple Linear Regression_Data set.xlsx](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/Lab_Multiple%20Linear_Regression_Data_set.xlsx "Lab_Multiple Linear Regression_Data set.xlsx"). To download the data set, right-click the hyperlink and select Open link in a new tab. Open the file in Excel for the Web version and follow the steps given below to perform the regression analysis.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_6.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-Here\'s a screenshot of the data set.
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/1_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 12:** In the summary chart in Panel 1, select the title of the visualization and change it to *Average Revenue*.
 
-### Task 1: Identify the dependent and independent variables
-In this task, you\'ll predict the house prices, which depend on three variables: the area of the house in square feet, the inflation rate, and the bank\'s rate of interest. Thus, house prices are the dependent variable, whereas the area of the house in square feet, the inflation rate, and the bank\'s rate of interest are the independent variables.
+**Step 13:** From the **Navigation** panel, select **Widgets** to open the widgets panel. Drag and drop **Money coin** from **Shapes** to the center of Panel 1.
 
-You will use the following multiple regression equation with three independent variables:
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_7.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-Y = β<sub>0</sub> + β<sub>1</sub>X<sub>1</sub> + β<sub>2</sub>X<sub>2</sub> + β<sub>3</sub>X<sub>3</sub>
- 
-Where
+**Step 14:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the toolbar.
 
-- Y: House price (Dependent variable)
-- X<sub>1</sub>: Area of the house in square feet (Independent variable)
-- X<sub>2</sub>: The inflation rate (Independent variable)
-- X<sub>3</sub>: The interest rate (Independent variable)
-- β<sub>0</sub>: The y-intercept
-- β<sub>1</sub>, β<sub>2</sub>, and β<sub>3</sub>: The slope coefficients
+**Step 15:** Your Panel 1 visualization should look similar to the one below:
 
-### Task 2: Perform the multiple linear regression
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_1.13.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-In this task, you\'ll perform regression analysis using Excel. 
+## Exercise 2: Working with Advanced Cognos Analytics dashboard capabilities
 
-**Step 1:** You\'ll be using the XL Miner Analysis Toolpak to perform this task. To open the add-in, Click the **Show ToolPak** icon within the **Home** tab. 
+In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
+- Task A: Create calculations 
+- Task B: Keep/Exclude Data Points from a visualization
+- Task C: Set Top/Bottom on a visualization
+- Task D: Create and Leverage navigation paths
+- Task E: Filter Data in the current tab
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/2_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+### Task A: Create Calculations 
 
-**Step 2:** The **XLMiner Analysis ToolPak** will appear. Select **Linear Regression**.
+**Step 1:** From the **Navigation** panel, select **Sources** to open the data source panel if it is not already open. The data source panel displays the uploaded file **CustomerLoyaltyProgram.csv** as the selected source.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/3_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** Right-click the **CustomerLoyaltyProgram.csv** data source and select **Calculation**.
 
-**Step 3:** Populate the regression analysis fields with the below range.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-- **Input Y Range:** The housing prices **($E$1:$E$12)**.
-- **Input X Range:** Area in square feet, the inflation rate, and the bank\'s rate of interest **($B$1:$D$12)**.
-- Select the **Labels** checkbox.
-- Uncheck **Confidence Level**.
-- **Output Range:** $H$1
-- Select **OK**.
+**Step 3:** Change the calculation name to **Margin**. From the **Components** panel, drag **Unit Sale Price** to the **Expression** field, type a space, then the minus sign, **-**, to the right of it, and then drag **Unit Cost** to the right of that. Click **OK**.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/4_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_8.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 4:** The regression analysis results will appear. 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/5_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 4:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed, and drag **Margin** to the center of **Panel 2**, releasing it once you see the drop zone turn blue.
 
-**Step 5:** The regression output shows the coefficients. You can thus determine the regression equation as follows: 
+**Step 5:** Right-click the margin chart in Panel 2, point to **Summarize**, and then select **Average**.
 
-Y = β<sub>0</sub> + β<sub>1</sub>X<sub>1</sub> + β<sub>2</sub>X<sub>2</sub> + β<sub>3</sub>X<sub>3</sub>
+**Step 6:** From the data source panel, right-click on **Margin** and click **Format data**. 
 
-Y = -483410.67 + 261.05X<sub>1</sub> + 95473.76X<sub>2</sub> + 147274.52 X<sub>3</sub>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_9.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/6_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 7:** In the **Format type** list, select **Currency**.
 
-### Task 3: Evaluate the model
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_10.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-Next, you\'ll evaluate the regression model by examining some of the values in this analysis summary.
+**Step 8:** Select **$ (USD) - United States of America, dollar** as the currency and click **OK** at the bottom.
 
-**Step 1:** Examine the **R-squared value**. The R-squared value for the given data set is 0.93. This means that the independent variables, the area in square feet, the inflation rate, and the bank\'s rate of interest, are collectively responsible for 93% of the variance in the house price. 
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_11.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/7_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 9:** In the margin chart in Panel 2, select the title of the visualization and change it to *Average Margin*.
 
-**Step 2:** Next, assess the statistical significance of the regression sum of squares. Examine the ANOVA table produced for the given data set using Excel. 
-This table shows the **F-statistic** and the **Significance F** value. The F-statistic value is 33.17, which is a high value, and the model\'s p-value or Significance F is 0.000165, which is less than 0.05. This indicates that one or all of the independent variables have explanatory power beyond what would be expected by chance. 
+**Step 10:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/9_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+**Step 11:** Your Panel 2 visualization should look similar to the one below:
 
-**Step 3:** To assess the contribution of each independent variable, examine their **p-values**. The p-values for the area in square feet is 0.0022, the bank\'s rate of interest is 0.16, and that of the inflation rate is 0.09. A low p-value, typically less than 0.05, indicates that the corresponding regression coefficient is statistically significant, implying that the independent variable has a meaningful impact on the dependent variable.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.A.9.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-ST0141EN-Coursera/images/10_MLRA.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+### Task B: Keep/Exclude Data Points from a Visualization
+
+**Step 1:** In the data source panel, expand CustomerLoyaltyProgram.csv if needed. Press the **CTRL** key and select **Revenue** and **Product Line** and drag them both to the center of **Panel 3**, releasing them once you see the drop zone turn blue.
+
+**Step 2:** From the data source panel, drag **Location Code** to the **Color** drop zone of **Panel 3**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 3:** Right-click the **Suburban** data point in the Panel 3 visualization, and select **Exclude**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 4:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 5:** Your Panel 3 visualization should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.B.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+### Task C: Set Top/Bottom on a Visualization
+
+**Step 1:** From the data source panel, press the **CTRL** key and select **Quantity Sold** and **City**, and drag them both to the center of **Panel 4**, releasing them once you see the drop zone turn blue.
+
+**Step 2:** Click the chart in Panel 4 to bring it into focus and render the on-demand toolbar.
+
+**Step 3:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Map**), then expand **All visualizations**, if needed, and select **Column**.
+
+**Step 4:** In Panel 4, right-click the axis label **Quantity Sold (Sum)** down the left side of the chart and select **Top or bottom**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.4.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 5:** Ensure the value of **Number of results** is set to **10**, then select **Top count**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.5.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 6:** In the column chart in Panel 4, select the title of the visualization and change it to *Top 10 Quantity Sold by City*.
+
+**Step 7:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 8:** Your Panel 4 visualization should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.C.8.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+### Task D: Create and leverage navigation paths
+
+**Step 1:** In the data source panel on the left, scroll to the top of the list and click the **plus sign** labeled **Create navigation path** to the right of **Navigation paths**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 2:** In the **Create navigation path** dialog box, expand CustomerLoyaltyProgram.csv, if needed. Drag **Order Year**, **Quarter**, **Country**, and **City** sequentially to the right hand panel of the dialog box, maintaining the order (shown in the image below). Once done, click **OK**. 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 3:** From the data source panel, press the **CTRL** key and select **Margin**, **Product Line**, and **Order Year** and drag them to the center of **Panel 5**, releasing them once you see the drop zone turn blue.
+
+**Step 4:** Click the line chart in Panel 5 to bring it into focus and render the on-demand toolbar.
+
+**Step 5:** Click the **Change visualization** button in the on-demand toolbar (which will currently say **Line**), then expand **All visualizations**, if needed, and select **Bar**.
+
+**Step 6:** In Panel 5, right-click the axis label **Order Year** down the left side of the chart, and select **Navigate**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.6.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 7:** One by one, select the **Order Year**, **Quarter**, **Country**, and **City** options in the **Navigate** dialog box to view the different navigation paths and observe the resulting visualization in Panel 5 as you select each one. Lastly, keep the **Order Year** option selected.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.7.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 8:** <ins>Alternative interactive way with Drill down/back:</ins>
+- In the bar chart in Panel 5, right-click the **2016** - **Smart Electronics** bar of the bar chart, and select **Drill down**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+- Now right-click the **Q1** - **Smart Electronics** bar of the bar chart, and select **Back**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.8.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 9:** To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar.
+
+**Step 10:** Your Panel 5 visualization should look similar to the one below:
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.D.10.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+### Task E: Filter Data in the Current Tab
+
+**Step 1:** If required, click **Filters** in the **Dashboard Toolbar** to display the filters pane.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.1.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 2:** From the data source panel, select **Product Line** and drag it to the **This tab** filter panel on the right hand side.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.2.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 3:** Click the **Product Line** filter tab of the **This tab** filter panel. Select **Computers and Home Office**, **Photography**, and **TV and Video Gaming**, then click **Done**.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2.E.3.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+Your final dashboard should look similar to the one below. To save the current work in the dashboard, press **CTRL+S** or click **Save** in the main toolbar. 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-DV0130EN-Coursera/images/L3_2_final_dashboard.png" style="width:880px; max-height:600px; object-fit:contain;"></div></div>
+
+Feel free to change the appearance and layout of the dashboard you have just created. 
 
 **Congratulations!**
 
 You have completed this lab!
-
-
-
 
 
 
