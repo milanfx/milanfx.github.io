@@ -45,7 +45,7 @@ In this exercise, you will sign up for a Microsoft Account to use Excel for the 
 
 **Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png" width="880">
+![Step 1](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/images/signin.png)
 
 **Step 2:** Click **Create one!**
 
