@@ -6,7 +6,8 @@ permalink: /xxx/
 
 
 
-# Static Code Analysis
+
+# Unit Testing Practice
 
 **Estimated Time Needed: 30 Minutes**
 
@@ -14,121 +15,178 @@ permalink: /xxx/
 
 After completing this lab you will be able to:
 
-- Install pylint package
-- Run Static Code Analysis on a python program
-- Check the compliance score of a python program.
-- Fix common mistakes and improve the compliance score.
+- Write unit tests to test a function.
+- Run unit tests and interpret the results.
 
-### Install the pylint package
+### About the Lab Environment
 
-**Step 1:** Open a new terminal.
+Cloud IDE is an open-source IDE(Integrated Development Environment), that can be run on desktop or on cloud. You will be using the Cloud IDE to do this lab. When you log into the Cloud IDE environment, you are presented with a &#39;dedicated computer on the cloud&#39; exclusively for you. This is available to you as long as you work on the labs. Once you log off, this &#39;dedicated computer on the cloud&#39; is deleted along with any files you may have created. So, it is a good idea to finish your labs in a single session. If you finish part of the lab and return to the Theia lab later, you may have to start from the beginning. Plan to work out all your Theia labs when you have the time to finish the complete lab in a single session.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/new-terminal.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
+### Create a new python file named mymodule.py
 
-**Step 2:** At the terminal run the following command to install pylint.
+On the window, Right click on the **Explorer** and select **New File** option, as shown in the image below.<br>
 
-```
-pip3 install pylint==2.11.1
-```
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BdOq065I6y-k4xTPTm7MDQ/Python-newfile.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-**Step 3:** This should install the pylint package.
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/pylint_pip.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
+A pop up appears with title **New File**, as shown in the image below.<br>
 
-### Create a sample python file for static code analysis
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-Create a new file named **sample1.py**
+Enter "mymodule.py" as the file name and click **OK**.
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup2.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-Copy and paste the below code into **sample1.py**
+A file "mymodule.py" will be created for you.
 
-```
-# Define a function named 'add' that takes two arguments, 'number1' and 'number2'.
-def add(number1, number2):
-    # The function returns the sum of 'number1' and 'number2'.
-    return number1 + number2
+You are now ready to add code to mymodule.py
 
-# Initialize the variable 'num1' with the value 4.
-num1 = 4
-
-# Initialize the variable 'num2' with the value 5.
-num2 = 5
-
-# Call the 'add' function with 'num1' and 'num2' as arguments and store the result in 'total'.
-total = add(num1, num2)
-
-# Print the result of adding 'num1' and 'num2' using the 'format' method to insert the values into the string.
-print("The sum of {} and {} is {}".format(num1, num2, total))
+Copy and paste the below code into mymodule.py
 
 ```
+def square(number):
+    """
+    This function returns the square of a given number
+    """
+    return number ** 2
 
-Save the file **sample1.py**
-
-### Run pylint
-
-- Open a terminal
-- Run the below command
-
-```
-pylint sample1.py
-```
-
-- Pylint goes through every line of code and gives you a list all the non-compliant lines.
-- Pylint gives you a compliance score (10 being maximum).
-
-### Correct the mistakes identified by pylint.
-
-- Based on the report given by pylint changes were made to this code to address the following issues.
-    * Exactly one space required after comma
-    * Exactly one space required around assignment
-- Create a new file named **sample2.py**
-- Copy and paste the below code into **sample2.py**
-
+def double(number):
+    """
+    This function returns twice the value of a given number
+    """
+    return number * 2
 ```
 
-# Define a function named 'add' that takes two arguments, 'number1' and 'number2'.
-# The purpose of this function is to add the two numbers and return the result.
-def add(number1, number2):
-    # Return the sum of 'number1' and 'number2'.
-    # This line computes the addition of the two input numbers and outputs the result.
-    return number1 + number2
+You should see a screen like this now.
 
-# Initialize the constant variable 'NUM1' with the value 4.
-# Constants are usually written in uppercase letters to indicate that they should not be changed.
-NUM1 = 4
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/module.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-# Initialize the variable 'num2' with the value 5.
-# This variable will be used as the second input to the 'add' function.
-num2 = 5
+Save the file by using the Save option in the File Menu.
 
-# Call the 'add' function with 'NUM1' and 'num2' as arguments.
-# The result of this addition operation is stored in the variable 'total'.
-total = add(NUM1, num2)
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/save_file.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-# Print a formatted string that displays the sum of 'NUM1' and 'num2'.
-# The 'format' method is used to insert the values of 'NUM1', 'num2', and 'total' into the string.
-print("The sum of {} and {} is {}".format(NUM1, num2, total))
+## Write Unit Tests
+
+### Write the unit tests for square function
+
+Let us write test cases for these three scenarios.
+
+- When 2 is given as input the output must be 4.
+- When 3.0 is given as input the output must be 9.0.
+- When -3 is given as input the output must not be -9.
+
+### Write the unit tests for double function
+
+Let us write test cases for these three scenarios.
+
+- When 2 is given as input the output must be 4.
+- When -3.1 is given as input the output must be -6.2.
+- When 0 is given as input the output must be 0.
+
+### Create a new file and name it as test_mymodule.py
+
+Copy and paste the below code into test_mymodule.py
+
+```
+# Import the 'unittest' module to create unit tests for your code.
+import unittest
+
+# Import the 'square' and 'double' functions from the 'mymodule' module.
+from mymodule import square, double
+
+# Define a test case class for testing the 'square' function.
+# A test case is a single unit of testing. It checks a specific aspect of the code's behavior.
+class TestSquare(unittest.TestCase): 
+
+    # Define the first test method for the 'square' function.
+    # Test methods should start with the word 'test' so that the test runner recognizes them as test cases.
+    def test1(self): 
+        # Check that calling 'square(2)' returns 4.
+        # This tests if the function correctly computes the square of 2.
+        self.assertEqual(square(2), 4) # test when 2 is given as input the output is 4.
+
+        # Check that calling 'square(3.0)' returns 9.0.
+        # This tests if the function correctly computes the square of 3.0, verifying that it handles float inputs.
+        self.assertEqual(square(3.0), 9.0)  # test when 3.0 is given as input the output is 9.0.
+
+        # Check that calling 'square(-3)' does not return -9.
+        # This tests that the function's output is not -9, verifying that the square of -3 should be 9.
+        self.assertNotEqual(square(-3), -9)  # test when -3 is given as input the output is not -9.
+
+# Define a test case class for testing the 'double' function.
+class TestDouble(unittest.TestCase): 
+
+    # Define the first test method for the 'double' function.
+    def test1(self): 
+        # Check that calling 'double(2)' returns 4.
+        # This tests if the function correctly computes double of 2.
+        self.assertEqual(double(2), 4) # test when 2 is given as input the output is 4.
+
+        # Check that calling 'double(-3.1)' returns -6.2.
+        # This tests if the function correctly computes double of -3.1, verifying that it handles negative float inputs.
+        self.assertEqual(double(-3.1), -6.2) # test when -3.1 is given as input the output is -6.2.
+
+        # Check that calling 'double(0)' returns 0.
+        # This tests if the function correctly computes double of 0, verifying that the function works for edge cases.
+        self.assertEqual(double(0), 0) # test when 0 is given as input the output is 0.
+        
+# Run all the test cases defined in the module when the script is executed.
+# This will automatically discover and run all the test cases defined in the module.
+unittest.main()
 
 ```
 
-Save the file **sample2.py**
+You should see a screen like this now.
 
-### Run pylint
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/testcase.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
 
-- Open a terminal
-- Run the below command
+## Run tests
+
+To run tests, click on the "Terminal" and then click on the "New Terminal"
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/000.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+
+It will open the terminal 
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/abc.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+
+Run command python3 test_mymodule.py and this will run the tests.
+
+You should see a screen like this now.
+
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/def.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+
+An `OK` in the last line indicates that all tests passed successfully.
+
+`FAILED` in the last line indicates that at least one test has failed, and python prints which test or tests failed.
+
+### Write unit tests for the given function
+
+Here is a function that accepts two arguments and returns their sum.
+
+Copy and paste the below code into mymodule.py and the save the file.
 
 ```
-pylint sample2.py
+def add(a,b):
+    """
+    This function returns the sum of the given numbers
+    """
+    return a + b
+
 ```
-- This will give you the compliance score.
-- This time you should see the score improve.
 
-### Your task
+Write test cases for these scenarios.
 
-Improve the score in sample2.py to a perfect 10 by correcting all the issues pointed out by pylint. If cant figure out how to solve some issues it is helpful to google the pylint message.
+- When 2 and 4 are given as input the output must be 6.
+
+- When 0 and 0 are given as input the output must be 0.
+- When 2.3 and 3.6 are given as input the output must be 5.9.
+- When the strings 'hello' and 'world' are given as input the output must be 'helloworld'.
+- When 2.3000 and 4.300 are given as input the output must be 6.6.
+- When -2 and -2 are given as input the output must **not** be 0. (Hint : Use assertNotEqual)
 
 **Congratulations!**
 
 You have completed this lab!
+
 
 
 
