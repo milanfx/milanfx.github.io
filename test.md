@@ -21,7 +21,7 @@ Microsoft Excel is the most widely used spreadsheet software even three decades 
 
 The instruction videos in this course use the full Excel Desktop version as this has all the available product features, but for the hands-on labs we will be using the free 'Excel for the web' version as this is available to everyone.
 
-Although you can use the Excel Desktop software if you have access to this version, <ins>it is recommended that you use Excel for the web for the hands-on labs</ins> as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
+Although you can use the Excel Desktop software if you have access to this version, it is recommended that you use Excel for the web for the hands-on labs as the lab instructions specifically refer to this version, and there are some small differences in the interface and available features.
 
 ### Dataset
 
@@ -41,7 +41,7 @@ After completing this lab, you will be able to:
 
 In this exercise, you will sign up for a Microsoft Account to use Excel for the web.
 
-- <ins>If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.</ins>
+- If you already have a Microsoft account, you can skip Exercise 1 and proceed to Exercise 2 directly.
 
 **Step 1:** Go to [www.office.com](https://www.office.com). Click **Sign in**
 
