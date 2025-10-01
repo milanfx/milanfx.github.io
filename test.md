@@ -26,14 +26,14 @@ Cloud IDE is an open-source IDE(Integrated Development Environment), that can be
 
 On the window, Right click on the **Explorer** and select **New File** option, as shown in the image below.<br>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BdOq065I6y-k4xTPTm7MDQ/Python-newfile.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BdOq065I6y-k4xTPTm7MDQ/Python-newfile.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 A pop up appears with title **New File**, as shown in the image below.<br>
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 Enter "mymodule.py" as the file name and click **OK**.
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup2.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/file_new_popup2.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 A file "mymodule.py" will be created for you.
 
@@ -57,11 +57,11 @@ def double(number):
 
 You should see a screen like this now.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/module.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/module.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 Save the file by using the Save option in the File Menu.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/save_file.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/save_file.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 ## Write Unit Tests
 
@@ -136,23 +136,23 @@ unittest.main()
 
 You should see a screen like this now.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/testcase.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/labs/module_1/images/testcase.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 ## Run tests
 
 To run tests, click on the "Terminal" and then click on the "New Terminal"
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/000.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/000.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 It will open the terminal 
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/abc.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/abc.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 Run command python3 test_mymodule.py and this will run the tests.
 
 You should see a screen like this now.
 
-<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/def.png" style="width:780px; max-height:450px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 3px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0222EN-SkillsNetwork/images/def.png" style="width:800px; max-height:450px; object-fit:contain;"></div></div>
 
 An `OK` in the last line indicates that all tests passed successfully.
 
@@ -186,6 +186,7 @@ Write test cases for these scenarios.
 **Congratulations!**
 
 You have completed this lab!
+
 
 
 
