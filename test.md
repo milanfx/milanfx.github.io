@@ -1,183 +1,258 @@
 ---
 layout: page
-permalink: /BI03Lab09/
+permalink: /DE02Lab01/
 ---
 
-# Lab09 - Looker Advanced Dashboard
+# Getting Started with IDE 
 
-**Estimated Time Needed: 60 Minutes**
+**Estimated Time Needed: 15 Minutes**
 
-### Purpose of the lab:
+### Overview
 
-This hands-on lab focuses on enhancing skills in utilizing advanced features of Google Looker Studio to create dynamic and interactive dashboards. It covers creating calculated fields, manipulating data points within visualizations, applying filters, and constructing navigation paths. This lab provides hands-on experience aimed at leveraging Google Looker Studio for complex data analysis and visualization tasks.
+In this lab, you will become familiar with using an Integrated Development Environment (IDE). The IDE you will be using is Skills Network Cloud IDE, based on an open-source project called Theia.  This IDE is similar to the popular Visual Studio (VS) Code IDE. In this lab, you will explore the IDE and use it to create and run a simple Python program. You will install a library, create a code file, save it, and edit it to make changes.
 
-### Software
+### Objectives
 
-Google Looker Studio, available for free.
+- Explore the IDE interface.
+- Install a package using terminal.
+- Create a simple Python program using the IDE.
+- Execute the program.
+- Edit the source code and re-run the program.
 
-### Dataset
+### Environment
 
-Use data set [CustomerLoyaltyProgram.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/bXn-QnrBL0Uv_nAaMVWgpw/CustomerLoyaltyProgram%20.csv "CustomerLoyaltyProgram.csv").
+**Two Components of the Skills Network Lab environment:**
 
-### Objectives:
+- The instructions that you will follow to complete this lab are displayed on the left side of the screen.
 
-- Start a new dashboard
-- Use advanced Google Looker Studio dashboard capabilities
-- Create a bar chart using Drill Down 
-- Create another bar chart to implement top/bottom filtering in visualizations
-- Create a horizontal bar chart using Drill Down and a calculated field
-- Create a pie chart
-- Add headings to all the created charts in the dashboard
-- Build an interactive dashboard
-- Save the dashboard and download as a PDF
+- The area on the right side of the screen is the actual IDE, where you will use the menus, terminals, and tools to develop your code.
 
-## Step-by-step instructions
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-**Step 1:** **Starting a new dashboard**
+## Exercise 1: Explore the IDE interface
 
-a. Sign in to Google Looker Studio:
+### Explore the menus, terminals, and tools
 
-- Go to Google Looker Studio and sign in with your Google account.
+Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
 
-b. Access the data set
+**Step 1:** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
 
-- Here you are going to use the same data set that you have used in the previous lab and follow the same steps to upload the file.
-- In the top left corner, click **Create**, then select **Data source**.
-- In the **Search** box, type *file upload*, then click the **File Upload** connector.
-- Click the **CLICK TO UPLOAD FILES** button, select the **CustomerLoyaltyProgram.csv** file, and click **Open**.
-- Once the data is uploaded, click **CONNECT**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mzGSXG9vyEALK3SxzgjDkg/Advanced-Lab-Fig%200.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** In the **Search** menu, you can search for particular folders or files that were created or cloned.
 
-c. Create and add the report
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-- To start creating the report, click **CREATE REPORT**.
-- In the pop-up dialog box, click **ADD TO REPORT**.
+**Step 3:** In the **Source Control** menu, you will find the cloned repository.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Z7xNUKltE7vl9_sybXJ5gw/Advanced-Lab-Fig%201.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-d. Save the new report
+**Step 4:** In the **Debug** menu, you can debug and troubleshoot your code.
 
-- Click the untitled report at the top and rename it to *Advanced Dashboard*.
-- Save the new report.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-**Step 2:** **Working with advanced Google Looker Studio dashboard capabilities**
+**Step 5:** In the **Extensions** menu, you can check the recommended, installed, and built-in software already provided as the pre-requisitesprerequisites. 
 
-a. Create calculations
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-- In your Data Source, click **+ ADD A FIELD**.
-- Then select **Add calculated field**.
+**Step 6:** In the **Skills Network Toolbox**, you will find options to use database, big data, cloud, and other tools to complete lab exercises in other courses.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/gRkVFXJKzT7LrZ01QK34Wg/Advanced-Lab-Fig%202.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-- Define the calculation for Margin as **Unit Sale Price - Unit Cost**.
+**Step 7:** Explore the menu options at the top of the IDE: File, Edit, Selection, View, Go, Run, Terminal, Help. You will be using some of these menu items in subsequent exercises. A summary of what they are used for is provided below.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mUGB-J0MGqf_hlMtPSRGgQ/Advanced-Lab-Fig%203.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-- Name the field **Margin** and save it.
+- **File:** This menu is used to create a new file or folder and save the file.
 
-b. Set up filters and control widgets
-- Add filter controls.
-- From the toolbar, select **Add a control** and choose a drop-down list or slider based on the type of filter you need, such as **City**.
+- **Edit:** This menu is used to undo, redo, cut, paste, and find the file.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/thrVidrnI93XYxo5ctg8cw/Advanced-Lab-Fig%204.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+- **Selection:** This menu is used to Select All, Copy line up or down and Move line up or down in the file.
 
-- Position the filter control on the dashboard.
+- **View:** This menu is used to view the other menus like explorer, extensions, and search.
 
-c. Add score cards
+- **Go:** This menu is used to Go back, view the last edit location, and go to the files.
 
-- Now you will include two scorecards to display *Margin* and *Revenue* on the top of your dashboard.
-- In the toolbar, click **Add a chart**, and select **Scorecard**.
-- Move it above the line chart visualization and to the left side of the canvas.
-- And pick **Margin** to be displayed on this scorecard.
-- In the Chart – Set Up area, click the left side of the **Margin** field and then you will see the following dialog box.  
-- Select the data type and aggregation.
+- **Run:** This menu is used for debugging and Adding configurations.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BerexUOejqyb2CZeNiFubg/Advanced-Lab-Fig%204A.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+- **Terminal:** This menu is used to open the New terminal and run the tasks.
 
-- You can change the size and position as you like.
-- Use the **STYLE** tab in the scorecard chart\'s **Properties** pane to change the color and change the font size to **28pt** and then select **Background and Border**.
+- **Help:** This menu is used to view the list of extensions and get started a file.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/peE0c-wQgVmCtK7U-Pp7MA/Advanced-Lab-Fig%204B.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+Click on each menu and explore them.
 
-- Now you will add the second scorecard chart above the line chart.
-- In the toolbar, click **Add a chart**, and select **Scorecard**.
-- Place it to the right of the **Revenue** scorecard chart.
-- Select the data type and aggregation.
-- Then use the same size and style as **Margin**.
+**You will learn about folder and file creation and how to use the terminal to run the commands later in this lab.**
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nf9fKqm0hPha_vf6Rm2x8Q/Advanced-Lab-Fig%205.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+## Exercise 2: Create a simple Python program using the IDE
 
-**Step 3:** **Creating a bar chart**
+**Step 1:** On the window to the right, click on the File menu and select **"New Folder"** option, as shown in the image below.
 
-a. Create a bar chart (Revenue By Product Line By Location Code) using Drill Down
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-- Add a bar chart to your dashboard.
-- Then drag the **Product Line** field to **Dimensions** (in the SET UP area)
-- Then drag the **Location Code** field to **Breakdown Dimension**
-- Then drag the **Revenue** field to **Metric** (change it to Average)
+Name the folder **"welcome101"**.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/ljFH7Xvn_Ev4rCbohEhbVQ/Advanced-Lab-Fig%206.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-b. Exclude data points from the visualization
+**NOTE:** Ensure that the folder is created within the /home/project directory. If you\'re encountering any issues, right-click on an empty area and select New Folder*
 
-- Add a filter in the **Location Code**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/7sdRuSMD2cmd6DrUX_3Mzg/Advanced-Lab-Fig%207.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** Right-click on the folder welcome101 and click on **"New File"**.
 
-- And exclude **Suburban**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/mapxLLZs5lvkUrbaxsvVbw/Advanced-Lab-Fig%208.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+Create a new file and name it **"welcome.py"**.
 
-**Step 4:** **Creating another bar chart to implement top/bottom filtering in visualizations**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-- Add a bar chart to your dashboard.
-- Sort the data in the chart\'s data properties
-- Limit the number of bars to show top 10
-- Then drag the **City** field to **Dimensions** (in the SET UP area)
-- Then drag the **Quantity Sold** field to **Metric**
+**Step 3:** Paste the below code to the welcome.py file and save it using Ctrl+S.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WCB2GmkdF2ToD3-_IJll3g/Advanced-Lab-Fig%209.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+```Python
+import numpy as np
 
-**Step 5:** **Creating a horizontal bar chart (Margin By Order Year Colored By Product Line) using Drill Down**
-- Add a horizontal bar chart to your dashboard
-- Then drag the **Order Year** field to **Dimensions** (in SET UP area)
-- Then drag the **Product Line** field to **Breakdown Dimension**
-- Then drag the **Margin** calculated field to **Metric**
+a = np.array([1,2])
+b = np.array([3,4])
+c = a + b
+print(c)
+```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/lJb8hwLfDH3lflk1EEuChg/Advanced-Lab-Fig%2010.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 6:** **Creating a pie chart of Loyalty Status Distribution**
+## Exercise 3: Execute the program
 
-- Add a pie chart to your dashboard
-- Then drag the **Loyalty Status** field to **Dimensions** (in the SET UP area)
-- Then drag the **Loyalty#** field to **Metric**
+**Step 1:** Open a terminal window using the editor New  Terminal.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rCEFhlPo9kfqTHix6ibCfw/Advanced-Lab-Fig%2011.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 7:** **Adding headings to all the created charts in the dashboard**
+In the terminal, you will run all the commands to complete the lab.
 
-- On the top of each chart, add a text box and enter the heading and use the text properties to make the text bold and fill it with color and provide a boundary.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/At88omr4SwspDnKlvjW6RA/Advanced-Lab-Fig%2011A.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** Verify that python is installed.
 
-**Step 8:** **Building an interactive dashboard**
+```bash
+python3.11 --version
+```
 
-- Filter data in the current tab (selecting a city)
+You should see output similar to this, though the versions may be different:
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/DyKDdY9sgJZlcITeyIRdLA/Advanced-Lab-Fig%2012.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+```
+Python 3.11.11
+```
 
-- Filter data in the current tab (selecting a product line)
+**Step 3:** Install the numpy package.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Gt8RMPajm1HLD2inOJdN8g/Advanced-Lab-Fig%2013.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+```bash
+python3.11 -m pip install numpy
+```
+You should see the an output similar to this.
 
-**Step 9:** **Saving the dashboard and downloading as a PDF**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-- Finalize the dashboard.
-- Ensure all visualizations are correctly configured and aligned.
-- Preview the dashboard in **View** mode to check interactivity and finalize the design.
-- Save the dashboard.
-- Download as a PDF (you can also share your PDF).
+**Step 4:** Change the directory for this lab by using the command shown below in the terminal.
+
+```bash
+cd welcome101
+```
+
+**Step 5:** Run the program in the terminal using the below command:
+
+```bash
+python3.11 welcome.py
+```
+
+**You will get the following output!**
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+## Exercise 4: Edit the source code and re-run the program
+
+**Step 1:** Replace the source code with the code shown below:
+
+```python
+message= "Welcome to the world of programming!"
+print (message)
+```
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+
+**Step 2:** Run the program in the terminal using the command below:
+
+```bash
+python3.11 welcome.py
+```
+
+You should see an output similar to this.
+
+```
+Welcome to the world of programming!
+```
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+## Practice Exercises
+
+**Step 1:** Create a new folder called "software101".
+
+**HINT:** On the window to the right, click on the File menu and select the **"New Folder"** option, as shown in the image below. Name the folder **"software101"**.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 2:** In software101, create a new file called "software.py".
+
+**HINT:** Right-click on the folder software101, click on **"New File"**, create a new file, and name it **"software.py"**.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 3:** Write code to add two arrays using Numpy library.
+
+**NOTE:** Since the library is already installed in the practice, there is no need to install it again.
+
+**HINT:** Import the numpy library, create two numpy arrays, and add them.
+
+Paste the code below to the software.py file and save it using Ctrl+S.
+
+```Python
+import numpy as np
+
+a = np.array([2,3,4])
+b = np.array([3,2,1])
+c = a + b
+print (c)
+```
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 4:** Run the program.
+
+**HINT:** Run the program in the terminal using the below command. Make sure you are in the correct folder.
+
+```bash
+cd software101
+python3.11 software.py
+```
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 5:** Edit the software.py file and change one of the arrays.
+
+**HINT:** 
+
+Change the array 'a' to [5,3,1] and save the file.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 6:** Run the updated file.
+
+**HINT:** 
+
+Run the program in the terminal using the below command:
+
+```bash
+python3.11 software.py
+```
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
 **Congratulations!**
 
