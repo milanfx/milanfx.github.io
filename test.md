@@ -1,384 +1,270 @@
 ---
 layout: page
-permalink: /DE05Lab13/
+permalink: /DE06Lab05/
 ---
 
-# PostgreSQL Troubleshooting
+# Lab05 - Airflow Monitoring DAG
 
-**Estimated Time Needed: 30 Minutes**
+**Estimated Time Needed: 20 Minutes**
 
-### Overview
+### Introduction
 
-In this lab, you will obtain hands-on experience in troubleshooting common issues you may encounter as a database administrator. The most common problems encountered with databases are caused by poor performance, improper configuration, or poor connectivity. You will use a PostgreSQL server instance to explore some of these possible problems and rectify them.
+In this lab, you will work with the Airflow Web UI and CLi to explore the DAGs further. You will be exposed to using the interactive tools to search for DAGs, introduces to various views of the DAGS and how you can use this to explore the DAG workflow, the individual tasks in the workflow and view the outcome of the tasks.
 
 ### Objectives
 
-After completing this lab, you will be able to:
+After completing this lab you will be able to:
 
-- Enable error logging for your PostgreSQL instance.
-- Access server logs for troubleshooting.
-- Diagnose commonly encountered issues caused by poor performance, improper configuration, or poor connectivity.
-- Resolve common issues you may encounter as a database administrator.
+- Search for a DAG
+- Pause/Unpause a DAG
+- Get the Details of a DAG
+- Explore grid view of a DAG
+- Explore graph view of a DAG
+- Explore Calendar view of a DAG
+- Explore Task Duration view of a DAG
+- Explore Details view of a DAG
+- View the source code of a DAG
+- Delete a DAG
 
-### Software
+### Cloud IDE
 
-In this lab, you will be using PostgreSQL. It is a popular open source object relational database management system (RDBMS) capable of performing a wealth of database administration tasks, such as storing, manipulating, retrieving, and archiving data.
+Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands on labs for course and project related labs. Theia is an open source IDE (Integrated Development Environment), that can be run on desktop or on the cloud. to complete this lab, we will be using the Cloud IDE based on Theia running in a Docker container.
 
-To complete this lab, you will be accessing the PostgreSQL service through the IBM Skills Network (SN) Cloud IDE, which is a virtual development environnement you will use throughout this course.
+### Environment
 
-### Database
+Please be aware that sessions for this lab environment are not persistent. A new environment is created for you every time you connect to this lab. Any data you may have saved in an earlier session will get lost. To avoid losing your data, please plan to complete these labs in a single session.
 
-In this lab, you will use a database from https://postgrespro.com/education/demodb distributed under the [PostgreSQL license](https://www.postgresql.org/about/licence/). It stores a month of data about airline flights in Russia and is organized according to the following schema:
+## Exercise 1: Start Apache Airflow
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/DB_schema.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 1:** Click on **Skills Network Toolbox**.
 
-## Exercise 1: Set Up Your Database in PostgreSQL
+**Step 2:** From the **BIG DATA** section, click **Apache Airflow**.
 
-### Task A: Launch PostgreSQL in Cloud IDE
+**Step 3:** Click **Start** to start the Apache Airflow.
 
-To get started with this lab, launch PostgreSQL using the Cloud IDE. You can do this by following these steps:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/images/apache1.PNG" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** Select the Skills Network extension button in the left pane.
+**NOTE:** Please be patient, it will take a few minutes for Airflow to get started.
 
-**Step 2:** Open the **DATABASES** dropdown menu and select **PostgreSQL**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rOoPp-qlthLQovD65RWl7A/airflow-start.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**NOTE:** If the PostgreSQL database does not function properly, you may need to stop and restart it in case it fails to initialize.
+## Exercise 2: Open the Airflow Web UI
 
-**Step 3:** Select the **Start** button. PostgreSQL may take a few moments to start.
+When Airflow starts successfully, you should see an output similar to the one below.  Once **Apache Airflow** has started, click on the highlighted icon to open **Apache Airflow Web UI** in the new window.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/SC_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oOEvvbiaEKB_S_izc8BZLg/airflow-active.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### Task B: Download and Create the Database
+You should land at a page that looks like this.
 
-**First, you will need to download the database.**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/REjhlZPZksRQQK9mwX8AyA/airflowhomepage.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** Open a new terminal by selecting the **New Terminal** button near the bottom of the interface.
+## Exercise 3: Submit a dummy DAG
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openTerminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+For the purpose of monitoring, let\'s create a dummy DAG with three tasks.
 
-**Step 2:** Run the following command in the terminal:
+- Task1 does nothing but sleep for 1 second.
+- Task2 sleeps for 2 seconds.
+- Task3 sleeps for 3 seconds.
 
-```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/example-guided-project/flights_RUSSIA_small.sql
-```
+This DAG is scheduled to run every 1 minute.
 
-The file that you downloaded is a full database backup of a month of flight data in Russia. Now, you can perform a full restoration of the data set by first opening the PostgreSQL CLI. 
+**Step 1:** Using Menu->`File`->`New File` create a new file named `dummy_dag.py`.
 
-**Step 3:** Near the bottom of the window, select the **PostgreSQL CLI** button to launch the command line interface (CLI).
+**Step 2:** Copy and paste the code below into it and save the file.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+```python
+# import the libraries
 
-**Step 4:** In the PostgreSQL CLI, enter the command to restore the data you downloaded into a new database called **demo**.
+from datetime import timedelta
+# The DAG object; we'll need this to instantiate a DAG
+from airflow import DAG
+# Operators; we need this to write tasks!
+from airflow.operators.bash_operator import BashOperator
+# This makes scheduling easy
+from airflow.utils.dates import days_ago
 
-**HINT:** In the PostgreSQL CLI, enter the command `\i <file_name>.` In your case, the file name will be the name of the file you downloaded, `flights_RUSSIA_small.sql`. This will restore the data into a new database called `demo`.
+#defining DAG arguments
 
-```
-\i flights_RUSSIA_small.sql
-```
+# You can override them on a per-task basis during operator initialization
+default_args = {
+    'owner': 'Your name',
+    'start_date': days_ago(0),
+    'email': ['your email'],
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
 
-The restorations may take a few moments to complete.
+# defining the DAG
+dag = DAG(
+    'dummy_dag',
+    default_args=default_args,
+    description='My first DAG',
+    schedule_interval=timedelta(minutes=1),
+)
 
-**Step 5:** Verify that the database was properly created by entering the following command:
+# define the tasks
 
-```
-\dt
-```
+# define the first task
 
-You should see the following output showing all the tables that are part of the `bookings` schema in the `demo` database.
+task1 = BashOperator(
+    task_id='task1',
+    bash_command='sleep 1',
+    dag=dag,
+)
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/SC_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+# define the second task
+task2 = BashOperator(
+    task_id='task2',
+    bash_command='sleep 2',
+    dag=dag,
+)
 
-## Exercise 2: Enable Error Logging and Observe Logs
+# define the third task
+task3 = BashOperator(
+    task_id='task3',
+    bash_command='sleep 3',
+    dag=dag,
+)
 
-### Task A: Enable Server Logging
-
-First, to enable error logging on your PostgreSQL server instance, you will need to configure your server to support it. You can do so by using the Cloud IDE file explorer to open `postgresql.conf`, which stores the configuration parameters that are read upon server startup. Let's go ahead and do it.
-
-**Step 1:** You can open the file by first opening the file explorer on Cloud IDE then selecting `postgres > data > postgresql.conf`.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 2:** With the configuration file open, scroll down to line 431. Replace `logging_collector = off` with `logging_collector = on` and uncomment the parameter by removing the `#` before the line.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 3:** Save the changes to `postgresql.conf` by either navigating to **File > Save** at the top toolbar or by pressing **Ctrl + S** (Mac: ⌘ + S).
-
-**Step 4:** Changing this parameter requires a server restart in order to take effect. Select the PostgreSQL tab in Cloud IDE.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**NOTE:** If the database will not work, you may need to stop and restart the database if it fails to start up
-
-**Step 5:** Stop the PostgreSQL server by selecting the "Stop" button and close all CLI and terminal tabs.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 6:** Now restart the PostgreSQL server by selecting the "Start" button. It may take a few moments to start up again. When it does so, reopen the PostgreSQL CLI.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 7:** Confirm that the configuration parameter was successfully changed and loaded into the PostgreSQL instance by entering the following command into the CLI:
-
-```
-SHOW logging_collector;
-```
-
-You should see that the command returns **on**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-### Task B: View the Server Logs
-
-In this task, you will navigate the Cloud IDE file explorer to open up and inspect the server logs created after you enabled the logging in the previous task. The logs can be a valuable tool when troubleshooting issues as a database administrator. For now, let's look at the logs created during normal operation, with nothing broken yet.
-
-**Step 1:** To find where the system logs are stored, enter the following command into the CLI:
-
-```
-SHOW log_directory;
+# task pipeline
+task1 >> task2 >> task3
 ```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/show_log_directory.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 3:** Set the `AIRFLOW_HOME` directory.
 
-**Step 2:** Open up the file explorer on Cloud IDE and navigate through **postgres > data > log**.
-
-**Step 3:** You will see a file with a name of the form `postgresql-YYYY-MM-DD-<numbers>.log`. Go ahead and open it.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 4:** Inspect and familiarize yourself with the logs given for a PostgreSQL server startup. Every time you start the server again, a new `.log` file will be created in the **log** folder.
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 5:** Navigate back to the PostgreSQL tab.
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 6:** **Try it yourself:** Stop the PostgreSQL server and close all terminal tabs.
-
-**HINT:** Recall how you stopped the PostgreSQL server in the previous task.
-
-Stop the PostgreSQL server by selecting the **Stop** button and close all terminal and CLI tabs.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-## Exercise 3: Test the Performance of the PostgreSQL Server
-
-The most common problems encountered with databases are caused by poor performance, improper configuration, or poor connectivity. ​Server configuration issues, such as inadequate hardware resources or misconfigured settings, can significantly impact performance.​ In this exercise, you will gain some hands-on experience in studying the performance of the PostgreSQL server and inspecting the logs to identify and resolve slow performance and connection disruptions.
-
-### Task A: Preparation for the Exercise
-
-Before you get started, you'll have to set up a few things so that you can begin troubleshooting. In this task, you will first delete the **postgresql.conf** file and replace it with a new configuration file that has some parameters changed. This task is entirely setup and will allow you to complete the remainder of the tasks where you will test the performance of the server.
-
-**Step 1:** In Cloud IDE, open up a new terminal by navigating to the top menu bar and selecting **Terminal > New terminal**.
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 2:** In the terminal, enter the following command to download a new `postgresql.conf` configuration file:
-
-```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/postgresql.conf
+```bash
+export AIRFLOW_HOME=/home/project/airflow
 ```
 
-**Step 3:** Open up the file explorer on Cloud IDE and navigate to **postgres > data**.
-
-**Step 4:** Right-click `postgresql.conf` in this directory and select **Delete**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 5:** You will be prompted to confirm that you wish to delete this file. Select **OK** to confirm.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 6:** In the file explorer, you will see the `postgresql.conf` file you downloaded in Step 1 sitting in the root directory. Drag it into the **postgres > data** directory, as shown below.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 7:** Now go ahead and start up the PostgreSQL server again by selecting the **Start** button.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-### Task B: Test the Performance of the Server
-
-In this part of the exercise, you will run a few SQL commands and analyze the server's performance, inspect the error logs, then finally, identify and resolve issues that could be hindering the performance of the database.
-
-Let's try running some queries on the database and analyze its performance.
-
-**Step 1:** First, open up the PostgreSQL command line interface (CLI) by selecting the **PostgreSQL CLI** button.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 2:** **Try it yourself:** Use the CLI to connect to the **demo** database. 
-
-Connect to the **demo** database by entering the following command into the CLI:
+**Step 4:** Submitting a DAG is as simple as copying the DAG python file into `dags` folder in the `AIRFLOW_HOME` directory. Open a terminal and run the command below to submit the DAG.
 
 ```
-\connect demo
+cp dummy_dag.py $AIRFLOW_HOME/dags
 ```
 
-**Step 3:** To inspect how long each query or command takes, enable the timer with the following command in the CLI:
+**Step 5:** Verify that our DAG actually got submitted. Run the command below to list out all the existing DAGs.
 
 ```
-\timing
+airflow dags list
 ```
 
-This will tell you how long each query takes (in milliseconds).
-
-**Step 4:** Let's start off with a very simple query on the **aircrafts_data** table. Enter the following into the CLI:
+**Step 6:** Verify that `dummy_dag` is a part of the output.
 
 ```
-SELECT * FROM aircrafts_data;
+airflow dags list | grep dummy_dag
 ```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-As you can see, this query was on a small table and was quick--only about 1 millisecond. No problems here.
-
-**Step 5:** Let's try something a little more computationally heavy and see how the server handles it. The following command goes through each element in the **boarding_passes** table and reassigns each value to itself. In other words, it does not change the table but allows you to see how the server handles this task. Enter the following into the CLI:
+**Step 7:** Run the command below to list out all the tasks in `dummy_dag`.
 
 ```
-UPDATE boarding_passes SET ticket_no = ticket_no, flight_id = flight_id, boarding_no = boarding_no, seat_no = seat_no;
+airflow tasks list dummy_dag
 ```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+You should see 3 tasks in the output.
 
-This heavier command took almost a minute to execute--a fairly long time, but the server was nonetheless able to complete the command. Still, you may want to improve this performance.
+## Exercise 4: Search for a DAG
 
-**Step 6:** Now, as the database administrator, you will likely not be the _only_ one who needs to access the database you are working with. Other users will likely need to connect to the database for a wide variety of reasons, including retrieving and inputting data. Let's simulate additional users connecting to the database. You can do this by opening additional **PostgreSQL CLI** terminals in Cloud IDE, as each one establishes a new connection to the server. Click **PostgreSQL CLI** three times, opening three new CLI terminals:
+**Step 1:** In the Web-UI, identify the `Search DAGs` text box as shown in the image below and type `dummy_dag` in the textbox and press enter.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLIx3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/GRNUom2cQhIq4y2kBPo4Jw/search-dag.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-After clicking the button the third time, you will be presented with the following message in the new terminal:
+**NOTE:** It may take a couple of minutes for the dag to appear here. If you do not see your DAG, please give it a minute and try again.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** You should see the `dummy_dag` listed as seen in the image below:
 
-What happened here? Let's do some investigating and find out what the issue is, but first, go ahead and close all the terminals you opened up.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/n4cbg0ugiIWoY5cLrpUOkA/dummy-dag.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-## Exercise 4: Troubleshoot
+## Exercise 5: Pause/Unpause a DAG
 
-In the previous exercise, you encountered a problem and the server shut down. Now it's time to figure out what happened, why it happened, and how to fix it so that it does not happen again.
+**Step 1:** Unpause the DAG using the Pause/Unpause button.
 
-### Task A: Diagnose the Issue
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/TTYgOeoyShNPEj0pJU0cNw/pause%20unpause.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** First, let's check the server logs to see what happened. Open up the Cloud IDE file explorer and navigate to **postgres > data > log**.
+**Step 2:** You can see the following details in this view.
 
-**Step 2:** Since you restarted the server in the previous exercise, a new log file will have been created for this new session. Open up the most recent one.
+- Owner of the DAG
+- How many times this DAG has run
+- Schedule of the DAG
+- Last run time of the DAG
+- Recent task status
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/gEuP1THdOqfYW3o__1Rh-Q/postgres-second-log.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/oEznTFz4sciAq_oenJG2Xg/dag-unpaused.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 3:** Inspect the most recent logs, as you encountered the problem in Exercise 3.
+## Exercise 6: Detailed view of a DAG
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/diagnose_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 1:** Click on the DAG name as shown in the image below to see the detailed view of the DAG.
 
-As you can see, some error logs were created from opening that last CLI terminal, with the message `FATAL: sorry, too many clients already`.
-This message is repeated several times as the connection is repeatedly attempting to re-establish.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/95rZrkWU75XI7pWUag3dFA/clickdagname.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-Some of the most common connectivity problems are not being able to connect to the database server, the database server or instance not running properly, and client login credentials being incorrect.​ You can likely rule out the last two, since the login credentials are automatically inputted for us on Cloud IDE and you know that the server instance is running properly, since you are already connected to it on 3 other terminals. This likely means you could be experiencing some problems connecting to the database server when you open the fourth connection. But why is this?
+**Step 2:** You will land on a DAG details page showing the default grid view with the three tasks listed.
 
-Server configuration issues, such as inadequate hardware resources or misconfigured settings, can significantly impact performance.​ Perhaps this could explain the connection problem as well as the slow performance you saw on the database query in Exercise 3. Let's take a look at the server configuration and see if you can spot anything.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/W1nyIK0KyWH6tH98n8o4TQ/dag%20details.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 4:** Using the Cloud IDE file explorer, navigate to **postgres > data** and open the **postgresql.conf** configuration file.
+The Grid view shows your DAG tasks in the form of grids as seen in the image. You will observe the `Auto Refresh` button switched on by default on the right corner.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+The grids in the image represent a single DAG run and the color indicates the status of the DAG run. Place your mouse on any grid to see the details.
 
-**Step 5:** If you scroll down to line 64 of the file, you will find **max_connections = 4**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/BFtZ7JwaxIc3JV7NKq8OZQ/dag-status.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/diagnose_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+The squares in the image below represent a single task within a DAG run and the color indicates its status. Place your mouse on any square to see the task details.
 
-Aha! That's where the issue was coming from. This parameter sets the maximum number of connections that can be made to the server at any given time. So when you tried to open that fourth CLI terminal, the max number of connections was reached, giving that FATAL error in the logs. Therefore, the problem you encountered comes from improper server configuration, since it's reasonable to expect more than four users to be connected to the database. Let's go ahead and fix the issue.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/9muJx8FAZu6U2hNQSEUcJw/task-status.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### Task B: Resolve the Issue
+## Exercise 7: Explore graph view of DAG
 
-In Task A, you discovered that the issues you encountered in Exercise 3 were caused by improper server configuration. Now let\'s modify the configuration parameters to resolve the issue.
+Click on the `Graph View` button to open the graph view. The graph view shows the tasks in a form of a graph. With the auto refresh on, each task status is also indicated with the color code.
 
-**Step 1:** With the **postgresql.conf** file open, change the **max_connections** parameter from 4 to 100. A maximum connections of 100 is a standard value that will support more than enough connections for most applications.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/U5Bo4l1orMEcHswT_xKRtQ/graph-view.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/resolve_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+## Exercise 8: Calender view
 
-That should fix the issue you encountered when opening those additional CLI terminals.
+The calender view gives you an overview of all the dates when this DAG was run along with its status as a color code.
 
-**Step 2:** Since the server can now support far more connections than before, it will also need more available memory to support these connections. The **shared_buffers** configuration parameter sets the amount of memory the database server has at its disposal for shared memory buffers. Scroll down to line 121 to find the **shared_buffers** parameter.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/UsVOBsRcf1XlGs31IuZ2dA/calendar-view.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/resolve_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+## Exercise 9: DAG and Task Duration view
 
-Notice that the parameter is set to 128kB, which is the minimum value.
+The DAG duration gives you an overview of how much time the entire workflow took.
 
-**Step 3:** Increase the available memory by changing the **shared_buffers** parameter from **128kB** to **128MB**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/CG5Z2evazF8GBiK-tTA1rQ/dag-duration.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 4:** While you're at it, you can also increase the server performance so that the slow query you executed in Exercise 3 will run more quickly. Increase the **work_mem** parameter from the minimum **64kB** to **4MB**.
+The Task Duration view gives you an overview of how much time each task took to execute, over a period of time.
 
-**Step 5:** Change the **maintenance_work_mem** from the minimum **1MB** to a more standard **64MB**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/vL3tJ1Xn1lwDvjJ4IES04Q/task-duration.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 6:** Save the changes to `postgresql.conf` by either navigating to **File > Save** at the top toolbar or by pressing **Ctrl + S** (Mac: ⌘ + S).
+## Exercise 10: Details view
 
-**Step 7:** Close all open terminal tabs and stop the PostgreSQL server by selecting the **Stop** button.
+The Details view give you all the details of the DAG as specified in the code of the DAG.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/1HJa2BqXFsAPV7m_Ew1FgA/dag-details.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-## Exercise 5: Try it Yourself!
+## Exercise 11: Code view
 
-The changes you made to the PostgreSQL server configuration parameters should fix the problems you encountered in Exercise 3. However, it's certainly good practice to test this out and confirm that your fix was successful. In this practice exercise, you will run through much of the same process you did in Exercise 3 to confirm that the issues you encountered are resolved and will not arise again.
+The Code view lets you view the code of the DAG.
 
-**Try it yourself:** Restart the PostgreSQL server.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/K-ZXIgH0_Nn7VOr5jl89YA/dag-code.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**HINT:** As before, select the "Start" button to start the PostgreSQL server.
+## Exercise 12: Task logs
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+You can view the logs of an individual task with task logs.
 
-**Try it yourself:** Compare the performance of querying the **aircrafts_data** table now compared to before changing the configuration parameters.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/C0yFNUn3vW1YDo7Zein5iw/task-logs.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**HINT:** You'll first need to open up the PostgreSQL CLI, connect to the <strong>demo</strong> database, and enable timing.
+## Exercise 13: Delete a DAG
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+To delete a DAG click on the delete button.
 
-**Step 1:** Open up a PostgreSQL CLI terminal.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/Zp2ywy1m3a0unffHmXSfaw/delete-dag.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+You will get a confirmation pop up as shown in the image below. Click `OK` to delete the DAG.
 
-**Step 2:** Connect to the <strong>demo</strong> database by entering the following into the CLI:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/p2dpSmVYyNLHgvpyp5BaBg/confirm-deletion.jpg" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-\connect demo
-```
+## Practice exercises
 
-**Step 3:** Enable timing with the following command in the CLI:
+**Step 1:** Unpause any existing DAG and monitor it.
 
-```
-\timing
-```
-
-**Step 4:** Enter the following query into the CLI:
-
-```
-SELECT * FROM aircrafts_data;
-```
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-As you can see, the query took less than 1 millisecond. Extremely quick, but fairly similar to the results before you changed the configuration parameters. This is because this query is on such a small table that the server didn't get close to the memory limits when executing it, so there was no issue with that query to begin with.
-
-**Step 5:** Run the same command in the CLI that you did in Step 5 of Exercise 3 and compare the performance before and after changing the configuration parameters. To save you the scrolling and losing your place, the command you entered earlier is given below:
-
-```
-UPDATE boarding_passes SET ticket_no = ticket_no, flight_id = flight_id, boarding_no = boarding_no, seat_no = seat_no;
-```
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-After increasing the <strong>shared_buffers</strong> and <strong>work_mem</strong> parameters, you saw a significant improvement in performance! This command took only about 10 seconds to execute as opposed to close to a minute as before. By reconfiguring the server, you greatly improved server performance. Well done!
-
-**Try it yourself:** Finally, test to confirm that the server can now handle _at least_ 5 connections.
-
-**HINT:** Recall that opening additional PostgreSQL terminals constitute additional connections to the server.
-
-**Step 1:** Click the "PostgreSQL CLI" button four times.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLIx4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 2:** Notice that no error was raised on the fifth terminal and the CLI is still open.
-
-**Step 3:** You could even enter a test command, such as <code>\du</code> to confirm the CLI is working.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 4:** Furthermore, you could check the server logs to confirm that no error was raised and everything is running as intended.
+**Step 2:** View the details on any existing DAG. View the code of the DAG. Delve into the task details and view the logs of each task.
 
 **Congratulations!**
 
