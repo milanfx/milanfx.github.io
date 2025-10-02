@@ -306,12 +306,13 @@ print(query_output)
 # Close the connection
 conn.close()
 ```
-	
+
 ## Practice Problems
 
 Try the following practice problems to test your understanding of the lab. Please note that the solutions for the following are not shared, and the learners are encouraged to use the discussion forums in case they need help.
 
 **Step 1:** In the same database `STAFF`, create another table called `Departments`. The attributes of the table are as shown below.
+
 | Header | Description |
 | ------ | --------- |
 | DEPT_ID | Department ID |
@@ -337,7 +338,9 @@ https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetw
 **Step 4:** Run the following queries on the `Departments` Table:
 
 a. View all entries
+
 b. View only the department names
+
 c. Count the total entries
 
 ### Conclusion
