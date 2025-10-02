@@ -1,459 +1,352 @@
 ---
 layout: page
-permalink: /DE02Lab02/
+permalink: /DE02Lab04/
 ---
 
-# Extract Transform Load
+# Lab04 - Python Accessing Databases
 
-**Estimated Time Needed: 15 Minutes**
+**Estimated Time Needed: 30 Minutes**
 
 ### Overview
 
-Extract, Transform and Load (ETL) operations are of extreme importance in the role of a Data engineer. A data engineer extracts data from multiple sources and different file formats, transforms the extracted data to predefined settings and then loads the data to a database for further processing. In this lab, you will get hands-on practice of performing these operations.
+Using databases is an important and useful method of sharing information. To preserve repeated storage of the same files containing the required data, it is a good practice to save the said data on a database on a server and access the required subset of information using database management systems.
+
+In this lab, you\'ll learn how to create a database, load data from a CSV file as a table, and then run queries on the data using Python.
 
 ### Objectives
 
-After completing this lab, you will be able to:
+In this lab you\'ll learn how to:
 
-- Read CSV, JSON, and XML file types. 
-- Extract the required data from the different file types. 
-- Transform data to the required format. 
-- Save the transformed data in a ready-to-load format, which can be loaded into an RDBMS.
+- Create a database using Python
+- Load the data from a CSV file as a table to the database
+- Run basic \"queries\" on the database to access the information
+
+### Scenario
+
+Consider a dataset of employee records that is available with an HR team in a CSV file. As a Data Engineer, you are required to create the database called `STAFF` and load the contents of the CSV file as a table called `INSTRUCTORS`. The headers of the available data are :
+
+| Header | Description |
+| ------ | --------- |
+| ID | Employee ID |
+| FNAME | First Name |
+| LNAME | Last Name |
+| CITY | City of residence |
+| CCODE | Country code (2 letters) |
+
+### Setting Up
+
+Usually, the database for storing data would be created on a server to which the other team members would have access. For the purpose of this lab, we are going to create the database on a dummy server using SQLite3 library. 
+
+*NOTE: SQLite3 is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. SQLite3 comes bundled with Python and does not require installation.*
+
+## Lab Practice
 
 ### Initial steps
 
-The first step in this process is to create a new file in the default `project` folder in the IDE. To create the new file, you can press the button below (recommended).
+For this lab, you will need a Python file in the `project` folder. You can name it `db_code.py`. The process to create the file is shown in the images below. 
 
-**Step 1:** Create a new `etl_code.py` file
-
-Alternatively, we can do it the hard way
-
-Navigate to the `File` tab in the menu bar and click `New File`. Save this file in the path `\home\project` as `etl_code.py`. These steps are shown in the following images.
-
-a. Create New File
+**Step 1:** In the `File` menu, click the option `New File`.
 
 <div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-b. Save the file as `etl_code.py`.
+This should open an `Untitled` file in the editor tab.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/untitled.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 2:** Use `Ctlr+S` to save the file. The `Save As` interface would pop up. Navigate to the path `/home/project/` as shown in the image below and name the file `db_code.py`. Click `Save`.
 
-The file is now ready in the `project` folder and further steps will be done in the file.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_as.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/etl_code.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-### Gather the data files
-
-Before you start the extraction of data, you need the files containing the data to be available in the `project` folder. For the purpose of this lab, perform the following steps to gather the required data.
-
-**Step 2:** Open a new terminal window
+You also need the CSV data to be available in the same location `/home/project/`. For this, open a new terminal from the `Terminal` tab in the menu as shown below.
 
 <div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_terminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 3:** Run the following commands in the terminal shell: <br>
-
-a. Download the zip file containing the required data in multiple formats.
+Run the following command in the terminal. Make sure the current directory in the terminal window is `/home/project/`.
 
 ```bash
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/source.zip
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/labs/v2/INSTRUCTOR.csv
 ```
 
-b. Unzip the downloaded file.
+The file `INSTRUCTOR.csv` should now be available in the location `/home/project/`. You can check its contents by clicking it from the `Explorer` menu.
 
-```bash
-unzip source.zip
-```
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/csv_view.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-After you complete the above steps, the folder structure should appear as shown in the following image.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/folder_structure.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-### Importing libraries and setting paths
-
-The required files are now available in the `project` folder.
-
-In this lab, you will extract data from `CSV`, `JSON`, and `XML` formats. First, you need to import the appropriate Python libraries to use the relevant functions.
-
-The `xml` library can be used to parse the information from an `.xml` file format. The `.csv` and `.json` file formats can be read using the `pandas` library. You will use the `pandas` library to create a data frame format that will store the extracted data from any file.
-
-To call the correct function for data extraction, you need to access the file format information. For this access, you can use the `glob` library.
-
-To log the information correctly, you need the date and time information at the point of logging. For this information, you require the `datetime` package.
-
-While `glob`, `xml`, and `datetime` are inbuilt features of Python, you need to install the `pandas` library to your IDE.
-
-Run the following command in a terminal shell to install `pandas` for `python3.11`.
+Further, to read the CSV and interact with the database, you\'ll need the `pandas` library. This library will first have to be installed in the Cloud IDE framework. For this, run the below mentioned statement in a terminal window.
 
 ```bash
 python3.11 -m pip install pandas
 ```
 
-After the installation is complete, you can import all the libraries in `etl_code.py` using the following commands.
+### Python Scripting: Database initiation
+
+Let us first create a database using Python.
+
+Open `db_code.py` and import the `sqlite3` library using the below mentioned command.
 
 ```python
-import glob 
-import pandas as pd 
-import xml.etree.ElementTree as ET 
-from datetime import datetime 
+import sqlite3
 ```
 
-Note that you import only the ElementTree function from the `xml.etree` library because you require that function to parse the data from an `XML` file format.
-
-You also require two file paths that will be available globally in the code for all functions. These are `transformed_data.csv`, to store the final output data that you can load to a database, and `log_file.txt`, that stores all the logs.
-
-Introduce these paths in the code by adding the following statements:
-
-```python
-log_file = "log_file.txt" 
-target_file = "transformed_data.csv" 
-```
-
-Remember to save your file! You may use `Ctrl+S` to save the file or click `Save` in the `File` tab.
-
-## Task 1: Extraction
-
-Next, you will develop the functions to extract the data from different file formats. As there will be different functions for the file formats, you\'ll have to write one function each for the `.csv`, `.json`, and the `.xml` filetypes.
-
-You can name these three functions as `extract_from_csv()`, `extract_from_json()`, and `extract_from_xml()`. You need to pass the data file as an argument, `file_to_process`, to each function.
-
-To extract from a `CSV` file, you can define the function `extract_from_csv()`as follows using the `pandas` function `read_csv`:
-
-```python
-def extract_from_csv(file_to_process): 
-    dataframe = pd.read_csv(file_to_process) 
-    return dataframe 
-```
-
-To extract from a `JSON` file, you can define the function `extract_from_json()`using the `pandas` function `read_json`. It requires an extra argument `lines=True` to enable the function to read the file as a `JSON` object on line to line basis as follows.
-
-```python 
-def extract_from_json(file_to_process): 
-    dataframe = pd.read_json(file_to_process, lines=True) 
-    return dataframe 
-```
-
-To extract from an `XML` file, you need first to parse the data from the file using the `ElementTree` function. You can then extract relevant information from this data and append it to a pandas dataframe as follows.
-
-**NOTE:** Adding Data to DataFrames using `pd.concat`
-
-In this lab, we use `pd.concat` to append data to an existing DataFrame. This method is recommended because the `append` method is deprecated. `pd.concat` offers better efficiency and flexibility, especially when combining multiple DataFrames.
-
-**Why use `pd.concat`:**
-
-- `pd.concat` is more efficient when adding rows or combining multiple DataFrames.
-- It provides better control over the operation, allowing you to concatenate along rows or columns.
-- It also includes the `ignore_index=True` argument, which resets the index to avoid duplication when combining DataFrames.
-
-**Example:**
+Import the `pandas` library in `db_code.py` using the following code.
 
 ```python
 import pandas as pd
-
-# Create DataFrames
-df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
-df2 = pd.DataFrame({'A': [5], 'B': [6]})
-
-# Use concat
-result = pd.concat([df1, df2], ignore_index=True)
-print(result)
 ```
 
-**Output:**
-
-``  A  B``
-``0 1  3``
-``1  2  4``
-``2  5  6``
-
-**NOTE:** You must know the headers of the extracted data to write this function. In this data, you extract \"name\", \"height\", and \"weight\" headers for different persons.
-
-This function can be written as follows:
+Now, you can use SQLite3 to create and connect your process to a new database `STAFF` using the following statements.
 
 ```python
-def extract_from_xml(file_to_process): 
-    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
-    tree = ET.parse(file_to_process) 
-    root = tree.getroot() 
-    for person in root: 
-        name = person.find("name").text 
-        height = float(person.find("height").text) 
-        weight = float(person.find("weight").text) 
-        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name, "height":height, "weight":weight}])], ignore_index=True) 
-    return dataframe 
+conn = sqlite3.connect('STAFF.db')
 ```
 
-Now you need a function to identify which function to call on basis of the filetype of the data file. To call the relevant function, write a function `extract`, which uses the `glob` library to identify the filetype. This can be done as follows: 
+Remember to save the file using `Ctrl+S`.
 
-```python 
-def extract(): 
-    extracted_data = pd.DataFrame(columns=['name','height','weight']) # create an empty data frame to hold extracted data 
+### Python Scripting: Create and Load the table
 
-# process all csv files, except the target file
-    for csvfile in glob.glob("*.csv"): 
-        if csvfile != target_file:  # check if the file is not the target file
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
+To create a table in the database, you first need to have the attributes of the required table. Attributes are columns of the table. Along with their names, the knowledge of their data types are also required. The attributes for the required tables in this lab were shared in the Lab Scenario.
 
-# process all json files 
-    for jsonfile in glob.glob("*.json"): 
-        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
+Add the following statements to `db_code.py` to feed the required table name and attribute details for the table.
 
-# process all xml files 
-    for xmlfile in glob.glob("*.xml"): 
-        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
-
-    return extracted_data 
+```python
+table_name = 'INSTRUCTOR'
+attribute_list = ['ID', 'FNAME', 'LNAME', 'CITY', 'CCODE']
 ```
 
-After adding these functions to `etl_code.py` you complete the implementation of the extraction part. 
+**NOTE:** This information can be updated for the case of any other kind of table.
 
-Remember to save your file using `Ctrl+S`. 
+Save the file using `Ctrl+S`.
 
-## Task 2 - Transformation
+### Reading the CSV file
 
-The height in the extracted data is in inches, and the weight is in pounds. However, for your application, the height is required to be in meters, and the weight is required to be in kilograms, rounded to two decimal places. Therefore, you need to write the function to perform the unit conversion for the two parameters. 
+Now, to read the CSV using Pandas, you use the `read_csv()` function. Since this CSV does not contain headers, you can use the keys of the `attribute_dict` dictionary as a list to assign headers to the data. For this, add the commands below to `db_code.py`.
 
-The name of this function will be `transform()`, and it will receive the extracted dataframe as the input. Since the dataframe is in the form of a dictionary with three keys, \"name\", \"height\", and \"weight\", each of them having a list of values, you can apply the transform function on the entire list at one go. 
+```python
+file_path = '/home/project/INSTRUCTOR.csv'
+df = pd.read_csv(file_path, names = attribute_list)
+```
 
-The function can be written as follows: 
+### Loading the data to a table
 
-```python 
-def transform(data):
+The `pandas` library provides easy loading of its dataframes directly to the database. For this, you may use the `to_sql()` method of the `dataframe` object.
 
-'''Convert inches to meters and round off to two decimals 
-1 inch is 0.0254 meters '''
-    data['height'] = round(data.height * 0.0254,2) 
+However, while you load the data for creating the table, you need to be careful if a table with the same name already exists in the database. If so, and it isn\'t required anymore, the tables should be replaced with the one you are loading here. You may also need to append some information to an existing table. For this purpose, `to_sql()` function uses the argument `if_exists`. The possible usage of `if_exists` is tabulated below.
 
-'''Convert pounds to kilograms and round off to two decimals 
-1 pound is 0.45359237 kilograms '''
-    data['weight'] = round(data.weight * 0.45359237,2) 
+| Argument usage | Description |
+| -------------- | ----------- |
+| `if_exists = 'fail'` | Default. The command doesn\'t work if a table with the same name exists in the database. |
+| `if_exists = 'replace'` | The command replaces the existing table in the database with the same name. |
+| `if_exists = 'append'` | The command appends the new data to the existing table with the same name.
 
-    return data 
-``` 
+As you need to create a fresh table upon execution, add the following commands to the code. The print command is optional, but helps identify the completion of the steps of code until this point.
 
-The output of this function will now be a dataframe where the \"height\" and \"weight\" parameters will be modified to the required format. 
+```python
+df.to_sql(table_name, conn, if_exists = 'replace', index =False)
+print('Table is ready')
+```
 
-You can add the `transform()` function to the `etl_code.py` file, thus completing the transform operation. 
+Save the file using `Ctrl+S`.
 
-Remember to save your file using `Ctrl+S`. 
+### Python Scripting: Running basic queries on data
 
-## Task 3 - Loading and Logging
+Now that the data is uploaded to the table in the database, anyone with access to the database can retrieve this data by executing SQL queries.
 
-You need to load the transformed data to a `CSV` file that you can use to load to a database as per requirement. 
+Some basic SQL queries to test this data are `SELECT` queries for viewing data, and `COUNT` query to count the number of entries.
 
-To load the data, you need a function `load_data()` that accepts the transformed data as a dataframe and the `target_file` path. You need to use the `to_csv` attribute of the dataframe in the function as follows: 
+SQL queries can be executed on the data using the `read_sql` function in `pandas`.
 
-```python 
-def load_data(target_file, transformed_data): 
-    transformed_data.to_csv(target_file) 
-``` 
+Now, run the following tasks for data retrieval on the created database.
 
-Finally, you need to implement the logging operation to record the progress of the different operations. For this operation, you need to record a message, along with its timestamp, in the `log_file`. 
+**Step 1:** Viewing all the data in the table.
 
-To record the message, you need to implement a function `log_progress()` that accepts the log message as the argument. The function captures the current date and time using the `datetime` function from the `datetime` library. The use of this function requires the definition of a date-time format, and you need to convert the timestamp to a string format using the `strftime` attribute. The following code creates the log operation: 
+Add the following lines of code to `db_code.py`
 
-```python 
-def log_progress(message): 
-    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
-    now = datetime.now() # get current timestamp 
-    timestamp = now.strftime(timestamp_format) 
-    with open(log_file,"a") as f: 
-        f.write(timestamp + ',' + message + '\n') 
-``` 
+```python
+query_statement = f"SELECT * FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
+```
 
-After you add these functions to `etl_code.py`, you will complete the implementation of the loading and logging operations. With this, all the functions for Extract, Transform, and Load (ETL) are ready for testing. 
+**Step 2:** Viewing only FNAME column of data.
 
-Remember to save your file using `Ctrl+S`. 
+Add the following lines of code to `db_code.py`
 
-### Testing ETL operations and log progress
+```python
+query_statement = f"SELECT FNAME FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
+```
 
-Now, test the functions you have developed so far and log your progress along the way. Insert the following lines into your code to complete the process. Note the comments on every step of the code. 
+**Step 3:** Viewing the total number of entries in the table.
 
-```python 
-# Log the initialization of the ETL process 
-log_progress("ETL Job Started") 
+Add the following lines of code to `db_code.py`
 
-# Log the beginning of the Extraction process 
-log_progress("Extract phase Started") 
-extracted_data = extract() 
+```python
+query_statement = f"SELECT COUNT(*) FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
+```
 
-# Log the completion of the Extraction process 
-log_progress("Extract phase Ended") 
+Now try appending some data to the table. Consider the following.
 
-# Log the beginning of the Transformation process 
-log_progress("Transform phase Started") 
-transformed_data = transform(extracted_data) 
-print("Transformed Data") 
-print(transformed_data) 
+a. Assume the `ID` is `100`.
 
-# Log the completion of the Transformation process 
-log_progress("Transform phase Ended") 
+b. Assume the first name, `FNAME`, is `John`.
 
-# Log the beginning of the Loading process 
-log_progress("Load phase Started") 
-load_data(target_file,transformed_data) 
+c. Assume the last name as `LNAME`, `Doe`.
 
-# Log the completion of the Loading process 
-log_progress("Load phase Ended") 
+d. Assume the city of residence, `CITY` is `Paris`.
 
-# Log the completion of the ETL process 
-log_progress("ETL Job Ended") 
-``` 
+e. Assume the country code, `CCODE` is `FR`.
 
-Remember to save your file using `Ctrl+S`. 
+Use the following statements to create the dataframe of the new data.
 
-### Execution of code
+```python
+data_dict = {'ID' : [100],
+            'FNAME' : ['John'],
+            'LNAME' : ['Doe'],
+            'CITY' : ['Paris'],
+            'CCODE' : ['FR']}
+data_append = pd.DataFrame(data_dict)
+```
+Now use the following statement to append the data to the `INSTRUCTOR` table.
 
-Execute `etl_code.py` from a terminal shell using the command 
+```python
+data_append.to_sql(table_name, conn, if_exists = 'append', index =False)
+print('Data appended successfully')
+```
 
-```bash 
-python3.11 etl_code.py 
-``` 
+Now, repeat the `COUNT` query. You will observe an increase by 1 in the output of the first `COUNT` query and the second one.
 
-Upon execution, you can view the output of the print command on the terminal as shown in the image below. 
+Before proceeding with the final execution, you need to add the command to close the connection to the database after all the queries are executed.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/code_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> <br>
+Add the following line at the end of `db_code.py` to close the connection to the database.
 
-The contents of the log file will appear as shown in the image below. 
+```python
+conn.close()
+```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/log_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+Save the file using `Ctrl+S`.
 
-## Lab Solution
+### Code Execution
 
-In case you face some issue while you execute the created code, it might be because of missing a step in the process somewhere. The complete code of all the steps is given below to help you resolve the issue. Please note that you should refer to this only if you are unable to achieve the desired results yourself or get an error during the execution in the next step.  
+Execute `db_code.py` from the terminal window using the following command.
 
-```python 
-import glob 
-import pandas as pd 
-import xml.etree.ElementTree as ET 
-from datetime import datetime 
+```bash
+python3.11 db_code.py
+```
 
-log_file = "log_file.txt" 
-target_file = "transformed_data.csv" 
+The output expected is shown in the image below.
 
-def extract_from_csv(file_to_process): 
-    dataframe = pd.read_csv(file_to_process) 
-    return dataframe 
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/query_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-def extract_from_json(file_to_process): 
-    dataframe = pd.read_json(file_to_process, lines=True) 
-    return dataframe 
+### Lab Solution
 
-def extract_from_xml(file_to_process): 
-    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
-    tree = ET.parse(file_to_process) 
-    root = tree.getroot() 
-    for person in root: 
-        name = person.find("name").text 
-        height = float(person.find("height").text) 
-        weight = float(person.find("weight").text) 
-        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name,"height":height, "weight":weight}])], ignore_index=True) 
-    return dataframe 
+In case you are not able to get the required output from the code or are facing some errors, the final file for `db_code.py`is shared below. Please note that this is for your help, and we encourage you to first try to resolve the errors on your own.
 
-def extract(): 
-    extracted_data = pd.DataFrame(columns=['name','height','weight'])  # create an empty data frame to hold extracted data
+Also, you may keep a copy of `db_code.py` saved in your local machine since it will be useful in the projects of the course as well.
 
-# process all csv files, except the target file
-    for csvfile in glob.glob("*.csv"): 
-        if csvfile != target_file:  # check if the file is not the target file
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
+```python
+import sqlite3
+import pandas as pd
 
-# process all json files 
-    for jsonfile in glob.glob("*.json"): 
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
+# Connect to the SQLite3 service
+conn = sqlite3.connect('STAFF.db')
 
-# process all xml files 
-    for xmlfile in glob.glob("*.xml"): 
-            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
+# Define table parameters
+table_name = 'INSTRUCTOR'
+attribute_list = ['ID', 'FNAME', 'LNAME', 'CITY', 'CCODE']
 
-    return extracted_data 
+# Read the CSV data
+file_path = '/home/project/INSTRUCTOR.csv'
+df = pd.read_csv(file_path, names = attribute_list)
 
-def transform(data): 
-# Convert inches to meters and round off to two decimals 
-# 1 inch is 0.0254 meters 
-    data['height'] = round(data.height * 0.0254,2) 
+# Load the CSV to the database
+df.to_sql(table_name, conn, if_exists = 'replace', index = False)
+print('Table is ready')
 
-# Convert pounds to kilograms and round off to two decimals 
-# 1 pound is 0.45359237 kilograms 
-    data['weight'] = round(data.weight * 0.45359237,2) 
+# Query 1: Display all rows of the table
+query_statement = f"SELECT * FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
 
-    return data 
+# Query 2: Display only the FNAME column for the full table.
+query_statement = f"SELECT FNAME FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
 
-def load_data(target_file, transformed_data): 
-    transformed_data.to_csv(target_file) 
+# Query 3: Display the count of the total number of rows.
+query_statement = f"SELECT COUNT(*) FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
 
-def log_progress(message): 
-    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
-    now = datetime.now() # get current timestamp 
-    timestamp = now.strftime(timestamp_format) 
-    with open(log_file,"a") as f: 
-        f.write(timestamp + ',' + message + '\n') 
+# Define data to be appended
+data_dict = {'ID' : [100],
+            'FNAME' : ['John'],
+            'LNAME' : ['Doe'],
+            'CITY' : ['Paris'],
+            'CCODE' : ['FR']}
+data_append = pd.DataFrame(data_dict)
 
-# Log the initialization of the ETL process 
-log_progress("ETL Job Started") 
+# Append data to the table
+data_append.to_sql(table_name, conn, if_exists = 'append', index = False)
+print('Data appended successfully')
 
-# Log the beginning of the Extraction process 
-log_progress("Extract phase Started") 
-extracted_data = extract() 
+# Query 4: Display the count of the total number of rows.
+query_statement = f"SELECT COUNT(*) FROM {table_name}"
+query_output = pd.read_sql(query_statement, conn)
+print(query_statement)
+print(query_output)
 
-# Log the completion of the Extraction process 
-log_progress("Extract phase Ended") 
+# Close the connection
+conn.close()
+```
+	
+## Practice Problems
 
-# Log the beginning of the Transformation process 
-log_progress("Transform phase Started") 
-transformed_data = transform(extracted_data) 
-print("Transformed Data") 
-print(transformed_data) 
+Try the following practice problems to test your understanding of the lab. Please note that the solutions for the following are not shared, and the learners are encouraged to use the discussion forums in case they need help.
 
-# Log the completion of the Transformation process 
-log_progress("Transform phase Ended") 
+**Step 1:** In the same database `STAFF`, create another table called `Departments`. The attributes of the table are as shown below.
+| Header | Description |
+| ------ | --------- |
+| DEPT_ID | Department ID |
+| DEP_NAME | Department Name |
+| MANAGER_ID | Manager ID |
+| LOC_ID | Location ID |
 
-# Log the beginning of the Loading process 
-log_progress("Load phase Started") 
-load_data(target_file,transformed_data) 
+**Step 2:** Populate the `Departments` table with the data available in the CSV file which can be downloaded from the link below using `wget`.
 
-# Log the completion of the Loading process 
-log_progress("Load phase Ended") 
+```bash
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/labs/v2/Departments.csv
+```
 
-# Log the completion of the ETL process 
-log_progress("ETL Job Ended") 
-``` 
+**Step 3:** Append the `Departments` table with the following information.
 
-## Practice Exercises
+| Attribute | Value |
+|--------| --------- |
+| DEPT_ID | 9 |
+| DEP_NAME | Quality Assurance |
+| MANAGER_ID | 30010 |
+| LOC_ID | L0010 |
 
-Follow the process learned in this lab to perform ETL operations on the data available in the link below. 
+**Step 4:** Run the following queries on the `Departments` Table:
 
-``` 
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/datasource.zip 
-``` 
-
-Complete the following practice exercises: 
-
-**Step 1:** Create a folder `data_source` and use the terminal shell to change the current directory to `\home\project\data_source`. Create a file `etl_practice.py` in this folder.  
-
-**Step 2:** Download and unzip the data available in the link shared above. 
-
-**Step 3:** The data available has four headers: \'car_model\', \'year_of_manufacture\', \'price\', \'fuel\'. Implement the extraction process for the `CSV`, `JSON`, and `XML` files.  
-
-**Step 4:** Transform the values under the \'price\' header such that they are rounded to 2 decimal places. 
-
-**Step 5:** Implement the loading function for the transformed data to a target file, `transformed_data.csv`. 
-
-**Step 6:** Implement the logging function for the entire process and save it in `log_file.txt`. 
-
-**Step 7:** Test the implemented functions and log the events as done in the lab. 
-
-Please note that the solutions for this practice exercise are not provided to motivate you to try them yourself. However, feel free to share your opinions on the solutions as well as your questions in the discussion forums. 
+a. View all entries
+b. View only the department names
+c. Count the total entries
 
 ### Conclusion
 
-In this lab, you practiced the implementation of: 
+In this lab, you have learned how to:
 
-- Extraction of data from `CSV`, `JSON`, and `XML` file formats. 
-- Transformation of data as per requirement. 
-- Loading the transformed data to a `CSV` file. 
-- Logging the progress of the said operations. 
+ - Create a databse using SQLite3 in Python.
+ - Create and load a table using data from a CSV file using Pandas.
+ - Run basic queries on the tables in the database.
 
 **Congratulations!**
 
