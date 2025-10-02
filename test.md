@@ -94,6 +94,6 @@ Select the **BookShop** table under the **PetShop** database.
 
 <div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/Datasetteoptionallabs/Week2/images/Fig8.PNG" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Congratulations!**
+### Congratulations!
 
 You have completed this lab!
