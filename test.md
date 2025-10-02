@@ -1,384 +1,384 @@
 ---
 layout: page
-permalink: /DE04Lab06/
+permalink: /DE05Lab13/
 ---
 
-# Lab06 - Linux Commands Text Wrangling
+# PostgreSQL Troubleshooting
 
-**Estimated Time Needed: 40 Minutes**
+**Estimated Time Needed: 30 Minutes**
 
 ### Overview
 
-Consider that any text file can potentially be interpreted as some sort of dataset. For example, your text file might contain the following: 
-
-- The kind of text that you might find in a news article or blog post
-- The source HTML code that defines a web page
-- A table-like structure consisting of *text fields* separated by a *delimiter* such as a comma or Tab
-- The data stream that encodes a song or a movie
-- A completely random sequence of characters, such as:
-  -  an encryption key or password
-  -  a digitized random noise sequence
-
-Whatever your text file may be, you can benefit from being able to perform some basic text processing to *munge*, *wrangle*, *clean*, and *integrate* your data the way you need it.
+In this lab, you will obtain hands-on experience in troubleshooting common issues you may encounter as a database administrator. The most common problems encountered with databases are caused by poor performance, improper configuration, or poor connectivity. You will use a PostgreSQL server instance to explore some of these possible problems and rectify them.
 
 ### Objectives
 
-Working through the exercises in this lab will enable you to perform some basic but essential text wrangling operations. These operations will allow you to work with text files by:
+After completing this lab, you will be able to:
 
-- Displaying and exploring file contents
-- Extracting and displaying first or last N lines of text
-- Displaying counts of lines, words, and characters in text
-- Sorting lines (rows) of text
-- Dropping consecutively duplicated lines of text
-- Extracting lines of text containing a pattern match
-- Extracting fields from lines of text
-- Merging text files as aligned columns of text
+- Enable error logging for your PostgreSQL instance.
+- Access server logs for troubleshooting.
+- Diagnose commonly encountered issues caused by poor performance, improper configuration, or poor connectivity.
+- Resolve common issues you may encounter as a database administrator.
 
-These are some of the building blocks of filtering text files. Later in this course, you will learn how to combine such operations. This will empower you to start engineering sophisticated views of your data by creating complex data-processing flows called *data pipelines*.
+### Software
 
-### Cloud IDE
+In this lab, you will be using PostgreSQL. It is a popular open source object relational database management system (RDBMS) capable of performing a wealth of database administration tasks, such as storing, manipulating, retrieving, and archiving data.
 
-Skills Network Cloud IDE (based on Theia and Docker) provides an environment for hands-on labs for course and project related labs. Theia is an open source IDE (Integrated Development Environment), that can be run on desktop or on the cloud. To complete this lab, you will be using the Cloud IDE based on Theia.
+To complete this lab, you will be accessing the PostgreSQL service through the IBM Skills Network (SN) Cloud IDE, which is a virtual development environnement you will use throughout this course.
 
-### Environment
+### Database
 
-Please be aware that sessions for this lab environment are not persisted. Thus, every time you connect to this lab, a new environment is created for you and any data or files you may have saved in a previous session will be lost. To avoid losing your data, plan to complete these labs in a single session.
+In this lab, you will use a database from https://postgrespro.com/education/demodb distributed under the [PostgreSQL license](https://www.postgresql.org/about/licence/). It stores a month of data about airline flights in Russia and is organized according to the following schema:
 
-## Exercise 1 - Viewing file contents
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/DB_schema.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-In this exercise, you will learn how to explore file contents using the `cat`, `more`, and `less` commands to display the file contents in your terminal window.
+## Exercise 1: Set Up Your Database in PostgreSQL
 
-Begin by changing directories to your default home directory, `~`, or `\home\theia`:  
+### Task A: Launch PostgreSQL in Cloud IDE
 
+To get started with this lab, launch PostgreSQL using the Cloud IDE. You can do this by following these steps:
+
+**Step 1:** Select the Skills Network extension button in the left pane.
+
+**Step 2:** Open the **DATABASES** dropdown menu and select **PostgreSQL**.
+
+**NOTE:** If the PostgreSQL database does not function properly, you may need to stop and restart it in case it fails to initialize.
+
+**Step 3:** Select the **Start** button. PostgreSQL may take a few moments to start.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/SC_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+### Task B: Download and Create the Database
+
+**First, you will need to download the database.**
+
+**Step 1:** Open a new terminal by selecting the **New Terminal** button near the bottom of the interface.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openTerminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 2:** Run the following command in the terminal:
+
 ```
-cd ~
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/example-guided-project/flights_RUSSIA_small.sql
 ```
+
+The file that you downloaded is a full database backup of a month of flight data in Russia. Now, you can perform a full restoration of the data set by first opening the PostgreSQL CLI. 
 
-Using the `ls` command, you should see a file called `entrypoint.sh`. The `.sh` is a convention used to identify a text file as being a *shell script*.
+**Step 3:** Near the bottom of the window, select the **PostgreSQL CLI** button to launch the command line interface (CLI).
 
-Next, let\'s take a look inside this file.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### 1.1. Viewing file content with the `cat` command
+**Step 4:** In the PostgreSQL CLI, enter the command to restore the data you downloaded into a new database called **demo**.
 
-The `cat` command displays the contents of the file and exits back to the command prompt as follows:
+**HINT:** In the PostgreSQL CLI, enter the command `\i <file_name>.` In your case, the file name will be the name of the file you downloaded, `flights_RUSSIA_small.sql`. This will restore the data into a new database called `demo`.
 
 ```
-cat entrypoint.sh
+\i flights_RUSSIA_small.sql
 ```
 
-It only displays the tail end of the file, so if the file is too long to fit on the terminal, you won\'t be able to see some of its contents.
+The restorations may take a few moments to complete.
 
-Although the `cat` command may not be the best way to view the contents of a file, especially larger files, it is quite useful for shell scripting applications. For example, it is often used to *concatenate*, or append one file onto another.
+**Step 5:** Verify that the database was properly created by entering the following command:
 
-### 1.2. Viewing file content with the `more` command
+```
+\dt
+```
 
-A better alternative to the `cat` command for viewing file contents is the `more` command. By entering the following command:
+You should see the following output showing all the tables that are part of the `bookings` schema in the `demo` database.
 
-```
-more entrypoint.sh
-``` 
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/SC_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-you will see the top portion of the file first.
+## Exercise 2: Enable Error Logging and Observe Logs
 
-**Tip:** The first line of this particular file, `#!/bin/bash`, is called a *shebang*. Basically, this shebang line makes the file a *bash script* by invoking the bash shell. You will learn more about shebang lines later in this course.
+### Task A: Enable Server Logging
 
-When using the `more` command, you can see only as many lines as will fit on your terminal window at once.
+First, to enable error logging on your PostgreSQL server instance, you will need to configure your server to support it. You can do so by using the Cloud IDE file explorer to open `postgresql.conf`, which stores the configuration parameters that are read upon server startup. Let's go ahead and do it.
 
-To see the next portion of the file, just press your spacebar. You can keep *paging* this way, tapping the spacebar until you reach the end of the file. Once you reach the last *page*, you will exit back to the command prompt. 
+**Step 1:** You can open the file by first opening the file explorer on Cloud IDE then selecting `postgres > data > postgresql.conf`.
 
-Another way to exit is simply to type `q`, which quits and returns to the command prompt.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### 1.3. Scrolling through file content with the `less` command
+**Step 2:** With the configuration file open, scroll down to line 431. Replace `logging_collector = off` with `logging_collector = on` and uncomment the parameter by removing the `#` before the line.
 
-What if you want to move up and down through the file, not just downward? In this case, you can use the `less` command:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-less entrypoint.sh
-```  
+**Step 3:** Save the changes to `postgresql.conf` by either navigating to **File > Save** at the top toolbar or by pressing **Ctrl + S** (Mac: ⌘ + S).
+
+**Step 4:** Changing this parameter requires a server restart in order to take effect. Select the PostgreSQL tab in Cloud IDE.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-Just like `more`, the `less` command displays the first page of the file. What\'s useful about `less` is that you can use it to move around the file, page by page, using the `Page Up` and `Page Down` keys.
+**NOTE:** If the database will not work, you may need to stop and restart the database if it fails to start up
 
-You can also scroll up and down through the file line-by-line, using the `Up Arrow` and `Down Arrow` keys, &#8593; and &#8595;.
+**Step 5:** Stop the PostgreSQL server by selecting the "Stop" button and close all CLI and terminal tabs.
 
-Unlike `more`, `less` does not automatically exit when you reach the end of a file, allowing you the option to continue scrolling around. You can quit at any time by typing `q`.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-## Exercise 2 - Viewing text file contents
+**Step 6:** Now restart the PostgreSQL server by selecting the "Start" button. It may take a few moments to start up again. When it does so, reopen the PostgreSQL CLI.
 
-In this exercise, you will work with a few more commands for viewing the content of text files.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-To begin, run the following commands:
+**Step 7:** Confirm that the configuration parameter was successfully changed and loaded into the PostgreSQL instance by entering the following command into the CLI:
 
 ```
-cd /home/project
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Bash%20Scripting/usdoi.txt
+SHOW logging_collector;
 ```
 
-The `wget` command downloads a text file called `usdoi.txt` from the provided URL. You\'ll see this command again later in the context of networking commands. You can check to see if you successfully downloaded the `usdoi.txt` by using the `ls` command.
+You should see that the command returns **on**.
 
-### 2.1. Display the first N lines of a file with **`head`** command
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-By default, `head` will print the first 10 lines of a file. To use it with `usdoi.txt`, enter the following:
+### Task B: View the Server Logs
 
-```
-head usdoi.txt
-```
+In this task, you will navigate the Cloud IDE file explorer to open up and inspect the server logs created after you enabled the logging in the previous task. The logs can be a valuable tool when troubleshooting issues as a database administrator. For now, let's look at the logs created during normal operation, with nothing broken yet.
 
-You can also specify the number of lines to be printed. Print only the first ***3*** lines of text from the file `usdoi.txt` by entering:
+**Step 1:** To find where the system logs are stored, enter the following command into the CLI:
 
 ```
-head -3 usdoi.txt
+SHOW log_directory;
 ```
 
-### 2.2. Display the last N lines of a file with **`tail`** command
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/show_log_directory.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-By default, `tail` will print the last 10 lines of the file `usdoi.txt`:
+**Step 2:** Open up the file explorer on Cloud IDE and navigate through **postgres > data > log**.
 
-```
-tail usdoi.txt
-```
+**Step 3:** You will see a file with a name of the form `postgresql-YYYY-MM-DD-<numbers>.log`. Go ahead and open it.
 
-Just like with `head`, you can specify the number of lines to be printed. Print the last ***2*** lines of the file `usdoi.txt` by entering the following:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-tail -2 usdoi.txt
-```
+**Step 4:** Inspect and familiarize yourself with the logs given for a PostgreSQL server startup. Every time you start the server again, a new `.log` file will be created in the **log** folder.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-## Exercise 3 - Getting basic text file stats
+**Step 5:** Navigate back to the PostgreSQL tab.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/view_log_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### 3.1. Count lines, words, or characters from a text file with **`wc`** command
+**Step 6:** **Try it yourself:** Stop the PostgreSQL server and close all terminal tabs.
 
-If you want to find the number of lines, words, and characters in a file like `usdoi.txt`, enter the following command: 
+**HINT:** Recall how you stopped the PostgreSQL server in the previous task.
 
-```
-wc usdoi.txt
-```
+Stop the PostgreSQL server by selecting the **Stop** button and close all terminal and CLI tabs.
 
-The output contains the number of lines, followed by the number of words, followed by the number of characters in the file.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-To get just the count of lines in `usdoi.txt`, use the `-l` option:
+## Exercise 3: Test the Performance of the PostgreSQL Server
 
-```
-wc -l usdoi.txt
-```
+The most common problems encountered with databases are caused by poor performance, improper configuration, or poor connectivity. ​Server configuration issues, such as inadequate hardware resources or misconfigured settings, can significantly impact performance.​ In this exercise, you will gain some hands-on experience in studying the performance of the PostgreSQL server and inspecting the logs to identify and resolve slow performance and connection disruptions.
 
-Similarly, for the count of words in `usdoi.txt`, use the `-w` option:
+### Task A: Preparation for the Exercise
 
-```
-wc -w usdoi.txt
-```
+Before you get started, you'll have to set up a few things so that you can begin troubleshooting. In this task, you will first delete the **postgresql.conf** file and replace it with a new configuration file that has some parameters changed. This task is entirely setup and will allow you to complete the remainder of the tasks where you will test the performance of the server.
+
+**Step 1:** In Cloud IDE, open up a new terminal by navigating to the top menu bar and selecting **Terminal > New terminal**.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-To print the number of characters in `usdoi.txt`, use the `-c` option:
+**Step 2:** In the terminal, enter the following command to download a new `postgresql.conf` configuration file:
 
 ```
-wc -c usdoi.txt
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/postgresql.conf
 ```
+
+**Step 3:** Open up the file explorer on Cloud IDE and navigate to **postgres > data**.
+
+**Step 4:** Right-click `postgresql.conf` in this directory and select **Delete**.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 5:** You will be prompted to confirm that you wish to delete this file. Select **OK** to confirm.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 6:** In the file explorer, you will see the `postgresql.conf` file you downloaded in Step 1 sitting in the root directory. Drag it into the **postgres > data** directory, as shown below.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/EX2_setup_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 7:** Now go ahead and start up the PostgreSQL server again by selecting the **Start** button.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+### Task B: Test the Performance of the Server
+
+In this part of the exercise, you will run a few SQL commands and analyze the server's performance, inspect the error logs, then finally, identify and resolve issues that could be hindering the performance of the database.
 
-## Exercise 4 - Basic text wrangling: sorting lines and dropping duplicates
+Let's try running some queries on the database and analyze its performance.
 
-### 4.1. Sort and display lines of file alphanumerically with **`sort`** command
+**Step 1:** First, open up the PostgreSQL command line interface (CLI) by selecting the **PostgreSQL CLI** button.
 
-You can use the `sort` command to display the lines of a file sorted alphanumerically.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-To view the lines of `usdoi.txt` sorted alphanumerically, enter:
+**Step 2:** **Try it yourself:** Use the CLI to connect to the **demo** database. 
 
+Connect to the **demo** database by entering the following command into the CLI:
+
 ```
-sort usdoi.txt
+\connect demo
 ```
 
-To view those lines sorted in reverse order, enter:
+**Step 3:** To inspect how long each query or command takes, enable the timer with the following command in the CLI:
 
 ```
-sort -r usdoi.txt
+\timing
 ```
 
-### 4.2. Drop consecutive duplicated lines and display result with **`uniq`** command
+This will tell you how long each query takes (in milliseconds).
 
-First download the following file:
+**Step 4:** Let's start off with a very simple query on the **aircrafts_data** table. Enter the following into the CLI:
 
 ```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/module%201/zoo.txt
+SELECT * FROM aircrafts_data;
 ```
 
-View the raw contents of `zoo.txt` with the `cat` command:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-cat zoo.txt
-```
+As you can see, this query was on a small table and was quick--only about 1 millisecond. No problems here.
 
-View the contents of `zoo.txt` with identical, consecutive lines dropped using the `uniq` command:
+**Step 5:** Let's try something a little more computationally heavy and see how the server handles it. The following command goes through each element in the **boarding_passes** table and reassigns each value to itself. In other words, it does not change the table but allows you to see how the server handles this task. Enter the following into the CLI:
 
 ```
-uniq zoo.txt
+UPDATE boarding_passes SET ticket_no = ticket_no, flight_id = flight_id, boarding_no = boarding_no, seat_no = seat_no;
 ```
-The `uniq` line will drop any lines in the file that are identical *and* consecutive. This is similar to what is known as \"dropping duplicates\". As you can see from this example, however, there can still be duplicated lines left over if these lines are not repeated right after the other.
 
-## Exercise 5 - Basic text wrangling: extracting lines and fields
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### 5.1. Extract lines matching a specified criterion with **`grep`** command
+This heavier command took almost a minute to execute--a fairly long time, but the server was nonetheless able to complete the command. Still, you may want to improve this performance.
 
-The `grep` command allows you to specify a pattern and search for lines within a file that match that pattern.
+**Step 6:** Now, as the database administrator, you will likely not be the _only_ one who needs to access the database you are working with. Other users will likely need to connect to the database for a wide variety of reasons, including retrieving and inputting data. Let's simulate additional users connecting to the database. You can do this by opening additional **PostgreSQL CLI** terminals in Cloud IDE, as each one establishes a new connection to the server. Click **PostgreSQL CLI** three times, opening three new CLI terminals:
 
-For example, the following command prints all lines in the file `usdoi.txt` which contain the word `people`:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLIx3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-grep people usdoi.txt
-```
+After clicking the button the third time, you will be presented with the following message in the new terminal:
 
-Some frequently used options for `grep` include:  
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/X_troubleshoot_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-| Option | Description                                                |  
-| -------| ---------------------------------------------------------  |  
-| `-n`   | Along with the matching lines, also print the line numbers |  
-| `-c`   | Get the count of matching lines                            |  
-| `-i`   | Ignore the case of the text while matching                 |  
-| `-v`   | Print all lines which do not contain the pattern           |  
-| `-w`   | Match only if the pattern matches whole words              |  
+What happened here? Let's do some investigating and find out what the issue is, but first, go ahead and close all the terminals you opened up.
 
-You can use these options to print all the lines from the `/etc/passwd` file which do not contain the pattern `login`:
+## Exercise 4: Troubleshoot
 
-```
-grep -v login /etc/passwd
-```
+In the previous exercise, you encountered a problem and the server shut down. Now it's time to figure out what happened, why it happened, and how to fix it so that it does not happen again.
 
-### 5.2. Extract fields from lines of text with **`cut`** command
+### Task A: Diagnose the Issue
 
-The `cut` command allows you to view only specific fields from each line of text in a file.
+**Step 1:** First, let's check the server logs to see what happened. Open up the Cloud IDE file explorer and navigate to **postgres > data > log**.
 
-For example, you can use `cut` with the `-c` option to view only the *first two* characters of each line:
+**Step 2:** Since you restarted the server in the previous exercise, a new log file will have been created for this new session. Open up the most recent one.
 
-```
-cut -c -2 zoo.txt
-```
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/gEuP1THdOqfYW3o__1Rh-Q/postgres-second-log.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-Or to view each line *starting from* the second character:
+**Step 3:** Inspect the most recent logs, as you encountered the problem in Exercise 3.
 
-```
-cut -c 2- zoo.txt
-```
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/diagnose_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-The `cut` command can also be used to extract a field from a delimited file. 
-To demonstrate this, start by downloading and taking a look at the following comma-separated file:
+As you can see, some error logs were created from opening that last CLI terminal, with the message `FATAL: sorry, too many clients already`.
+This message is repeated several times as the connection is repeatedly attempting to re-establish.
 
-```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/v4_new_content/labs/names_and_numbers.csv
-cat names_and_numbers.csv
-```
+Some of the most common connectivity problems are not being able to connect to the database server, the database server or instance not running properly, and client login credentials being incorrect.​ You can likely rule out the last two, since the login credentials are automatically inputted for us on Cloud IDE and you know that the server instance is running properly, since you are already connected to it on 3 other terminals. This likely means you could be experiencing some problems connecting to the database server when you open the fourth connection. But why is this?
 
-Now you can extract just the phone numbers for each person listed in the file using the `-d` (delimiter) and `f` (field) options as follows:
+Server configuration issues, such as inadequate hardware resources or misconfigured settings, can significantly impact performance.​ Perhaps this could explain the connection problem as well as the slow performance you saw on the database query in Exercise 3. Let's take a look at the server configuration and see if you can spot anything.
 
-```
-cut -d "," -f2 names_and_numbers.csv
-```
-`-d ","` tells the command that the delimiter is a comma, and `-f2` tells it to extract the second field.
+**Step 4:** Using the Cloud IDE file explorer, navigate to **postgres > data** and open the **postgresql.conf** configuration file.
 
-## Exercise 6 - Basic text wrangling: merging lines as fields
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/enable_log_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-### 6.1. Merge text files line-by-line, aligned as columns with **`paste`** command
+**Step 5:** If you scroll down to line 64 of the file, you will find **max_connections = 4**.
 
-Use the `paste` command to merge lines of multiple files together.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/diagnose_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-Download the following file:
+Aha! That's where the issue was coming from. This parameter sets the maximum number of connections that can be made to the server at any given time. So when you tried to open that fourth CLI terminal, the max number of connections was reached, giving that FATAL error in the logs. Therefore, the problem you encountered comes from improper server configuration, since it's reasonable to expect more than four users to be connected to the database. Let's go ahead and fix the issue.
 
-```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/module%201/zoo_ages.txt
-```
+### Task B: Resolve the Issue
 
-Then use the `paste` command to view the two files merged together, line-by-line, as columns delimited by a `Tab` character:
+In Task A, you discovered that the issues you encountered in Exercise 3 were caused by improper server configuration. Now let\'s modify the configuration parameters to resolve the issue.
 
-```
-paste zoo.txt zoo_ages.txt
-```
+**Step 1:** With the **postgresql.conf** file open, change the **max_connections** parameter from 4 to 100. A maximum connections of 100 is a standard value that will support more than enough connections for most applications.
 
-Try changing the delimiter. Instead of the default `Tab` delimiter, you can specify a comma `,` as follows:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/resolve_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-paste -d "," zoo.txt zoo_ages.txt
-```
+That should fix the issue you encountered when opening those additional CLI terminals.
 
-## Practice Exercises
+**Step 2:** Since the server can now support far more connections than before, it will also need more available memory to support these connections. The **shared_buffers** configuration parameter sets the amount of memory the database server has at its disposal for shared memory buffers. Scroll down to line 121 to find the **shared_buffers** parameter.
 
-Before you begin, ensure you\'re working in your home directory by entering:
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/resolve_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-cd ~
-pwd
-```
+Notice that the parameter is set to 128kB, which is the minimum value.
 
-**Step 1:** Display the number of lines in the `/etc/passwd file`.
+**Step 3:** Increase the available memory by changing the **shared_buffers** parameter from **128kB** to **128MB**.
 
-**HINT:** Use the `wc` command with the appropriate option.
+**Step 4:** While you're at it, you can also increase the server performance so that the slow query you executed in Exercise 3 will run more quickly. Increase the **work_mem** parameter from the minimum **64kB** to **4MB**.
 
-```
-wc -l /etc/passwd
-```
+**Step 5:** Change the **maintenance_work_mem** from the minimum **1MB** to a more standard **64MB**.
 
-**Step 2:** Display the lines that contain the string `"not installed"` in `/var/log/bootstrap.log`.
+**Step 6:** Save the changes to `postgresql.conf` by either navigating to **File > Save** at the top toolbar or by pressing **Ctrl + S** (Mac: ⌘ + S).
 
-**HINT:** Use the `grep` command.
+**Step 7:** Close all open terminal tabs and stop the PostgreSQL server by selecting the **Stop** button.
 
-```
-grep "not installed" /var/log/bootstrap.log
-```
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_stop.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+## Exercise 5: Try it Yourself!
+
+The changes you made to the PostgreSQL server configuration parameters should fix the problems you encountered in Exercise 3. However, it's certainly good practice to test this out and confirm that your fix was successful. In this practice exercise, you will run through much of the same process you did in Exercise 3 to confirm that the issues you encountered are resolved and will not arise again.
+
+**Try it yourself:** Restart the PostgreSQL server.
+
+**HINT:** As before, select the "Start" button to start the PostgreSQL server.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 3:** The text file at `https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Bash%20Scripting/top-sites.txt` contains a list of popular websites. Find all the websites on the list that have the word `"org"` in them.
+**Try it yourself:** Compare the performance of querying the **aircrafts_data** table now compared to before changing the configuration parameters.
 
-**HINT:** Use the `wget` command to download the file.
+**HINT:** You'll first need to open up the PostgreSQL CLI, connect to the <strong>demo</strong> database, and enable timing.
 
-**HINT:** Use the `grep` command to search.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/postgres_start.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
+**Step 1:** Open up a PostgreSQL CLI terminal.
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLI.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+**Step 2:** Connect to the <strong>demo</strong> database by entering the following into the CLI:
+
 ```
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Bash%20Scripting/top-sites.txt
-grep org top-sites.txt 
+\connect demo
 ```
 
+**Step 3:** Enable timing with the following command in the CLI:
+
 ```
-curl -o top-sites.txt https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Bash%20Scripting/top-sites.txt
-grep org top-sites.txt 
+\timing
 ```
-
-**Step 4:** Print the first seven lines of `top-sites.txt`.
 
-**HINT:** Use the `head` command with the correct arguments.
+**Step 4:** Enter the following query into the CLI:
 
 ```
-head -n 7 top-sites.txt
+SELECT * FROM aircrafts_data;
 ```
 
-**Step 5:** Print the last seven lines of `top-sites.txt`.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**HINT:** Use the `tail` command with the correct arguments.
+As you can see, the query took less than 1 millisecond. Extremely quick, but fairly similar to the results before you changed the configuration parameters. This is because this query is on such a small table that the server didn't get close to the memory limits when executing it, so there was no issue with that query to begin with.
 
+**Step 5:** Run the same command in the CLI that you did in Step 5 of Exercise 3 and compare the performance before and after changing the configuration parameters. To save you the scrolling and losing your place, the command you entered earlier is given below:
+
 ```
-tail -n 7 top-sites.txt
+UPDATE boarding_passes SET ticket_no = ticket_no, flight_id = flight_id, boarding_no = boarding_no, seat_no = seat_no;
 ```
 
-**Step 6:** Print the first three characters of each line from `top-sites.txt`.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**HINT:** Use the `cut` command with the correct arguments.
+After increasing the <strong>shared_buffers</strong> and <strong>work_mem</strong> parameters, you saw a significant improvement in performance! This command took only about 10 seconds to execute as opposed to close to a minute as before. By reconfiguring the server, you greatly improved server performance. Well done!
 
-```
-cut -c -3 top-sites.txt
-```
+**Try it yourself:** Finally, test to confirm that the server can now handle _at least_ 5 connections.
 
-**Step 7:** Extract and view only the names, without their phone numbers, from the file `names_and_numbers.csv`.
+**HINT:** Recall that opening additional PostgreSQL terminals constitute additional connections to the server.
 
-**HINT:** Use `cd` to return to your `/home/project` directory, where `names_and_numbers.csv` is located.
+**Step 1:** Click the "PostgreSQL CLI" button four times.
 
-**HINT:** Use the `cut` command with the correct arguments.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/openCLIx4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-```
-cd /home/project
-cut -d "," -f 1 names_and_numbers.csv
-```
+**Step 2:** Notice that no error was raised on the fifth terminal and the CLI is still open.
+
+**Step 3:** You could even enter a test command, such as <code>\du</code> to confirm the CLI is working.
 
-**Summary**
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0231EN-SkillsNetwork/labs/PostgreSQL/Lab%20-%20Troubleshooting/images/practice_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-- View file contents with `cat`, `more`, and `less`
-- See the first and last N lines of a file using `head` and `tail`
-- Find the number of lines, words, and characters in a file with `wc`
-- Sort lines and drop duplicates using `sort` and `uniq`
-- Extract lines and fields from a file with `grep` and `cut`
-- Merge text files using `paste`
+**Step 4:** Furthermore, you could check the server logs to confirm that no error was raised and everything is running as intended.
 
 **Congratulations!**
 
