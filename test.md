@@ -1,258 +1,459 @@
 ---
 layout: page
-permalink: /DE02Lab01/
+permalink: /DE02Lab02/
 ---
 
-# Getting Started with IDE 
+# Extract Transform Load
 
 **Estimated Time Needed: 15 Minutes**
 
 ### Overview
 
-In this lab, you will become familiar with using an Integrated Development Environment (IDE). The IDE you will be using is Skills Network Cloud IDE, based on an open-source project called Theia.  This IDE is similar to the popular Visual Studio (VS) Code IDE. In this lab, you will explore the IDE and use it to create and run a simple Python program. You will install a library, create a code file, save it, and edit it to make changes.
+Extract, Transform and Load (ETL) operations are of extreme importance in the role of a Data engineer. A data engineer extracts data from multiple sources and different file formats, transforms the extracted data to predefined settings and then loads the data to a database for further processing. In this lab, you will get hands-on practice of performing these operations.
 
 ### Objectives
 
-- Explore the IDE interface.
-- Install a package using terminal.
-- Create a simple Python program using the IDE.
-- Execute the program.
-- Edit the source code and re-run the program.
+After completing this lab, you will be able to:
 
-### Environment
+- Read CSV, JSON, and XML file types. 
+- Extract the required data from the different file types. 
+- Transform data to the required format. 
+- Save the transformed data in a ready-to-load format, which can be loaded into an RDBMS.
 
-**Two Components of the Skills Network Lab environment:**
+### Initial steps
 
-- The instructions that you will follow to complete this lab are displayed on the left side of the screen.
+The first step in this process is to create a new file in the default `project` folder in the IDE. To create the new file, you can press the button below (recommended).
 
-- The area on the right side of the screen is the actual IDE, where you will use the menus, terminals, and tools to develop your code.
+**Step 1:** Create a new `etl_code.py` file
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/ide.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+Alternatively, we can do it the hard way
 
-## Exercise 1: Explore the IDE interface
+Navigate to the `File` tab in the menu bar and click `New File`. Save this file in the path `\home\project` as `etl_code.py`. These steps are shown in the following images.
 
-### Explore the menus, terminals, and tools
+a. Create New File
 
-Let us now explore the IDE interface. Please click on each of the icons and menu items highlighted in red boxes in the following screenshots to become familiar with their purpose.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 1:** In the **Explorer** menu, you will find your folders, files (created or cloned), and pre-requisites installed.
+b. Save the file as `etl_code.py`.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/explorer.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-**Step 2:** In the **Search** menu, you can search for particular folders or files that were created or cloned.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/save_file_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/search.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+The file is now ready in the `project` folder and further steps will be done in the file.
 
-**Step 3:** In the **Source Control** menu, you will find the cloned repository.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/etl_code.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/source_control.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+### Gather the data files
 
-**Step 4:** In the **Debug** menu, you can debug and troubleshoot your code.
+Before you start the extraction of data, you need the files containing the data to be available in the `project` folder. For the purpose of this lab, perform the following steps to gather the required data.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/debug.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+**Step 2:** Open a new terminal window
 
-**Step 5:** In the **Extensions** menu, you can check the recommended, installed, and built-in software already provided as the pre-requisitesprerequisites. 
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/new_terminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/extention.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+**Step 3:** Run the following commands in the terminal shell: <br>
 
-**Step 6:** In the **Skills Network Toolbox**, you will find options to use database, big data, cloud, and other tools to complete lab exercises in other courses.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/toolbox.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-**Step 7:** Explore the menu options at the top of the IDE: File, Edit, Selection, View, Go, Run, Terminal, Help. You will be using some of these menu items in subsequent exercises. A summary of what they are used for is provided below.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/menu.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-- **File:** This menu is used to create a new file or folder and save the file.
-
-- **Edit:** This menu is used to undo, redo, cut, paste, and find the file.
-
-- **Selection:** This menu is used to Select All, Copy line up or down and Move line up or down in the file.
-
-- **View:** This menu is used to view the other menus like explorer, extensions, and search.
-
-- **Go:** This menu is used to Go back, view the last edit location, and go to the files.
-
-- **Run:** This menu is used for debugging and Adding configurations.
-
-- **Terminal:** This menu is used to open the New terminal and run the tasks.
-
-- **Help:** This menu is used to view the list of extensions and get started a file.
-
-Click on each menu and explore them.
-
-**You will learn about folder and file creation and how to use the terminal to run the commands later in this lab.**
-
-## Exercise 2: Create a simple Python program using the IDE
-
-**Step 1:** On the window to the right, click on the File menu and select **"New Folder"** option, as shown in the image below.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-Name the folder **"welcome101"**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-**NOTE:** Ensure that the folder is created within the /home/project directory. If you\'re encountering any issues, right-click on an empty area and select New Folder*
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VQca0p7KO2XuK9DXXQy5AA/new-folder-2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-**Step 2:** Right-click on the folder welcome101 and click on **"New File"**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-Create a new file and name it **"welcome.py"**.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/file2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 3:** Paste the below code to the welcome.py file and save it using Ctrl+S.
-
-```Python
-import numpy as np
-
-a = np.array([1,2])
-b = np.array([3,4])
-c = a + b
-print(c)
-```
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/welcome_py.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-## Exercise 3: Execute the program
-
-**Step 1:** Open a terminal window using the editor New  Terminal.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/new-terminal.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-In the terminal, you will run all the commands to complete the lab.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/terminal1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
-
-**Step 2:** Verify that python is installed.
+a. Download the zip file containing the required data in multiple formats.
 
 ```bash
-python3.11 --version
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/source.zip
 ```
 
-You should see output similar to this, though the versions may be different:
-
-```
-Python 3.11.11
-```
-
-**Step 3:** Install the numpy package.
+b. Unzip the downloaded file.
 
 ```bash
-python3.11 -m pip install numpy
+unzip source.zip
 ```
-You should see the an output similar to this.
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/numpy_install.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+After you complete the above steps, the folder structure should appear as shown in the following image.
 
-**Step 4:** Change the directory for this lab by using the command shown below in the terminal.
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/folder_structure.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+
+### Importing libraries and setting paths
+
+The required files are now available in the `project` folder.
+
+In this lab, you will extract data from `CSV`, `JSON`, and `XML` formats. First, you need to import the appropriate Python libraries to use the relevant functions.
+
+The `xml` library can be used to parse the information from an `.xml` file format. The `.csv` and `.json` file formats can be read using the `pandas` library. You will use the `pandas` library to create a data frame format that will store the extracted data from any file.
+
+To call the correct function for data extraction, you need to access the file format information. For this access, you can use the `glob` library.
+
+To log the information correctly, you need the date and time information at the point of logging. For this information, you require the `datetime` package.
+
+While `glob`, `xml`, and `datetime` are inbuilt features of Python, you need to install the `pandas` library to your IDE.
+
+Run the following command in a terminal shell to install `pandas` for `python3.11`.
 
 ```bash
-cd welcome101
+python3.11 -m pip install pandas
 ```
 
-**Step 5:** Run the program in the terminal using the below command:
-
-```bash
-python3.11 welcome.py
-```
-
-**You will get the following output!**
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/code_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-## Exercise 4: Edit the source code and re-run the program
-
-**Step 1:** Replace the source code with the code shown below:
+After the installation is complete, you can import all the libraries in `etl_code.py` using the following commands.
 
 ```python
-message= "Welcome to the world of programming!"
-print (message)
+import glob 
+import pandas as pd 
+import xml.etree.ElementTree as ET 
+from datetime import datetime 
 ```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_code.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+Note that you import only the ElementTree function from the `xml.etree` library because you require that function to parse the data from an `XML` file format.
 
-**Step 2:** Run the program in the terminal using the command below:
+You also require two file paths that will be available globally in the code for all functions. These are `transformed_data.csv`, to store the final output data that you can load to a database, and `log_file.txt`, that stores all the logs.
 
-```bash
-python3.11 welcome.py
+Introduce these paths in the code by adding the following statements:
+
+```python
+log_file = "log_file.txt" 
+target_file = "transformed_data.csv" 
 ```
 
-You should see an output similar to this.
+Remember to save your file! You may use `Ctrl+S` to save the file or click `Save` in the `File` tab.
 
-```
-Welcome to the world of programming!
+## Task 1: Extraction
+
+Next, you will develop the functions to extract the data from different file formats. As there will be different functions for the file formats, you\'ll have to write one function each for the `.csv`, `.json`, and the `.xml` filetypes.
+
+You can name these three functions as `extract_from_csv()`, `extract_from_json()`, and `extract_from_xml()`. You need to pass the data file as an argument, `file_to_process`, to each function.
+
+To extract from a `CSV` file, you can define the function `extract_from_csv()`as follows using the `pandas` function `read_csv`:
+
+```python
+def extract_from_csv(file_to_process): 
+    dataframe = pd.read_csv(file_to_process) 
+    return dataframe 
 ```
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/correct_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+To extract from a `JSON` file, you can define the function `extract_from_json()`using the `pandas` function `read_json`. It requires an extra argument `lines=True` to enable the function to read the file as a `JSON` object on line to line basis as follows.
+
+```python 
+def extract_from_json(file_to_process): 
+    dataframe = pd.read_json(file_to_process, lines=True) 
+    return dataframe 
+```
+
+To extract from an `XML` file, you need first to parse the data from the file using the `ElementTree` function. You can then extract relevant information from this data and append it to a pandas dataframe as follows.
+
+**NOTE:** Adding Data to DataFrames using `pd.concat`
+
+In this lab, we use `pd.concat` to append data to an existing DataFrame. This method is recommended because the `append` method is deprecated. `pd.concat` offers better efficiency and flexibility, especially when combining multiple DataFrames.
+
+**Why use `pd.concat`:**
+
+- `pd.concat` is more efficient when adding rows or combining multiple DataFrames.
+- It provides better control over the operation, allowing you to concatenate along rows or columns.
+- It also includes the `ignore_index=True` argument, which resets the index to avoid duplication when combining DataFrames.
+
+**Example:**
+
+```python
+import pandas as pd
+
+# Create DataFrames
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5], 'B': [6]})
+
+# Use concat
+result = pd.concat([df1, df2], ignore_index=True)
+print(result)
+```
+
+**Output:**
+
+``  A  B``
+``0 1  3``
+``1  2  4``
+``2  5  6``
+
+**NOTE:** You must know the headers of the extracted data to write this function. In this data, you extract \"name\", \"height\", and \"weight\" headers for different persons.
+
+This function can be written as follows:
+
+```python
+def extract_from_xml(file_to_process): 
+    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
+    tree = ET.parse(file_to_process) 
+    root = tree.getroot() 
+    for person in root: 
+        name = person.find("name").text 
+        height = float(person.find("height").text) 
+        weight = float(person.find("weight").text) 
+        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name, "height":height, "weight":weight}])], ignore_index=True) 
+    return dataframe 
+```
+
+Now you need a function to identify which function to call on basis of the filetype of the data file. To call the relevant function, write a function `extract`, which uses the `glob` library to identify the filetype. This can be done as follows: 
+
+```python 
+def extract(): 
+    extracted_data = pd.DataFrame(columns=['name','height','weight']) # create an empty data frame to hold extracted data 
+
+# process all csv files, except the target file
+    for csvfile in glob.glob("*.csv"): 
+        if csvfile != target_file:  # check if the file is not the target file
+            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
+
+# process all json files 
+    for jsonfile in glob.glob("*.json"): 
+        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
+
+# process all xml files 
+    for xmlfile in glob.glob("*.xml"): 
+        extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
+
+    return extracted_data 
+```
+
+After adding these functions to `etl_code.py` you complete the implementation of the extraction part. 
+
+Remember to save your file using `Ctrl+S`. 
+
+## Task 2 - Transformation
+
+The height in the extracted data is in inches, and the weight is in pounds. However, for your application, the height is required to be in meters, and the weight is required to be in kilograms, rounded to two decimal places. Therefore, you need to write the function to perform the unit conversion for the two parameters. 
+
+The name of this function will be `transform()`, and it will receive the extracted dataframe as the input. Since the dataframe is in the form of a dictionary with three keys, \"name\", \"height\", and \"weight\", each of them having a list of values, you can apply the transform function on the entire list at one go. 
+
+The function can be written as follows: 
+
+```python 
+def transform(data):
+
+'''Convert inches to meters and round off to two decimals 
+1 inch is 0.0254 meters '''
+    data['height'] = round(data.height * 0.0254,2) 
+
+'''Convert pounds to kilograms and round off to two decimals 
+1 pound is 0.45359237 kilograms '''
+    data['weight'] = round(data.weight * 0.45359237,2) 
+
+    return data 
+``` 
+
+The output of this function will now be a dataframe where the \"height\" and \"weight\" parameters will be modified to the required format. 
+
+You can add the `transform()` function to the `etl_code.py` file, thus completing the transform operation. 
+
+Remember to save your file using `Ctrl+S`. 
+
+## Task 3 - Loading and Logging
+
+You need to load the transformed data to a `CSV` file that you can use to load to a database as per requirement. 
+
+To load the data, you need a function `load_data()` that accepts the transformed data as a dataframe and the `target_file` path. You need to use the `to_csv` attribute of the dataframe in the function as follows: 
+
+```python 
+def load_data(target_file, transformed_data): 
+    transformed_data.to_csv(target_file) 
+``` 
+
+Finally, you need to implement the logging operation to record the progress of the different operations. For this operation, you need to record a message, along with its timestamp, in the `log_file`. 
+
+To record the message, you need to implement a function `log_progress()` that accepts the log message as the argument. The function captures the current date and time using the `datetime` function from the `datetime` library. The use of this function requires the definition of a date-time format, and you need to convert the timestamp to a string format using the `strftime` attribute. The following code creates the log operation: 
+
+```python 
+def log_progress(message): 
+    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
+    now = datetime.now() # get current timestamp 
+    timestamp = now.strftime(timestamp_format) 
+    with open(log_file,"a") as f: 
+        f.write(timestamp + ',' + message + '\n') 
+``` 
+
+After you add these functions to `etl_code.py`, you will complete the implementation of the loading and logging operations. With this, all the functions for Extract, Transform, and Load (ETL) are ready for testing. 
+
+Remember to save your file using `Ctrl+S`. 
+
+### Testing ETL operations and log progress
+
+Now, test the functions you have developed so far and log your progress along the way. Insert the following lines into your code to complete the process. Note the comments on every step of the code. 
+
+```python 
+# Log the initialization of the ETL process 
+log_progress("ETL Job Started") 
+
+# Log the beginning of the Extraction process 
+log_progress("Extract phase Started") 
+extracted_data = extract() 
+
+# Log the completion of the Extraction process 
+log_progress("Extract phase Ended") 
+
+# Log the beginning of the Transformation process 
+log_progress("Transform phase Started") 
+transformed_data = transform(extracted_data) 
+print("Transformed Data") 
+print(transformed_data) 
+
+# Log the completion of the Transformation process 
+log_progress("Transform phase Ended") 
+
+# Log the beginning of the Loading process 
+log_progress("Load phase Started") 
+load_data(target_file,transformed_data) 
+
+# Log the completion of the Loading process 
+log_progress("Load phase Ended") 
+
+# Log the completion of the ETL process 
+log_progress("ETL Job Ended") 
+``` 
+
+Remember to save your file using `Ctrl+S`. 
+
+### Execution of code
+
+Execute `etl_code.py` from a terminal shell using the command 
+
+```bash 
+python3.11 etl_code.py 
+``` 
+
+Upon execution, you can view the output of the print command on the terminal as shown in the image below. 
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/code_output.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> <br>
+
+The contents of the log file will appear as shown in the image below. 
+
+<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/images/log_file.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div> 
+
+## Lab Solution
+
+In case you face some issue while you execute the created code, it might be because of missing a step in the process somewhere. The complete code of all the steps is given below to help you resolve the issue. Please note that you should refer to this only if you are unable to achieve the desired results yourself or get an error during the execution in the next step.  
+
+```python 
+import glob 
+import pandas as pd 
+import xml.etree.ElementTree as ET 
+from datetime import datetime 
+
+log_file = "log_file.txt" 
+target_file = "transformed_data.csv" 
+
+def extract_from_csv(file_to_process): 
+    dataframe = pd.read_csv(file_to_process) 
+    return dataframe 
+
+def extract_from_json(file_to_process): 
+    dataframe = pd.read_json(file_to_process, lines=True) 
+    return dataframe 
+
+def extract_from_xml(file_to_process): 
+    dataframe = pd.DataFrame(columns=["name", "height", "weight"]) 
+    tree = ET.parse(file_to_process) 
+    root = tree.getroot() 
+    for person in root: 
+        name = person.find("name").text 
+        height = float(person.find("height").text) 
+        weight = float(person.find("weight").text) 
+        dataframe = pd.concat([dataframe, pd.DataFrame([{"name":name,"height":height, "weight":weight}])], ignore_index=True) 
+    return dataframe 
+
+def extract(): 
+    extracted_data = pd.DataFrame(columns=['name','height','weight'])  # create an empty data frame to hold extracted data
+
+# process all csv files, except the target file
+    for csvfile in glob.glob("*.csv"): 
+        if csvfile != target_file:  # check if the file is not the target file
+            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True) 
+
+# process all json files 
+    for jsonfile in glob.glob("*.json"): 
+            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_json(jsonfile))], ignore_index=True) 
+
+# process all xml files 
+    for xmlfile in glob.glob("*.xml"): 
+            extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_xml(xmlfile))], ignore_index=True) 
+
+    return extracted_data 
+
+def transform(data): 
+# Convert inches to meters and round off to two decimals 
+# 1 inch is 0.0254 meters 
+    data['height'] = round(data.height * 0.0254,2) 
+
+# Convert pounds to kilograms and round off to two decimals 
+# 1 pound is 0.45359237 kilograms 
+    data['weight'] = round(data.weight * 0.45359237,2) 
+
+    return data 
+
+def load_data(target_file, transformed_data): 
+    transformed_data.to_csv(target_file) 
+
+def log_progress(message): 
+    timestamp_format = '%Y-%h-%d-%H:%M:%S' # Year-Monthname-Day-Hour-Minute-Second 
+    now = datetime.now() # get current timestamp 
+    timestamp = now.strftime(timestamp_format) 
+    with open(log_file,"a") as f: 
+        f.write(timestamp + ',' + message + '\n') 
+
+# Log the initialization of the ETL process 
+log_progress("ETL Job Started") 
+
+# Log the beginning of the Extraction process 
+log_progress("Extract phase Started") 
+extracted_data = extract() 
+
+# Log the completion of the Extraction process 
+log_progress("Extract phase Ended") 
+
+# Log the beginning of the Transformation process 
+log_progress("Transform phase Started") 
+transformed_data = transform(extracted_data) 
+print("Transformed Data") 
+print(transformed_data) 
+
+# Log the completion of the Transformation process 
+log_progress("Transform phase Ended") 
+
+# Log the beginning of the Loading process 
+log_progress("Load phase Started") 
+load_data(target_file,transformed_data) 
+
+# Log the completion of the Loading process 
+log_progress("Load phase Ended") 
+
+# Log the completion of the ETL process 
+log_progress("ETL Job Ended") 
+``` 
 
 ## Practice Exercises
 
-**Step 1:** Create a new folder called "software101".
+Follow the process learned in this lab to perform ETL operations on the data available in the link below. 
 
-**HINT:** On the window to the right, click on the File menu and select the **"New Folder"** option, as shown in the image below. Name the folder **"software101"**.
+``` 
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0221EN-SkillsNetwork/labs/module%206/Lab%20-%20Extract%20Transform%20Load/data/datasource.zip 
+``` 
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/folder.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+Complete the following practice exercises: 
 
-**Step 2:** In software101, create a new file called "software.py".
+**Step 1:** Create a folder `data_source` and use the terminal shell to change the current directory to `\home\project\data_source`. Create a file `etl_practice.py` in this folder.  
 
-**HINT:** Right-click on the folder software101, click on **"New File"**, create a new file, and name it **"software.py"**.
+**Step 2:** Download and unzip the data available in the link shared above. 
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/labs/v1/labs/images/hint.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+**Step 3:** The data available has four headers: \'car_model\', \'year_of_manufacture\', \'price\', \'fuel\'. Implement the extraction process for the `CSV`, `JSON`, and `XML` files.  
 
-**Step 3:** Write code to add two arrays using Numpy library.
+**Step 4:** Transform the values under the \'price\' header such that they are rounded to 2 decimal places. 
 
-**NOTE:** Since the library is already installed in the practice, there is no need to install it again.
+**Step 5:** Implement the loading function for the transformed data to a target file, `transformed_data.csv`. 
 
-**HINT:** Import the numpy library, create two numpy arrays, and add them.
+**Step 6:** Implement the logging function for the entire process and save it in `log_file.txt`. 
 
-Paste the code below to the software.py file and save it using Ctrl+S.
+**Step 7:** Test the implemented functions and log the events as done in the lab. 
 
-```Python
-import numpy as np
+Please note that the solutions for this practice exercise are not provided to motivate you to try them yourself. However, feel free to share your opinions on the solutions as well as your questions in the discussion forums. 
 
-a = np.array([2,3,4])
-b = np.array([3,2,1])
-c = a + b
-print (c)
-```
+### Conclusion
 
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_1.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+In this lab, you practiced the implementation of: 
 
-**Step 4:** Run the program.
-
-**HINT:** Run the program in the terminal using the below command. Make sure you are in the correct folder.
-
-```bash
-cd software101
-python3.11 software.py
-```
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 5:** Edit the software.py file and change one of the arrays.
-
-**HINT:** 
-
-Change the array 'a' to [5,3,1] and save the file.
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_3.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
-
-**Step 6:** Run the updated file.
-
-**HINT:** 
-
-Run the program in the terminal using the below command:
-
-```bash
-python3.11 software.py
-```
-
-<div align="center"><div style="display: inline-grid; border: 2px solid var(--word); margin:10px 0px;"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0224EN-Coursera/images/image_4.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+- Extraction of data from `CSV`, `JSON`, and `XML` file formats. 
+- Transformation of data as per requirement. 
+- Loading the transformed data to a `CSV` file. 
+- Logging the progress of the said operations. 
 
 **Congratulations!**
 
