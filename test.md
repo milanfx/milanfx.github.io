@@ -3,165 +3,87 @@ layout: page
 permalink: /DE06Lab05/
 ---
 
-### 🎯 教学目标
+# 🧩 Lecture Notes: Decision Trees for Machine Learning
 
-通过本节课程，学生将能够：
+### 🎯 Objectives
+- Define and explain what a Decision Tree is and how it functions  
+- Describe how to train, grow, and prune a Decision Tree model  
+- Explain how Decision Trees learn using splitting criteria such as entropy and information gain  
 
-- **理解并描述** DBSCAN（基于密度的空间聚类算法）的工作原理。
--  **解释** HDBSCAN（层次化密度聚类）的核心概念及其改进。
--   **比较** DBSCAN 与 HDBSCAN 的优缺点与适用场景。  
+### Decision Trees Overview
+- **Main idea:**  
+  - A Decision Tree is a supervised learning algorithm used for classification and regression.  
+  - It can be visualized as a flowchart where internal nodes represent tests on features, branches represent test outcomes, and leaf nodes represent class labels.  
+- **Details:**  
+  - Each data point passes through the tree based on feature conditions until it reaches a leaf node.  
+  - The final leaf determines the class or predicted value of that data point.  
+  - Decision Trees are interpretable and can handle both categorical and numerical data.  
+- **Teaching tip:**  
+  - Use a simple tree diagram to show how decisions “flow” from root to leaves.
 
-### 📘 一、引入：密度聚类的意义
+### Building a Decision Tree
+- **Main idea:**  
+  - Decision Trees are built recursively by selecting the best feature at each node to split the data.  
+- **Details:**  
+  - Start with labeled training data at a root node.  
+  - Select a feature that best separates the classes based on a splitting criterion.  
+  - Split the data into subsets along this feature, passing each subset to a new node.  
+  - Continue until all nodes contain pure classes, features are exhausted, or a stopping rule is reached.  
+- **Teaching tip:**  
+  - Compare the tree-growing process to “20 Questions”: each question (split) aims to reduce uncertainty.
 
-💬 **教师导语：**
+### Stopping Criteria and Pruning
+- **Main idea:**  
+  - A tree stops growing when specific conditions (stopping criteria) are met.  
+  - Pruning removes unnecessary branches to prevent overfitting.  
+- **Details:**  
+  - Common stopping criteria include:
+    - Maximum depth reached  
+    - Minimum number of samples per node or per leaf exceeded  
+    - Maximum number of leaf nodes reached  
+  - Pruning simplifies the model, improves generalization, and enhances interpretability.  
+- **Teaching tip:**  
+  - Demonstrate how pruning reduces a complex tree into a simpler, more general structure.
 
-- 在真实世界的数据中，簇往往并非规则形状，可能存在噪声点或异常值。
-- 传统的 K-Means 或层次聚类算法假设簇为凸形或球形，限制了其应用。
-- DBSCAN 与 HDBSCAN 属于 **基于密度的聚类算法**，可以识别任意形状的簇，并区分噪声。
+### Example: Predicting Medication Response
+- **Main idea:**  
+  - Example dataset: patient features (age, gender, blood pressure, cholesterol) and target (drug A or B).  
+- **Details:**  
+  - The tree might split first by age (young, middle-aged, senior).  
+  - If middle-aged → drug B; if young and male → drug B; if senior with high cholesterol → drug A.  
+  - Each split corresponds to a test condition learned from data.  
+- **Teaching tip:**  
+  - Draw a sample tree to illustrate how specific patient profiles lead to different predictions.
 
-### 1️⃣ 什么是 DBSCAN？
+### Splitting Criteria
+- **Main idea:**  
+  - The algorithm uses a metric to decide which feature provides the best split.  
+- **Details:**  
+  - **Entropy:** measures randomness or impurity of a node.  
+    - Entropy = 0 means all samples belong to one class.  
+    - Entropy = 1 means classes are evenly mixed.  
+  - **Information Gain:** measures reduction in entropy after a split.  
+    - Information Gain = Entropy(before) − Weighted Entropy(after).  
+    - The goal is to choose features that yield the **highest information gain**.  
+  - **Gini Impurity:** another popular split metric; measures how often a randomly chosen element would be incorrectly labeled.  
+- **Teaching tip:**  
+  - Emphasize that both entropy and Gini work similarly: they prefer splits that produce purer subsets.
 
-### 💡 基本定义
+### Interpretability and Advantages
+- **Main idea:**  
+  - Decision Trees are highly interpretable and transparent models.  
+- **Details:**  
+  - You can visualize how decisions are made at each node.  
+  - The order of feature splits provides insight into feature importance.  
+  - Trees require little data preprocessing and can handle non-linear relationships.  
+- **Teaching tip:**  
+  - Highlight that interpretability makes Decision Trees ideal for domains like healthcare or finance where understanding model logic is crucial.
 
-- **DBSCAN（Density-Based Spatial Clustering of Applications with Noise）** 是一种基于密度的空间聚类算法，用于发现具有高密度区域的聚类。
-- 聚类由用户定义的 **密度阈值（density value）** 决定，围绕一个“空间质心（centroid）”。
-
-### 📍核心思想
-
-- 每个点都有一个邻域（neighborhood），定义为：
-  - 半径为 **ε（epsilon）** 的范围；
-  - 至少包含 **n（min_samples）** 个点。  
-- DBSCAN 通过寻找这些“高密度区域”来形成聚类，并将稀疏点标记为噪声。
- 
-### 2️⃣ DBSCAN 的三种点类型
-
-### 🔹 核心点（Core Point）
-- 在其 ε 邻域内包含至少 `n` 个点（包括自身）。
-- 是形成聚类的中心。
-
-### 🔸 边界点（Border Point）
-- 位于某个核心点的邻域内；
-- 自身的邻域不足以成为核心点。
-
-### ⚫ 噪声点（Noise Point）
-- 不属于任何核心点邻域的孤立点。
-
-💬 **教师讲解提示：**
-
-- 我们可以把核心点看作“聚类的心脏”，边界点是外围成员，而噪声点则是“游离在外”的个体。
-
-## 3️⃣ DBSCAN 算法的执行步骤
-
-1. **选择参数**：
-   - `ε`：邻域半径；
-   - `min_samples`：最小邻域点数。
-2. **遍历所有点**：
-   - 判断每个点是核心点、边界点或噪声点。
-3. **扩展聚类**：
-   - 从核心点出发，将所有密度可达的点加入该簇。
-4. **输出结果**：
-   - 已标记簇的点形成聚类；
-   - 其他未归类的点为噪声。
-
-🎓 **教师提示：**
-> DBSCAN **不是迭代算法**。  
-> 一旦点被标记为核心、边界或噪声，就不会在后续步骤中被重新分类。
-
-## 4️⃣ 示例讲解：DBSCAN 聚类过程
-
-📊 **实验数据：**
-- 采用 scikit-learn 中的 `make_moons()` 函数生成两组半月形数据。  
-
-🧩 **观察：**
-- 蓝色点：核心点（邻域中 ≥4 个点）；  
-- 橙色点：边界点；  
-- 黑色点：噪声。
-
-💬 **教师讲解建议：**
-> 在可视化过程中，可以展示算法如何从黑点（初始噪声）逐步识别出两个半月形簇，  
-> 最后形成蓝、橙、绿色三类区域。  
-> 注意，算法自动识别出第三个孤立簇，这体现了其发现“任意形状簇”的能力。
-
-## 5️⃣ DBSCAN 与传统聚类的区别
-
-| 方法 | 聚类依据 | 形状限制 | 噪声处理 | 是否需指定簇数 |
-|------|------------|------------|--------------|----------------|
-| **K-Means** | 距离最小化 | 球形或凸形 | 不处理噪声 | ✅ 需要指定 |
-| **层次聚类** | 聚合层次 | 规则形状 | 一般不区分噪声 | ✅ 需要指定 |
-| **DBSCAN** | 密度连接 | 任意形状 | ✅ 可识别噪声 | ❌ 不需要指定 |
-
-💬 **教师总结：**
-> DBSCAN 适合含噪声或复杂形状的数据集，特别是当簇数未知时。
-
-## 6️⃣ HDBSCAN：层次化密度聚类
-
-### 💡 基本定义
-- **HDBSCAN（Hierarchical Density-Based Spatial Clustering of Applications with Noise）**  
-  是 DBSCAN 的改进版本。
-- 它不需要用户预先设定 ε 参数，能够根据数据自动调整密度阈值。
-
-## 7️⃣ HDBSCAN 的工作原理
-
-### 🧩 核心步骤
-1. **初始化**：每个点视为独立簇（或噪声）。  
-2. **逐步合并**：通过降低密度阈值，逐渐将相邻簇合并。  
-3. **生成层次结构**：形成一个完整的聚类树（dendrogram）。  
-4. **简化为凝聚树（condensed tree）**：  
-   - 仅保留在不同密度水平上稳定存在的聚类。  
-   - “稳定性”指聚类在不同半径范围内的持久性。
-
-### 🧠 **概念理解：**
-> **Cluster Stability（聚类稳定性）**  
-> 表示当调整邻域半径时，聚类结构保持不变的能力。  
-> 稳定的簇更“可信”，反映出真实数据模式。
-
-## 8️⃣ 案例讲解：加拿大博物馆数据
-
-📍 **数据来源：**
-- Statistics Canada 数据集（包含博物馆的经纬度坐标）。
-
-### DBSCAN 结果：
-- 参数：`min_samples = 3`，`ε = 0.15`（归一化单位）。  
-- 发现约 10 个聚类。  
-- 问题：在人口密集区域（红色椭圆内），多个细簇被错误合并为单一大簇。
-
-### HDBSCAN 结果：
-- 参数：`min_samples = 10`，`min_cluster_size = 3`。  
-- 识别出更多、更合理的聚类。  
-- 能够自适应调整邻域大小，捕捉不同密度区域的变化。  
-- 输出结果更加清晰、连贯，尤其在东部高密度区域细节更丰富。
-
-## 9️⃣ DBSCAN 与 HDBSCAN 对比
-
-| 特征 | DBSCAN | HDBSCAN |
-|------|---------|----------|
-| 参数依赖 | 需要设定 ε 与 min_samples | 自动调整，无需 ε |
-| 对噪声的敏感度 | 较高 | 较低 |
-| 聚类形状 | 任意形状 | 任意形状 |
-| 聚类稳定性 | 不考虑 | ✅ 考虑（Cluster Stability） |
-| 算法类型 | 单层密度聚类 | 层次 + 密度聚类 |
-| 适用场景 | 简单噪声数据 | 多密度、复杂数据集 |
-
-## 🧾 教学总结
-
-| 概念 | 说明 |
-|------|------|
-| **DBSCAN** | 基于密度的聚类算法，适用于未知簇数与含噪声数据。 |
-| **核心点** | ε 邻域内至少有 min_samples 个点的样本。 |
-| **边界点** | 位于核心点邻域内但自身不足以成核的点。 |
-| **噪声点** | 不属于任何核心点邻域的点。 |
-| **HDBSCAN** | 层次化密度聚类算法，通过聚类稳定性实现自适应聚类。 |
-| **聚类稳定性** | 簇在不同半径范围内保持结构不变的能力。 |
-
-## 🧠 课堂复习要点
-- DBSCAN 依赖两个参数：`ε`（半径）和 `min_samples`（最小点数）。  
-- HDBSCAN 不需指定 ε，更灵活且对噪声鲁棒。  
-- 两者都能识别任意形状簇，并有效处理异常值。  
-- **DBSCAN 适合规则密度分布；HDBSCAN 适合多密度、复杂结构数据。**
-
-## 💭 教师结语
-> 在实际应用中，DBSCAN 和 HDBSCAN 都是探索性数据分析的重要工具。  
-> 选择哪一个，取决于数据的密度分布、噪声程度，以及对可解释性的需求。  
-> 掌握这两种算法，将帮助我们更好地发现数据中的隐藏结构。
+### 📌 Takeaways
+- Decision Trees classify data by recursively splitting it based on feature conditions  
+- Stopping and pruning prevent overfitting and improve generalization  
+- Entropy and Information Gain measure the quality of splits, aiming to maximize purity  
+- Decision Trees are interpretable and reveal which features are most predictive  
+- They provide an intuitive, visual framework for understanding decision boundaries
 
 
