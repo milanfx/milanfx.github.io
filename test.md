@@ -3,87 +3,94 @@ layout: page
 permalink: /DE06Lab05/
 ---
 
-# 🧩 Lecture Notes: Decision Trees for Machine Learning
+# 🧩 Lecture Notes: Classification in Supervised Learning
 
 ### 🎯 Objectives
-- Define and explain what a Decision Tree is and how it functions  
-- Describe how to train, grow, and prune a Decision Tree model  
-- Explain how Decision Trees learn using splitting criteria such as entropy and information gain  
+- Describe the classification method within supervised learning  
+- Discuss real-world applications and use cases of classification  
+- List common classification algorithms and explain multi-class prediction strategies  
 
-### Decision Trees Overview
-- **Main idea:**  
-  - A Decision Tree is a supervised learning algorithm used for classification and regression.  
-  - It can be visualized as a flowchart where internal nodes represent tests on features, branches represent test outcomes, and leaf nodes represent class labels.  
-- **Details:**  
-  - Each data point passes through the tree based on feature conditions until it reaches a leaf node.  
-  - The final leaf determines the class or predicted value of that data point.  
-  - Decision Trees are interpretable and can handle both categorical and numerical data.  
-- **Teaching tip:**  
-  - Use a simple tree diagram to show how decisions “flow” from root to leaves.
+### Understanding Classification
+- **Main Ideas:**  
+  - Classification is a type of **supervised machine learning** that predicts labels for new data.  
+  - Labels represent **categorical variables** with discrete values.  
+  - The model learns the relationship between features (inputs) and class labels (outputs) during training.  
+- **Key Details:**  
+  - The goal of supervised learning is to interpret data correctly to answer a specific question.  
+  - As data is input, the model adjusts to fit the algorithm and classifies each sample into a category.  
+  - The process ensures data-driven predictions that are consistent and contextually accurate.  
+- **Extra Notes:**  
+  - Reinforce that classification requires **labeled training data** to learn effectively.  
+  - Mention that evaluation of classification models often involves metrics like **accuracy**, **precision**, and **recall**.
 
-### Building a Decision Tree
-- **Main idea:**  
-  - Decision Trees are built recursively by selecting the best feature at each node to split the data.  
-- **Details:**  
-  - Start with labeled training data at a root node.  
-  - Select a feature that best separates the classes based on a splitting criterion.  
-  - Split the data into subsets along this feature, passing each subset to a new node.  
-  - Continue until all nodes contain pure classes, features are exhausted, or a stopping rule is reached.  
-- **Teaching tip:**  
-  - Compare the tree-growing process to “20 Questions”: each question (split) aims to reduce uncertainty.
+### Applications and Use Cases
+- **Main Ideas:**  
+  - Classification has widespread applications across industries and domains.  
+  - It can be used whenever data can be mapped between features and discrete categories.  
+- **Key Details:**  
+  - **Common applications:**  
+    - Email filtering (spam vs. not spam)  
+    - Speech-to-text and handwriting recognition  
+    - Biometric identification  
+    - Document classification  
+  - **Business examples:**  
+    - *Churn prediction:* identify customers likely to discontinue a service  
+    - *Customer segmentation:* categorize customers by behavior or demographics  
+    - *Marketing response prediction:* forecast which customers will respond to a campaign  
+  - **Bank loan example:**  
+    - Train a model on historical loan default data (age, income, credit debt).  
+    - Predict if a new applicant is likely to default → *binary classification* (default vs. non-default).  
+  - **Healthcare example:**  
+    - Predict which of multiple drugs (A, B, or C) a patient may respond to → *multi-class classification*.  
+- **Extra Notes:**  
+  - Highlight that classification models support **decision-making** in both operational and strategic contexts.  
+  - Encourage thinking about **ethical implications** — e.g., fairness and bias in model outcomes.
 
-### Stopping Criteria and Pruning
-- **Main idea:**  
-  - A tree stops growing when specific conditions (stopping criteria) are met.  
-  - Pruning removes unnecessary branches to prevent overfitting.  
-- **Details:**  
-  - Common stopping criteria include:
-    - Maximum depth reached  
-    - Minimum number of samples per node or per leaf exceeded  
-    - Maximum number of leaf nodes reached  
-  - Pruning simplifies the model, improves generalization, and enhances interpretability.  
-- **Teaching tip:**  
-  - Demonstrate how pruning reduces a complex tree into a simpler, more general structure.
+### Classification Algorithms
+- **Main Ideas:**  
+  - Various algorithms can be used to build classification models, depending on data size and complexity.  
+- **Key Details:**  
+  - **Common classification algorithms:**  
+    - Naive Bayes  
+    - Logistic Regression  
+    - Decision Trees  
+    - K-Nearest Neighbors (KNN)  
+    - Support Vector Machines (SVM)  
+    - Neural Networks  
+  - Some algorithms (e.g., Logistic Regression, KNN, Decision Trees) natively support **multi-class classification**.  
+  - Others are inherently binary and require strategies to handle multiple classes.  
+- **Extra Notes:**  
+  - Emphasize that algorithm selection depends on data characteristics, interpretability needs, and computation cost.  
+  - Encourage comparing multiple algorithms using validation techniques like **cross-validation**.
 
-### Example: Predicting Medication Response
-- **Main idea:**  
-  - Example dataset: patient features (age, gender, blood pressure, cholesterol) and target (drug A or B).  
-- **Details:**  
-  - The tree might split first by age (young, middle-aged, senior).  
-  - If middle-aged → drug B; if young and male → drug B; if senior with high cholesterol → drug A.  
-  - Each split corresponds to a test condition learned from data.  
-- **Teaching tip:**  
-  - Draw a sample tree to illustrate how specific patient profiles lead to different predictions.
-
-### Splitting Criteria
-- **Main idea:**  
-  - The algorithm uses a metric to decide which feature provides the best split.  
-- **Details:**  
-  - **Entropy:** measures randomness or impurity of a node.  
-    - Entropy = 0 means all samples belong to one class.  
-    - Entropy = 1 means classes are evenly mixed.  
-  - **Information Gain:** measures reduction in entropy after a split.  
-    - Information Gain = Entropy(before) − Weighted Entropy(after).  
-    - The goal is to choose features that yield the **highest information gain**.  
-  - **Gini Impurity:** another popular split metric; measures how often a randomly chosen element would be incorrectly labeled.  
-- **Teaching tip:**  
-  - Emphasize that both entropy and Gini work similarly: they prefer splits that produce purer subsets.
-
-### Interpretability and Advantages
-- **Main idea:**  
-  - Decision Trees are highly interpretable and transparent models.  
-- **Details:**  
-  - You can visualize how decisions are made at each node.  
-  - The order of feature splits provides insight into feature importance.  
-  - Trees require little data preprocessing and can handle non-linear relationships.  
-- **Teaching tip:**  
-  - Highlight that interpretability makes Decision Trees ideal for domains like healthcare or finance where understanding model logic is crucial.
+### Multi-Class Prediction Strategies
+- **Main Ideas:**  
+  - Binary classifiers can be extended to handle more than two classes using structured strategies.  
+  - The two main approaches are **One-vs-All (OvA)** and **One-vs-One (OvO)**.  
+- **Key Details:**  
+  - **One-vs-All (OvA):**  
+    - Builds *k* binary classifiers (one per class).  
+    - Each classifier predicts whether a sample belongs to its target class or not.  
+    - Data points not assigned by any classifier may represent **outliers or noise**.  
+  - **One-vs-One (OvO):**  
+    - Builds classifiers for every pair of classes.  
+    - Each model distinguishes between two specific classes.  
+    - The final label is chosen by a **voting scheme** — the class with the most “wins” across classifiers.  
+    - If a tie occurs, votes may be **weighted by confidence** or probability.  
+  - **Example:**  
+    - For three classes (A, B, C):  
+      - OvA builds 3 classifiers (A vs. rest, B vs. rest, C vs. rest).  
+      - OvO builds 3 classifiers (A vs. B, A vs. C, B vs. C).  
+- **Extra Notes:**  
+  - ROC (Receiver Operating Characteristic) curves can also evaluate classifier performance.  
+  - Multi-class strategies improve flexibility but increase computational cost.  
+  - Encourage exploring algorithm libraries (e.g., scikit-learn) for built-in OvA and OvO implementations.
 
 ### 📌 Takeaways
-- Decision Trees classify data by recursively splitting it based on feature conditions  
-- Stopping and pruning prevent overfitting and improve generalization  
-- Entropy and Information Gain measure the quality of splits, aiming to maximize purity  
-- Decision Trees are interpretable and reveal which features are most predictive  
-- They provide an intuitive, visual framework for understanding decision boundaries
+- Classification is a **supervised learning** approach that predicts categorical outcomes.  
+- It is used across fields such as finance, marketing, and healthcare.  
+- Common algorithms include **Naive Bayes, Logistic Regression, Decision Trees, KNN, SVM, and Neural Networks**.  
+- Binary classifiers can be extended for multi-class problems using **One-vs-All** or **One-vs-One** strategies.  
+- Model choice and evaluation depend on use case, interpretability, and data characteristics.
 
 
