@@ -3,193 +3,160 @@ layout: page
 permalink: /DE06Lab05/
 ---
 
-# 📘 Lecture Notes: Plot Libraries in Python
+## 🎯 教学目标
+通过本节课程，学生将能够：
+1. **理解并描述** DBSCAN（基于密度的空间聚类算法）的工作原理。  
+2. **解释** HDBSCAN（层次化密度聚类）的核心概念及其改进。  
+3. **比较** DBSCAN 与 HDBSCAN 的优缺点与适用场景。  
 
-## 🎯 Learning Objectives
-After completing this lesson, you should be able to:
-- **Identify** popular Python libraries used for data visualization.  
-- **Describe** the features and strengths of each plotting library.  
-- **Recognize** the use cases and integration capabilities of different libraries.  
+## 📘 一、引入：密度聚类的意义
 
----
+💬 **教师导语：**
+> 在真实世界的数据中，簇往往并非规则形状，可能存在噪声点或异常值。  
+> 传统的 K-Means 或层次聚类算法假设簇为凸形或球形，限制了其应用。  
+> DBSCAN 与 HDBSCAN 属于 **基于密度的聚类算法**，可以识别任意形状的簇，并区分噪声。
 
-## 1. 📊 Overview: The Role of Plot Libraries
+## 1️⃣ 什么是 DBSCAN？
 
-### Importance of Plot Libraries
-- **Data visualization** helps gain insights and communicate complex information effectively.  
-- Python offers multiple **plotting libraries**, each with unique features and strengths.  
+### 💡 基本定义
+- **DBSCAN（Density-Based Spatial Clustering of Applications with Noise）**  
+  是一种基于密度的空间聚类算法，用于发现具有高密度区域的聚类。
+- 聚类由用户定义的 **密度阈值（density value）** 决定，围绕一个“空间质心（centroid）”。
 
-### Popular Plot Libraries in Python
-1. **Matplotlib**  
-2. **Pandas**  
-3. **Seaborn**  
-4. **Folium**  
-5. **Plotly**  
-6. **PyWaffle**
+### 📍核心思想
+- 每个点都有一个邻域（neighborhood），定义为：
+  - 半径为 **ε（epsilon）** 的范围；
+  - 至少包含 **n（min_samples）** 个点。  
+- DBSCAN 通过寻找这些“高密度区域”来形成聚类，并将稀疏点标记为噪声。
+- 
+## 2️⃣ DBSCAN 的三种点类型
 
-> Each library has distinct use cases — from statistical analysis to interactive dashboards and geospatial mapping.
+### 🔹 核心点（Core Point）
+- 在其 ε 邻域内包含至少 `n` 个点（包括自身）。
+- 是形成聚类的中心。
 
----
+### 🔸 边界点（Border Point）
+- 位于某个核心点的邻域内；
+- 自身的邻域不足以成为核心点。
 
-## 2. 📈 Matplotlib
+### ⚫ 噪声点（Noise Point）
+- 不属于任何核心点邻域的孤立点。
 
-### Description
-- A **general-purpose plotting library** providing a wide range of visualization options.  
-- Often regarded as the **foundation** of data visualization in Python.  
+💬 **教师讲解提示：**
+> 我们可以把核心点看作“聚类的心脏”，边界点是外围成员，而噪声点则是“游离在外”的个体。
+> 
+## 3️⃣ DBSCAN 算法的执行步骤
 
-### Key Features
-- Supports various plot types:  
-  - Line plots  
-  - Scatter plots  
-  - Bar charts  
-  - Histograms  
-  - Pie charts  
-  - Box plots  
-  - Heatmaps  
-- Highly **customizable**:
-  - Colors, line and marker styles  
-  - Axis labels and titles  
-  - Legends and grid lines  
-- **Integrates** seamlessly with:
-  - **NumPy**, **Pandas**, **Seaborn**, and **Plotly**
-- **Strong community support** and extensive documentation.
+1. **选择参数**：
+   - `ε`：邻域半径；
+   - `min_samples`：最小邻域点数。
+2. **遍历所有点**：
+   - 判断每个点是核心点、边界点或噪声点。
+3. **扩展聚类**：
+   - 从核心点出发，将所有密度可达的点加入该簇。
+4. **输出结果**：
+   - 已标记簇的点形成聚类；
+   - 其他未归类的点为噪声。
 
-### Use Case
-- Suitable for **general visualization tasks** and **publication-quality figures**.
+🎓 **教师提示：**
+> DBSCAN **不是迭代算法**。  
+> 一旦点被标记为核心、边界或噪声，就不会在后续步骤中被重新分类。
 
----
+## 4️⃣ 示例讲解：DBSCAN 聚类过程
 
-## 3. 🧮 Pandas
+📊 **实验数据：**
+- 采用 scikit-learn 中的 `make_moons()` 函数生成两组半月形数据。  
 
-### Description
-- Primarily a **data manipulation library**, but includes convenient plotting features.  
-- Built **on top of Matplotlib**, inheriting its flexibility and customization options.  
+🧩 **观察：**
+- 蓝色点：核心点（邻域中 ≥4 个点）；  
+- 橙色点：边界点；  
+- 黑色点：噪声。
 
-### Key Features
-- Integrates directly with **Pandas DataFrames and Series**.  
-- Enables quick plotting for:
-  - Line plots  
-  - Scatter plots  
-  - Bar charts  
-  - Histograms  
-  - Pie charts  
-- Ideal for **Exploratory Data Analysis (EDA)**.  
-- Simplifies the process of visualizing data during data cleaning and transformation.
+💬 **教师讲解建议：**
+> 在可视化过程中，可以展示算法如何从黑点（初始噪声）逐步识别出两个半月形簇，  
+> 最后形成蓝、橙、绿色三类区域。  
+> 注意，算法自动识别出第三个孤立簇，这体现了其发现“任意形状簇”的能力。
 
-### Use Case
-- Great for **fast, integrated visualizations** while performing data analysis tasks.
+## 5️⃣ DBSCAN 与传统聚类的区别
 
----
+| 方法 | 聚类依据 | 形状限制 | 噪声处理 | 是否需指定簇数 |
+|------|------------|------------|--------------|----------------|
+| **K-Means** | 距离最小化 | 球形或凸形 | 不处理噪声 | ✅ 需要指定 |
+| **层次聚类** | 聚合层次 | 规则形状 | 一般不区分噪声 | ✅ 需要指定 |
+| **DBSCAN** | 密度连接 | 任意形状 | ✅ 可识别噪声 | ❌ 不需要指定 |
 
-## 4. 📊 Seaborn
+💬 **教师总结：**
+> DBSCAN 适合含噪声或复杂形状的数据集，特别是当簇数未知时。
 
-### Description
-- A **statistical data visualization library** built on top of Matplotlib.  
-- Designed to produce **attractive, high-level statistical graphics** with minimal code.
+## 6️⃣ HDBSCAN：层次化密度聚类
 
-### Key Features
-- Specialized plot types:  
-  - Categorical plots  
-  - Count plots  
-  - Heatmaps  
-  - Violin plots  
-  - Bar plots  
-  - Pair plots (for multiple variables comparison)  
-- Built-in **themes, color palettes, and styles** for professional aesthetics.  
-- Allows **multiple plots in grid layouts** for comparing variables or groups.  
-- Integrates **seamlessly with Pandas** for direct plotting from DataFrames.  
-- Handles **statistical relationships** and **distributions** intuitively.
+### 💡 基本定义
+- **HDBSCAN（Hierarchical Density-Based Spatial Clustering of Applications with Noise）**  
+  是 DBSCAN 的改进版本。
+- 它不需要用户预先设定 ε 参数，能够根据数据自动调整密度阈值。
 
-### Use Case
-- Ideal for **statistical analysis**, **data exploration**, and **presentation-ready visualizations**.
+## 7️⃣ HDBSCAN 的工作原理
 
----
+### 🧩 核心步骤
+1. **初始化**：每个点视为独立簇（或噪声）。  
+2. **逐步合并**：通过降低密度阈值，逐渐将相邻簇合并。  
+3. **生成层次结构**：形成一个完整的聚类树（dendrogram）。  
+4. **简化为凝聚树（condensed tree）**：  
+   - 仅保留在不同密度水平上稳定存在的聚类。  
+   - “稳定性”指聚类在不同半径范围内的持久性。
 
-## 5. 🗺️ Folium
+### 🧠 **概念理解：**
+> **Cluster Stability（聚类稳定性）**  
+> 表示当调整邻域半径时，聚类结构保持不变的能力。  
+> 稳定的簇更“可信”，反映出真实数据模式。
 
-### Description
-- A library for **geospatial data visualization** using **interactive maps**.  
-- Built on the **Leaflet.js** JavaScript library.  
+## 8️⃣ 案例讲解：加拿大博物馆数据
 
-### Key Features
-- Enables the creation of:
-  - **Choropleth maps** (data-driven color maps)  
-  - **Point maps**  
-  - **Heat maps**  
-- Integrates with **Pandas** and **NumPy** for spatial data analysis.  
-- Fully **interactive and customizable**, allowing zoom, pop-ups, and overlays.  
-- Ideal for visualizing **geographical patterns**, **spatial distributions**, and **location-based data**.
+📍 **数据来源：**
+- Statistics Canada 数据集（包含博物馆的经纬度坐标）。
 
-### Use Case
-- Used in **geospatial analysis**, **mapping applications**, and **geographical reporting**.
+### DBSCAN 结果：
+- 参数：`min_samples = 3`，`ε = 0.15`（归一化单位）。  
+- 发现约 10 个聚类。  
+- 问题：在人口密集区域（红色椭圆内），多个细簇被错误合并为单一大簇。
 
----
+### HDBSCAN 结果：
+- 参数：`min_samples = 10`，`min_cluster_size = 3`。  
+- 识别出更多、更合理的聚类。  
+- 能够自适应调整邻域大小，捕捉不同密度区域的变化。  
+- 输出结果更加清晰、连贯，尤其在东部高密度区域细节更丰富。
 
-## 6. 🌐 Plotly
+## 9️⃣ DBSCAN 与 HDBSCAN 对比
 
-### Description
-- A **web-based, interactive plotting library**.  
-- Supports both **static** and **dynamic** visualizations.  
+| 特征 | DBSCAN | HDBSCAN |
+|------|---------|----------|
+| 参数依赖 | 需要设定 ε 与 min_samples | 自动调整，无需 ε |
+| 对噪声的敏感度 | 较高 | 较低 |
+| 聚类形状 | 任意形状 | 任意形状 |
+| 聚类稳定性 | 不考虑 | ✅ 考虑（Cluster Stability） |
+| 算法类型 | 单层密度聚类 | 层次 + 密度聚类 |
+| 适用场景 | 简单噪声数据 | 多密度、复杂数据集 |
 
-### Key Features
-- Supports multiple plot types:
-  - Line, scatter, bar, pie charts  
-  - 3D plots  
-  - Choropleth maps  
-- **Highly interactive** — zooming, hovering, and data exploration features.  
-- **Plotly Dash Framework**:
-  - Used to build full **interactive dashboards** with controls and widgets.  
-- **Web integration**:
-  - Plots can be embedded in websites or shared online easily.  
-  - Compatible with **Jupyter Notebooks** and web browsers.  
+## 🧾 教学总结
 
-### Use Case
-- Ideal for **interactive dashboards**, **data storytelling**, and **web-based visualizations**.
+| 概念 | 说明 |
+|------|------|
+| **DBSCAN** | 基于密度的聚类算法，适用于未知簇数与含噪声数据。 |
+| **核心点** | ε 邻域内至少有 min_samples 个点的样本。 |
+| **边界点** | 位于核心点邻域内但自身不足以成核的点。 |
+| **噪声点** | 不属于任何核心点邻域的点。 |
+| **HDBSCAN** | 层次化密度聚类算法，通过聚类稳定性实现自适应聚类。 |
+| **聚类稳定性** | 簇在不同半径范围内保持结构不变的能力。 |
 
----
+## 🧠 课堂复习要点
+- DBSCAN 依赖两个参数：`ε`（半径）和 `min_samples`（最小点数）。  
+- HDBSCAN 不需指定 ε，更灵活且对噪声鲁棒。  
+- 两者都能识别任意形状簇，并有效处理异常值。  
+- **DBSCAN 适合规则密度分布；HDBSCAN 适合多密度、复杂结构数据。**
 
-## 7. 🧱 PyWaffle
+## 💭 教师结语
+> 在实际应用中，DBSCAN 和 HDBSCAN 都是探索性数据分析的重要工具。  
+> 选择哪一个，取决于数据的密度分布、噪声程度，以及对可解释性的需求。  
+> 掌握这两种算法，将帮助我们更好地发现数据中的隐藏结构。
 
-### Description
-- A specialized library for **categorical data visualization** using **waffle charts**.  
-- Provides a creative and intuitive way to represent **proportions** and **parts-to-whole relationships**.
-
-### Key Features
-- Can create:
-  - Waffle charts  
-  - Square pie charts  
-  - Donut charts  
-- Represents data through **squares or rectangles** — each representing a portion of the total.  
-- Simple to use and effective for **proportion-based storytelling**.
-
-### Use Case
-- Best for **showing percentages or proportions** in categorical datasets.
-
----
-
-## 🧾 Summary Table
-
-| Library | Primary Use | Key Features | Strengths |
-|----------|--------------|---------------|------------|
-| **Matplotlib** | General-purpose plotting | Customizable static plots | Versatile and widely supported |
-| **Pandas** | Quick EDA plotting | Integrated with DataFrames | Simple, fast for analysis |
-| **Seaborn** | Statistical visualization | Aesthetics, grids, color palettes | Beautiful, easy for statistics |
-| **Folium** | Geospatial mapping | Interactive maps, heatmaps | Excellent for geographic data |
-| **Plotly** | Interactive dashboards | Web-based, 3D, dynamic | Highly interactive and shareable |
-| **PyWaffle** | Proportional visualization | Waffle and donut charts | Unique categorical visuals |
-
----
-
-## 📌 Key Takeaways
-- **Matplotlib** → Foundational, flexible, and widely supported.  
-- **Pandas** → Great for quick, integrated EDA plots.  
-- **Seaborn** → Ideal for statistical analysis with beautiful defaults.  
-- **Folium** → Specialized for interactive geospatial visualizations.  
-- **Plotly** → Enables web-based, interactive, and dashboard-style visualizations.  
-- **PyWaffle** → Simplifies representation of categorical proportions.  
-
----
-
-## 💭 Summary Statement
-> By harnessing the power of Python’s plot libraries, analysts and data scientists can **transform raw data into meaningful stories**, enabling deeper insights and effective communication of findings.
 
