@@ -216,3 +216,78 @@ permalink: /DE01M01/
 5. Data repositories are fundamental to **Business Intelligence (BI)**, ensuring reliable reporting and decision-making.  
 6. The evolution of repositories reflects the shift toward **Big Data**, **Cloud Computing**, and **Scalable Analytics**.  
 7. Effective data management depends on choosing the right repository type for the organization’s data structure and goals.  
+
+
+# 🧩 Summary - Introduction to Data Science
+
+### 🎯 Objectives
+
+- Topic01 - Define the Concept and Purpose of Data Science  
+- Topic02 - Explain the Role of Data Analysis in Data Science  
+- Topic03 - Describe the Process and Stages of a Data Science Project  
+- Topic04 - Analyze How Data Scientists Use Models to Discover Insights  
+- Topic05 - Discuss the Importance of Storytelling and Visualization in Data Science  
+
+### 1. Topic01 - Define the Concept and Purpose of Data Science  
+
+- **Main Ideas:**  
+    - Data Science involves analyzing large and diverse data sets to generate valuable insights.  
+    - It enables organizations to understand their environments and identify opportunities.  
+
+- **Core Notes:**  
+    - **Data Science** integrates **data analysis**, **computational power**, and **business understanding**.  
+    - It aims to **interpret data** from numerous sources such as log files, social media, sales records, and sensor outputs.  
+    - The main goal is to **discover knowledge**, **solve business problems**, and **guide decision-making**.  
+    - The field leverages massive data availability and modern computing resources to uncover **patterns** and **hidden opportunities**.  
+    - **Data Scientists** help organizations gain a deeper understanding of both internal operations and external environments.  
+
+### 2. Topic02 - Explain the Role of Data Analysis in Data Science  
+
+- **Main Ideas:**  
+    - Data analysis is the foundation of Data Science, transforming raw data into actionable insights.  
+    - It bridges data collection and decision-making.  
+
+- **Core Notes:**  
+    - Although **data analysis** has existed for decades, the scale and diversity of data today make it a central component of **modern Data Science**.  
+    - The novelty lies in **the massive volume and variety of data sources**, including:  
+        - **Emails**  
+        - **Social Media Platforms**  
+        - **Sales Transactions**  
+        - **Healthcare Data**  
+        - **Sports and Sensor Data**  
+        - **Security Footage**  
+    - With increased **computational power**, Data Scientists can process and analyze these large datasets efficiently.  
+    - The purpose of data analysis in Data Science is to **reveal insights**, **validate assumptions**, and **generate new knowledge**.  
+
+### 3. Topic03 - Describe the Process and Stages of a Data Science Project  
+
+- **Main Ideas:**  
+    - The Data Science process follows a systematic approach beginning with problem definition and ending with insight communication.  
+    - Defining the right question is the foundation of the project.  
+
+- **Core Notes:**  
+    - **Step 1: Define the Business Problem**  
+        - Organizations begin by **identifying a specific issue** or question to address.  
+        - Clarity in the **problem statement** determines the direction and success of the project.  
+        - **Curiosity** and **critical thinking** are key traits for Data Scientists in this phase.  
+    - **Step 2: Identify Data Requirements**  
+        - Determine **what data is needed** and **where it will come from**.  
+        - Data can be **structured** (e.g., databases, spreadsheets) or **unstructured** (e.g., social media, text files).  
+    - **Step 3: Collect and Prepare Data**  
+        - Gather and clean data to ensure quality and relevance.  
+    - **Step 4: Analyze Data**  
+        - Use appropriate **statistical** and **computational methods** to uncover insights.  
+    - **Step 5: Communicate Results**  
+        - Present findings clearly to stakeholders using **visualization** and **storytelling**.  
+
+### 4. Topic04 - Analyze How Data Scientists Use Models to Discover Insights  
+
+- **Main Ideas:**  
+    - Data Scientists use different models to analyze data and reveal hidden patterns or anomalies.  
+    - These insights can validate or challenge existing assumptions.  
+
+- **Core Notes:**  
+    - Data Scientists apply **multiple analytical models** to interpret data effectively.  
+    - This process helps identify **patterns**, **archetypes**, and **outliers**.  
+    - Analysis outcomes can:  
+        - **Confirm existing beliefs** within a
