@@ -25,15 +25,18 @@ permalink: /DE01M01/
 ### 1. Define what a Data Repository is and describe its purpose
 
 - **Main Ideas:**
-    - A data repository is a structured environment for storing, managing, and retrieving data.
-    - It serves as the foundation for reporting, analytics, and business operations.
+ - A data repository is a structured environment for storing, managing, and retrieving data.
+ - It serves as the foundation for reporting, analytics, and business operations.
 
 - **Core Notes:**  
-    - A **Data Repository** is a system that collects and organizes data for future use in **operations** or **analysis**.  
-    - It can range from a **single database** to a **large-scale infrastructure** containing multiple databases.  
-    - The main goal is to **isolate, organize, and maintain** data to ensure it is accessible and analyzable.  
-    - Data repositories enhance the **efficiency**, **credibility**, and **accuracy** of data reporting and analytics.  
-    - They also serve as **data archives** for long-term storage and compliance.  
+  - A **Data Repository** is a system that collects and organizes data for future use in **operations** or **analysis**.  
+  - It can range from a **single database** to a **large-scale infrastructure** containing multiple databases.  
+  - The main goal is to **isolate, organize, and maintain** data to ensure it is accessible and analyzable.  
+  - Data repositories enhance the **efficiency**, **credibility**, and **accuracy** of data reporting and analytics.  
+  - They also serve as **data archives** for long-term storage and compliance.  
+    - xxxx
+    - xxxx
+    - xxxx
 
 ### 2. Distinguish between Databases, Data Warehouses, and Big Data Stores
 
