@@ -25,8 +25,8 @@ permalink: /DE01M01/
 ### 1. Define what a Data Repository is and describe its purpose
 
 - **Main Ideas:**
- - A data repository is a structured environment for storing, managing, and retrieving data.
- - It serves as the foundation for reporting, analytics, and business operations.
+  - A data repository is a structured environment for storing, managing, and retrieving data.
+  - It serves as the foundation for reporting, analytics, and business operations.
 
 - **Core Notes:**  
   - A **Data Repository** is a system that collects and organizes data for future use in **operations** or **analysis**.  
