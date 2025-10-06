@@ -1,96 +1,199 @@
 ---
 layout: page
-permalink: /DE06Lab05/
+permalink: /DE02M01/
 ---
 
-# 🧩 Lecture Notes: Classification in Supervised Learning
+# 🧩 Summary - Types of Data Repositories
 
 ### 🎯 Objectives
-- Describe the classification method within supervised learning  
-- Discuss real-world applications and use cases of classification  
-- List common classification algorithms and explain multi-class prediction strategies  
+1. Define what a **Data Repository** is and describe its purpose  
+2. Distinguish between **Databases**, **Data Warehouses**, and **Big Data Stores**  
+3. Compare **Relational (RDBMS)** and **Non-Relational (NoSQL)** databases  
+4. Explain the **ETL Process** and its role in data integration  
+5. Describe how **Data Repositories** support **Analytics** and **Business Intelligence**  
 
-### Understanding Classification
-- **Main Ideas:**  
-  - Classification is a type of **supervised machine learning** that predicts labels for new data.  
-  - Labels represent **categorical variables** with discrete values.  
-  - The model learns the relationship between features (inputs) and class labels (outputs) during training.  
-- **Key Details:**  
-  - The goal of supervised learning is to interpret data correctly to answer a specific question.  
-  - As data is input, the model adjusts to fit the algorithm and classifies each sample into a category.  
-  - The process ensures data-driven predictions that are consistent and contextually accurate.  
-- **Extra Notes:**  
-  - Reinforce that classification requires **labeled training data** to learn effectively.  
-  - Mention that evaluation of classification models often involves metrics like **accuracy**, **precision**, and **recall**.
+### 1. Define what a Data Repository is and describe its purpose
+- **Main Ideas:**
+    - A data repository is a structured environment for storing, managing, and retrieving data.
+    - It serves as the foundation for reporting, analytics, and business operations.
 
-### Applications and Use Cases
-- **Main Ideas:**  
-  - Classification has widespread applications across industries and domains.  
-  - It can be used whenever data can be mapped between features and discrete categories.  
-- **Key Details:**  
-  - **Common applications:**  
-    - Email filtering (spam vs. not spam)  
-    - Speech-to-text and handwriting recognition  
-    - Biometric identification  
-    - Document classification  
-  - **Business examples:**  
-    - *Churn prediction:* identify customers likely to discontinue a service  
-    - *Customer segmentation:* categorize customers by behavior or demographics  
-    - *Marketing response prediction:* forecast which customers will respond to a campaign  
-  - **Bank loan example:**  
-    - Train a model on historical loan default data (age, income, credit debt).  
-    - Predict if a new applicant is likely to default → *binary classification* (default vs. non-default).  
-  - **Healthcare example:**  
-    - Predict which of multiple drugs (A, B, or C) a patient may respond to → *multi-class classification*.  
-- **Extra Notes:**  
-  - Highlight that classification models support **decision-making** in both operational and strategic contexts.  
-  - Encourage thinking about **ethical implications** — e.g., fairness and bias in model outcomes.
+- **Core Notes:**  
+    - A **Data Repository** is a system that collects and organizes data for future use in **operations** or **analysis**.  
+    - It can range from a **single database** to a **large-scale infrastructure** containing multiple databases.  
+    - The main goal is to **isolate, organize, and maintain** data to ensure it is accessible and analyzable.  
+    - Data repositories enhance the **efficiency**, **credibility**, and **accuracy** of data reporting and analytics.  
+    - They also serve as **data archives** for long-term storage and compliance.  
 
-### Classification Algorithms
-- **Main Ideas:**  
-  - Various algorithms can be used to build classification models, depending on data size and complexity.  
-- **Key Details:**  
-  - **Common classification algorithms:**  
-    - Naive Bayes  
-    - Logistic Regression  
-    - Decision Trees  
-    - K-Nearest Neighbors (KNN)  
-    - Support Vector Machines (SVM)  
-    - Neural Networks  
-  - Some algorithms (e.g., Logistic Regression, KNN, Decision Trees) natively support **multi-class classification**.  
-  - Others are inherently binary and require strategies to handle multiple classes.  
-- **Extra Notes:**  
-  - Emphasize that algorithm selection depends on data characteristics, interpretability needs, and computation cost.  
-  - Encourage comparing multiple algorithms using validation techniques like **cross-validation**.
+### 2. Distinguish between Databases, Data Warehouses, and Big Data Stores
+- **Main Ideas:**
+    - These three types of repositories differ in structure, purpose, and scale.
+    - Each serves specific organizational needs, from daily transactions to large-scale analytics.
 
-### Multi-Class Prediction Strategies
-- **Main Ideas:**  
-  - Binary classifiers can be extended to handle more than two classes using structured strategies.  
-  - The two main approaches are **One-vs-All (OvA)** and **One-vs-One (OvO)**.  
-- **Key Details:**  
-  - **One-vs-All (OvA):**  
-    - Builds *k* binary classifiers (one per class).  
-    - Each classifier predicts whether a sample belongs to its target class or not.  
-    - Data points not assigned by any classifier may represent **outliers or noise**.  
-  - **One-vs-One (OvO):**  
-    - Builds classifiers for every pair of classes.  
-    - Each model distinguishes between two specific classes.  
-    - The final label is chosen by a **voting scheme** — the class with the most “wins” across classifiers.  
-    - If a tie occurs, votes may be **weighted by confidence** or probability.  
-  - **Example:**  
-    - For three classes (A, B, C):  
-      - OvA builds 3 classifiers (A vs. rest, B vs. rest, C vs. rest).  
-      - OvO builds 3 classifiers (A vs. B, A vs. C, B vs. C).  
-- **Extra Notes:**  
-  - ROC (Receiver Operating Characteristic) curves can also evaluate classifier performance.  
-  - Multi-class strategies improve flexibility but increase computational cost.  
-  - Encourage exploring algorithm libraries (e.g., scikit-learn) for built-in OvA and OvO implementations.
+- **Core Notes:**  
+    - **Databases:**  
+        - Designed for **input, storage, search, retrieval, and modification** of data.  
+        - Managed by a **Database Management System (DBMS)** that allows querying and updates.  
+        - Example query: finding customers inactive for six months.  
+        - Suitable for **operational data** and **transactional systems**.  
+    - **Data Warehouses:**  
+        - Serve as **central repositories** integrating data from multiple sources.  
+        - Use the **ETL Process** (Extract, Transform, Load) to consolidate data into a single analytical database.  
+        - Support **analytics** and **business intelligence (BI)** tasks.  
+        - Traditionally built on **relational models**, though **non-relational** approaches are increasingly used.  
+    - **Big Data Stores:**  
+        - Designed for **massive, distributed data processing and storage**.  
+        - Handle **high-volume**, **high-velocity**, and **high-variety** data.  
+        - Commonly used in contexts involving **cloud computing**, **IoT**, and **social media** data streams.  
+
+### 3. Compare Relational (RDBMS) and Non-Relational (NoSQL) databases
+- **Main Ideas:**
+    - Relational databases follow structured schemas; non-relational databases offer flexibility and scalability.
+    - The choice depends on data type, structure, and performance needs.
+
+- **Core Notes:**  
+    - **Relational Databases (RDBMS):**  
+        - Organize data into **tables (rows and columns)** with **defined schemas**.  
+        - Use **Structured Query Language (SQL)** for data management.  
+        - Optimized for **complex queries** and **transactions** involving multiple tables.  
+        - Examples: **MySQL**, **PostgreSQL**, **Oracle Database**.  
+    - **Non-Relational Databases (NoSQL):**  
+        - “Not Only SQL” systems supporting **schema-less**, **flexible** data structures.  
+        - Designed for **speed**, **scalability**, and **variety** of data types.  
+        - Essential for handling **unstructured** or **semi-structured data** (e.g., JSON, key-value pairs).  
+        - Examples: **MongoDB**, **Cassandra**, **Couchbase**, **HBase**.  
+    - **Use Cases:**  
+        - RDBMS → Best for **structured enterprise data** and **transactional systems**.  
+        - NoSQL → Best for **Big Data**, **IoT**, and **cloud-based distributed systems**.  
+
+### 4. Explain the ETL Process and its role in data integration
+- **Main Ideas:**
+    - The ETL process integrates data from multiple sources into a unified repository.
+    - It ensures data consistency and readiness for analysis.
+
+- **Core Notes:**  
+    - **ETL (Extract, Transform, Load)** is a three-step process:  
+        1. **Extract** – Gather data from multiple internal and external sources.  
+        2. **Transform** – Clean, validate, and convert data into a standardized, usable format.  
+        3. **Load** – Insert transformed data into the **Data Warehouse** or **Repository**.  
+    - ETL improves **data quality** and ensures that datasets are **consistent**, **accurate**, and **analysis-ready**.  
+    - Modern ETL processes often include **real-time streaming** and **cloud integration**.  
+    - ETL forms the backbone of **business intelligence pipelines**, enabling unified data insights.  
+
+### 5. Describe how Data Repositories support Analytics and Business Intelligence
+- **Main Ideas:**
+    - Data repositories enable efficient data analysis, visualization, and decision-making.
+    - They form the core of enterprise data management strategies.
+
+- **Core Notes:**  
+    - Repositories isolate and structure data to make **reporting** and **analytics** easier and more credible.  
+    - They support **querying**, **trend analysis**, **data mining**, and **machine learning** applications.  
+    - **Data Warehouses** act as the analytical hub, enabling **organization-wide access** to unified data.  
+    - **Big Data Stores** expand analytical capacity to include **real-time insights** and **massive data volumes**.  
+    - Together, these systems empower organizations to make **data-driven decisions** and uncover new business opportunities.  
 
 ### 📌 Takeaways
-- Classification is a **supervised learning** approach that predicts categorical outcomes.  
-- It is used across fields such as finance, marketing, and healthcare.  
-- Common algorithms include **Naive Bayes, Logistic Regression, Decision Trees, KNN, SVM, and Neural Networks**.  
-- Binary classifiers can be extended for multi-class problems using **One-vs-All** or **One-vs-One** strategies.  
-- Model choice and evaluation depend on use case, interpretability, and data characteristics.
+1. A **Data Repository** is a centralized environment for storing, managing, and analyzing data.  
+2. **Databases** manage daily operational data; **Data Warehouses** consolidate data for analytics; **Big Data Stores** handle large-scale distributed data.  
+3. **RDBMS** systems use structured schemas and SQL, while **NoSQL** systems offer flexibility for modern data needs.  
+4. The **ETL Process**—Extract, Transform, Load—is essential for integrating diverse data sources into a unified analytical platform.  
+5. Data repositories are fundamental to **Business Intelligence (BI)**, ensuring reliable reporting and decision-making.  
+6. The evolution of repositories reflects the shift toward **Big Data**, **Cloud Computing**, and **Scalable Analytics**.  
+7. Effective data management depends on choosing the right repository type for the organization’s data structure and goals.  
 
 
+# 🧩 Summary - Types of Data Repositories
+
+### 🎯 Objectives
+1. Define what a **Data Repository** is and describe its purpose  
+2. Distinguish between **Databases**, **Data Warehouses**, and **Big Data Stores**  
+3. Compare **Relational (RDBMS)** and **Non-Relational (NoSQL)** databases  
+4. Explain the **ETL Process** and its role in data integration  
+5. Describe how **Data Repositories** support **Analytics** and **Business Intelligence**  
+
+### 1. Define what a Data Repository is and describe its purpose
+- **Main Ideas:**
+    - A data repository is a structured environment for storing, managing, and retrieving data.
+    - It serves as the foundation for reporting, analytics, and business operations.
+
+- **Core Notes:**  
+    - A **Data Repository** is a system that collects and organizes data for future use in **operations** or **analysis**.  
+    - It can range from a **single database** to a **large-scale infrastructure** containing multiple databases.  
+    - The main goal is to **isolate, organize, and maintain** data to ensure it is accessible and analyzable.  
+    - Data repositories enhance the **efficiency**, **credibility**, and **accuracy** of data reporting and analytics.  
+    - They also serve as **data archives** for long-term storage and compliance.  
+
+### 2. Distinguish between Databases, Data Warehouses, and Big Data Stores
+- **Main Ideas:**
+    - These three types of repositories differ in structure, purpose, and scale.
+    - Each serves specific organizational needs, from daily transactions to large-scale analytics.
+
+- **Core Notes:**  
+    - **Databases:**  
+        - Designed for **input, storage, search, retrieval, and modification** of data.  
+        - Managed by a **Database Management System (DBMS)** that allows querying and updates.  
+        - Example query: finding customers inactive for six months.  
+        - Suitable for **operational data** and **transactional systems**.  
+    - **Data Warehouses:**  
+        - Serve as **central repositories** integrating data from multiple sources.  
+        - Use the **ETL Process** (Extract, Transform, Load) to consolidate data into a single analytical database.  
+        - Support **analytics** and **business intelligence (BI)** tasks.  
+        - Traditionally built on **relational models**, though **non-relational** approaches are increasingly used.  
+    - **Big Data Stores:**  
+        - Designed for **massive, distributed data processing and storage**.  
+        - Handle **high-volume**, **high-velocity**, and **high-variety** data.  
+        - Commonly used in contexts involving **cloud computing**, **IoT**, and **social media** data streams.  
+
+### 3. Compare Relational (RDBMS) and Non-Relational (NoSQL) databases
+- **Main Ideas:**
+    - Relational databases follow structured schemas; non-relational databases offer flexibility and scalability.
+    - The choice depends on data type, structure, and performance needs.
+
+- **Core Notes:**  
+    - **Relational Databases (RDBMS):**  
+        - Organize data into **tables (rows and columns)** with **defined schemas**.  
+        - Use **Structured Query Language (SQL)** for data management.  
+        - Optimized for **complex queries** and **transactions** involving multiple tables.  
+        - Examples: **MySQL**, **PostgreSQL**, **Oracle Database**.  
+    - **Non-Relational Databases (NoSQL):**  
+        - “Not Only SQL” systems supporting **schema-less**, **flexible** data structures.  
+        - Designed for **speed**, **scalability**, and **variety** of data types.  
+        - Essential for handling **unstructured** or **semi-structured data** (e.g., JSON, key-value pairs).  
+        - Examples: **MongoDB**, **Cassandra**, **Couchbase**, **HBase**.  
+    - **Use Cases:**  
+        - RDBMS → Best for **structured enterprise data** and **transactional systems**.  
+        - NoSQL → Best for **Big Data**, **IoT**, and **cloud-based distributed systems**.  
+
+### 4. Explain the ETL Process and its role in data integration
+- **Main Ideas:**
+    - The ETL process integrates data from multiple sources into a unified repository.
+    - It ensures data consistency and readiness for analysis.
+
+- **Core Notes:**  
+    - **ETL (Extract, Transform, Load)** is a three-step process:  
+        1. **Extract** – Gather data from multiple internal and external sources.  
+        2. **Transform** – Clean, validate, and convert data into a standardized, usable format.  
+        3. **Load** – Insert transformed data into the **Data Warehouse** or **Repository**.  
+    - ETL improves **data quality** and ensures that datasets are **consistent**, **accurate**, and **analysis-ready**.  
+    - Modern ETL processes often include **real-time streaming** and **cloud integration**.  
+    - ETL forms the backbone of **business intelligence pipelines**, enabling unified data insights.  
+
+### 5. Describe how Data Repositories support Analytics and Business Intelligence
+- **Main Ideas:**
+    - Data repositories enable efficient data analysis, visualization, and decision-making.
+    - They form the core of enterprise data management strategies.
+
+- **Core Notes:**  
+    - Repositories isolate and structure data to make **reporting** and **analytics** easier and more credible.  
+    - They support **querying**, **trend analysis**, **data mining**, and **machine learning** applications.  
+    - **Data Warehouses** act as the analytical hub, enabling **organization-wide access** to unified data.  
+    - **Big Data Stores** expand analytical capacity to include **real-time insights** and **massive data volumes**.  
+    - Together, these systems empower organizations to make **data-driven decisions** and uncover new business opportunities.  
+
+### 📌 Takeaways
+1. A **Data Repository** is a centralized environment for storing, managing, and analyzing data.  
+2. **Databases** manage daily operational data; **Data Warehouses** consolidate data for analytics; **Big Data Stores** handle large-scale distributed data.  
+3. **RDBMS** systems use structured schemas and SQL, while **NoSQL** systems offer flexibility for modern data needs.  
+4. The **ETL Process**—Extract, Transform, Load—is essential for integrating diverse data sources into a unified analytical platform.  
+5. Data repositories are fundamental to **Business Intelligence (BI)**, ensuring reliable reporting and decision-making.  
+6. The evolution of repositories reflects the shift toward **Big Data**, **Cloud Computing**, and **Scalable Analytics**.  
+7. Effective data management depends on choosing the right repository type for the organization’s data structure and goals.  
