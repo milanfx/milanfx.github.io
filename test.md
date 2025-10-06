@@ -5,7 +5,8 @@ permalink: /DE02M01/
 
 # 🧩 Summary - Types of Data Repositories
 
-### 🎯 Objectives
+## 🎯 Objectives
+
 1. Define what a **Data Repository** is and describe its purpose  
 2. Distinguish between **Databases**, **Data Warehouses**, and **Big Data Stores**  
 3. Compare **Relational (RDBMS)** and **Non-Relational (NoSQL)** databases  
@@ -13,6 +14,7 @@ permalink: /DE02M01/
 5. Describe how **Data Repositories** support **Analytics** and **Business Intelligence**  
 
 ### 1. Define what a Data Repository is and describe its purpose
+
 - **Main Ideas:**
     - A data repository is a structured environment for storing, managing, and retrieving data.
     - It serves as the foundation for reporting, analytics, and business operations.
@@ -25,6 +27,7 @@ permalink: /DE02M01/
     - They also serve as **data archives** for long-term storage and compliance.  
 
 ### 2. Distinguish between Databases, Data Warehouses, and Big Data Stores
+
 - **Main Ideas:**
     - These three types of repositories differ in structure, purpose, and scale.
     - Each serves specific organizational needs, from daily transactions to large-scale analytics.
@@ -46,6 +49,7 @@ permalink: /DE02M01/
         - Commonly used in contexts involving **cloud computing**, **IoT**, and **social media** data streams.  
 
 ### 3. Compare Relational (RDBMS) and Non-Relational (NoSQL) databases
+
 - **Main Ideas:**
     - Relational databases follow structured schemas; non-relational databases offer flexibility and scalability.
     - The choice depends on data type, structure, and performance needs.
@@ -66,6 +70,7 @@ permalink: /DE02M01/
         - NoSQL → Best for **Big Data**, **IoT**, and **cloud-based distributed systems**.  
 
 ### 4. Explain the ETL Process and its role in data integration
+
 - **Main Ideas:**
     - The ETL process integrates data from multiple sources into a unified repository.
     - It ensures data consistency and readiness for analysis.
@@ -80,6 +85,7 @@ permalink: /DE02M01/
     - ETL forms the backbone of **business intelligence pipelines**, enabling unified data insights.  
 
 ### 5. Describe how Data Repositories support Analytics and Business Intelligence
+
 - **Main Ideas:**
     - Data repositories enable efficient data analysis, visualization, and decision-making.
     - They form the core of enterprise data management strategies.
@@ -91,7 +97,8 @@ permalink: /DE02M01/
     - **Big Data Stores** expand analytical capacity to include **real-time insights** and **massive data volumes**.  
     - Together, these systems empower organizations to make **data-driven decisions** and uncover new business opportunities.  
 
-### 📌 Takeaways
+## 📌 Takeaways
+
 1. A **Data Repository** is a centralized environment for storing, managing, and analyzing data.  
 2. **Databases** manage daily operational data; **Data Warehouses** consolidate data for analytics; **Big Data Stores** handle large-scale distributed data.  
 3. **RDBMS** systems use structured schemas and SQL, while **NoSQL** systems offer flexibility for modern data needs.  
