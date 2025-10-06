@@ -3,66 +3,90 @@ layout: page
 permalink: /DE01M01/
 ---
 
-# 🧩 Summary - Career Trends and Opportunities in Data Science
+## Note:
 
 ### 🎯 Objectives
-- Topic01 - Emergence of **Data Science** in the Digital Era  
-- Topic02 - Growth of the **Data Science** Job Market  
-- Topic03 - Skills and Qualities for a **Data Science** Career  
-- Topic04 - Role of **Education** and **Initiatives** in Advancing the Field  
+- Topic01 - Definition and Nature of **Data**
+- Topic02 - Categories of **Data Structure**
+- Topic03 - Characteristics of **Structured Data**
+- Topic04 - Features and Examples of **Semi-Structured Data**
+- Topic05 - Nature and Sources of **Unstructured Data**
 
-### Topic01 - Emergence of **Data Science** in the Digital Era
+### Topic01 - Definition and Nature of Data
 - **Main Ideas:**  
-  - The rise of **Internet of Things (IoT)** and **Distributed Computing** has created vast data sources.  
-  - **Data Science** emerged as a discipline to transform this data into actionable insights.  
+  - Data refers to unorganized information that becomes meaningful once processed.  
+  - It encompasses a wide range of elements including facts, symbols, and media.
 
 - **Core Notes:**  
-  - The combination of **IoT** and **Big Data Analytics** allows extraction of useful knowledge from massive data sets.  
-  - **Data Science** focuses on understanding what data can do for organizations and how to apply its insights effectively.  
-  - Advances in **Distributed Computing** enable large-scale data processing and real-time analytics.  
+  - **Data** consists of **Facts**, **Observations**, **Perceptions**, **Numbers**, **Characters**, **Symbols**, and **Images**.  
+  - When processed, data gains **Meaning** and becomes useful information.  
+  - One primary method of classification is by **Structure**.
 
-### Topic02 - Growth of the **Data Science** Job Market
+### Topic02 - Categories of Data Structure
 - **Main Ideas:**  
-  - **Data Science** has rapidly become one of the most promising global career fields.  
-  - Demand continues to rise across industries, not just technology sectors.  
+  - Data is commonly categorized based on its structural organization.  
+  - The three main types are: **Structured**, **Semi-Structured**, and **Unstructured**.
 
 - **Core Notes:**  
-  - Companies such as **LinkedIn**, **Glassdoor**, **Indeed**, and **Dice** have ranked **Data Science** as a top career choice since **2016**.  
-  - By **2020**, it remained among the top three global career options.  
-  - **Global Industry Analysts Inc.** predicts the **Data Science Platform Market** will grow by **$314.8 billion** by **2025**, with a **38.2% compound growth rate**.  
-  - **McKinsey Global Institute** and **Forrester Research** highlighted persistent **talent shortages** in **Data Analytics** since **2018**, with continued growth in demand.  
-  - **Recruiters** face challenges filling specialized **Data Science** positions due to skill scarcity.  
+  - **Structured Data**: Clearly defined schema; stored in databases.  
+  - **Semi-Structured Data**: Partial organization with use of metadata or tags.  
+  - **Unstructured Data**: No identifiable structure; highly heterogeneous formats.
 
-### Topic03 - Skills and Qualities for a **Data Science** Career
+### Topic03 - Characteristics of Structured Data
 - **Main Ideas:**  
-  - A successful **Data Science** career requires technical expertise, analytical mindset, and communication skills.  
-  - Continuous learning and adaptability are critical for long-term success.  
+  - Structured data is the most organized form, often stored in relational databases.  
+  - It supports easy data analysis and processing.
 
 - **Core Notes:**  
-  - Key competencies include:  
-    - **Coding** proficiency  
-    - Strong foundation in **Mathematics** and **Statistics**  
-    - Ability to interpret and communicate data through **Storytelling**  
-  - **Data Science** applies to multiple disciplines, allowing professionals from varied fields to transition in.  
-  - Motivation factors include curiosity, problem-solving, and impact-driven thinking.  
-  - Continuous learning of new **Tools**, **Algorithms**, and **Techniques** is essential for career growth.  
+  - Stored in **Schemas** such as **SQL Databases** and **Spreadsheets**.  
+  - Represented in **Tabular Form** with **Rows** and **Columns**.  
+  - Common sources:
+    - **SQL Databases**
+    - **Online Transaction Processing (OLTP) Systems**
+    - **Excel** and **Google Spreadsheets**
+    - **Online Forms**
+    - **GPS Sensors**, **RFID Tags**
+    - **Network and Web Server Logs**
+  - Analyzed using **Standard Data Analysis Tools**.
 
-### Topic04 - Role of **Education** and **Initiatives** in Advancing the Field
+### Topic04 - Features and Examples of Semi-Structured Data
 - **Main Ideas:**  
-  - Educational initiatives are key to expanding diversity and accessibility in **Data Science**.  
-  - Online learning platforms and institutional programs are driving inclusion and innovation.  
+  - Semi-structured data has partial organization using metadata but lacks a fixed schema.  
+  - Cannot be stored in traditional tabular formats.
 
 - **Core Notes:**  
-  - The **Women in Data Science (WiDS)** initiative, led by **Stanford Institute for Computational and Mathematical Engineering**, supports and inspires global participation in **Data Science**, regardless of gender.  
-  - **Online Training Resources** allow individuals to acquire missing technical or analytical skills to match specific career goals.  
-  - **Customized Learning Paths** enable professionals to specialize in areas such as **Machine Learning**, **AI**, or **Data Engineering**.  
-  - Education democratization has made **Data Science Careers** more accessible to a global audience.  
+  - Includes **Tags**, **Elements**, and **Metadata** for data grouping.  
+  - Stored in **Hierarchical Formats** using **XML** and **JSON**.  
+  - Common sources:
+    - **E-mails**
+    - **XML** and other **Markup Languages**
+    - **Binary Executables**
+    - **TCP/IP Packets**
+    - **Zipped Files**
+    - **Integrated Data** from Multiple Sources
+
+### Topic05 - Nature and Sources of Unstructured Data
+- **Main Ideas:**  
+  - Unstructured data lacks a defined format, making it difficult to store in traditional databases.  
+  - It is highly diverse and supports many business intelligence applications.
+
+- **Core Notes:**  
+  - Has no **Defined Format**, **Sequence**, or **Rules**.  
+  - Cannot be stored in **Relational Databases**.  
+  - Stored in **Files** and **NoSQL Databases**.  
+  - Common sources:
+    - **Web Pages**
+    - **Social Media Feeds**
+    - **Images** (e.g., **JPEG**, **GIF**, **PNG**)
+    - **Videos** and **Audio Files**
+    - **Documents**, **PDFs**, **PowerPoint Presentations**
+    - **Media Logs**, **Surveys**
 
 ### 📌 Takeaways
-- The rise of **IoT** and **Distributed Computing** has accelerated the growth of **Data Science** as a key analytical discipline.  
-- **Data Science** careers have become top global choices due to high demand and broad industry adoption.  
-- Successful professionals combine **Technical Skills**, **Mathematical Knowledge**, and **Storytelling Ability**.  
-- Continuous **Learning** and **Skill Adaptation** are essential for staying competitive in this fast-evolving field.  
-- Initiatives like **Women in Data Science** foster inclusion and support educational advancement worldwide.  
-- With abundant **Online Learning Platforms** and industry opportunities, now is an ideal time to pursue a **Data Science Career**.  
+- **Data** becomes meaningful through **Processing** and exists in various forms.  
+- Categorizing data as **Structured**, **Semi-Structured**, or **Unstructured** helps determine its storage and analysis method.  
+- **Structured Data** is organized, easily analyzed, and typically stored in **Relational Databases**.  
+- **Semi-Structured Data** uses **Tags** and **Metadata** for partial organization and is suited for **Hierarchical Storage** like **XML** and **JSON**.  
+- **Unstructured Data** is highly varied, lacks formal organization, and often requires **NoSQL Databases** or **Manual Analysis** for interpretation.
+
 
