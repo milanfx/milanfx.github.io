@@ -1,11 +1,20 @@
 ---
 layout: page
-permalink: /DE02M01/
+permalink: /DE01M01/
 ---
 
-# 🧩 Summary - Types of Data Repositories
+## Note-M1-Data-Science-Introduction
 
-## 🎯 Objectives
+01 - Course Introduction
+02 - Data Science Definition
+03 - Data Science Fundamentals
+04 - Data Science Paths
+05 - Data Scientist Advice
+06 - Data Science Summary
+
+## 🧩 01 - Course Introduction
+
+### 🎯 Objectives
 
 1. Define what a **Data Repository** is and describe its purpose  
 2. Distinguish between **Databases**, **Data Warehouses**, and **Big Data Stores**  
@@ -97,7 +106,7 @@ permalink: /DE02M01/
     - **Big Data Stores** expand analytical capacity to include **real-time insights** and **massive data volumes**.  
     - Together, these systems empower organizations to make **data-driven decisions** and uncover new business opportunities.  
 
-## 📌 Takeaways
+### 📌 Takeaways
 
 1. A **Data Repository** is a centralized environment for storing, managing, and analyzing data.  
 2. **Databases** manage daily operational data; **Data Warehouses** consolidate data for analytics; **Big Data Stores** handle large-scale distributed data.  
@@ -108,7 +117,7 @@ permalink: /DE02M01/
 7. Effective data management depends on choosing the right repository type for the organization’s data structure and goals.  
 
 
-# 🧩 Summary - Types of Data Repositories
+## 🧩 02 - Data Science Definition
 
 ### 🎯 Objectives
 1. Define what a **Data Repository** is and describe its purpose  
