@@ -5,12 +5,12 @@ permalink: /DE01M01/
 
 ## Note-M1-Data-Science-Introduction
 
-01 - Course Introduction
-02 - Data Science Definition
-03 - Data Science Fundamentals
-04 - Data Science Paths
-05 - Data Scientist Advice
-06 - Data Science Summary
+- 01 - Course Introduction
+- 02 - Data Science Definition
+- 03 - Data Science Fundamentals
+- 04 - Data Science Paths
+- 05 - Data Scientist Advice
+- 06 - Data Science Summary
 
 ## 🧩 01 - Course Introduction
 
