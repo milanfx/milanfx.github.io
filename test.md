@@ -7,89 +7,91 @@ permalink: /DE01M01/
 
 ### 🎯 Objectives
 
-- Topic01 - Importance of **Data Measurement** in Business Operations  
-- Topic02 - Necessity of **Data Collection** and **Archiving Practices**  
-- Topic03 - Implementation of **Best Practices** for **Data Management**  
-- Topic04 - Relationship Between **Data Quality** and **Data Science Value**  
-- Topic05 - Role of **Data Science Teams** in Organizational Success  
+- Topic01 - Purpose of **Data Science** in Problem Solving  
+- Topic02 - Application of **Data Science** in **Transportation Systems**  
+- Topic03 - Contribution of **Data Science** to **Environmental Protection**  
+- Topic04 - Process of Developing **Data-Driven Solutions**  
+- Topic05 - Importance of **Data Strategy** and **Machine Learning Models**  
 
-### Topic01 - Importance of Data Measurement in Business Operations
-
-- **Main Ideas:**  
-  - **Data Measurement** enables businesses to monitor performance, reduce costs, and improve profitability through systematic tracking and evaluation.  
-
-- **Core Notes:**  
-  - **Businesses** must measure key variables to identify areas for improvement.  
-  - **Measurement of Costs** allows organizations to understand **Labor Costs**, **Material Costs**, and **Product Costs**.  
-  - **Measurement of Profits** supports strategies for increasing overall profitability.  
-  - **Revenue Analysis** helps determine the source of income, such as whether **80% of Revenue** comes from **20% of Customers**.  
-  - **Data Tracking** serves as the foundation for applying **Algorithms** and **Analytics**.  
-  - Example:  
-      - **Companies** that measure **Operational Metrics** can optimize **Efficiency**, **Reduce Costs**, and **Maximize Profits**.  
-
-### Topic02 - Necessity of Data Collection and Archiving Practices
+### Topic01 - Purpose of Data Science in Problem Solving
 
 - **Main Ideas:**  
-  - **Data Collection** and **Archiving** form the foundation for business analytics and future decision-making.  
+  - **Data Science** enables organizations to leverage large volumes of data to develop **Optimal Solutions** for existing and emerging challenges.  
 
 - **Core Notes:**  
-  - **Data Collection** should start immediately if not already in place.  
-  - **Data Archiving** prevents data loss and preserves historical information for long-term analysis.  
-  - **Old Data** remains valuable regardless of age, even **100 or 200 Years Old**.  
-  - **Archiving Systems** ensure that no data is overwritten or discarded.  
-  - **Consistent Data Storage** enables future analysts to interpret information accurately.  
-  - Example:  
-      - **Companies** should store past **Cost Records** and **Revenue Data** to analyze long-term performance trends.  
+  - **Organizations** use **Data Science** to identify and solve complex problems efficiently.  
+  - **Data Science** transforms **Raw Data** into **Actionable Insights** through **Analysis**, **Modeling**, and **Prediction**.  
+  - **Data Utilization** supports decision-making processes across multiple industries.  
+  - **Common Objective:** Discovering the most effective and data-supported solutions for operational and societal challenges.  
 
-### Topic03 - Implementation of Best Practices for Data Management
+### Topic02 - Application of Data Science in Transportation Systems
 
 - **Main Ideas:**  
-  - **Data Management Best Practices** ensure data accuracy, consistency, and accessibility across business processes.  
+  - **Data Science** improves transportation efficiency by optimizing **Traffic Management** and **Operational Planning**.  
 
 - **Core Notes:**  
-  - **Data Archiving Policies** should be established when a business begins operations.  
-  - **Existing Businesses** should implement these policies immediately if absent.  
-  - **Data Documentation** ensures future accessibility and comprehension.  
-  - **Consistency** in data storage enhances long-term **Data Integrity** and **Reliability**.  
-  - **Proper Data Management Systems** enable effective analysis by maintaining uniform data formats.  
+  - **Uber** applies **Real-Time Data Analysis** to balance **Driver Availability**, **Demand**, and **Pricing Strategies**.  
+  - **Algorithms** assess when and where **Surge Charges** should be applied to attract more drivers.  
+  - **Toronto Transportation Commission (TTC)** uses **Big Data Analytics** to improve **Traffic Flow** and **Public Transit Operations**.  
+  - **Data Science Tools** enable:  
+      - Collection of **Operational Data** on **Streetcar Movements**.  
+      - Analysis of **Customer Complaints** for service improvements.  
+      - Use of **Probe Data** to monitor **Traffic Performance** on major routes.  
+  - **Traffic Optimization Efforts** reduced **Commuter Delay Time** from **4.75 Hours in 2010** to **3 Hours by 2014**.  
   - Example:  
-      - **Companies** can adopt **Centralized Storage Platforms** with metadata tagging to improve data accessibility and traceability.  
+      - **TTC Analysts** applied **Peak Hour Data** to identify **Congested Routes**, significantly improving **Transit Efficiency**.  
 
-### Topic04 - Relationship Between Data Quality and Data Science Value
+### Topic03 - Contribution of Data Science to Environmental Protection
 
 - **Main Ideas:**  
-  - **Data Quality** directly influences the effectiveness and credibility of **Data Science** insights and business analytics.  
+  - **Data Science** provides innovative methods to monitor, analyze, and mitigate **Environmental Challenges** such as **Water Pollution**.  
 
 - **Core Notes:**  
-  - **High-Quality Data** leads to accurate insights, while **Poor Data** results in unreliable outcomes.  
-  - **Garbage In, Garbage Out** highlights the importance of accurate and clean data inputs.  
-  - **Data Cleaning** should be performed on existing datasets to remove inconsistencies or errors.  
-  - **New Data Collection** must focus on **Accuracy**, **Consistency**, and **Completeness**.  
-  - **Measurement Systems** are critical for maintaining quality across all data-driven initiatives.  
+  - **Freshwater Lakes** are vital for **Human Consumption**, **Food Production**, and **Ecological Balance**.  
+  - **Harmful Cyanobacterial Blooms** threaten global freshwater systems.  
+  - **US Research Teams** use **Robotic Boats**, **Buoys**, and **Drones** to collect **Physical**, **Chemical**, and **Biological Data** on lakes.  
+  - **Algorithmic Models** are developed to **Predict** the occurrence of cyanobacterial blooms.  
+  - **Predictive Analytics** help anticipate when and where harmful blooms will appear, enabling proactive **Public Health Protection**.  
+  - **Interdisciplinary Collaboration** trains scientists to apply **Modern Data Science Tools** to **Societal and Environmental Issues**.  
   - Example:  
-      - Before implementing **Predictive Models**, companies should perform **Data Validation** to ensure integrity.  
+      - **Researchers** integrated **Sensor Data** from **Lakes Across the East Coast** to model **Bloom Development Patterns** and **Risk Factors**.  
 
-### Topic05 - Role of Data Science Teams in Organizational Success
+### Topic04 - Process of Developing Data-Driven Solutions
 
 - **Main Ideas:**  
-  - **Data Science Teams** composed of diverse and motivated professionals are essential for achieving meaningful analytical outcomes.  
+  - **Developing Data-Driven Solutions** requires systematic identification, analysis, and modeling of problems using appropriate tools.  
 
 - **Core Notes:**  
-  - **Employee Interest** in **Data Science** drives engagement and innovation.  
-  - **Companies** must cultivate a culture that values **Data-Driven Decision-Making**.  
-  - **Data Science Teams** should include members with different specializations such as **Machine Learning**, **Data Engineering**, and **Visualization**.  
-  - **Team Collaboration** enhances analytical accuracy and creativity.  
-  - **Single Data Scientists** are less effective compared to **Collaborative Teams** that combine multiple skill sets.  
+  - **Problem Identification** is the first step toward designing an effective data-based solution.  
+  - **Data Gathering** ensures that sufficient and relevant information is available for analysis.  
+  - **Tool Selection** aligns analytical methods with problem requirements.  
+  - **Data Strategy Development** involves planning how to manage, store, and process data effectively.  
+  - **Case Studies** help refine solutions by adapting general methods to specific business or environmental contexts.  
   - Example:  
-      - A balanced team may include experts in **Statistics**, **Programming**, and **Business Analysis**, ensuring holistic data solutions.  
+      - **Enterprises** use **Exploratory Data Analysis** to identify performance bottlenecks before applying predictive algorithms.  
+
+### Topic05 - Importance of Data Strategy and Machine Learning Models
+
+- **Main Ideas:**  
+  - **Data Strategy** and **Machine Learning Models** are essential for refining and automating solutions based on large-scale data analysis.  
+
+- **Core Notes:**  
+  - **Machine Learning Models** are developed after data extraction and preparation.  
+  - **Organizational Data Strategies** define long-term approaches to **Data Utilization** and **Innovation**.  
+  - **Data Refinement** and **Cleaning** improve model accuracy and reliability.  
+  - **Best Practices** in **Data Science** evolve through continuous experimentation and model improvement.  
+  - **Implementation Challenges** include resource allocation and the development of a skilled workforce.  
+  - Example:  
+      - A company implementing **Predictive Maintenance Models** must first establish a **Comprehensive Data Strategy** to ensure data quality and model performance.  
 
 ### 📌 Takeaways
 
-- **Data Measurement** forms the foundation of business improvement and operational optimization.  
-- **Data Collection** and **Archiving** are vital for ensuring long-term access to valuable business information.  
-- **Best Practices** in **Data Management** guarantee consistency, reliability, and clarity in stored data.  
-- **Data Quality** determines the success and credibility of **Data Science Applications**.  
-- **Data Science Teams** with interdisciplinary expertise enhance company innovation and data-driven success.  
+- **Data Science** transforms large datasets into solutions that address real-world problems across industries.  
+- **Transportation Systems** benefit from **Data Analytics** through improved **Efficiency** and **Operational Planning**.  
+- **Environmental Applications** of **Data Science** enable proactive responses to ecological challenges like **Water Pollution**.  
+- **Developing Data-Driven Solutions** requires systematic steps, including problem identification, data gathering, and strategy development.  
+- **Machine Learning Models** and **Data Strategies** ensure continuous optimization and innovation in modern organizations.  
+
 
 
 
