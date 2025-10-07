@@ -7,86 +7,89 @@ permalink: /DE01M01/
 
 ### 🎯 Objectives
 
-- Topic01 - Importance of **Data Measurement** for Business Improvement  
-- Topic02 - Necessity of **Data Collection** and **Archiving**  
-- Topic03 - Implementation of **Best Practices** in **Data Management**  
-- Topic04 - Significance of **Data Quality** in **Data Science**  
+- Topic01 - Importance of **Data Measurement** in Business Operations  
+- Topic02 - Necessity of **Data Collection** and **Archiving Practices**  
+- Topic03 - Implementation of **Best Practices** for **Data Management**  
+- Topic04 - Relationship Between **Data Quality** and **Data Science Value**  
 - Topic05 - Role of **Data Science Teams** in Organizational Success  
 
-### Topic01 - Importance of Data Measurement for Business Improvement
+### Topic01 - Importance of Data Measurement in Business Operations
 
 - **Main Ideas:**  
-  - **Data Measurement** enables companies to evaluate and enhance their **Performance**, **Costs**, and **Profits** through informed decision-making.  
+  - **Data Measurement** enables businesses to monitor performance, reduce costs, and improve profitability through systematic tracking and evaluation.  
 
 - **Core Notes:**  
-  - **Businesses** must measure their **Operations** to improve or optimize outcomes.  
-  - **Measurement** of **Costs** allows identification and reduction of unnecessary expenses.  
-  - **Measurement** of **Profits** helps determine strategies to enhance profitability.  
-  - **Data Recording** provides the foundation for **Performance Evaluation** and **Strategic Planning**.  
+  - **Businesses** must measure key variables to identify areas for improvement.  
+  - **Measurement of Costs** allows organizations to understand **Labor Costs**, **Material Costs**, and **Product Costs**.  
+  - **Measurement of Profits** supports strategies for increasing overall profitability.  
+  - **Revenue Analysis** helps determine the source of income, such as whether **80% of Revenue** comes from **20% of Customers**.  
+  - **Data Tracking** serves as the foundation for applying **Algorithms** and **Analytics**.  
   - Example:  
-      - A company should analyze whether **80% of Revenue** comes from **20% of Customers** to identify key client groups.  
+      - **Companies** that measure **Operational Metrics** can optimize **Efficiency**, **Reduce Costs**, and **Maximize Profits**.  
 
-### Topic02 - Necessity of Data Collection and Archiving
+### Topic02 - Necessity of Data Collection and Archiving Practices
 
 - **Main Ideas:**  
-  - **Data Collection** and **Archiving** are fundamental steps for any company aiming to adopt **Data Analytics** or **Data Science** practices.  
+  - **Data Collection** and **Archiving** form the foundation for business analytics and future decision-making.  
 
 - **Core Notes:**  
-  - **Organizations** must begin **Capturing Data** immediately if not already doing so.  
-  - **Data Archiving** ensures that no information is lost or overwritten.  
-  - **Old Data** retains long-term value, even if it is **100 Years Old**, as it provides historical insights.  
-  - **Data Consistency** is essential for future interpretation and analysis.  
-  - **Documentation** should accompany data storage to maintain **Transparency** and **Traceability**.  
+  - **Data Collection** should start immediately if not already in place.  
+  - **Data Archiving** prevents data loss and preserves historical information for long-term analysis.  
+  - **Old Data** remains valuable regardless of age, even **100 or 200 Years Old**.  
+  - **Archiving Systems** ensure that no data is overwritten or discarded.  
+  - **Consistent Data Storage** enables future analysts to interpret information accurately.  
   - Example:  
-      - A company that has operated for decades should retain all past **Cost Data** and **Sales Records** for future analysis.  
+      - **Companies** should store past **Cost Records** and **Revenue Data** to analyze long-term performance trends.  
 
-### Topic03 - Implementation of Best Practices in Data Management
+### Topic03 - Implementation of Best Practices for Data Management
 
 - **Main Ideas:**  
-  - **Best Practices** in **Data Management** ensure data reliability, accessibility, and usability for long-term business and analytical success.  
+  - **Data Management Best Practices** ensure data accuracy, consistency, and accessibility across business processes.  
 
 - **Core Notes:**  
-  - **Data Archiving Standards** should be established at the **Start of the Business**.  
-  - **Existing Companies** should implement **Archiving Policies** immediately if missing.  
-  - **Data Management Systems** must support **Data Retrieval** and **Version Control**.  
-  - **Proper Documentation** guarantees that future analysts can interpret the data accurately.  
-  - **Consistency** across data sources ensures **Reliability** for **Analytical Models**.  
+  - **Data Archiving Policies** should be established when a business begins operations.  
+  - **Existing Businesses** should implement these policies immediately if absent.  
+  - **Data Documentation** ensures future accessibility and comprehension.  
+  - **Consistency** in data storage enhances long-term **Data Integrity** and **Reliability**.  
+  - **Proper Data Management Systems** enable effective analysis by maintaining uniform data formats.  
   - Example:  
-      - Businesses should adopt **Centralized Data Storage Systems** with metadata tagging to maintain clarity.  
+      - **Companies** can adopt **Centralized Storage Platforms** with metadata tagging to improve data accessibility and traceability.  
 
-### Topic04 - Significance of Data Quality in Data Science
+### Topic04 - Relationship Between Data Quality and Data Science Value
 
 - **Main Ideas:**  
-  - **Data Quality** directly determines the success of **Data Science Applications**; poor-quality data leads to inaccurate results.  
+  - **Data Quality** directly influences the effectiveness and credibility of **Data Science** insights and business analytics.  
 
 - **Core Notes:**  
-  - **Data Science Value** depends on the **Quality of Collected Data**.  
-  - **Garbage In, Garbage Out** principle emphasizes that flawed data produces unreliable insights.  
-  - **Data Cleaning** is crucial for companies with existing datasets.  
-  - **New Companies** must focus on **Accurate and Systematic Data Collection**.  
-  - **Measurement Systems** should be standardized before analytical processes begin.  
+  - **High-Quality Data** leads to accurate insights, while **Poor Data** results in unreliable outcomes.  
+  - **Garbage In, Garbage Out** highlights the importance of accurate and clean data inputs.  
+  - **Data Cleaning** should be performed on existing datasets to remove inconsistencies or errors.  
+  - **New Data Collection** must focus on **Accuracy**, **Consistency**, and **Completeness**.  
+  - **Measurement Systems** are critical for maintaining quality across all data-driven initiatives.  
   - Example:  
-      - Before applying **Machine Learning Models**, organizations should ensure data is **Complete**, **Consistent**, and **Error-Free**.  
+      - Before implementing **Predictive Models**, companies should perform **Data Validation** to ensure integrity.  
 
 ### Topic05 - Role of Data Science Teams in Organizational Success
 
 - **Main Ideas:**  
-  - **Data Science Teams** composed of skilled and motivated individuals are essential for transforming **Business Data** into actionable insights.  
+  - **Data Science Teams** composed of diverse and motivated professionals are essential for achieving meaningful analytical outcomes.  
 
 - **Core Notes:**  
-  - **Companies** must develop **Interest in Data Science** among their employees.  
-  - **Employee Engagement** ensures sustained **Data-Driven Culture** and innovation.  
-  - **Effective Teams** combine diverse skills in **Statistics**, **Programming**, and **Business Analysis**.  
-  - **Team Collaboration** enhances overall performance in solving analytical problems.  
+  - **Employee Interest** in **Data Science** drives engagement and innovation.  
+  - **Companies** must cultivate a culture that values **Data-Driven Decision-Making**.  
+  - **Data Science Teams** should include members with different specializations such as **Machine Learning**, **Data Engineering**, and **Visualization**.  
+  - **Team Collaboration** enhances analytical accuracy and creativity.  
+  - **Single Data Scientists** are less effective compared to **Collaborative Teams** that combine multiple skill sets.  
   - Example:  
-      - A successful data team may include experts in **Data Engineering**, **Machine Learning**, and **Visualization** working collaboratively.  
+      - A balanced team may include experts in **Statistics**, **Programming**, and **Business Analysis**, ensuring holistic data solutions.  
 
 ### 📌 Takeaways
 
-- **Data Measurement** is the foundation of improvement; what cannot be measured cannot be optimized.  
-- **Data Collection** and **Archiving** are essential for building reliable datasets and enabling long-term analysis.  
-- **Best Practices** in **Data Management** ensure accuracy, consistency, and usability for future decision-making.  
-- **Data Quality** determines the effectiveness of **Data Science** outcomes — poor data leads to poor insights.  
-- **Data Science Teams** with diverse expertise and engagement drive innovation and strategic business success.  
+- **Data Measurement** forms the foundation of business improvement and operational optimization.  
+- **Data Collection** and **Archiving** are vital for ensuring long-term access to valuable business information.  
+- **Best Practices** in **Data Management** guarantee consistency, reliability, and clarity in stored data.  
+- **Data Quality** determines the success and credibility of **Data Science Applications**.  
+- **Data Science Teams** with interdisciplinary expertise enhance company innovation and data-driven success.  
+
 
 
