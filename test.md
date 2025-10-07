@@ -3,7 +3,7 @@ layout: page
 permalink: /DS01M01/
 ---
 
-## M1-Data-Science-Overview
+# M1 - Data Science Overview
 
 - 01 - Course Overview
 - 02 - Introduction to Data Science
