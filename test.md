@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /DE01M01/
+permalink: /DS01M01/
 ---
 
 ## M1-Data-Science-Overview
