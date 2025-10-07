@@ -6,87 +6,70 @@ permalink: /DE01M01/
 ## Note:
 
 ### 🎯 Objectives
-- Topic01 - Definition and Nature of **Data**
-- Topic02 - Categories of **Data Structure**
-- Topic03 - Characteristics of **Structured Data**
-- Topic04 - Features and Examples of **Semi-Structured Data**
-- Topic05 - Nature and Sources of **Unstructured Data**
 
-### Topic01 - Definition and Nature of Data
+- Topic01 - Definition and Hierarchy of **Artificial Intelligence**  
+- Topic02 - Functions and Advantages of **Machine Learning**  
+- Topic03 - Structure and Efficiency of **Deep Learning**  
+- Topic04 - Capabilities and Use Cases of **Generative AI**  
+- Topic05 - Application of **Regression** in Machine Learning Analysis  
+
+### Topic01 - Definition and Hierarchy of Artificial Intelligence
+
 - **Main Ideas:**  
-  - Data refers to unorganized information that becomes meaningful once processed.  
-  - It encompasses a wide range of elements including facts, symbols, and media.
+  - Artificial Intelligence is a broad domain that encompasses various technologies which mimic human intelligence.
 
 - **Core Notes:**  
-  - **Data** consists of **Facts**, **Observations**, **Perceptions**, **Numbers**, **Characters**, **Symbols**, and **Images**.  
-  - When processed, data gains **Meaning** and becomes useful information.  
-  - One primary method of classification is by **Structure**.
+  - **Artificial Intelligence (AI)** refers to systems capable of simulating tasks associated with **Human Intelligence**.  
+  - **Data Scientists** use **AI** tools to analyze complex datasets and derive insights.  
+  - **Artificial Intelligence** includes subsets such as **Machine Learning**, **Deep Learning**, and **Generative AI**.
 
-### Topic02 - Categories of Data Structure
+### Topic02 - Functions and Advantages of Machine Learning
+
 - **Main Ideas:**  
-  - Data is commonly categorized based on its structural organization.  
-  - The three main types are: **Structured**, **Semi-Structured**, and **Unstructured**.
+  - Machine Learning enables data-driven predictions without manual programming and supports several analytical applications.
 
 - **Core Notes:**  
-  - **Structured Data**: Clearly defined schema; stored in databases.  
-  - **Semi-Structured Data**: Partial organization with use of metadata or tags.  
-  - **Unstructured Data**: No identifiable structure; highly heterogeneous formats.
+  - **Machine Learning** uses **Algorithms** to learn from data and generate **Predictions**.  
+  - **Machine Learning** functions without the need to explicitly code analytical rules.  
+  - **Machine Learning** supports tasks such as **Predictive Analytics**, **Recommendation Systems**, and **Fraud Detection**.  
+  - **Data Scientists** apply these models regularly in practical business scenarios.
 
-### Topic03 - Characteristics of Structured Data
+### Topic03 - Structure and Efficiency of Deep Learning
+
 - **Main Ideas:**  
-  - Structured data is the most organized form, often stored in relational databases.  
-  - It supports easy data analysis and processing.
+  - Deep Learning utilizes multiple neural network layers to model complex decision-making processes and improves with data volume.
 
 - **Core Notes:**  
-  - Stored in **Schemas** such as **SQL Databases** and **Spreadsheets**.  
-  - Represented in **Tabular Form** with **Rows** and **Columns**.  
-  - Common sources:
-    - **SQL Databases**
-    - **Online Transaction Processing (OLTP) Systems**
-    - **Excel** and **Google Spreadsheets**
-    - **Online Forms**
-    - **GPS Sensors**, **RFID Tags**
-    - **Network and Web Server Logs**
-  - Analyzed using **Standard Data Analysis Tools**.
+  - **Deep Learning** is a subset of **Machine Learning** that employs **Layered Neural Networks**.  
+  - **Neural Networks** consist of interconnected units called **Neurons** that learn patterns from input data.  
+  - **Deep Learning Algorithms** improve performance with increasing data size, unlike traditional **Machine Learning Models**.  
+  - **Deep Learning** distinguishes nuanced differences such as between a **Dog** and a **Cat**.
 
-### Topic04 - Features and Examples of Semi-Structured Data
+### Topic04 - Capabilities and Use Cases of Generative AI
+
 - **Main Ideas:**  
-  - Semi-structured data has partial organization using metadata but lacks a fixed schema.  
-  - Cannot be stored in traditional tabular formats.
+  - Generative AI creates new content and synthetic data, enabling broader applications in AI development and training.
 
 - **Core Notes:**  
-  - Includes **Tags**, **Elements**, and **Metadata** for data grouping.  
-  - Stored in **Hierarchical Formats** using **XML** and **JSON**.  
-  - Common sources:
-    - **E-mails**
-    - **XML** and other **Markup Languages**
-    - **Binary Executables**
-    - **TCP/IP Packets**
-    - **Zipped Files**
-    - **Integrated Data** from Multiple Sources
+  - **Generative AI** produces new data, mimicking the structure of **Raw Data Sets**.  
+  - **Generative AI** enables machines to generate **Images**, **Music**, **Language**, and **Computer Code**.  
+  - **Generative AI** assists **Data Scientists** by generating **Synthetic Data** when real data is limited.  
 
-### Topic05 - Nature and Sources of Unstructured Data
+### Topic05 - Application of Regression in Machine Learning Analysis
+
 - **Main Ideas:**  
-  - Unstructured data lacks a defined format, making it difficult to store in traditional databases.  
-  - It is highly diverse and supports many business intelligence applications.
+  - Regression is a core statistical technique used in machine learning to model and quantify relationships between variables.
 
 - **Core Notes:**  
-  - Has no **Defined Format**, **Sequence**, or **Rules**.  
-  - Cannot be stored in **Relational Databases**.  
-  - Stored in **Files** and **NoSQL Databases**.  
-  - Common sources:
-    - **Web Pages**
-    - **Social Media Feeds**
-    - **Images** (e.g., **JPEG**, **GIF**, **PNG**)
-    - **Videos** and **Audio Files**
-    - **Documents**, **PDFs**, **PowerPoint Presentations**
-    - **Media Logs**, **Surveys**
+  - **Regression** analyzes the correlation between **Input Variables** and **Output Variables**.  
+  - **Regression Models** are used to evaluate the impact of multiple factors, such as **Square Footage** and **Bedrooms** on **House Prices**.  
+  - **Regression** helps determine the **Strength** and **Confidence Level** of observed relationships.
 
 ### 📌 Takeaways
-- **Data** becomes meaningful through **Processing** and exists in various forms.  
-- Categorizing data as **Structured**, **Semi-Structured**, or **Unstructured** helps determine its storage and analysis method.  
-- **Structured Data** is organized, easily analyzed, and typically stored in **Relational Databases**.  
-- **Semi-Structured Data** uses **Tags** and **Metadata** for partial organization and is suited for **Hierarchical Storage** like **XML** and **JSON**.  
-- **Unstructured Data** is highly varied, lacks formal organization, and often requires **NoSQL Databases** or **Manual Analysis** for interpretation.
 
+- **Artificial Intelligence** encompasses various branches including **Machine Learning**, **Deep Learning**, and **Generative AI**.  
+- **Machine Learning** allows systems to learn from data and make predictions without explicit programming.  
+- **Deep Learning** uses layered **Neural Networks** and becomes more effective as data size increases.  
+- **Generative AI** enables creation of synthetic and creative data, expanding possibilities for data generation and modeling.  
+- **Regression** is essential in modeling relationships and is heavily used in predictive machine learning tasks.
 
