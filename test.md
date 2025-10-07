@@ -7,77 +7,77 @@ permalink: /DE01M01/
 
 ### 🎯 Objectives
 
-- Topic01 - Concept of **Artificial Intelligence** and Its Subfields  
-- Topic02 - Relationship Between **Machine Learning** and **Data Science**  
-- Topic03 - Function of **Deep Learning** and **Neural Networks**  
-- Topic04 - Role of **Generative AI** in Data Creation  
+- Topic01 - Definition and Scope of **Artificial Intelligence**  
+- Topic02 - Role of **Machine Learning** in **Data Science**  
+- Topic03 - Mechanisms of **Deep Learning** and **Neural Networks**  
+- Topic04 - Function of **Generative AI** in Data Creation  
 - Topic05 - Application of **Regression Models** in **Machine Learning**
 
-### {{Topic01 - Concept of Artificial Intelligence and Its Subfields}}
+### Topic01 - Definition and Scope of Artificial Intelligence
 
 - **Main Ideas:**  
-  - **Artificial Intelligence** encompasses systems designed to mimic **Human Intelligence** and includes subfields such as **Machine Learning**, **Deep Learning**, and **Generative AI**.
+  - **Artificial Intelligence** develops computer systems that mimic **Human Intelligence** by performing tasks such as **Reasoning**, **Learning**, and **Decision-Making**.
 
 - **Core Notes:**  
-  - **Artificial Intelligence (AI)** represents a branch of **Computer Science** that enables machines to perform tasks similar to those requiring **Human Cognition**.  
-  - **AI Systems** simulate behaviors like **Learning**, **Reasoning**, **Perception**, and **Decision-Making**.  
-  - **Machine Learning**, **Deep Learning**, and **Generative AI** are specialized subsets of AI with distinct goals and techniques.  
-  - **Data Scientists** leverage AI to analyze data, build models, and derive insights for business and scientific applications.  
+  - **Artificial Intelligence (AI)** represents a branch of **Computer Science** focused on simulating **Human Cognitive Processes**.  
+  - **AI Systems** perform tasks like **Speech Recognition**, **Pattern Identification**, and **Predictive Decision-Making**.  
+  - **AI** encompasses subfields including **Machine Learning**, **Deep Learning**, and **Generative AI**.  
+  - **Data Scientists** employ AI techniques for **Data Analysis**, **Model Building**, and **Business Predictions**.  
 
-### {{Topic02 - Relationship Between Machine Learning and Data Science}}
+### Topic02 - Role of Machine Learning in Data Science
 
 - **Main Ideas:**  
-  - **Machine Learning** enables **Data Scientists** to discover insights and make predictions from large datasets without explicit programming instructions.
+  - **Machine Learning** enables **Data Scientists** to analyze data, identify patterns, and make predictions without explicit programming instructions.
 
 - **Core Notes:**  
-  - **Machine Learning (ML)** is a subset of **Artificial Intelligence** that uses algorithms to **Identify Patterns** and **Make Predictions** from data.  
-  - **Data Scientists** use ML to conduct **Predictive Analytics**, **Recommendation Systems**, and **Fraud Detection**.  
-  - **ML Algorithms** learn from **Historical Data** and improve their accuracy as more data becomes available.  
-  - **Statistical Techniques**, particularly **Regression Analysis**, are fundamental to machine learning modeling.  
-  - Example: **Regression Models** estimate how variables such as **Square Footage** and **Number of Bedrooms** influence **House Price**.  
+  - **Machine Learning (ML)** is a subset of **AI** that uses **Algorithms** to learn from **Data Patterns** and make **Predictions**.  
+  - **ML Models** adapt and improve performance with increasing **Data Volume**.  
+  - **Data Scientists** use ML for **Predictive Analytics**, **Recommendation Systems**, and **Fraud Detection**.  
+  - **Machine Learning Algorithms** learn from **Historical Data** and generalize insights to **Future Predictions**.  
+  - Example: **ML Models** detect **Fraudulent Credit Card Transactions** by analyzing **Purchasing Behaviors**.  
 
-### {{Topic03 - Function of Deep Learning and Neural Networks}}
+### Topic03 - Mechanisms of Deep Learning and Neural Networks
 
 - **Main Ideas:**  
-  - **Deep Learning** extends **Machine Learning** through the use of **Neural Networks** composed of multiple layers that simulate human brain functions.
+  - **Deep Learning** extends **Machine Learning** by utilizing **Layered Neural Networks** that simulate the **Decision-Making Processes** of the human brain.
 
 - **Core Notes:**  
-  - **Deep Learning (DL)** is a specialized subset of **Machine Learning** that uses **Layered Neural Networks** to process complex data patterns.  
-  - **Neural Networks** consist of **Neurons** that transform input data into outputs through iterative learning.  
-  - **Deep Learning Models** improve as the **Volume of Data** increases, unlike traditional ML algorithms that may plateau.  
-  - Example: **Neural Networks** can classify objects (e.g., distinguishing a **Dog** from a **Cat**) through repeated exposure to labeled data.  
-  - **Deep Learning** is especially powerful for **Image Recognition**, **Speech Processing**, and **Language Translation** tasks.  
+  - **Deep Learning (DL)** is a subset of **Machine Learning** that employs **Neural Networks** for **Complex Data Analysis**.  
+  - **Neural Networks** are composed of interconnected **Neurons** that process and transmit information.  
+  - **Deep Learning Models** become more accurate with larger **Data Sets**, unlike traditional ML algorithms that plateau.  
+  - Example: **Neural Networks** classify images (e.g., recognizing **Dogs** and **Cats**) by learning **Visual Patterns** through repeated training.  
+  - **Deep Learning** powers **Speech Recognition**, **Image Processing**, and **Natural Language Understanding**.  
 
-### {{Topic04 - Role of Generative AI in Data Creation}}
+### Topic04 - Function of Generative AI in Data Creation
 
 - **Main Ideas:**  
-  - **Generative AI** produces new data and content that mimic existing datasets, enabling creative and synthetic data generation.
+  - **Generative AI** produces new data resembling existing datasets, enabling synthetic data creation and creative content generation.
 
 - **Core Notes:**  
-  - **Generative AI** focuses on creating **New Data** rather than analyzing existing information.  
-  - It can produce **Images**, **Music**, **Languages**, and **Computer Code** that resemble human creations.  
-  - **Data Scientists** use **Generative AI** to generate **Synthetic Data** when **Real Data** is insufficient.  
-  - **Synthetic Datasets** are used for **Model Training** and **Testing**, preserving data privacy while maintaining data realism.  
-  - **Generative Models**, such as **GANs (Generative Adversarial Networks)**, are key tools for simulating realistic data patterns.  
+  - **Generative AI** focuses on **Producing New Data** rather than only analyzing existing information.  
+  - **Generative Models** create **Images**, **Music**, **Text**, and **Code** that imitate human-generated content.  
+  - **Data Scientists** use **Generative AI** to produce **Synthetic Datasets** when **Real Data** is limited.  
+  - **Synthetic Data** helps in **Model Training**, **Testing**, and **Simulation** while maintaining data privacy.  
+  - Example: **Generative AI** builds **Synthetic Data Sets** that share similar traits to **Raw Data Sets**.  
 
-### {{Topic05 - Application of Regression Models in Machine Learning}}
+### Topic05 - Application of Regression Models in Machine Learning
 
 - **Main Ideas:**  
-  - **Regression Models** quantify relationships between input variables and outputs, serving as a foundational technique in **Machine Learning**.
+  - **Regression Models** quantify relationships between input variables and outputs, serving as a key tool in **Machine Learning Predictions**.
 
 - **Core Notes:**  
-  - **Regression Analysis** identifies the **Strength** and **Direction** of relationships among multiple variables.  
-  - **Data Scientists** use **Regression Models** for tasks like **Predictive Analytics** and **Forecasting**.  
-  - **Linear Regression** estimates how much an **Output Variable** (e.g., price) changes in response to changes in **Input Variables** (e.g., size, features).  
-  - **Regression-Based Models** are crucial for developing **Predictive Systems** across industries, from **Finance** to **Real Estate**.  
-  - The accuracy of regression predictions improves with the **Quality** and **Volume** of Data.  
+  - **Regression Analysis** identifies the **Strength** and **Direction** of correlations between **Inputs** and **Outputs**.  
+  - **Machine Learning Algorithms** apply **Regression Techniques** to predict **Continuous Variables** such as **House Prices**.  
+  - Example: **Regression Models** estimate how **Square Footage** and **Number of Bedrooms** influence **Housing Prices**.  
+  - **Regression-Based Models** enhance **Predictive Analytics** and **Decision-Making** accuracy.  
+  - **Data Scientists** rely on **Regression** to interpret how multiple **Independent Variables** affect a **Dependent Variable**.  
 
 ### 📌 Takeaways
 
-- **Artificial Intelligence** encompasses multiple subfields, including **Machine Learning**, **Deep Learning**, and **Generative AI**, all aiming to mimic aspects of **Human Intelligence**.  
-- **Machine Learning** enables **Data Scientists** to extract patterns and make data-driven predictions without explicit programming.  
-- **Deep Learning** enhances traditional ML by using **Neural Networks** that learn complex patterns from large data volumes.  
-- **Generative AI** allows the creation of **Synthetic Data** and new digital content that resemble human-made outputs.  
-- **Regression Models** provide a mathematical foundation for analyzing variable relationships and driving predictive modeling in **Machine Learning**.  
+- **Artificial Intelligence** integrates **Machine Learning**, **Deep Learning**, and **Generative AI** to replicate aspects of **Human Intelligence**.  
+- **Machine Learning** empowers **Data Scientists** to analyze patterns and make predictions without explicit programming.  
+- **Deep Learning** leverages **Neural Networks** to simulate complex decision-making and improve with large datasets.  
+- **Generative AI** creates **Synthetic Data** and new content, enhancing model development and creativity.  
+- **Regression Models** provide the mathematical foundation for analyzing variable relationships and supporting predictive modeling in **Machine Learning**.  
 
 
