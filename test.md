@@ -5,12 +5,12 @@ permalink: /DS01M01/
 
 ## M1 - Data Science Overview
 
-- 01 - Course Overview
-- 02 - Introduction to Data Science
-- 03 - Fundamentals of Data Science
-- 04 - Many Paths to Data Science
-- 05 - Advice for New Data Scientists
-- 06 - Data Science Summary
+- **01 - Course Overview**
+- **02 - Introduction to Data Science**
+- **03 - Fundamentals of Data Science**
+- **04 - Many Paths to Data Science**
+- **05 - Advice for New Data Scientists**
+- **06 - Data Science Summary**
 
 ## 01 - Course Overview
 
