@@ -21,17 +21,23 @@ permalink: /DS01M01/
 - **Topic03** - Foundations of **Big Data**, **Cloud Computing**, and **Artificial Intelligence** for **Data Science**
 - **Topic04** - Understanding the **Data Ecosystem**, **Data Literacy**, and **ETL** Concepts
 
-### Topic01 - Data Science Career Outlook and Industry Demand
+### Topic01 - Ratio Data and Interval Data
 
 - **Main Ideas:**
-    - **Data Science** exhibits strong **Labor Market Growth**, competitive **Compensation**, and cross-industry **Business Value** motivating learner engagement.
+    - **Ratio Data** possesses a **True Zero** enabling valid **Ratios**, while **Interval Data** supports **Differences** but lacks a **Natural Zero**, invalidating **Ratio Statements**.
 
 - **Core Notes:**
-    - **Market Growth** is projected by the **US Bureau of Labor Statistics** at **35%** in the **United States**.
-    - **Compensation** features a **Median Annual Salary** of approximately **$103,000**.
-    - **Adoption** across **Industries** increases demand for **Skilled Data Scientists** who use **Data Storytelling** to inform and transform **Businesses**.
-    - **Audience** includes **Beginners**, **Managers**, and **Executives** seeking **Data-Driven** transformation.
-    - **Prerequisites** are minimal, requiring no prior **Data Science** or **Programming** degree.
+    - **Ratio Data** features **Absolute Zero**, **Continuity**, and interpretable **Ratios** and **Differences**.
+        - **Examples** include **Sales Dollars**, **Distance**, and **Weight**.
+        - **Continuity** allows **Values** such as **8.0 km**, **8.5 km**, **6.2 miles**.
+        - **Zero Meaning** indicates **Absence** of the **Quantity**.
+            - Example: **$0** indicates **No Expenditure** and permits **Ratio Comparisons**.
+        - **Common Analyses** include **Means**, **Standard Deviations**, **Ratios**, and **Growth Rates**.
+    - **Interval Data** supports meaningful **Differences** but not meaningful **Proportions**.
+        - **Examples** include **Temperature** measured in **Celsius** or **Fahrenheit**.
+            - Example: **0°C** indicates the **Freezing Point**, not **Absence of Temperature**.
+            - Example: **50°C** vs **25°C** allows a **25° Difference** statement, not **Twice as Hot**.
+        - **Scale Properties** preserve **Intervals** under **Linear Transformations**, altering **Ratio Interpretations**.
 
 ### Topic02 - Course Modules and Learning Outcomes
 
