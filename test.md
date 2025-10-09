@@ -12,7 +12,7 @@ permalink: /DS01M01/
 - **05 - Advice for New Data Scientists**
 - **06 - Data Science Summary**
 
-## 01 - Course Overview
+## 01 - Probability of High & Low Teaching Evaluation
 
 ### 🎯 Objectives
 
