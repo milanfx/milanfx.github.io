@@ -3,93 +3,166 @@ layout: page
 permalink: /DS01M01/
 ---
 
+## 01 - Course Introduction
+
 ### 🎯 Objectives
+- **Topic01** - Overview of **Data Science** Growth and Career Opportunities  
+- **Topic02** - Core **Roles and Skills** of Data Scientists  
+- **Topic03** - Integration of **Big Data** and **Cloud Computing** in Digital Transformation  
+- **Topic04** - Connection between **Artificial Intelligence** and **Data Science**  
+- **Topic05** - Structure of the **Data Ecosystem** and **Data Processing** Fundamentals  
 
-- **Topic01** - Use of **Sub-Queries** for Accessing **Multiple Tables**  
-- **Topic02** - Application of **Implicit Joins** for Combining **Table Data**  
-- **Topic03** - Implementation of **Table Aliases** for Simplifying **Query Syntax**  
-
-### Topic01 - Use of Sub-Queries for Accessing Multiple Tables
-
+### Topic01 - Overview of Data Science Growth and Career Opportunities
 - **Main Ideas:**
-    - **Sub-Queries** allow retrieval of related data from **Multiple Tables** by nesting one query inside another.
+    - **Data Science** has rapidly expanded due to advances in **Electronic Data**, **Computing Power**, **Artificial Intelligence**, and its proven **Business Value**.
 
 - **Core Notes:**  
-    - **Sub-Query Definition**:
-        - A **Sub-Query** is a query within another query, used to retrieve data that will be used by the main (outer) query.
-    - **Example 1** - Retrieving Employees by Department:
-        - Query:  
-            `SELECT * FROM Employees WHERE Department_ID IN (SELECT Department_ID FROM Departments);`
-        - The **Outer Query** accesses the **Employees Table**.
-        - The **Inner Query** accesses the **Departments Table** to filter results.
-    - **Example 2** - Retrieving Employees by Location:
-        - The **Employees Table** does not have location data.
-        - The **Departments Table** includes **Location_ID**.
-        - Query:  
-            `SELECT * FROM Employees WHERE DEP_ID IN (SELECT DEP_ID_DEP FROM Departments WHERE LOC_ID='L0002');`
-        - The sub-query filters departments based on **Location_ID**, and only employees in those departments are selected.
-    - **Example 3** - Departments for Employees with High Salaries:
-        - Objective: Retrieve **Department_ID** and **Department_Name** for employees earning more than **$70,000**.
-        - Query:  
-            `SELECT Department_ID, Department_Name FROM Departments WHERE Department_ID IN (SELECT Department_ID FROM Employees WHERE Salary > 70000);`
-        - The **Inner Query** identifies departments of high-earning employees.
-        - The **Outer Query** retrieves department details.
+    - **Data Science** is a thriving and fast-growing field with significant global impact.  
+    - **US Bureau of Labor Statistics** projects a **35% growth rate** in Data Science jobs.  
+    - The **Median Annual Salary** for a Data Scientist is approximately **$103,000**.  
+    - The growing **Adoption Across Industries** increases demand for professionals who can use data to inform business decisions.  
+    - **Data-Driven Transformation** allows organizations to become more efficient and insightful.  
+    - The course provides an **Introduction to Data Science**, preparing learners to explore how data transforms industries.  
+    - Example: Businesses use **Data Analysis** to uncover insights that influence marketing and operational strategies.  
 
-### Topic02 - Application of Implicit Joins for Combining Table Data
-
+### Topic02 - Core Roles and Skills of Data Scientists
 - **Main Ideas:**
-    - **Implicit Joins** enable combining data from multiple tables using the **FROM Clause**, without explicitly using **JOIN Operators**.
+    - **Data Scientists** apply technical and analytical skills to convert raw data into actionable insights that support **Business Decision-Making**.
 
 - **Core Notes:**  
-    - **Implicit Join Definition**:
-        - Multiple tables are listed in the **FROM Clause**, and their relationship is defined in the **WHERE Clause**.
-    - **Example 1** - Basic Implicit Join:
-        - Query:  
-            `SELECT * FROM Employees, Departments;`
-        - Joins every row in **Employees** with every row in **Departments**.
-        - This results in a **Full Join** producing a large number of rows.
-    - **Limiting the Result Set**:
-        - Use a **WHERE Clause** to filter matching rows.
-        - Query:  
-            `SELECT * FROM Employees, Departments WHERE Employees.DEP_ID = Departments.DEP_ID_DEP;`
-        - This retrieves only rows where **Department_IDs** match between the two tables.
-    - **Column Qualification**:
-        - Prefix columns with table names to avoid ambiguity when both tables contain columns with identical names.
-        - Example:  
-            `Employees.DEP_ID` and `Departments.DEP_ID_DEP`
-    - **Use Case**:
-        - Implicit joins are efficient for combining related data but can become complex with more tables.
+    - **Data Scientist Role** involves gathering, processing, analyzing, and interpreting complex data.  
+    - **Key Skills** include **Programming**, **Statistical Analysis**, and **Data Visualization**.  
+    - **Critical Thinking** and **Storytelling** are vital for communicating analytical findings.  
+    - Learners explore **Data Science Topics**, **Algorithms**, and methods for **Handling Different File Types**.  
+    - The course includes **Case Studies**, **Assessments**, and a **Final Peer-Reviewed Project** based on **Data Science Job Listings**.  
+    - Example: A **Data Scientist** designs a predictive model to forecast sales trends using historical data.  
 
-### Topic03 - Implementation of Table Aliases for Simplifying Query Syntax
-
+### Topic03 - Integration of Big Data and Cloud Computing in Digital Transformation
 - **Main Ideas:**
-    - **Table Aliases** provide shorter names for tables, simplifying query writing and improving readability.
+    - **Big Data** and **Cloud Computing** jointly empower organizations to achieve scalable and efficient **Digital Transformation**.
 
 - **Core Notes:**  
-    - **Alias Definition**:
-        - Assigns a short name to a table, often a single letter, for convenience.
-    - **Example 1** - Using Aliases in Joins:
-        - Query:  
-            `SELECT * FROM Employees E, Departments D WHERE E.DEP_ID = D.DEP_ID_DEP;`
-        - **E** is an alias for **Employees**, and **D** is an alias for **Departments**.
-        - The **WHERE Clause** uses these aliases to match department IDs.
-    - **Example 2** - Selecting Specific Columns with Aliases:
-        - Query:  
-            `SELECT E.EMP_ID, D.DEP_NAME FROM Employees E, Departments D WHERE E.DEP_ID = D.DEP_ID_DEP;`
-        - Prefixing column names with table aliases clarifies which table each column belongs to.
-    - **Advantages**:
-        - Simplifies long table names.
-        - Increases readability.
-        - Prevents column name conflicts when working with multiple tables.
+    - **Big Data** provides massive, diverse, and rapidly generated information from multiple sources.  
+    - **Cloud Computing** offers scalable infrastructure to store, manage, and process Big Data effectively.  
+    - **Data Mining Techniques** allow for extracting meaningful patterns and insights from large datasets.  
+    - Learners are introduced to **Foundational Concepts**, **Key Tools**, and their practical relevance in data-driven organizations.  
+    - Example: Companies use **Cloud-Based Platforms** like **AWS** and **Azure** to manage large-scale analytics efficiently.  
+
+### Topic04 - Connection between Artificial Intelligence and Data Science
+- **Main Ideas:**
+    - **Artificial Intelligence (AI)** provides the foundation for **Machine Learning** and **Deep Learning**, which are essential to modern **Data Science Applications**.
+
+- **Core Notes:**  
+    - **AI** focuses on developing intelligent systems capable of learning from data and making predictions.  
+    - **Machine Learning** uses algorithms that automatically learn and improve from experience.  
+    - **Deep Learning** enhances data science with multi-layered neural networks capable of complex pattern recognition.  
+    - The course introduces **AI Concepts** and their integration with **Data Science Methods**.  
+    - Example: **Machine Learning Algorithms** are used to detect patterns in customer behavior for targeted marketing.  
+
+### Topic05 - Structure of the Data Ecosystem and Data Processing Fundamentals
+- **Main Ideas:**
+    - **Data Ecosystem** encompasses the sources, systems, and processes that enable efficient data collection, storage, and transformation.
+
+- **Core Notes:**  
+    - The **Optional Module** introduces **Data Literacy** and foundational concepts of the **Data Ecosystem**.  
+    - **Data Sources** include internal and external datasets used by data professionals daily.  
+    - **Data Storage Systems** are categorized into:
+        - **Databases** for structured transactional data.  
+        - **Data Warehouses** for analytical and historical data.  
+        - **Data Marts** for focused departmental use.  
+        - **Data Lakes** for unstructured and raw data.  
+    - **ETL Process (Extract, Transform, Load)** enables the preparation and transfer of data for analysis.  
+    - **Data Pipelines** automate data flow across systems to support analysis and visualization.  
+    - Example: ETL workflows clean and integrate raw data before loading it into a **Data Warehouse**.  
+    - Learners can access **Discussion Forums** for guidance and peer interaction.  
 
 ### 📌 Takeaways
+- **Data Science** represents a rapidly evolving and high-demand career field.  
+- **Data Scientists** require both **Technical Competence** and **Analytical Insight** to deliver business value.  
+- **Big Data** and **Cloud Computing** drive organizational **Digital Transformation**.  
+- **Artificial Intelligence** extends the power of **Data Science** through **Machine Learning** and **Deep Learning**.  
+- **Data Ecosystem** understanding, including **ETL** and **Data Pipelines**, is fundamental to effective data management.  
 
-- **Sub-Queries** enable hierarchical data retrieval by embedding one query inside another.  
-- **Implicit Joins** combine multiple tables using the **FROM Clause** and conditional logic in the **WHERE Clause**.  
-- **Column Qualification** ensures clarity when tables share column names.  
-- **Table Aliases** make SQL queries cleaner, more readable, and easier to maintain.  
-- **Query Optimization** often involves balancing readability with efficiency, especially when using multiple tables.  
-- **Practical SQL Queries** frequently combine **Sub-Queries** and **Implicit Joins** for flexible multi-table data access.  
+## 02 - What is Data Science?
+
+### 🎯 Objectives
+- **Topic01** - Overview of **Data Science** Growth and Career Opportunities  
+- **Topic02** - Core **Roles and Skills** of Data Scientists  
+- **Topic03** - Integration of **Big Data** and **Cloud Computing** in Digital Transformation  
+- **Topic04** - Connection between **Artificial Intelligence** and **Data Science**  
+- **Topic05** - Structure of the **Data Ecosystem** and **Data Processing** Fundamentals  
+
+### Topic01 - Overview of Data Science Growth and Career Opportunities
+- **Main Ideas:**
+    - **Data Science** has rapidly expanded due to advances in **Electronic Data**, **Computing Power**, **Artificial Intelligence**, and its proven **Business Value**.
+
+- **Core Notes:**  
+    - **Data Science** is a thriving and fast-growing field with significant global impact.  
+    - **US Bureau of Labor Statistics** projects a **35% growth rate** in Data Science jobs.  
+    - The **Median Annual Salary** for a Data Scientist is approximately **$103,000**.  
+    - The growing **Adoption Across Industries** increases demand for professionals who can use data to inform business decisions.  
+    - **Data-Driven Transformation** allows organizations to become more efficient and insightful.  
+    - The course provides an **Introduction to Data Science**, preparing learners to explore how data transforms industries.  
+    - Example: Businesses use **Data Analysis** to uncover insights that influence marketing and operational strategies.  
+
+### Topic02 - Core Roles and Skills of Data Scientists
+- **Main Ideas:**
+    - **Data Scientists** apply technical and analytical skills to convert raw data into actionable insights that support **Business Decision-Making**.
+
+- **Core Notes:**  
+    - **Data Scientist Role** involves gathering, processing, analyzing, and interpreting complex data.  
+    - **Key Skills** include **Programming**, **Statistical Analysis**, and **Data Visualization**.  
+    - **Critical Thinking** and **Storytelling** are vital for communicating analytical findings.  
+    - Learners explore **Data Science Topics**, **Algorithms**, and methods for **Handling Different File Types**.  
+    - The course includes **Case Studies**, **Assessments**, and a **Final Peer-Reviewed Project** based on **Data Science Job Listings**.  
+    - Example: A **Data Scientist** designs a predictive model to forecast sales trends using historical data.  
+
+### Topic03 - Integration of Big Data and Cloud Computing in Digital Transformation
+- **Main Ideas:**
+    - **Big Data** and **Cloud Computing** jointly empower organizations to achieve scalable and efficient **Digital Transformation**.
+
+- **Core Notes:**  
+    - **Big Data** provides massive, diverse, and rapidly generated information from multiple sources.  
+    - **Cloud Computing** offers scalable infrastructure to store, manage, and process Big Data effectively.  
+    - **Data Mining Techniques** allow for extracting meaningful patterns and insights from large datasets.  
+    - Learners are introduced to **Foundational Concepts**, **Key Tools**, and their practical relevance in data-driven organizations.  
+    - Example: Companies use **Cloud-Based Platforms** like **AWS** and **Azure** to manage large-scale analytics efficiently.  
+
+### Topic04 - Connection between Artificial Intelligence and Data Science
+- **Main Ideas:**
+    - **Artificial Intelligence (AI)** provides the foundation for **Machine Learning** and **Deep Learning**, which are essential to modern **Data Science Applications**.
+
+- **Core Notes:**  
+    - **AI** focuses on developing intelligent systems capable of learning from data and making predictions.  
+    - **Machine Learning** uses algorithms that automatically learn and improve from experience.  
+    - **Deep Learning** enhances data science with multi-layered neural networks capable of complex pattern recognition.  
+    - The course introduces **AI Concepts** and their integration with **Data Science Methods**.  
+    - Example: **Machine Learning Algorithms** are used to detect patterns in customer behavior for targeted marketing.  
+
+### Topic05 - Structure of the Data Ecosystem and Data Processing Fundamentals
+- **Main Ideas:**
+    - **Data Ecosystem** encompasses the sources, systems, and processes that enable efficient data collection, storage, and transformation.
+
+- **Core Notes:**  
+    - The **Optional Module** introduces **Data Literacy** and foundational concepts of the **Data Ecosystem**.  
+    - **Data Sources** include internal and external datasets used by data professionals daily.  
+    - **Data Storage Systems** are categorized into:
+        - **Databases** for structured transactional data.  
+        - **Data Warehouses** for analytical and historical data.  
+        - **Data Marts** for focused departmental use.  
+        - **Data Lakes** for unstructured and raw data.  
+    - **ETL Process (Extract, Transform, Load)** enables the preparation and transfer of data for analysis.  
+    - **Data Pipelines** automate data flow across systems to support analysis and visualization.  
+    - Example: ETL workflows clean and integrate raw data before loading it into a **Data Warehouse**.  
+    - Learners can access **Discussion Forums** for guidance and peer interaction.  
+
+### 📌 Takeaways
+- **Data Science** represents a rapidly evolving and high-demand career field.  
+- **Data Scientists** require both **Technical Competence** and **Analytical Insight** to deliver business value.  
+- **Big Data** and **Cloud Computing** drive organizational **Digital Transformation**.  
+- **Artificial Intelligence** extends the power of **Data Science** through **Machine Learning** and **Deep Learning**.  
+- **Data Ecosystem** understanding, including **ETL** and **Data Pipelines**, is fundamental to effective data management.  
+
 
 
 
