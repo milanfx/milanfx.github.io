@@ -141,73 +141,214 @@ permalink: /DS09M3/
 
 ### 🎯 Objectives
 - **Topic01** - Definition and Characteristics of **Normal Distribution**  
-- **Topic02** - Mathematical Representation of **Normal Distribution Function**  
-- **Topic03** - Concept and Derivation of **Standard Normal Distribution**  
-- **Topic04** - Generation of **Normal Curve** Using **Python Libraries**
+- **Topic02** - Mathematical Formulation of **Normal Distribution Function**  
+- **Topic03** - Concept and Simplification of **Standard Normal Distribution**  
+- **Topic04** - Generation of **Normal Distribution Curve** Using **Python**
 
 ### Topic01 - Definition and Characteristics of Normal Distribution
 - **Main Ideas:**
-    - **Normal Distribution** is one of the most widely used statistical distributions, represented by a **Bell-Shaped Curve**.
+    - **Normal Distribution** is a fundamental concept in statistics, commonly used across academic, scholarly, and professional analyses.
 
 - **Core Notes:**  
-    - **Normal Distribution** forms the foundation of many **Statistical Analyses** and **Real-World Applications**.  
-    - **Bell-Shaped Curve** represents the **Symmetry** and **Central Tendency** of data.  
-    - A large body of **Academic**, **Scholarly**, and **Professional Work** assumes that data follows a **Normal Distribution**.  
-    - The curve visually depicts how **Data Points** are distributed around the **Mean**.  
+    - **Normal Distribution** represents how data points are distributed symmetrically around the **Mean**.  
+    - The curve is **Bell-Shaped**, showing higher frequency near the **Mean** and tapering off symmetrically on both sides.  
+    - Many **Statistical Models** assume that underlying data follows a **Normal Distribution**.  
+    - The curve visually describes how **Random Variables** behave under normal conditions.  
 
-### Topic02 - Mathematical Representation of Normal Distribution Function
+### Topic02 - Mathematical Formulation of Normal Distribution Function
 - **Main Ideas:**
-    - **Normal Distribution Function** mathematically expresses how probabilities are distributed across values of a **Random Variable**.
+    - **Normal Distribution Function** mathematically models the probability density of a random variable based on its **Mean** and **Standard Deviation**.
 
 - **Core Notes:**  
-    - **Formula Structure:**  
-        - \( f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \)  
-    - **Parameters of the Function:**  
-        - **x:** Random Variable representing data values.  
-        - **μ (Mu):** Mean of the distribution, derived from data.  
-        - **σ (Sigma):** Standard Deviation representing data spread.  
-    - **Constant Terms:**  
-        - **π (Pi):** 3.142 or 22/7.  
-        - **Exponential Function (e):** Represents continuous probability decay.  
-    - **Key Components:**  
-        - The **Exponent Term** \(-(x - μ)^2 / (2σ^2)\) defines how probabilities decrease symmetrically around the mean.  
-        - The **Denominator Term** \(\sigma \sqrt{2\pi}\) ensures the total probability equals 1.  
-    - Example: When **μ** and **σ** are obtained from actual data, the resulting curve models that dataset’s **Probability Distribution**.  
+    - The function is expressed as:  
+        - $f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$  
+    - **Parameters:**  
+        - **x:** Random Variable (data point).  
+        - **μ (Mu):** Mean, representing the central value of data.  
+        - **σ (Sigma):** Standard Deviation, representing data spread.  
+    - **Constants:**  
+        - **π (Pi):** Approximated as 3.142 or 22/7.  
+        - **e:** Exponential constant used for calculating continuous probability.  
+    - **Interpretation of Components:**  
+        - The **Exponent Term** $-\frac{(x-\mu)^2}{2\sigma^2}$ defines the shape and symmetry of the curve.  
+        - The **Denominator** $\sigma \sqrt{2\pi}$ ensures total probability equals 1.  
+    - Example: The **Mean** and **Standard Deviation** are derived from data, while **x** varies over possible values.  
 
-### Topic03 - Concept and Derivation of Standard Normal Distribution
+### Topic03 - Concept and Simplification of Standard Normal Distribution
 - **Main Ideas:**
-    - **Standard Normal Distribution** is a special case of the **Normal Distribution** with **Mean = 0** and **Standard Deviation = 1**.
+    - **Standard Normal Distribution** is a special case of **Normal Distribution** with a **Mean (μ) = 0** and **Standard Deviation (σ) = 1**.
 
 - **Core Notes:**  
-    - **Transformation:** By substituting **μ = 0** and **σ = 1**, the general normal distribution simplifies to:  
-        - \( f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \)  
-    - **Simplification Steps:**  
-        - **μ = 0** removes the mean adjustment (x - μ → x).  
-        - **σ = 1** simplifies the scaling factors since multiplying or dividing by 1 has no effect.  
-    - **Purpose:** Establishes a **Universal Reference Distribution** used for **Z-Scores** and **Standardization** in statistics.  
-    - Example: When **x** varies from **-4 to 4**, substituting these values generates the **Standard Normal Bell Curve**.  
+    - When **μ = 0** and **σ = 1**, the equation simplifies to:  
+        - $f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$  
+    - **Simplification Process:**  
+        - Replace **μ** with 0, making $(x - μ)$ become $x$.  
+        - Replace **σ** with 1, removing its influence since multiplying or dividing by 1 has no effect.  
+    - **Purpose:**  
+        - Used to create a **Universal Distribution Model** for standardized variables.  
+    - Example: When **x** ranges from -4 to 4, substituting these values generates the **Standard Normal Curve**.  
 
-### Topic04 - Generation of Normal Curve Using Python Libraries
+### Topic04 - Generation of Normal Distribution Curve Using Python
 - **Main Ideas:**
-    - **Python Libraries** can be used to simulate and visualize the **Standard Normal Distribution**.
+    - **Python Libraries** can simulate and visualize the **Standard Normal Distribution Curve** effectively.
 
 - **Core Notes:**  
-    - **Python Libraries Used:**  
-        - **Matplotlib:** for generating graphical visualizations.  
-        - **NumPy:** for numerical operations and creating data arrays.  
-        - **SciPy.stats:** for accessing the **norm.pdf** function that computes **Probability Density Values**.  
-    - **Implementation Steps:**  
-        - Use **x-values** from **-4 to 4** in increments of **0.1**.  
-        - Compute **Probability Density** using the **norm.pdf** function.  
-        - Plot results with **Matplotlib** to generate the **Standard Normal Curve**.  
-    - Example: The generated plot visually represents the **Bell-Shaped Curve** associated with the **Standard Normal Distribution**.  
+    - **Tools Used:**  
+        - **Matplotlib:** for graphical visualization.  
+        - **NumPy:** for array creation and numerical computation.  
+        - **SciPy.stats:** for probability density function using **norm.pdf**.  
+    - **Implementation Details:**  
+        - Define **x-values** between -4 and 4 using increments of 0.1.  
+        - Calculate **Probability Density** using the **norm.pdf** function.  
+        - Use **Matplotlib** to plot the **Standard Normal Curve**.  
+    - Example: The generated **Bell Curve** represents data centered around a **Mean of 0** with a **Standard Deviation of 1**.  
 
 ### 📌 Takeaways
-- **Normal Distribution** underpins a vast range of **Statistical Models** and **Real-World Data Analyses**.  
-- **Mathematical Formulation** uses parameters **Mean (μ)** and **Standard Deviation (σ)** to define the curve’s shape.  
-- **Standard Normal Distribution** serves as a simplified reference with **μ = 0** and **σ = 1**.  
-- **Python Libraries** such as **NumPy**, **Matplotlib**, and **SciPy.stats** allow efficient generation and visualization of the **Normal Curve**.  
-- **Bell-Shaped Curve** symbolizes data symmetry and the natural clustering of observations around the mean.  
+- **Normal Distribution** is foundational in both theoretical and applied statistics.  
+- **Mathematical Representation** combines constants **π**, **e**, and parameters **μ**, **σ**, and **x**.  
+- **Standard Normal Distribution** simplifies analysis by fixing **Mean = 0** and **Standard Deviation = 1**.  
+- **Python Libraries** such as **NumPy**, **Matplotlib**, and **SciPy.stats** allow efficient visualization of the **Normal Curve**.  
+- **Bell-Shaped Curve** illustrates how data symmetrically clusters around the **Mean**, representing natural variation.  
 
 ## 04 - T distribution
+
+### 🎯 Objectives
+- **Topic01** - Historical Background and Significance of **Student’s T-Distribution**  
+- **Topic02** - Relationship Between **T-Distribution** and **Normal Distribution**  
+- **Topic03** - Application of **T-Test** in Comparing Sample Means  
+- **Topic04** - Assumptions and Implementation of **Independent Sample T-Test**  
+
+### Topic01 - Historical Background and Significance of Student’s T-Distribution
+- **Main Ideas:**
+    - **Student’s T-Distribution** was developed by **William Sealy Gosset** and remains a cornerstone of inferential statistics, especially for small sample analysis.
+
+- **Core Notes:**  
+    - **William Sealy Gosset** published the **T-Distribution** in 1908 under the pseudonym **"Student"** in the journal **Biometrika**.  
+    - He worked at **Guinness Brewery** in **Dublin, Ireland**, conducting experiments with **Small Samples of Barley**.  
+    - **Employer Restrictions** prevented him from publishing under his real name.  
+    - His contributions were later overshadowed by other statisticians such as **Ronald Fisher** and **Egon Pearson**, despite his foundational role.  
+    - The book *The Cult of Statistical Significance* highlights **Gosset’s** influence and the evolution of **Statistical Significance Testing**.  
+
+### Topic02 - Relationship Between T-Distribution and Normal Distribution
+- **Main Ideas:**
+    - **T-Distribution** describes the distribution of **Sample Means** drawn from a population, whereas **Normal Distribution** describes the **Population Mean** itself.
+
+- **Core Notes:**  
+    - **Normal Distribution:** Represents the **Population Mean** and assumes an **Infinite Sample Size**.  
+    - **T-Distribution:** Represents the **Mean of Samples** drawn from the **Population** and accounts for **Sampling Variability**.  
+    - The **Shape of the T-Distribution** depends on **Degrees of Freedom (df)**.  
+        - When **df = 1**, the T-distribution is **Wider and Flatter** than the Normal Distribution.  
+        - As **df Increases**, the **T-Distribution** becomes **More Similar** to the **Normal Distribution**.  
+    - Example: When plotted, the **Normal Distribution Curve (Blue)** and **T-Distribution Curve** converge as the sample size grows.  
+
+### Topic03 - Application of T-Test in Comparing Sample Means
+- **Main Ideas:**
+    - **T-Test** utilizes the **T-Distribution** to evaluate whether the means of two groups differ significantly.
+
+- **Core Notes:**  
+    - **T-Test** is a statistical method that relies on the **T-Distribution** to test **Differences in Means**.  
+    - Example: A **Comparison of Teaching Evaluation Scores** for **Male** and **Female Instructors** at the **University of Texas**.  
+        - **Blue Bar:** Represents **Female Instructors’ Average Scores**.  
+        - **Orange Bar:** Represents **Male Instructors’ Average Scores**.  
+        - Observation: Average score for females is slightly lower, approximately **4**, but the difference appears small.  
+    - The **Research Question:** Is the difference in average evaluation scores **Statistically Significant**?  
+    - **Null Hypothesis (H₀):** There is **No Difference** between male and female evaluation scores.  
+    - **Alternative Hypothesis (Hₐ):** There **Is a Difference** between male and female evaluation scores.  
+    - **Alpha Level (α):** Set at **0.05** to determine significance.  
+    - If the **P-Value < 0.05**, the **Null Hypothesis is Rejected**, indicating a **Significant Difference** in scores based on gender.  
+
+### Topic04 - Assumptions and Implementation of Independent Sample T-Test
+- **Main Ideas:**
+    - **T-Test Assumptions** ensure the validity of comparing means using the **T-Distribution**.
+
+- **Core Notes:**  
+    - **Assumptions Required for T-Test:**  
+        - The **Measurement Scale** must be **Continuous** or **Ordinal**.  
+        - The **Sample Data** must be **Randomly Selected** from the population.  
+        - The **Data Distribution** should be **Approximately Normal**.  
+        - **Homogeneity of Variance** must be satisfied to prevent bias toward larger samples.  
+    - **Testing Procedure in Python:**  
+        - Use the **`scipy.stats.ttest_ind()`** function from the **SciPy** library.  
+        - Input: Two independent samples (e.g., **Female Evaluation Scores** and **Male Evaluation Scores**).  
+        - Output: **T-Statistic** and **P-Value**.  
+        - Example: If the returned **P-Value < 0.05**, conclude a **Statistical Difference** between the two groups.  
+
+### 📌 Takeaways
+- **Student’s T-Distribution** is crucial for analyzing small sample data and estimating population parameters.  
+- **William Sealy Gosset**, under the pseudonym **Student**, pioneered the **T-Distribution**, shaping modern statistical inference.  
+- **T-Distribution** approximates the **Normal Distribution** as **Degrees of Freedom** increase.  
+- **T-Test** applies the **T-Distribution** to determine whether two sample means differ significantly.  
+- **Assumptions** such as **Normality**, **Random Sampling**, and **Equal Variance** are essential for the accuracy of **T-Test Results**.  
+- **Python’s SciPy Library** provides efficient implementation of **Independent Sample T-Tests** for empirical data analysis.  
+
 ## 05 - Probability of Getting a High or Low Teaching Evaluation
+
+### 🎯 Objectives
+- **Topic01** - Concept and Computation of **Standardization (Z-Score)**  
+- **Topic02** - Determination of **Probability from Normal Distribution Tables**  
+- **Topic03** - Calculation of **Probability for Specific Teaching Evaluation Scores**  
+- **Topic04** - Implementation of **Probability Computation** Using **Python**
+
+### Topic01 - Concept and Computation of Standardization (Z-Score)
+- **Main Ideas:**
+    - **Standardization** converts a variable into a **Z-Score** with a **Mean of 0** and a **Standard Deviation of 1**, allowing comparison within the **Normal Distribution**.
+
+- **Core Notes:**  
+    - **Standardization Formula:**  
+        - $Z = \frac{X - \mu}{\sigma}$  
+        - Where **X** is the raw score, **μ** is the mean, and **σ** is the standard deviation.  
+    - Example: For a **Teaching Evaluation Score** of **4.5**,  
+        - **Mean (μ)** = 3.998  
+        - **Standard Deviation (σ)** = 0.554  
+        - $Z = \frac{4.5 - 3.998}{0.554} = 0.906$  
+    - **Z-Score Interpretation:**  
+        - **Z = 0.906** represents how many **Standard Deviations** the score is above the mean.  
+    - When standardized, data centers around a **Mean of 0** with most values between **-3** and **+3** on the **X-Axis**.
+
+### Topic02 - Determination of Probability from Normal Distribution Tables
+- **Main Ideas:**
+    - **Standard Normal Tables** allow estimation of probabilities for a given **Z-Score** without computational tools.
+
+- **Core Notes:**  
+    - **Normal Distribution Table:** Lists **Cumulative Probabilities** corresponding to **Z-Scores**.  
+    - Accuracy of the table is typically to **Two Decimal Places**.  
+        - Example: **Z = 0.906** is rounded to **0.91**.  
+    - For **Z = 0.91**, the **Cumulative Probability** is **0.8186**.  
+    - **Graphical Representation:**  
+        - The **Shaded Area Under the Curve** corresponds to the probability of obtaining a value **Less Than or Equal To** a given **Z**.  
+
+### Topic03 - Calculation of Probability for Specific Teaching Evaluation Scores
+- **Main Ideas:**
+    - Probabilities can be computed for scores **Less Than** or **Greater Than** a specific value based on **Z-Score** and **Normal Distribution** properties.
+
+- **Core Notes:**  
+    - **Given Values:**  
+        - Mean = 3.998, Standard Deviation = 0.554, and Score (X) = 4.5.  
+    - **Probability of Score ≤ 4.5:**  
+        - Using **Z = 0.906**, the **Probability** = 0.8186 or **81.76%**.  
+        - Represented as the **Gray Shaded Area** under the **Normal Curve** to the left of **Z = 0.91**.  
+    - **Probability of Score > 4.5:**  
+        - Since the **Total Area Under the Curve = 1**,  
+            - $P(X > 4.5) = 1 - 0.8176 = 0.1824$  
+            - Equivalent to **18.24%**, represented by the **Right-Side Shaded Area**.  
+    - **Relationship:**  
+        - $P(X ≤ 4.5) + P(X > 4.5) = 1$.  
+
+### Topic04 - Implementation of Probability Computation Using Python
+- **Main Ideas:**
+    - **Python** provides statistical functions to calculate probabilities directly from the **Normal Distribution**.
+
+- **Core Notes:**  
+    - **Library Used:** `scipy.stats`  
+    - **Function:** `norm.cdf()` (Cumulative Distribution Function) computes the **Left-Side Probability**.  
+        - Example: `norm.cdf(4.5, 3.998, 0.554)` returns **0.8176** for **P(X ≤ 4.5)**.  
+    - To compute the **Right-Side Probability (P(X > 4.5))**, subtract the result from 1:  
+        - $1 - P(X ≤ 4.5) = 0.1824$.  
+    - **Output:** Confirms that **Probability of Evaluation > 4.5 = 18.24%**, consistent with manual calculation.  
+
+### 📌 Takeaways
+- **Standardization** transforms data into **Z-Scores** for comparison within the **Standard Normal Distribution**.  
+- **Normal Tables** enable estimation of probabilities without computational tools, typically accurate to two decimal places.  
+- **Probability of a Value** is represented as the **Area Under the Normal Curve**, summing to **1** for all outcomes.  
+- **Python’s SciPy Library** simplifies probability computation using **norm.cdf()** for cumulative probabilities.  
+- **Teaching Evaluation Example** demonstrates practical computation of probabilities for real-world datasets.  
