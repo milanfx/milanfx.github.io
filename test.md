@@ -20,6 +20,8 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;" markdown="1">
+
 <div style="flex:1; min-width:0;">
 
 - **Main Ideas:**  
