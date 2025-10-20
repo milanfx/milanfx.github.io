@@ -35,17 +35,11 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;">
-  <br><img src="/images/DS01M101.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
-  <br><img src="/images/DS01M102.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
-  <br><img src="/images/DS01M103.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
-</div>
-
-</div>
-
-
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M101.jpg" style="border-radius:8px;"></div></div>
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
+
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;"><div style="flex:1; min-width:0;" markdown="1">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
@@ -60,7 +54,12 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M102.jpg" style="border-radius:8px;"></div></div>
+  
 ### Topic03 - Application of Cumulative Distribution Function (CDF)
+
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;"><div style="flex:1; min-width:0;" markdown="1">
+
 - **Main Ideas:**
     - **Cumulative Distribution Function (CDF)** measures the **Probability** that a random variable takes a value **Less Than or Equal To** a specified number.
 
@@ -68,6 +67,8 @@ permalink: /DS09M3/
     - **CDF** aggregates **Individual Probabilities** up to a specific **Value Threshold**.  
         - Example: **Probability of Getting ≤ 6** equals **0.417**, while **≥ 6** equals **0.58**.  
     - **CDF Graphs** visualize cumulative probabilities across all outcomes, showing how **Probabilities Accumulate** to **1**.  
+
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M103.jpg" style="border-radius:8px;"></div></div>
 
 ### Topic04 - Modeling with Normal Distribution using Mean and Standard Deviation
 - **Main Ideas:**
