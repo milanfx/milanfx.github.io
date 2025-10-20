@@ -36,9 +36,9 @@ permalink: /DS09M3/
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
 </div><div style="flex:1; min-width:0; text-align:center;">
-  <img src="/images/DS01M101.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
-  <img src="/images/DS01M102.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
-  <img src="/images/DS01M103.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+  <br><img src="/images/DS01M101.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+  <br><img src="/images/DS01M102.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+  <br><img src="/images/DS01M103.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
 </div>
 
 </div>
