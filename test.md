@@ -20,7 +20,7 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; grid-template-columns: 1fr 1fr;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
@@ -39,7 +39,7 @@ permalink: /DS09M3/
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 
-<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
@@ -58,7 +58,7 @@ permalink: /DS09M3/
   
 ### Topic03 - Application of Cumulative Distribution Function (CDF)
 
-<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
 
 - **Main Ideas:**
     - **Cumulative Distribution Function (CDF)** measures the **Probability** that a random variable takes a value **Less Than or Equal To** a specified number.
