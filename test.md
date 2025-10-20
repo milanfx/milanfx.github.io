@@ -20,9 +20,10 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;" markdown="1">
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;">
 
-<div style="flex:1; min-width:0;">
+<!-- 左栏 -->
+<div style="flex:1; min-width:0;" markdown="1">
 
 - **Main Ideas:**  
   - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1.  
@@ -45,6 +46,7 @@ permalink: /DS09M3/
 </div>
 
 </div>
+
 
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
