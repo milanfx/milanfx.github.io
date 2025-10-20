@@ -35,7 +35,7 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M101.jpg" style="border-radius:8px;"></div></div>
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M101.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 
@@ -54,7 +54,7 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M102.jpg" style="border-radius:8px;"></div></div>
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M102.jpg" style="max-width:100%; border-radius:10px;"></div></div>
   
 ### Topic03 - Application of Cumulative Distribution Function (CDF)
 
@@ -68,7 +68,7 @@ permalink: /DS09M3/
         - Example: **Probability of Getting ≤ 6** equals **0.417**, while **≥ 6** equals **0.58**.  
     - **CDF Graphs** visualize cumulative probabilities across all outcomes, showing how **Probabilities Accumulate** to **1**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M103.jpg" style="border-radius:8px;"></div></div>
+</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M103.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
 ### Topic04 - Modeling with Normal Distribution using Mean and Standard Deviation
 - **Main Ideas:**
