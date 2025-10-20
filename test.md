@@ -20,7 +20,7 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:grid; grid-template-columns: 6fr 4fr;"><div style="grid:1; min-width:0;" markdown="1">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
@@ -35,11 +35,11 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M101.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="grid:1; min-width:0; text-align:center;"><br><img src="/images/DS01M101.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 
-<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:grid; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
