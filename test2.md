@@ -4,7 +4,7 @@ permalink: /DE01M02/
 ---
 
 
-#Entering and Formatting Data
+## Entering and Formatting Data
 
 **Estimated time needed:** 30 minutes
 
