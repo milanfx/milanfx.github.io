@@ -20,7 +20,7 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; align-items:flex-start; gap:20px;" markdown="1"><div style="flex:1;">
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;" markdown="1">
 
 - **Main Ideas:** - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1. 
   - **Random Variables** represent numerical outcomes dependent on random events in a defined **Probability Space**.
