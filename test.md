@@ -19,6 +19,9 @@ permalink: /DS09M3/
 - **Topic04** - Modeling with **Normal Distribution** using **Mean** and **Standard Deviation**
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
+
+<div style="display:flex; align-items:flex-start; gap:20px;"><div style="flex:1;">
+    
 - **Main Ideas:**
     - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1.
     - **Random Variables** represent numerical outcomes dependent on random events in a defined **Probability Space**.
@@ -31,6 +34,8 @@ permalink: /DS09M3/
     - **Probability Space** includes all **Possible Outcomes** of a random experiment.  
         - Example: For one die, there are **6 Possible Outcomes** (1 to 6).  
         - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).  
+
+</div><div style="flex:1;"><img src="images/DS01M101.jpg"></div>
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 - **Main Ideas:**
