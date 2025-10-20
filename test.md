@@ -20,29 +20,25 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;">
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;"><div style="flex:1; min-width:0;" markdown="1">
 
-<!-- 左栏 -->
-<div style="flex:1; min-width:0;" markdown="1">
+- **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
+- **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
+    - Example: Rolling two dice produces outcomes ranging from **2 to 12**.  
+- **Outcome Frequencies** determine **Distribution Shape**.  
+    - **Sum = 2**: occurs once (**1/36 = 0.028**).  
+    - **Sum = 3**: occurs twice (**2/36 = 0.056**).  
+    - **Sum = 4**: occurs three times (**3/36 = 0.083**).  
+    - **Sum = 5**: occurs four times (**4/36 = 0.111**).  
+    - **Sum = 7**: occurs six times (**6/36 = 0.167**), representing the most **Frequent Outcome**.  
+- **Total Probability** across all outcomes always **Sums to 1**, ensuring **Completeness** of the probability model.  
+- **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
+- **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-- **Main Ideas:**  
-  - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1.  
-  - **Random Variables** represent numerical outcomes dependent on random events in a defined **Probability Space**.
-
-- **Core Notes:**  
-  - **Probability** measures the **Likelihood** of an event occurring, expressed as a value between **0** and **1**.  
-    - Example: The **Chance of Rain** being **45%** corresponds to a **Probability Value** of **0.45**.  
-  - **Random Variable** defines a quantity whose **Possible Values** depend on **Random Events**.  
-    - It functions as a **Mapping** from outcomes to values within a **Probability Space**.  
-  - **Probability Space** includes all **Possible Outcomes** of a random experiment.  
-    - Example: For one die, there are **6 Possible Outcomes** (1 to 6).  
-    - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).  
-
-</div>
-
-<!-- 右栏 -->
-<div style="flex:1; min-width:0; text-align:center;">
+</div><div style="flex:1; min-width:0; text-align:center;">
   <img src="/images/DS01M101.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+  <img src="/images/DS01M102.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+  <img src="/images/DS01M103.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
 </div>
 
 </div>
@@ -50,21 +46,19 @@ permalink: /DS09M3/
 
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
-- **Main Ideas:**
-    - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 
-- **Core Notes:**  
-    - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
-        - Example: Rolling two dice produces outcomes ranging from **2 to 12**.  
-    - **Outcome Frequencies** determine **Distribution Shape**.  
-        - **Sum = 2**: occurs once (**1/36 = 0.028**).  
-        - **Sum = 3**: occurs twice (**2/36 = 0.056**).  
-        - **Sum = 4**: occurs three times (**3/36 = 0.083**).  
-        - **Sum = 5**: occurs four times (**4/36 = 0.111**).  
-        - **Sum = 7**: occurs six times (**6/36 = 0.167**), representing the most **Frequent Outcome**.  
-    - **Total Probability** across all outcomes always **Sums to 1**, ensuring **Completeness** of the probability model.  
-    - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
-    - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
+- **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
+- **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
+    - Example: Rolling two dice produces outcomes ranging from **2 to 12**.  
+- **Outcome Frequencies** determine **Distribution Shape**.  
+    - **Sum = 2**: occurs once (**1/36 = 0.028**).  
+    - **Sum = 3**: occurs twice (**2/36 = 0.056**).  
+    - **Sum = 4**: occurs three times (**3/36 = 0.083**).  
+    - **Sum = 5**: occurs four times (**4/36 = 0.111**).  
+    - **Sum = 7**: occurs six times (**6/36 = 0.167**), representing the most **Frequent Outcome**.  
+- **Total Probability** across all outcomes always **Sums to 1**, ensuring **Completeness** of the probability model.  
+- **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
+- **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
 ### Topic03 - Application of Cumulative Distribution Function (CDF)
 - **Main Ideas:**
