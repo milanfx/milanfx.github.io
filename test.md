@@ -34,7 +34,7 @@ permalink: /DS09M3/
 
 </div><div style="flex:1;">
   
-<img src="/images/DS01M101.jpg" border-radius:8px;"></div>
+<img src="/images/DS01M101.jpg"></div>
 
 </div>
 
