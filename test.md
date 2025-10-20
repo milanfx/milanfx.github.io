@@ -20,21 +20,27 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;" markdown="1">
+<div style="flex:1; min-width:0;">
 
-- **Main Ideas:** - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1. 
+- **Main Ideas:**  
+  - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1.  
   - **Random Variables** represent numerical outcomes dependent on random events in a defined **Probability Space**.
-- **Core Notes:** - **Probability** measures the **Likelihood** of an event occurring, expressed as a value between **0** and **1**.
-  - Example: The **Chance of Rain** being **45%** corresponds to a **Probability Value** of **0.45**.
-  - **Random Variable** defines a quantity whose **Possible Values** depend on **Random Events**.
-  - It functions as a **Mapping** from outcomes to values within a **Probability Space**.
-  - **Probability Space** includes all **Possible Outcomes** of a random experiment.
-  - Example: For one die, there are **6 Possible Outcomes** (1 to 6).
-  - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).
+
+- **Core Notes:**  
+  - **Probability** measures the **Likelihood** of an event occurring, expressed as a value between **0** and **1**.  
+    - Example: The **Chance of Rain** being **45%** corresponds to a **Probability Value** of **0.45**.  
+  - **Random Variable** defines a quantity whose **Possible Values** depend on **Random Events**.  
+    - It functions as a **Mapping** from outcomes to values within a **Probability Space**.  
+  - **Probability Space** includes all **Possible Outcomes** of a random experiment.  
+    - Example: For one die, there are **6 Possible Outcomes** (1 to 6).  
+    - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).  
 
 </div>
 
-<div style="flex:1;"><img src="/images/DS01M101.jpg"></div>
+<!-- 右栏 -->
+<div style="flex:1; min-width:0; text-align:center;">
+  <img src="/images/DS01M101.jpg" alt="Probability" style="max-width:100%; height:auto; border-radius:8px;">
+</div>
 
 </div>
 
