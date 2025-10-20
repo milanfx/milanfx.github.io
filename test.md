@@ -20,22 +20,37 @@ permalink: /DS09M3/
 
 ### Topic01 - Fundamental Concepts of Probability and Random Variables
 
-<div style="display:flex; align-items:flex-start; gap:20px;"><div style="flex:1;">
-    
-- **Main Ideas:**
-    - **Probability** quantifies the likelihood of an event occurring within a range from 0 to 1.
-    - **Random Variables** represent numerical outcomes dependent on random events in a defined **Probability Space**.
+<div style="display:flex; align-items:flex-start; gap:24px;">
 
-- **Core Notes:**  
-    - **Probability** measures the **Likelihood** of an event occurring, expressed as a value between **0** and **1**.  
-        - Example: The **Chance of Rain** being **45%** corresponds to a **Probability Value** of **0.45**.  
-    - **Random Variable** defines a quantity whose **Possible Values** depend on **Random Events**.  
-        - It functions as a **Mapping** from outcomes to values within a **Probability Space**.  
-    - **Probability Space** includes all **Possible Outcomes** of a random experiment.  
-        - Example: For one die, there are **6 Possible Outcomes** (1 to 6).  
-        - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).  
+  <!-- 左侧：文字 -->
+  <div style="flex:1; min-width:300px;">
+    <h3>Topic01 - Fundamental Concepts of Probability and Random Variables</h3>
 
-</div><div style="flex:1;"><img src="images/DS01M101.jpg"></div></div>
+    <p><b>Main Ideas:</b></p>
+    <ul>
+      <li><b>Probability</b> quantifies the likelihood of an event occurring within a range from 0 to 1.</li>
+      <li><b>Random Variables</b> represent numerical outcomes dependent on random events in a defined <b>Probability Space</b>.</li>
+    </ul>
+
+    <p><b>Core Notes:</b></p>
+    <ul>
+      <li><b>Probability</b> measures the <b>Likelihood</b> of an event occurring, expressed as a value between <b>0</b> and <b>1</b>.  
+      Example: The <b>Chance of Rain</b> being <b>45%</b> corresponds to a <b>Probability Value</b> of <b>0.45</b>.</li>
+      <li><b>Random Variable</b> defines a quantity whose <b>Possible Values</b> depend on <b>Random Events</b>.  
+      It functions as a <b>Mapping</b> from outcomes to values within a <b>Probability Space</b>.</li>
+      <li><b>Probability Space</b> includes all <b>Possible Outcomes</b> of a random experiment.  
+      Example: For one die, there are <b>6 Possible Outcomes</b> (1 to 6).  
+      Example: For two dice, there are <b>36 Possible Outcomes</b> (6 × 6).</li>
+    </ul>
+  </div>
+
+  <!-- 右侧：图片 -->
+  <div style="flex:1; text-align:center;">
+    <img src="/images/DS01M101.jpg" alt="Probability Diagram" style="width:100%; border-radius:8px;">
+  </div>
+
+</div>
+
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 - **Main Ideas:**
