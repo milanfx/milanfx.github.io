@@ -32,9 +32,9 @@ permalink: /DS09M3/
   - Example: For one die, there are **6 Possible Outcomes** (1 to 6).
   - Example: For two dice, there are **36 Possible Outcomes** (6 × 6).
 
-</div><div style="flex:1;">
-  
-<img src="/images/DS01M101.jpg"></div>
+</div>
+
+<div style="flex:1;"><img src="/images/DS01M101.jpg"></div>
 
 </div>
 
