@@ -34,12 +34,24 @@ permalink: /DS09M3/
 - **Total Probability** across all outcomes always **Sums to 1**, ensuring **Completeness** of the probability model.  
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
+- **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
+- **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
+    - Example: Rolling two dice produces outcomes ranging from **2 to 12**.  
+- **Outcome Frequencies** determine **Distribution Shape**.  
+    - **Sum = 2**: occurs once (**1/36 = 0.028**).  
+    - **Sum = 3**: occurs twice (**2/36 = 0.056**).  
+    - **Sum = 4**: occurs three times (**3/36 = 0.083**).  
+    - **Sum = 5**: occurs four times (**4/36 = 0.111**).  
+    - **Sum = 7**: occurs six times (**6/36 = 0.167**), representing the most **Frequent Outcome**.  
+- **Total Probability** across all outcomes always **Sums to 1**, ensuring **Completeness** of the probability model.  
+- **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
+- **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.
 
 </div><div style="text-align:center;"><br><img src="/images/DS01M101.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
 ### Topic02 - Structure and Interpretation of Probability Distributions
 
-<div style="display:grid; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
 - **Probability Distribution** models all potential values a **Random Variable** may assume along with their corresponding **Probabilities**.
 - **Probability Distribution** assigns a **Probability Value** to each possible **Outcome** of a **Random Variable**.  
@@ -54,11 +66,11 @@ permalink: /DS09M3/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M102.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;"><br><img src="/images/DS01M102.jpg" style="max-width:100%; border-radius:10px;"></div></div>
   
 ### Topic03 - Application of Cumulative Distribution Function (CDF)
 
-<div style="display:flex; grid-template-columns: 6fr 4fr;"><div style="flex:1; min-width:0;" markdown="1">
+<div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
 - **Main Ideas:**
     - **Cumulative Distribution Function (CDF)** measures the **Probability** that a random variable takes a value **Less Than or Equal To** a specified number.
@@ -68,7 +80,7 @@ permalink: /DS09M3/
         - Example: **Probability of Getting ≤ 6** equals **0.417**, while **≥ 6** equals **0.58**.  
     - **CDF Graphs** visualize cumulative probabilities across all outcomes, showing how **Probabilities Accumulate** to **1**.  
 
-</div><div style="flex:1; min-width:0; text-align:center;"><br><img src="/images/DS01M103.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;"><br><img src="/images/DS01M103.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
 ### Topic04 - Modeling with Normal Distribution using Mean and Standard Deviation
 - **Main Ideas:**
