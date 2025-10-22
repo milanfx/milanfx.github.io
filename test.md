@@ -3,7 +3,8 @@ layout: page
 permalink: /DS05M5/
 ---
 
-# Module - Probability Distributions
+### Module - Probability Distributions
+
 - **01 - Random Numbers and Probability Distributions**
 - **02 - State your Hypothesis**
 - **03 - Normal Distribution**
