@@ -20,7 +20,7 @@ permalink: /DS05M5/
 - **Topic04** - Modeling with **Normal Distribution** using **Mean** and **Standard Deviation**
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M101.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M101.jpg" style="max-width:100%; border-radius:10px; margin:10px;">
 </div></div>
 
 
