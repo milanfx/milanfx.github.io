@@ -20,8 +20,8 @@ permalink: /DS05M5/
 - **Topic04** - Modeling with **Normal Distribution** using **Mean** and **Standard Deviation**
 
 </div><div style="text-align:center;">
-    <img src="/images/M101.jpg" style="max-width:100%; border-radius:10px; margin:10px;">
-</div></div>
+    <br><img src="/images/M101.jpg" style="max-width:100%; border-radius:10px;">
+<br></div></div>
 
 
 ### 01 - Define Software Engineering
@@ -53,7 +53,9 @@ permalink: /DS05M5/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.
 
-</div><div style="text-align:center;"><br><img src="/images/M102.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;">
+<br></div></div>
 
 ### Topic02 - Course Introdution
 
@@ -75,7 +77,7 @@ permalink: /DS05M5/
 </div><div style="text-align:center;">
     <br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;">
     <br><img src="/images/M104.jpg" style="max-width:100%; border-radius:10px;">
-</div></div>
+<br></div></div>
   
 ### Topic03 - How to Learn
 
