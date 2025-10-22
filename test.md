@@ -20,8 +20,8 @@ permalink: /DS05M5/
 - **Topic04** - Modeling with **Normal Distribution** using **Mean** and **Standard Deviation**
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M101.jpg" style="max-width:100%; border-radius:10px;">
-<br></div></div>
+    <img src="/images/M101.jpg">
+</div></div>
 
 
 ### 01 - Define Software Engineering
@@ -75,9 +75,8 @@ permalink: /DS05M5/
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;">
-    <br><img src="/images/M104.jpg" style="max-width:100%; border-radius:10px;">
-<br></div></div>
+    <img src="/images/M102.jpg"><img src="/images/M103.jpg">
+</div></div>
   
 ### Topic03 - How to Learn
 
@@ -104,7 +103,7 @@ permalink: /DS05M5/
 - **Topic03** - Comparison of **Mean Scores** between Two Entities  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M301.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
 </div></div>
 
 ### Topic01 - Define Software Engineering
@@ -121,7 +120,7 @@ permalink: /DS05M5/
     - Despite the similarity of these averages, a **Formal Statistical Test** is required to evaluate if the difference is **Statistically Significant**.  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M302.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
 </div></div>
 
 ### Topic02 - Software Crisis
@@ -150,8 +149,7 @@ permalink: /DS05M5/
     - **Selection of Test Type** depends on the **Research Question** or **Expectation** regarding the relationship between the two means.  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M303.jpg" style="max-width:100%; border-radius:10px;">
-    <br><img src="/images/M304.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
 </div></div>
 
 ### Topic03 - Other Projects
@@ -172,6 +170,5 @@ permalink: /DS05M5/
         - If not rejected, the **Observed Difference** could be due to **Random Variation**.  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M305.jpg" style="max-width:100%; border-radius:10px;">
-    <br><img src="/images/M306.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
 </div></div>
