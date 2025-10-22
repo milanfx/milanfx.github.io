@@ -3,14 +3,14 @@ layout: page
 permalink: /DS05M5/
 ---
 
-## M3 - Probability Distributions
+# Module - Probability Distributions
 - **01 - Random Numbers and Probability Distributions**
 - **02 - State your Hypothesis**
 - **03 - Normal Distribution**
 - **04 - T distribution**
 - **05 - Probability of Getting a High or Low Teaching Evaluation**
 
-## 01 - Course Introduction
+## Lesson 01 - Course Introduction
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
     
@@ -24,7 +24,7 @@ permalink: /DS05M5/
 </div></div>
 
 
-### 01 - Define Software Engineering
+### Topic 01 - Define Software Engineering
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -57,7 +57,7 @@ permalink: /DS05M5/
     <img src="/images/M102.jpg">
 </div></div>
 
-### Topic02 - Course Introdution
+### Topic 02 - Course Introdution
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -78,7 +78,7 @@ permalink: /DS05M5/
     <img src="/images/M102.jpg"><img src="/images/M103.jpg">
 </div></div>
   
-### Topic03 - How to Learn
+### Topic 03 - How to Learn
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
