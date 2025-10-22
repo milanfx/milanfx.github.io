@@ -10,7 +10,7 @@ permalink: /DS05M5/
 - **04 - T distribution**
 - **05 - Probability of Getting a High or Low Teaching Evaluation**
 
-## 01 - Random Numbers and Probability Distributions
+## 01 - Course Introduction
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
     
@@ -19,7 +19,12 @@ permalink: /DS05M5/
 - **Topic03** - Application of **Cumulative Distribution Function (CDF)**  
 - **Topic04** - Modeling with **Normal Distribution** using **Mean** and **Standard Deviation**
 
-</div><div style="text-align:center;"><br><img src="/images/M101.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M101.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
+
+
+### 01 - Define Software Engineering
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -50,7 +55,7 @@ permalink: /DS05M5/
 
 </div><div style="text-align:center;"><br><img src="/images/M102.jpg" style="max-width:100%; border-radius:10px;"></div></div>
 
-### Topic02 - Structure and Interpretation of Probability Distributions
+### Topic02 - Course Introdution
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -67,9 +72,12 @@ permalink: /DS05M5/
 - **Probability of Getting 12** (both dice show six) equals **1/36 = 0.028**.  
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.  
 
-</div><div style="text-align:center;"><br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;"><img src="/images/M104.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;">
+    <br><img src="/images/M104.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
   
-### Topic03 - Application of Cumulative Distribution Function (CDF)
+### Topic03 - How to Learn
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -81,9 +89,11 @@ permalink: /DS05M5/
         - Example: **Probability of Getting ≤ 6** equals **0.417**, while **≥ 6** equals **0.58**.  
     - **CDF Graphs** visualize cumulative probabilities across all outcomes, showing how **Probabilities Accumulate** to **1**.  
 
-</div><div style="text-align:center;"><br><img src="/images/M105.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M105.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
 
-## 02 - State your Hypothesis
+## 02 - What is Software Engineering?
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -91,9 +101,11 @@ permalink: /DS05M5/
 - **Topic02** - Formulation of **Null Hypothesis (H₀)** and **Alternative Hypothesis (Hₐ)**  
 - **Topic03** - Comparison of **Mean Scores** between Two Entities  
 
-</div><div style="text-align:center;"><br><img src="/images/M301.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M301.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
 
-### Topic01 - Definition and Purpose of Statistical Hypothesis Testing
+### Topic01 - Define Software Engineering
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -106,9 +118,11 @@ permalink: /DS05M5/
     - **Michael Jordan** averaged **30.12 Points per Game**, while **Wilt Chamberlain** averaged **30.06 Points per Game**.  
     - Despite the similarity of these averages, a **Formal Statistical Test** is required to evaluate if the difference is **Statistically Significant**.  
 
-</div><div style="text-align:center;"><br><img src="/images/M302.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M302.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
 
-### Topic02 - Formulation of Null Hypothesis (H₀) and Alternative Hypothesis (Hₐ)
+### Topic02 - Software Crisis
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -133,9 +147,12 @@ permalink: /DS05M5/
             - **Hₐ:** μ_J > μ_C  
     - **Selection of Test Type** depends on the **Research Question** or **Expectation** regarding the relationship between the two means.  
 
-</div><div style="text-align:center;"><br><img src="/images/M303.jpg" style="max-width:100%; border-radius:10px;"><img src="/images/M304.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M303.jpg" style="max-width:100%; border-radius:10px;">
+    <br><img src="/images/M304.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
 
-### Topic03 - Comparison of Mean Scores between Two Entities
+### Topic03 - Other Projects
 
 <div style="display:grid; grid-template-columns: 6fr 4fr;"><div markdown="1" style="min-width:0;">
 
@@ -152,4 +169,7 @@ permalink: /DS05M5/
         - If the **Null Hypothesis** is rejected, it implies a **Statistically Significant Difference** between the two averages.  
         - If not rejected, the **Observed Difference** could be due to **Random Variation**.  
 
-</div><div style="text-align:center;"><br><img src="/images/M305.jpg" style="max-width:100%; border-radius:10px;"><img src="/images/M306.jpg" style="max-width:100%; border-radius:10px;"></div></div>
+</div><div style="text-align:center;">
+    <br><img src="/images/M305.jpg" style="max-width:100%; border-radius:10px;">
+    <br><img src="/images/M306.jpg" style="max-width:100%; border-radius:10px;">
+</div></div>
