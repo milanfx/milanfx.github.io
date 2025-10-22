@@ -54,8 +54,8 @@ permalink: /DS05M5/
 - **Probability of Getting More than 12** equals **0**, since **12** is the **Maximum Possible Sum**.
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M103.jpg" style="max-width:100%; border-radius:10px;">
-<br></div></div>
+    <img src="/images/M102.jpg">
+</div></div>
 
 ### Topic02 - Course Introdution
 
@@ -91,7 +91,7 @@ permalink: /DS05M5/
     - **CDF Graphs** visualize cumulative probabilities across all outcomes, showing how **Probabilities Accumulate** to **1**.  
 
 </div><div style="text-align:center;">
-    <br><img src="/images/M105.jpg" style="max-width:100%; border-radius:10px;">
+    <img src="/images/M104.jpg">
 </div></div>
 
 ## 02 - What is Software Engineering?
@@ -120,7 +120,7 @@ permalink: /DS05M5/
     - Despite the similarity of these averages, a **Formal Statistical Test** is required to evaluate if the difference is **Statistically Significant**.  
 
 </div><div style="text-align:center;">
-    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
+    <img src="/images/M103.jpg">
 </div></div>
 
 ### Topic02 - Software Crisis
@@ -149,7 +149,7 @@ permalink: /DS05M5/
     - **Selection of Test Type** depends on the **Research Question** or **Expectation** regarding the relationship between the two means.  
 
 </div><div style="text-align:center;">
-    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
+    <img src="/images/M102.jpg">
 </div></div>
 
 ### Topic03 - Other Projects
@@ -170,5 +170,5 @@ permalink: /DS05M5/
         - If not rejected, the **Observed Difference** could be due to **Random Variation**.  
 
 </div><div style="text-align:center;">
-    <img src="/images/M104.jpg"><img src="/images/M105.jpg">
+    <img src="/images/M104.jpg">
 </div></div>
