@@ -25,7 +25,7 @@ permalink: /
       <a href="/#/"           class="btn empty">-<br>-</a>
       <a href="/#/" class="btn boxout" style="background-color:#CFB87C; color:#212121;"><span class="btn boxin">05</span>Colorado<br></a>
       <a href="/#/" class="btn boxout" style="background-color:#CC3333; color:#FFFFFF;"><span class="btn boxin">06</span>IllinoisTech<br></a>
-      <a href="/#/" class="btn boxout" style="background-color:#FF552E; color:#13294B;"><span class="btn boxin">07</span>UIUC<br></a>
+      <a href="/#/" class="btn boxout" style="background-color:#13294B; color:#FF552E;"><span class="btn boxin">07</span>UIUC<br></a>
       <a href="/#/" class="btn boxout" style="background-color:#000000; color:#C8102E;"><span class="btn boxin">08</span>Northestern<br></a>
       <a href="/#/"           class="btn empty">-<br>-</a>
     </div>
