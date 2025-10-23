@@ -40,7 +40,7 @@ permalink: /
       <a href="/#/" class="btn boxout" style="background-color:#0530AD; color:#F4F4F4;"><span class="btn boxin">09</span>IBM<br></a>
       <a href="/#/" class="btn boxout" style="background-color:#F4B400; color:#4285F4;"><span class="btn boxin">10</span>Google<br></a>
       <a href="/#/" class="btn boxout" style="background-color:#7EB900; color:#F14F21;"><span class="btn boxin">11</span>Microsoft<br></a>
-      <a href="/#/" class="btn boxout" style="background-color:#F4F4F4; color:#F65B66;"><span class="btn boxin">12</span>DeepLearning.AI<br></a>
+      <a href="/#/" class="btn boxout" style="background-color:#F65B66; color:#F4F4F4;"><span class="btn boxin">12</span>DeepLearning.AI<br></a>
       <a href="/#/" class="btn empty">-<br>-</a>
     </div>
   </div>
