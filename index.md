@@ -23,9 +23,9 @@ permalink: /
     <div class="btn name">University Courses</div><br>
     <div class="block" style="grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;">
       <a href="/#/"           class="btn empty">-<br>-</a>
-      <a href="/#/" class="btn boxout" style="background-color:#CC3333; color:#FFFFFF;"><span class="btn boxin">05</span>IllinoisTech<br></a>
-      <a href="/#/" class="btn boxout" style="background-color:#13294B; color:#FF552E;"><span class="btn boxin">06</span>UIUC<br></a>
-      <a href="/#/" class="btn boxout" style="background-color:#000000; color:#C8102E;"><span class="btn boxin">07</span>Northestern<br></a>
+      <a href="/#/" class="btn boxout" style="background-color:#CC0000; color:#FFFFFF;"><span class="btn boxin">05</span>IllinoisTech<br></a>
+      <a href="/#/" class="btn boxout" style="background-color:#FF5F05; color:#13294B;"><span class="btn boxin">06</span>UIUC<br></a>
+      <a href="/#/" class="btn boxout" style="background-color:#000000; color:#C8102E;"><span class="btn boxin">07</span>Northeastern<br></a>
       <a href="/#/" class="btn boxout" style="background-color:#00274C; color:#FFCB05;"><span class="btn boxin">08</span>Other</a>
       <a href="/#/"           class="btn empty">-<br>-</a>
     </div>
