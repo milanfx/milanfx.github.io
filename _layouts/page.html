@@ -33,12 +33,20 @@
       text-decoration: none;
     }
 
-    .content > p,
-    .content > ul,
-    .content > ol,
-    .content > blockquote {
-      padding-left: 20px;
-      padding-right: 20px;
+    .content {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+    }
+    
+    .content > * {
+      grid-column: 2;
+    }
+    
+    /* 标题拉回全宽 */
+    .content h1,
+    .content h2,
+    .content h3 {
+      grid-column: 1 / -1;
     }
     
     .container {
