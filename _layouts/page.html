@@ -32,7 +32,15 @@
       font-style: normal;
       text-decoration: none;
     }
-  
+
+    .content > p,
+    .content > ul,
+    .content > ol,
+    .content > blockquote {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
     .container {
       max-width: 1500px;
       min-width: 800px;
@@ -111,7 +119,8 @@
     }
     .container h2 + h3 {
       margin-top: 30px;
-    }    
+    }
+
     .btn {
       display: block;
       box-sizing: border-box;
@@ -253,7 +262,7 @@
       </div>
     </div>
     <br>
-    <div>
+    <div class="content">
       {{ content }}
     </div>
     <br>
