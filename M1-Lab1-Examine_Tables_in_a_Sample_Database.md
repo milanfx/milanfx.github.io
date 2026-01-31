@@ -4,9 +4,7 @@ title: /M1C1/
 permalink: /M1C1/
 ---
 
-
 ### M4Lab1 - Implement AI-assisted SQL Queries
-
 
 #### 🗂️ Overview
 
@@ -15,6 +13,8 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 #### 🗂️ Learning Outcomes
 
 - Implement AI-assisted SQL Queries
+
+---
 
 #### 🗂️ Task 1: Basic Query Generation with Copilot
 
@@ -37,6 +37,8 @@ WHERE GenreId = (
 	WHERE Name = 'Rock'
 );
 ```
+
+---
 
 #### 🗂️ Task 2: Applying Filtering and Sorting
 
@@ -77,6 +79,8 @@ ORDER BY i.InvoiceDate DESC;
 
 ```
 
+---
+
 #### 🗂️ Task 3: Complex Query Optimization
 
 ✅️ Step 1: Copy the following starter code.
@@ -110,8 +114,6 @@ Leveraging AI tools like GitHub Copilot by Microsoft can greatly enhance the eff
 
 ### Lab M2C4 - Sort Data in a Real-world Dataset
 
----
-
 #### 🗂️ Overview
 
 This hands-on activity empowers you to apply SQL skills in sorting and organizing data within a real-world dataset using the ORDER BY clause. By utilizing the Chinook Database, you will gain practical experience in applying sorting techniques essential for effective data organization and presentation.
@@ -121,6 +123,8 @@ This hands-on activity empowers you to apply SQL skills in sorting and organizin
 - Apply sorting techniques using the ORDER BY clause.
 - Understand descending order and its uses. 
 - Practice combined query techniques to achieve specific results. 
+
+---
 
 #### 🗂️ Task 1: Sort Customer Names
 
