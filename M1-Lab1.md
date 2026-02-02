@@ -12,6 +12,9 @@ permalink: /M1C1/
 In this activity, you will engage in a hands-on experience using GitHub Copilot by Microsoft to create and optimize SQL queries. This interactive exercise is designed to demonstrate how generative AI can assist in making SQL query writing more efficient and effective. By comparing AI-generated queries to manually written ones, you will gain insight into the capabilities and efficiency of using AI tools in SQL database management.
 
 #### 🗂️ Learning Outcomes
+#### 🗂️ Learning Outcomes
+#### 🗂️ Learning Outcomes
+#### 🗂️ Learning Outcomes
 
 - Implement AI-assisted SQL Queries
 
