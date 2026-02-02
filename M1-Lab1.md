@@ -14,7 +14,28 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 
 - Implement AI-assisted SQL Queries
 
----
+|ID|Type|Content|
+|:-:|:-:|-|
+|M1||Introduction to SQL and Course Overview|
+|L1||Introduction to Databases|
+|01|Video|Program Introduction|
+|02|Video|Course Introduction|
+|03|Read|Course Structure|
+|04|Video|The Power of Data|
+|05|Read|Introduction to Databases|
+|06|Demo|Explore How Data is Organized in the Chinook Database|
+|07|Lab|Examine Tables in a Sample Database|
+|08|Quiz|Exploring Table Structures|
+|L2||Exploring Tables and Their Structures|
+|01|Video|The Power of SQL|
+|02|Read|What is SQL?|
+|03|Demo|Working with SQL Queries Using Pseudocode|
+|04|Lab|Query a Database using Pseudocode|
+|05|Quiz|Understanding SQL Basics for Interacting with Data|
+|05|Project|Understanding SQL Basics for Interacting with Data|
+|05|Assignment|Understanding SQL Basics for Interacting with Data|
+|05|Assignment|Understanding SQL Basics for Interacting with Data|
+|----|---------------|---------------------------------------------------------------------------------------------------------|
 
 #### 🗂️ Task 1: Basic Query Generation with Copilot
 
