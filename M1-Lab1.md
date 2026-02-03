@@ -11,13 +11,13 @@ permalink: /M1C2/
 
 In this activity, you will engage in a hands-on experience using GitHub Copilot by Microsoft to create and optimize SQL queries. This interactive exercise is designed to demonstrate how generative AI can assist in making SQL query writing more efficient and effective. By comparing AI-generated queries to manually written ones, you will gain insight into the capabilities and efficiency of using AI tools in SQL database management.
 
-#### M1 - Module 1: Introduction to SQL and Course Overview
-#### L1 - Lesson 1: Welcome to the Course
+#### 🗂️ M1 - Module 1: Introduction to SQL and Course Overview
+#### 🗂️ L1 - Lesson 1: Welcome to the Course
 -  Video - Welcome to SQL with Microsoft SQL Server Certificate
 -  Video - Welcome to SQL Foundations
 -  Read - Course Structure and Learning Outcomes
 
-#### L2 - Lesson 2: Introduction to Databases
+#### 🗂️ L2 - Lesson 2: Introduction to Databases
 -  Video - The Power of Data
 -  Read - Introduction to Databases
 -  Video - Explore How Data is Organized in the Chinook Database
@@ -25,7 +25,7 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 -  Quiz - Exploring Table Structures
 -  Dialogue - Reflect on the Importance of Databases
 
-#### L3 - Lesson 3: Exploring Tables and Their Structures
+#### 🗂️ L3 - Lesson 3: Exploring Tables and Their Structures
 -  Video - The Power of SQL
 -  Read - What is SQL?
 -  Video - Working with SQL Queries Using Pseudocode
