@@ -6,12 +6,12 @@ permalink: /M1C2/
 
 ### ⭐️ M1 - Module 1: Introduction to SQL and Course Overview
 
-#### 🗂️ L1 - Lesson 1: Welcome to the Course
+#### ⚡️ L1 - Lesson 1: Welcome to the Course
 -  Video - Welcome to SQL with Microsoft SQL Server Certificate
 -  Video - Welcome to SQL Foundations
 -  Read - Course Structure and Learning Outcomes
 
-#### 🗂️ L2 - Lesson 2: Introduction to Databases
+#### ⚡️ L2 - Lesson 2: Introduction to Databases
 -  Video - The Power of Data
 -  Read - Introduction to Databases
 -  Demo - Explore How Data is Organized in the Chinook Database
@@ -19,14 +19,7 @@ permalink: /M1C2/
 -  Quiz - Exploring Table Structures
 -  Dialogue - Reflect on the Importance of Databases
 
-🗂️🗂️🗂️🗂️🗂️
-⭕️⭕️⭕️⭕️⭕️
-⭐️⭐️⭐️⭐️⭐️
-📖📖📖📖📖
-✖️✖️✖️✖️✖️
-🚀🚀🚀🚀🚀
-
-#### 🗂️ L3 - Lesson 3: Exploring Tables and Their Structures
+#### ⚡️ L3 - Lesson 3: Exploring Tables and Their Structures
 -  Video - The Power of SQL
 -  Read - What is SQL?
 -  Video - Working with SQL Queries Using Pseudocode
