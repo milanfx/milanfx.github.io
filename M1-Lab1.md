@@ -4,14 +4,8 @@ title: /M1C1/
 permalink: /M1C2/
 ---
 
-### M4Lab1 - Implement AI-assisted SQL Queries
+### 🚀 M1 - Module 1: Introduction to SQL and Course Overview
 
-
-#### 🗂️ Overview
-
-In this activity, you will engage in a hands-on experience using GitHub Copilot by Microsoft to create and optimize SQL queries. This interactive exercise is designed to demonstrate how generative AI can assist in making SQL query writing more efficient and effective. By comparing AI-generated queries to manually written ones, you will gain insight into the capabilities and efficiency of using AI tools in SQL database management.
-
-#### 🗂️ M1 - Module 1: Introduction to SQL and Course Overview
 #### 🗂️ L1 - Lesson 1: Welcome to the Course
 -  Video - Welcome to SQL with Microsoft SQL Server Certificate
 -  Video - Welcome to SQL Foundations
@@ -20,10 +14,17 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 #### 🗂️ L2 - Lesson 2: Introduction to Databases
 -  Video - The Power of Data
 -  Read - Introduction to Databases
--  Video - Explore How Data is Organized in the Chinook Database
+-  Demo - Explore How Data is Organized in the Chinook Database
 -  Lab - Examine Tables in a Sample Database
 -  Quiz - Exploring Table Structures
 -  Dialogue - Reflect on the Importance of Databases
+
+🗂️🗂️🗂️🗂️🗂️
+⭕️⭕️⭕️⭕️⭕️
+
+📖📖📖📖📖
+✖️✖️✖️✖️✖️
+🚀🚀🚀🚀🚀
 
 #### 🗂️ L3 - Lesson 3: Exploring Tables and Their Structures
 -  Video - The Power of SQL
@@ -33,8 +34,11 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 -  Quiz - Understanding SQL Basics for Interacting with Data
 -  Dialogue - Discuss How SQL Can Benefit Your Field
 
+### 🚀 Read - Introduction to Databases
 
+### 🚀 Demo - Explore How Data is Organized in the Chinook Database
 
+### 🚀 Read - What is SQL?
 
 #### 🗂️ Task 1: Basic Query Generation with Copilot
 
