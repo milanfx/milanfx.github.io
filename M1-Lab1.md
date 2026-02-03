@@ -4,7 +4,7 @@ title: /M1C1/
 permalink: /M1C2/
 ---
 
-### 🚀 M1 - Module 1: Introduction to SQL and Course Overview
+### ⭐️ M1 - Module 1: Introduction to SQL and Course Overview
 
 #### 🗂️ L1 - Lesson 1: Welcome to the Course
 -  Video - Welcome to SQL with Microsoft SQL Server Certificate
@@ -21,7 +21,7 @@ permalink: /M1C2/
 
 🗂️🗂️🗂️🗂️🗂️
 ⭕️⭕️⭕️⭕️⭕️
-
+⭐️⭐️⭐️⭐️⭐️
 📖📖📖📖📖
 ✖️✖️✖️✖️✖️
 🚀🚀🚀🚀🚀
@@ -34,11 +34,11 @@ permalink: /M1C2/
 -  Quiz - Understanding SQL Basics for Interacting with Data
 -  Dialogue - Discuss How SQL Can Benefit Your Field
 
-### 🚀 Read - Introduction to Databases
+### ⭐️ Read - Introduction to Databases
 
-### 🚀 Demo - Explore How Data is Organized in the Chinook Database
+### ⭐️ Demo - Explore How Data is Organized in the Chinook Database
 
-### 🚀 Read - What is SQL?
+### ⭐️ Read - What is SQL?
 
 #### 🗂️ Task 1: Basic Query Generation with Copilot
 
