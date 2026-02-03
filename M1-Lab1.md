@@ -32,7 +32,7 @@ In this activity, you will engage in a hands-on experience using GitHub Copilot 
 -  Lab - Query a Database using Pseudocode
 -  Quiz - Understanding SQL Basics for Interacting with Data
 -  Dialogue - Discuss How SQL Can Benefit Your Field
-<img width="962" height="875" alt="image" src="https://github.com/user-attachments/assets/c06c5bcd-e7f8-4418-9d73-d32b63e3b268" />
+
 
 
 
