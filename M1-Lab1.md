@@ -11,51 +11,29 @@ permalink: /M1C2/
 
 In this activity, you will engage in a hands-on experience using GitHub Copilot by Microsoft to create and optimize SQL queries. This interactive exercise is designed to demonstrate how generative AI can assist in making SQL query writing more efficient and effective. By comparing AI-generated queries to manually written ones, you will gain insight into the capabilities and efficiency of using AI tools in SQL database management.
 
-#### 🗂️ Learning Outcomes
-#### 🗂️ Learning Outcomes
-#### 🗂️ Learning Outcomes
-#### 🗂️ Learning Outcomes
+#### M1 - Module 1: Introduction to SQL and Course Overview
+#### L1 - Lesson 1: Welcome to the Course
+-  Video - Welcome to SQL with Microsoft SQL Server Certificate
+-  Video - Welcome to SQL Foundations
+-  Read - Course Structure and Learning Outcomes
 
-#### M1 - Introduction to SQL and Course Overview
-#### L1 - Introduction to Databases
--  01Video - Program Introduction
--  02Video - Course Introduction
--  03Read - Course Structure
--  04Video - The Power of Data
--  05Read - Introduction to Databases
--  06Demo - Explore How Data is Organized in the Chinook Database
--  07Lab - Examine Tables in a Sample Database
--  08Quiz - Exploring Table Structures
-#### L2 - Exploring Tables and Their Structures
--  01Video - The Power of SQL
--  02Read - What is SQL?
--  03Demo - Working with SQL Queries Using Pseudocode
--  04Lab - Query a Database using Pseudocode
--  05Quiz - Understanding SQL Basics for Interacting with Data
+#### L2 - Lesson 2: Introduction to Databases
+-  Video - The Power of Data
+-  Read - Introduction to Databases
+-  Video - Explore How Data is Organized in the Chinook Database
+-  Lab - Examine Tables in a Sample Database
+-  Quiz - Exploring Table Structures
+-  Dialogue - Reflect on the Importance of Databases
 
-|ID|Type|Content|
-|:-:|:-:|-|
-|M1||Introduction to SQL and Course Overview|
-|||
-|L1||Introduction to Databases|
-|01|Video|Program Introduction|
-|02|Video|Course Introduction|
-|03|Read|Course Structure|
-|04|Video|The Power of Data|
-|05|Read|Introduction to Databases|
-|06|Demo|Explore How Data is Organized in the Chinook Database|
-|07|Lab|Examine Tables in a Sample Database|
-|08|Quiz|Exploring Table Structures|
-|||
-|L2||Exploring Tables and Their Structures|
-|01|Video|The Power of SQL|
-|02|Read|What is SQL?|
-|03|Demo|Working with SQL Queries Using Pseudocode|
-|04|Lab|Query a Database using Pseudocode|
-|05|Quiz|Understanding SQL Basics for Interacting with Data|
-|05|Project|Understanding SQL Basics for Interacting with Data|
-|05|Assignment|Understanding SQL Basics for Interacting with Data|
-|05|Assignment|Understanding SQL Basics for Interacting with Data|
+#### L3 - Lesson 3: Exploring Tables and Their Structures
+-  Video - The Power of SQL
+-  Read - What is SQL?
+-  Video - Working with SQL Queries Using Pseudocode
+-  Lab - Query a Database using Pseudocode
+-  Quiz - Understanding SQL Basics for Interacting with Data
+-  Dialogue - Discuss How SQL Can Benefit Your Field
+<img width="962" height="875" alt="image" src="https://github.com/user-attachments/assets/c06c5bcd-e7f8-4418-9d73-d32b63e3b268" />
+
 
 
 #### 🗂️ Task 1: Basic Query Generation with Copilot
