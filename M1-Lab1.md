@@ -7,7 +7,7 @@ permalink: /M1C1/
 
 ## ⭐️ M1 - What is Data Engineering?
 
-#### ⚡️ L1 - Modern Data Ecosystem and Role of Data Engineering
+#### ✔️ L1 - Modern Data Ecosystem and Role of Data Engineering
 - Video - Introduction to Data Engineering
 - Video - Modern Data Ecosystem 
 - Video - Key Players in the Data Ecosystem
@@ -16,12 +16,12 @@ permalink: /M1C1/
 - Video - Viewpoints: Defining Data Engineering
 - Video - Viewpoints: Evolution of Data Engineering
 
-#### ⚡️ L2 - Responsibilities and Skillsets of a Data Engineer
+#### ✔️ L2 - Responsibilities and Skillsets of a Data Engineer
 - Video - Responsibilities and Skillsets of a Data Engineer
 - Video - Viewpoints: Skills and Qualities to be a Data Engineer
 - Video - A Day in the Life of a Data Engineer
 
-## ⚡️ L1 - Modern Data Ecosystem and Role of Data Engineering
+## ⭐️ L1 - Modern Data Ecosystem and Role of Data Engineering
 
 ### 🗂️ Video - Introduction to Data Engineering
 
@@ -494,7 +494,7 @@ permalink: /M1C1/
 
 ### 🗂️ Video - Viewpoints: Evolution of Data Engineering
 
-## ⚡️ L2 - Responsibilities and Skillsets of a Data Engineer
+## ⭐️ L2 - Responsibilities and Skillsets of a Data Engineer
 
 ### 🗂️ Video - Responsibilities and Skillsets of a Data Engineer
 
