@@ -4,686 +4,740 @@ title: /M1C1/
 permalink: /M1C2/
 ---
 
-### ⭐️ M1 - Module 1: Introduction to SQL and Course Overview
 
-#### ⚡️ L1 - Lesson 1: Welcome to the Course
--  Video - Welcome to SQL with Microsoft SQL Server Certificate
--  Video - Welcome to SQL Foundations
--  Read - Course Structure and Learning Outcomes
+### ⭐️ M1 - What is Data Engineering?
 
-#### ⚡️ L2 - Lesson 2: Introduction to Databases
--  Video - The Power of Data
--  Read - Introduction to Databases
--  Demo - Explore How Data is Organized in the Chinook Database
--  Lab - Examine Tables in a Sample Database
--  Quiz - Exploring Table Structures
--  Dialogue - Reflect on the Importance of Databases
-
-#### ⚡️ L3 - Lesson 3: Exploring Tables and Their Structures
--  Video - The Power of SQL
--  Read - What is SQL?
--  Video - Working with SQL Queries Using Pseudocode
--  Lab - Query a Database using Pseudocode
--  Quiz - Understanding SQL Basics for Interacting with Data
--  Dialogue - Discuss How SQL Can Benefit Your Field
-
-#### ✔️ 01 - Language Categories for Data Professionals
-- **Languages for Data Professionals**: Languages relevant to accessing data, developing applications, and automating operational tasks.
-- **Language Categories**: Classification of languages used in data-related work.
-    - **Query Languages**: Designed for accessing and manipulating data in a database.
-        - Example: SQL
-    - **Programming Languages**: Designed for developing applications and controlling application behavior.
-        - Examples: Python, R, Java
-    - **Shell and Scripting Languages**: Designed for repetitive and time-consuming operational tasks.
-        - Examples: Unix/Linux Shell, PowerShell
-- **Proficiency Requirement**: Proficiency in at least one language in each category.
-    - Essential for any data professional
-
-#### ✔️ 02 - SQL (Structured Query Language)
-- **SQL**: Querying language for accessing and manipulating information.
-    - Used mostly, though not exclusively, with relational databases
-- **Database Operations**:
-    - Insert, update, and delete records
-    - Create databases, tables, and views
-    - Write stored procedures for later use
-- **SQL Advantages**:
-    - Platform independent and portable
-    - Works with a wide variety of databases and data repositories
-    - Simple, English-like syntax
-    - Fewer lines of code using basic keywords
-    - Fast and efficient retrieval of large amounts of data
-    - Interpreter-based execution for quick prototyping
-    - Large user community and extensive documentation
-
-#### ✔️ 03 - Python
-- **Python**: Open-source, general-purpose, high-level programming language.
-    - Used for developing applications and controlling application behavior
-- **Language Characteristics**:
-    - Simple and readable syntax
-    - Low learning curve
-    - Large developer community
-- **Data Processing Capabilities**:
-    - Performs high-computational tasks on large datasets
-    - Uses parallel processing through libraries
-- **Python Libraries**:
-    - Pandas for data cleaning and analysis
-    - NumPy and SciPy for statistical analysis
-    - BeautifulSoup and Scrapy for web scraping
-    - Matplotlib and Seaborn for data visualization
-    - OpenCV for image processing
-- **Programming Paradigms**:
-    - Object-oriented
-    - Imperative
-    - Functional
-    - Procedural
-
-#### ✔️ 04 - R
-- **R**: Open-source programming language and environment for data analysis.
-    - Used for data visualization, machine learning, and statistics
-- **Key Benefits**:
-    - Platform independent
-    - Can be paired with other programming languages such as Python
-    - Highly extensible through user-defined functions
-    - Handles structured and unstructured data
-- **Visualization and Reporting**:
-    - Libraries such as ggplot2 and Plotly
-    - Supports reports with embedded scripts
-    - Enables interactive web applications
-- **Primary Strength**:
-    - Dominant language for developing statistical tools
-
-#### ✔️ 05 - Java
-- **Java**: Object-oriented, class-based, platform-independent programming language.
-    - Originally developed by Sun Microsystems
-- **Data Analytics Usage**:
-    - Data cleaning
-    - Data import and export
-    - Statistical analysis
-    - Data visualization
-- **Big Data Ecosystem**:
-    - Hadoop
-    - Hive
-    - Spark
-- **Performance Focus**:
-    - Suitable for speed-critical projects
-
-#### ✔️ 06 - Unix/Linux Shell
-- **Unix/Linux Shell**: Computer program written for the UNIX shell.
-    - Series of UNIX commands written in plain text files
-- **Shell Scripts**: Used to automate repetitive tasks.
-- **Typical Operations**:
-    - File manipulation
-    - Program execution
-    - System administration tasks
-    - Disk backups and system log evaluation
-    - Installation scripts and batch execution
-
-#### ✔️ 07 - PowerShell
-- **PowerShell**: Cross-platform automation tool and configuration framework by Microsoft.
-    - Combines a command-line shell with a scripting language
-- **Design Characteristics**:
-    - Object-based pipeline processing
-- **Capabilities**:
-    - Filter, sort, measure, group, and compare objects
-    - Work with structured data formats such as JSON, CSV, XML
-    - Interact with REST APIs, websites, and office applications
-    - Support data mining
-    - Build GUIs
-    - Create charts, dashboards, and interactive reports
-
-
-### ⭐️ Read - Introduction to Databases
-
-### ⭐️ Demo - Explore How Data is Organized in the Chinook Database
-
-### ⭐️ Read - What is SQL?
-
-#### 🗂️ Task 1: Basic Query Generation with Copilot
-
-Objective: Formulate a query retrieving track names for all tracks in the Track table where the genre is ‘Rock’.
-
-✅️ Step 1: Start with a SELECT statement and observe Copilot’s suggestions for completing your query.
-
-✅️ Step 2: Compare the AI-generated query with your manually written attempt.
-
-Tip: Pay attention to how Copilot suggests completing the query.
-
-Test Your Work: Check if the query returns the expected track names for the ‘Rock’ genre.
-
-```SQL
--- Task 1: Basic Query Completion with Copilot
-SELECT NameFROM Track
-WHERE GenreId = (
-	SELECT GenerId
-	FROM Genre
-	WHERE Name = 'Rock'
-);
-```
-
----
-
-#### 🗂️ Task 2: Applying Filtering and Sorting
-
-✅️ Step 1: Copy the following starter code.
-
-✅️ Step 2: Complete the SELECT statement on the Customer table using an alias.
-
-✅️ Step 3: Create a JOIN on the Invoice table using an alias.
-
-✅️ Step 4: Let Copilot assist in what columns to join.
-
-✅️ Step 5: In the SELECT statement begin adding the columns and let Copilot assist with adding the columns and syntax.
-
-✅️ Step 6: Then, let Copilot assist with optimizing the query by adding a WHERE clause to filter the results based on a specific condition, and the ORDER BY clause to sort the results.
-
-✅️ Step 7: Analyze differences between the AI-generated and manual queries.
-
-Tip: Notice how Copilot helps structure the query.
-
-Test Your Work: Output should show the invoice details sorted by purchase date.
-
-```SQL
--- Task 2: Applying Filters and Sorting
--- Create a SELECT statement on the Customer table using an alias.
-SELECT
-    c.FirstName AS CustomerFirstName,
-    c.LastName AS CustomerLastName,
-    i.InvoiceId,
-    i.InvoiceDate,
-    i.Total
--- Create a join with the Invoice table using an alias.
-FROM
-    Customer c
-JOIN
-    Invoice i ON c.CustomerId = i.CustomerId
-WHERE i.Total > 10 
-ORDER BY i.InvoiceDate DESC;
-
-```
-
----
-
-#### 🗂️ Task 3: Complex Query Optimization
-
-✅️ Step 1: Copy the following starter code.
-
-✅️ Step 2: Construct a manual query to list artists, albums, and their total sales figures in descending order. Use Copilot to make suggestions.
-
-✅️ Step 3: Evaluate the AI-generated query for completeness and efficiency.
-
-Tip: Check the efficiency of the AI-suggested query.
-
-Test Your Work: Ensure the output correctly lists artist, albums, and their total sales figures in descending order.
-
-```SQL
--- Task 3: Complex Query Optimization
-SELECT
-    ar.Name AS ArtistName,
-    al.Title AS AlbumTitle,
-    SUM(il.UnitPrice * il.Quantity) AS TotalSales
-FROM Artist ar
-JOIN Album al ON ar.ArtistId = al.ArtistId
-JOIN Track t ON al.AlbumId = t.AlbumId
-JOIN InvoiceLine il ON t.TrackId = il.TrackId
-GROUP BY ar.Name, al.Title
-ORDER BY TotalSales DESC;
-```
-
-#### 🗂️ Summary
-
-Leveraging AI tools like GitHub Copilot by Microsoft can greatly enhance the efficiency and accuracy of SQL query writing. While AI can assist in generating and optimizing queries, it is important to validate and modify AI-generated code to fit specific needs accurately.
-
-
-### Lab M2C4 - Sort Data in a Real-world Dataset
-
-#### 🗂️ Overview
-
-This hands-on activity empowers you to apply SQL skills in sorting and organizing data within a real-world dataset using the ORDER BY clause. By utilizing the Chinook Database, you will gain practical experience in applying sorting techniques essential for effective data organization and presentation.
-
-#### 🗂️ Learning Outcomes
-
-- Apply sorting techniques using the ORDER BY clause.
-- Understand descending order and its uses. 
-- Practice combined query techniques to achieve specific results. 
-
----
-
-#### 🗂️ Task 1: Sort Customer Names
-
-Objective: Practice ordering data alphabetically to improve data readability and navigation.
-
-✅️ Step 1: Write a SQL query using the ORDER BY to retrieve and display customer names sorted alphabetically by their last names.
-
-Tip: The default order is ascending, but it’s best practice to still include ASC in the code.
-
-```SQL
--- Task 1: Sort Customer Names
--- Write a query to retrieve customer names sorted
--- alphabetically by their last names.
-SELECT FirstName, LastName
-FROM Customer
-ORDER BY LastName ASC;
-```
-
-#### 🗂️ Task 2: Organize Tracks by Unit Price
-
-Objective: Understand descending order and its role in financial analysis or resource prioritization.
-
-✅️ Step 1: Formulate a query to retrieve the names of tracks sorted by their UnitPrice, from the most expensive to the least expensive.
-
-Tip: To format in descending order, use the truncated DESC in your code. 
-
-```SQL
--- Task 2: Organize Track by Unit Price
--- Write a query to retrieve the names of tracks sorted by their UnitPrice
--- in descending order, from the most expensive to the least expensive.
-SELECT Name, UnitPrice
-FROM Track
-ORDER BY UnitPrice DESC;
-```
-
-#### 🗂️ Task 3: Combine Sorting with Filtering
-
-Objective: Reinforce combined query techniques used to achieve specific results when sorting and filtering data.
-
-✅️ Step 1: Using the following starter code, use a combination of WHERE and ORDER BY clauses to display InvoiceId for each CustomerId for customers in 'Germany', and ordered by Total in descending order.
-
-```SQL
--- Task 3: Combine Sorting with Filtering
--- Retrieve the InvoiceId and CustomerId for customers located in 'Germany',
--- and sort the results by Total in descending order.
-SELECT InvoiceId, CustomerId, Total
-FROM Invoice
-WHERE BillingCountry = 'Germany'
-ORDER BY Total DESC;
-```
-
-#### 🗂️ Task 4: Multi-column Sorting
-
-Objective: Learn to apply multi-level sorting, necessary for nuanced data analysis.
-
-✅️ Step 1: Using the following starter code, construct a query to sort the tracks by MediaTypeId and, within each media type, by track name alphabetically.
-
-```SQL
--- Task 4: Multi-column Sorting
--- Write a query to sort the tracks first by MediaTypeId in ascending order,
--- and then alphabetically by track name within each MediaTypeId.
-SELECT Name, MediaTypeId
-FROM Track
-ORDER BY MediaTypeId ASC, Name ASC;
-```
-
-#### 🗂️ Summary
-
-In this activity you explored advanced sorting techniques using the ORDER BY clause and ASC and DESC commands, enabling you to visualize your results in the most helpful way. Through practice, reflection, and feedback, you will strengthen your command over basic querying techniques essential for effective data manipulation.
-
-### Topic 1: Data Movement Approaches
-#### 1. Tools and processes:
-- **Data movement approaches**
-  - ETL
-  - ELT
-  - Data pipelines
-
-### Topic 2: Extract, Transform, and Load Process
-#### 1. ETL process:
-- **ETL purpose**
-  - Raw data converted into analysis-ready data
-- **ETL nature**
-  - Automated process
-- **ETL steps**
-  - Gather raw data from identified sources
-  - Extract data aligned with reporting and analysis needs
-  - Clean, standardize, and transform data
-  - Load data into a data repository
-
-#### 2. Extract:
-- **Extraction methods**
-  - Batch processing
-  - Stream processing
-
-#### 3. Batch processing:
-- **Batch movement**
-  - Source data moved in large chunks at scheduled intervals
-- **Batch tools**
-  - Stitch
-  - Blendo
-
-#### 4. Stream processing:
-- **Real-time processing**
-  - Data pulled and transformed in real time before loading
-- **Stream tools**
-  - Apache Samza
-  - Apache Storm
-  - Apache Kafka
-
-#### 5. Transform:
-- **Transformation rules**
-  - Make date formats and units consistent
-  - Remove duplicate data
-  - Filter unnecessary data
-  - Enrich data
-  - Establish key relationships
-  - Apply business rules and validations
-
-#### 6. Load:
-- **Load types**
-  - Initial loading
-  - Incremental loading
-  - Full refresh
-- **Load verification**
-  - Data checks for missing or null values
-  - Server performance monitoring
-  - Load failure monitoring
-
-#### 7. ETL usage:
-- **Historical usage**
-  - Batch workloads on a large scale
-- **Streaming usage**
-  - Real-time streaming event data
-
-#### 8. ETL tools:
-- **ETL tools**
-  - IBM Infosphere Information Server
-  - AWS Glue
-  - Improvado
-  - Skyvia
-  - HEVO
-  - Informatica PowerCenter
-
-### Topic 3: Extract, Load, and Transform Process
-#### 1. ELT process:
-- **ELT sequence**
-  - Data loaded before transformation
-- **Transformation location**
-  - Transformations applied in the target system
-
-#### 2. ELT destination:
-- **Target systems**
-  - Data lake
-  - Data warehouse
-
-#### 3. ELT characteristics:
-- **Technology basis**
-  - Powered by cloud technologies
-
-#### 4. ELT use cases:
-- **Data types**
-  - Large unstructured data
-  - Non-relational data
-- **Ideal environment**
-  - Data lakes
-
-#### 5. ELT advantages:
-- **Shorter cycle**
-  - No staging environment
-- **Immediate ingestion**
-  - Raw data ingested as available
-- **Analytical flexibility**
-  - Greater flexibility for exploratory analytics
-- **Selective transformation**
-  - Transform only data required for analysis
-- **Big Data suitability**
-  - More suited for Big Data
-
-### Topic 4: Data Pipelines
-#### 1. Data pipeline definition:
-- **Pipeline scope**
-  - Complete journey of data from one system to another
-
-#### 2. ETL and ELT relationship:
-- **Pipeline subsets**
-  - ETL and ELT may be subsets
-
-#### 3. Pipeline architectures:
-- **Processing types**
-  - Batch processing
-  - Streaming data
-  - Combined batch and streaming
-
-#### 4. Streaming pipelines:
-- **Continuous processing**
-  - Data processed in continuous flow
-- **Example use**
-  - Sensor data monitoring traffic
-
-#### 5. Pipeline performance:
-- **Query support**
-  - Long-running batch queries
-  - Smaller interactive queries
-
-#### 6. Pipeline destinations:
-- **Target destinations**
-  - Data lake
-  - Applications
-  - Visualization tools
-
-#### 7. Pipeline solutions:
-- **Pipeline tools**
-  - Apache Beam
-  - AirFlow
-  - DataFlow
-
-
-
-
-
-
-
-## ⭕️ C1 - Introduction to Data Engineering
-### ✅️ M1 - What is Data Engineering?
-#### ✔️ L1 - Course Introduction
-- Video - Welcome to Introduction to Data Engineering
-
-
-#### ✔️ L2 - Modern Data Ecosystem and role of Data Engineering
+#### ⚡️ L1 - Modern Data Ecosystem and Role of Data Engineering
+- Video - Introduction to Data Engineering
 - Video - Modern Data Ecosystem 
-- Video - Key Players  in the Data Ecosystem
+- Video - Key Players in the Data Ecosystem
 - Video - Specializations in Data Engineering
 - Video - What is Data Engineering?
 - Video - Viewpoints: Defining Data Engineering
 - Video - Viewpoints: Evolution of Data Engineering
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
 
-
-#### ✔️ L3 - Responsibilities and Skillsets of a Data Engineer
+#### ⚡️ L2 - Responsibilities and Skillsets of a Data Engineer
 - Video - Responsibilities and Skillsets of a Data Engineer
 - Video - Viewpoints: Skills and Qualities to be a Data Engineer
 - Video - A Day in the Life of a Data Engineer
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
 
 
-### ✅️ M2 - The Data Engineering Ecosystem
-#### ✔️ L1 - The Data Ecosystem and Languages for Data Professionals
-- Video - Overview of the Data Engineering Ecosystem
-- Video - Types of Data
-- Video - Understanding Different Types of File Formats
-- Video - Sources of Data
-- Video - Languages for Data Professionals
-- Video - Viewpoints: Working with Varied Data Sources and Types
-- Read - Reading: Metadata and Metadata Management
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
+### ⭐️ Video - Introduction to Data Engineering
+
+#### ✔️ 01 - Course Introduction & Motivation
+- **Data Engineering**: A foundational discipline focused on ensuring data accuracy and efficient access for decision-making.
+    - The value derived from data depends on data accuracy and accessibility.
+- **Data Growth**: Data is increasing rapidly across businesses, industries, institutions, and governments.
+    - Organizations rely on data to guide decisions affecting their future and society.
+- **Role of a Data Engineer**: Responsible for building and maintaining systems that make data reliable and accessible.
+    - Focuses on data accuracy and efficiency of access.
+- **Career Opportunity**: Data engineering is a fast-growing technology occupation.
+    - Dice Tech Job Report (2020) reports 50% year-over-year growth.
+
+#### ✔️ 02 - Target Audience & Course Scope
+- **Target Learners**:
+    - Aspiring data engineers from engineering or computer science backgrounds
+    - Graduates from non-related streams
+    - Non-graduates who enjoy coding
+    - Data professionals interested in engineering
+    - Working professionals in technical roles
+- **Course Purpose**: Help learners start or advance a career in data engineering.
+    - Provides upskilling opportunities and career pathways.
+- **Course Coverage**:
+    - Core concepts of data engineering
+    - Data engineering ecosystem and life cycle
+    - Data and data repositories
+    - Data pipelines and data integration platforms
+    - Big data concepts
+    - Data platform architecture
+    - Data store design considerations
+    - Data extraction, transformation, and cleaning
+    - Data security, privacy, and compliance regulations
+- **Industry Insights**:
+    - Knowledge shared by subject matter experts and practitioners
+    - Guidance on pathways to becoming a data engineer
 
 
-#### ✔️ L2 - Data Repositories, Data Pipelines, and Data Integration Platforms
-- Video - Overview of Data Repositories
-- Video - RDBMS
-- Video - NoSQL
-- Video - Data Warehouses, Data Marts, and Data Lakes
-- Video - Data Lakehouses Explained
-- Video - Viewpoints: Considerations for Choice of Data Repository
-- Video - ETL, ELT, and Data Pipelines
-- Video - Data Integration Platforms
-- Video - Viewpoints: Tools, Databases, and Data Repositories of Choice
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
+### ⭐️ Video - Modern Data Ecosystem 
+
+#### ✔️ 01 - Data Growth & Modern Data Ecosystem
+- **Data Growth**: Data continues to increase due to faster processing speeds, higher bandwidth, and new data tools.
+    - New tools enable creating, sharing, and consuming data.
+    - More data creators and consumers contribute globally.
+        - Data creates more data in a continuous cycle.
+- **Modern Data Ecosystem**: A network of interconnected, independent, and evolving entities.
+    - Data from disparate sources must be integrated.
+    - Different analysis types and skills are required to generate insights.
+    - Stakeholders collaborate and act on generated insights.
+    - Tools, applications, and infrastructure store, process, and disseminate data.
+
+#### ✔️ 02 - Data Sources & Diversity
+- **Data Sources**:
+    - Structured datasets
+    - Unstructured datasets
+    - Text, images, videos
+    - Clickstreams and user conversations
+    - Social media platforms
+    - Internet of Things (IoT) devices
+    - Real-time streaming events
+    - Legacy databases
+    - Professional data providers and agencies
+- **Source Characteristics**:
+    - Highly diverse
+    - Highly dynamic
+    - More varied than ever before
+
+#### ✔️ 03 - Data Acquisition & Ingestion
+- **Data Acquisition**: Pulling copies of data from original sources into a data repository.
+    - Focuses on acquiring required data only.
+- **Data Interfaces**:
+    - Data formats
+    - Data sources
+    - Interfaces used to pull data
+- **Key Challenges**:
+    - Reliability of data
+    - Security of data
+    - Integrity of acquired data
+
+#### ✔️ 04 - Data Organization, Compliance & Management
+- **Data Preparation**: Raw data must be organized, cleaned, and optimized for access.
+    - Prepared for end-user consumption.
+- **Compliance and Standards**:
+    - Organizational compliance requirements
+    - Regulations on personal data storage and usage
+        - Health data
+        - Biometrics
+        - Household data from IoT devices
+    - Adherence to master data tables
+        - Ensures standardization across applications and systems
+- **Data Management Challenges**:
+    - High availability
+    - Flexibility
+    - Accessibility
+    - Security of data repositories
+
+#### ✔️ 05 - Data Consumption & Access
+- **Data Consumers**:
+    - Business stakeholders
+    - Applications
+    - Programmers
+    - Analysts
+    - Data science use cases
+- **Access Mechanisms**:
+    - Interfaces
+    - APIs
+    - Applications
+- **Consumer Needs**:
+    - Data Analysts need raw data
+    - Business stakeholders need reports and dashboards
+    - Applications need custom APIs
+
+#### ✔️ 06 - Emerging Technologies in the Data Ecosystem
+- **Emerging Technologies**:
+    - Cloud Computing
+    - Machine Learning
+    - Big Data
+- **Cloud Computing**: Enables broad access to advanced capabilities.
+    - Limitless storage
+    - High-performance computing
+    - Open source technologies
+    - Machine learning tools
+    - Modern tools and libraries
+
+#### ✔️ 07 - Machine Learning & Big Data
+- **Machine Learning**: Used by Data Scientists to create predictive models.
+    - Algorithms are trained on historical data.
+- **Big Data**: Refers to extremely large and diverse datasets.
+    - Traditional tools and analysis methods are inadequate.
+    - Requires new tools, techniques, and skills.
+        - Leads to new knowledge and insights.
+
+### ⭐️ Video - Key Players in the Data Ecosystem
+
+#### ✔️ 01 - Data-Driven Organizations & Competitive Advantage
+- **Data-Driven Organizations**: Organizations that use data to uncover opportunities and differentiate themselves.
+    - Data is used to guide decisions and shape future leadership.
+- **Competitive Advantage**: Achieved by applying insights derived from data.
+    - Detecting fraud in financial transactions
+        - Looking for patterns in transaction data
+    - Recommendation engines
+        - Driving conversion through personalized suggestions
+    - Social media analysis
+        - Mining posts to capture customer voice
+    - Customer behavior analysis
+        - Personalizing offers based on user behavior
+
+#### ✔️ 02 - Roles in the Data Ecosystem
+- **Data Roles**:
+    - Data Engineer
+    - Data Analyst
+    - Data Scientist
+    - Business Analyst
+    - Business Intelligence (BI) Analyst
+- **Data Ecosystem**: A collaborative environment where multiple roles turn data into actionable insights.
+    - Each role contributes distinct skills and responsibilities.
+
+#### ✔️ 03 - Role of the Data Engineer
+- **Data Engineer**: Develops and maintains data architectures and makes data available for business operations and analysis.
+    - Works within the data ecosystem.
+- **Responsibilities**:
+    - Extract, integrate, and organize data from disparate sources
+    - Clean, transform, and prepare data
+    - Design, store, and manage data in data repositories
+- **Data Accessibility**: Ensures data is available in usable formats and systems.
+    - Supports business applications
+    - Supports Data Analysts and Data Scientists
+- **Required Skills**:
+    - Programming knowledge
+    - Systems and technology architecture knowledge
+    - Understanding of relational databases
+    - Understanding of non-relational datastores
+
+#### ✔️ 04 - Role of the Data Analyst
+- **Data Analyst**: Translates data and numbers into plain language for decision-making.
+    - Helps organizations understand what data means.
+- **Responsibilities**:
+    - Inspect and clean data
+    - Identify correlations and patterns
+    - Apply statistical methods to analyze and mine data
+    - Visualize data and present findings
+- **Typical Questions Answered**:
+    - User experience quality
+    - Public perception of branding initiatives
+    - Correlation between product sales
+- **Required Skills**:
+    - Spreadsheets
+    - Writing queries
+    - Statistical tools
+        - Creating charts and dashboards
+    - Programming skills
+    - Analytical and storytelling skills
+
+#### ✔️ 05 - Role of the Data Scientist
+- **Data Scientist**: Analyzes data for actionable insights and builds predictive models.
+    - Uses Machine Learning and Deep Learning.
+- **Responsibilities**:
+    - Train models on past data
+    - Create predictive models
+- **Typical Questions Answered**:
+    - Future social media follower growth
+    - Customer churn prediction
+    - Detection of unusual financial transactions
+- **Required Skills**:
+    - Mathematics
+    - Statistics
+    - Programming languages
+    - Databases
+    - Building data models
+    - Domain knowledge
+
+#### ✔️ 06 - Role of Business Analysts & BI Analysts
+- **Business Analyst**: Uses insights from data analysis and data science to guide business actions.
+    - Focuses on internal business implications.
+- **Business Intelligence (BI) Analyst**: Focuses on market forces and external influences.
+    - Shapes understanding of the business environment.
+- **Responsibilities**:
+    - Organize and monitor data across business functions
+    - Explore data to extract insights and actionables
+        - Improving business performance
+
+#### ✔️ 07 - Relationship Between Data Roles
+- **Data Engineering**: Converts raw data into usable data.
+- **Data Analytics**: Uses usable data to generate insights.
+- **Data Science**: Uses analytics and engineering to predict future outcomes from past data.
+- **Business Analysis & BI Analysis**: Uses insights and predictions to drive business decisions.
+- **Career Transitions**:
+    - Data professionals often move between roles.
+        - Achieved by supplementing skills within the data ecosystem
+
+### ⭐️ Video - Specializations in Data Engineering
+
+#### ✔️ 01 - Overview of Specialized Roles in the Data Engineering Ecosystem
+- **Data Engineering Ecosystem**: A complex data landscape supported by multiple specialized professionals.
+    - All roles share the objective of efficient and dependable data management.
+- **Specialized Roles**:
+    - Data Warehouse Engineer
+    - Data Architect
+    - Data Manager
+    - Database Administrator
+- **Role Collaboration**: These roles collaborate and interconnect to ensure secure, efficient data management.
+    - Interactions span architecture, governance, operations, and analytics support.
+
+#### ✔️ 02 - Role of the Data Warehouse Engineer
+- **Data Warehouse Engineer**: Designs, builds, and maintains data warehouses for analytics and reporting.
+    - Focuses on storing and analyzing large datasets.
+- **Responsibilities**:
+    - Design and maintain data warehouses
+    - Develop ETL processes
+        - Extract data from sources
+        - Transform data into usable formats
+        - Load data into repositories
+- **Evolving Scope**:
+    - Implementation of data lakes
+        - Supports unstructured data
+        - Enables advanced analytics and machine learning
+- **Role Clarification**:
+    - Responsibilities often align closely with an ETL developer role.
+
+#### ✔️ 03 - Role of the Data Architect
+- **Data Architect**: Designs the overall data architecture of an organization.
+    - Covers data warehousing, big data, and analytics platforms.
+- **Architecture Design**:
+    - Data integration strategies
+    - Governance and security strategies
+    - Scalability and performance planning
+- **Technical Design Tasks**:
+    - Schema design
+    - Indexing methods
+    - Partitioning strategies
+        - Optimizes data retrieval
+- **System Planning**:
+    - High availability solutions
+    - Disaster recovery planning
+    - Planning for future growth and technology evolution
+
+#### ✔️ 04 - Role of the Data Manager
+- **Data Manager**: Oversees data governance and data strategy.
+    - Aligns data usage with business and regulatory requirements.
+- **Governance Responsibilities**:
+    - Data quality management
+    - Compliance enforcement
+    - Accessibility standards
+- **Key Tasks**:
+    - Develop data governance frameworks
+    - Define access control policies
+    - Enforce organizational standards
+- **Organizational Role**:
+    - Promote cross-department collaboration
+    - Cultivate data literacy
+    - Align data initiatives with organizational goals
+
+#### ✔️ 05 - Role of the Database Administrator
+- **Database Administrator**: Ensures smooth and secure database operations.
+    - Focuses on availability, security, and performance.
+- **Operational Duties**:
+    - Routine backups
+    - Performance optimization
+    - Patch management
+- **Monitoring & Security**:
+    - Monitor database activity
+        - Detect slow queries
+        - Identify unauthorized access
+    - Implement encryption protocols
+    - Maintain audit logs
+        - Support compliance requirements
+
+#### ✔️ 06 - Hospital Network Example: Role Responsibilities in Practice
+- **Data Warehouse Engineer**:
+    - Designs and maintains the data warehouse
+        - Integrates data from EHR and lab systems
+    - Develops ETL pipelines
+        - Transforms patient data into structured formats
+- **Data Architect**:
+    - Designs scalable architecture
+        - Stores millions of patient records
+    - Develops indexing strategies
+        - Enables fast retrieval of medical histories
+    - Plans for future growth
+- **Data Manager**:
+    - Ensures adherence to healthcare regulations
+    - Establishes access policies
+    - Oversees data quality assurance
+    - Collaborates with medical researchers
+- **Database Administrator**:
+    - Ensures uninterrupted EHR system operations
+    - Conducts regular backups
+    - Resolves performance bottlenecks
+    - Implements disaster recovery protocols
+
+#### ✔️ 07 - Role Comparison: Focus & Deliverables
+- **Focus**:
+    - Data Warehouse Engineer
+        - Data warehouse design and data pipelines
+    - Data Architect
+        - Overall data architecture and scalability
+    - Data Manager
+        - Strategy, governance, and alignment with business goals
+    - Database Administrator
+        - Operational reliability and security
+- **Key Deliverables**:
+    - ETL pipelines and data warehouse deployments
+    - Scalable data management solutions
+    - Policies, standards, and compliance frameworks
+    - Secure and reliable database operations
+
+#### ✔️ 08 - Tools, Collaboration & Importance
+- **Tools Used**:
+    - Data Warehouse Engineers
+        - Apache Kafka
+        - Spark
+        - Cloud data warehouses
+    - Data Architects
+        - ERD tools
+        - MySQL
+        - MongoDB
+        - Cloud data platforms
+    - Data Managers
+        - Data governance platforms
+    - Database Administrators
+        - SQL
+        - Database monitoring tools
+- **Collaboration**:
+    - Engineers work with architects, DBAs, and BI analysts
+    - Architects collaborate with engineers, DBAs, and business leaders
+    - Data managers coordinate across business and technical teams
+    - DBAs partner with engineers and architects
+- **Importance**:
+    - Data warehouse engineers enable analytics-ready data
+    - Data architects ensure scalable, adaptable ecosystems
+    - Data managers align data with business goals
+    - Database administrators maintain security and reliability
+
+### ⭐️ Video - What is Data Engineering?
+
+#### ✔️ 01 - Scope of Data Engineering
+- **Data Engineering**: Focuses on the mechanics of data flow and data access.
+    - The goal is to make quality data available for fact-finding and data-driven decision making.
+- **Evolution of Data**: Data has expanded from single databases to diverse sources and structures.
+    - Includes wide-ranging sources, structures, and types of data.
+
+#### ✔️ 02 - Collecting Source Data
+- **Collecting Source Data**: Involves extracting, integrating, and organizing data from disparate sources.
+    - Data must be gathered from multiple systems and formats.
+- **Data Acquisition Requirements**:
+    - Develop tools, workflows, and processes
+    - Acquire data from multiple sources
+    - Handle different interfaces and formats
+
+#### ✔️ 03 - Data Architecture & Storage Design
+- **Scalable Data Architecture**: Designed to store growing volumes of data.
+    - Supports evolving data and business needs.
+- **Data Repositories**:
+    - Databases
+    - Data warehouses
+    - Data lakes
+    - Other data repositories
+
+#### ✔️ 04 - Data Processing & Transformation
+- **Data Processing**: Cleaning, transforming, and preparing data for use.
+    - Converts raw data into usable data.
+- **Processing Requirements**:
+    - Implement distributed systems
+        - Support large-scale data processing
+    - Design ETL pipelines
+        - Extract data
+        - Transform data
+        - Load data into repositories
+    - Validate data quality
+    - Safeguard privacy and security
+    - Optimize performance, reliability, and scalability
+    - Ensure regulatory and compliance guidelines are met
+
+#### ✔️ 05 - Storing Processed Data
+- **Data Storage**: Ensures reliable and easy availability of processed data.
+    - Data must be accessible and durable.
+- **Storage Responsibilities**:
+    - Architect or implement data stores
+    - Ensure scalability of storage systems
+    - Implement systems for:
+        - Data privacy
+        - Security
+        - Compliance
+        - Monitoring
+        - Backup
+        - Recovery
+
+#### ✔️ 06 - Making Data Available to Users
+- **Data Access**: Providing secure access to data for end-users.
+    - Supports analytics and decision-making.
+- **Access Mechanisms**:
+    - APIs, services, and programs
+        - Retrieve data based on defined parameters
+    - Interfaces and dashboards
+        - Present data for insight generation
+- **Security Controls**:
+    - Rights-based access
+    - Checks and balances to protect data
+
+#### ✔️ 07 - Data Engineering as a Team Effort
+- **Team Sport**: Data engineering requires multiple skill sets.
+    - No single person covers all responsibilities.
+- **Required Expertise**:
+    - Architecture skills
+        - Designing data management systems
+    - Database expertise
+        - Availability and optimization of data stores
+    - Programming languages
+    - Database tools
+    - Distributed systems
+
+#### ✔️ 08 - Tools, Solutions & Organizational Choices
+- **End-to-End Practice**: Not required for every organization.
+    - Depends on business needs.
+- **Available Solutions**:
+    - On-premise tools
+    - Cloud-based tools
+    - Market-ready applications and platforms
+- **Evaluation**:
+    - Organizations can select tools based on individual requirements
+
+#### ✔️ 09 - Core Emphasis of Data Engineering
+- **Primary Focus**: Tools and technologies for data manipulation.
+    - Strongly technology-driven.
+- **Broader Understanding**:
+    - Comprehending data complexity
+    - Understanding how data supports fact-finding
+    - Enabling effective decision-making
+
+### ⭐️ Video - Viewpoints: Defining Data Engineering
+
+### ⭐️ Video - Viewpoints: Evolution of Data Engineering
+
+### ⭐️ Video - Responsibilities and Skillsets of a Data Engineer
+
+#### ✔️ 01 - Core Responsibility of a Data Engineer
+- **Data Engineer**: A professional whose overarching responsibility is to provide analytics-ready data to data consumers.
+    - Ensures data can be used effectively for analysis and decision-making.
+- **Analytics-Ready Data**: Data that meets required standards for analysis.
+    - Accurate and reliable
+    - Complies with governing regulations
+    - Accessible to consumers when needed
+
+#### ✔️ 02 - High-Level Responsibilities of Data Engineers
+- **Data Handling Tasks**:
+    - Extract data from disparate sources
+    - Organize and integrate data
+- **Data Preparation**:
+    - Transform data
+    - Cleanse data
+        - Prepare data for analysis and reporting
+- **Data Pipelines**:
+    - Design data pipelines
+    - Manage data pipelines
+        - Cover the journey from source systems to destination systems
+- **Infrastructure Management**:
+    - Set up ingestion infrastructure
+    - Manage processing infrastructure
+    - Manage storage infrastructure
+
+#### ✔️ 03 - Data Engineering Infrastructure Components
+- **Data Platforms**:
+    - Support ingestion, processing, and storage
+- **Data Stores**:
+    - Aggregate source data
+- **Distributed Systems**:
+    - Enable large-scale data processing
+- **Data Repositories**:
+    - Store and disseminate analysis-ready data
+
+#### ✔️ 04 - Technical Skills: Systems & Infrastructure
+- **Operating Systems**:
+    - UNIX
+    - Linux
+    - Windows
+        - Administrative tools, system utilities, and commands
+- **Infrastructure Components**:
+    - Virtual machines
+    - Networking
+    - Application services
+        - Load balancing
+        - Application performance monitoring
+- **Cloud-Based Services**:
+    - Amazon
+    - Google
+    - IBM
+    - Microsoft
+
+#### ✔️ 05 - Technical Skills: Databases & Data Warehouses
+- **RDBMS**:
+    - IBM DB2
+    - MySQL
+    - Oracle Database
+    - PostgreSQL
+- **NoSQL Databases**:
+    - Redis
+    - MongoDB
+    - Cassandra
+    - Neo4J
+- **Data Warehouses**:
+    - Oracle Exadata
+    - IBM Db2 Warehouse on Cloud
+    - IBM Netezza Performance Server
+    - Amazon RedShift
+
+#### ✔️ 06 - Technical Skills: Data Pipelines & ETL
+- **Data Pipelines**:
+    - High-level proficiency in pipeline design and operation
+- **Pipeline Solutions**:
+    - Apache Beam
+    - AirFlow
+    - DataFLow
+- **ETL Tools**:
+    - IBM Infosphere Information Server
+    - AWS Glue
+    - Improvado
+
+#### ✔️ 07 - Technical Skills: Languages & Big Data Tools
+- **Query Languages**:
+    - SQL for relational databases
+    - SQL-like languages for NoSQL databases
+- **Programming Languages**:
+    - Python
+    - R
+    - Java
+- **Shell and Scripting Languages**:
+    - Unix/Linux Shell
+    - PowerShell
+- **Big Data Tools**:
+    - Hadoop
+    - Hive
+    - Spark
+
+#### ✔️ 08 - Functional Skills for Data Engineers
+- **Business-to-Technical Translation**:
+    - Convert business requirements into technical specifications
+- **Software Development Lifecycle**:
+    - Ideation
+    - Architecture
+    - Design
+    - Prototyping
+    - Testing
+    - Deployment
+    - Monitoring
+- **Business Understanding**:
+    - Understand how data can be applied in business contexts
+- **Data Risk Awareness**:
+    - Data quality risks
+    - Privacy risks
+    - Security risks
+    - Compliance risks
+
+#### ✔️ 09 - Collaboration & Soft Skills
+- **Team Sport**: Data engineering requires collaboration among multiple specialists.
+    - Multiple data engineers contribute different expertise
+- **Data Consumers**:
+    - Data analysts
+    - Data scientists
+    - Business users
+    - Other technical teams
+- **Soft Skills**:
+    - Interpersonal skills
+    - Teamwork
+    - Collaboration
+- **Communication**:
+    - Communicate with technical stakeholders
+    - Communicate with non-technical stakeholders
+        - Ensure clear mutual understanding
+
+#### ✔️ 10 - Skill Growth & Specialization
+- **Broad Skillset**: Data engineering spans many tools and disciplines.
+    - No single engineer masters all skills
+- **Specialization**:
+    - Focus on one or more areas
+    - Maintain general understanding of all areas
+- **Skill Development**:
+    - Grows with experience
+    - Depends on focus areas
+    - Requires continuous upskilling
 
 
-#### ✔️ L3 - Big Data Platforms
-- Video - Foundations of Big Data
-- Video - Big Data Processing Tools: Hadoop, HDFS, Hive, and Spark
-- Video - Viewpoints: Impact of Big Data on Data Engineering
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
+### ⭐️ Video - Viewpoints: Skills and Qualities to be a Data Engineer
+
+### ⭐️ Video - A Day in the Life of a Data Engineer
+
+#### ✔️ 01 - Business Context & Motivation
+- **Data Engineer**: A professional supporting business goals through data systems.
+    - Works within a multinational hair care company.
+- **Product Launch**: Introduction of a new shampoo to the market.
+    - Sales and brand perception are influenced by social media discussions.
+- **Customer Sentiment**: Public opinion expressed online about the product.
+    - Business teams want to monitor sentiment from day one of launch.
+
+#### ✔️ 02 - Business Requirements for Sentiment Monitoring
+- **Social Media Monitoring**:
+    - Twitter
+    - Facebook
+    - Instagram
+- **Online Sources**:
+    - eCommerce platforms
+    - Product review blogs
+    - Bloggers
+- **Types of Feedback**:
+    - Positive feedback
+    - Negative comments
+    - Suggestions
+    - Comparisons with existing products
+
+#### ✔️ 03 - Data Science Prototype
+- **Dashboard Prototype**: Built by Data Scientists using dummy data.
+    - Uses a sentiment analysis algorithm.
+- **Dashboard Output**:
+    - Graphs of customer sentiment
+        - Plotted as sentiment scores
+    - Data segmented by:
+        - Social media sources
+        - Consumer demographics
+- **Business Approval**: Prototype receives go-ahead for implementation.
+
+#### ✔️ 04 - Data Engineering Implementation Begins
+- **Data Engineers**: Responsible for turning the prototype into a production solution.
+    - Step in after business approval.
+- **Initial Task**: Pull data from identified online sources into the organization’s environment.
+    - Based on business team requirements
+
+#### ✔️ 05 - Data Collection Techniques
+- **APIs**:
+    - Pull tweets and posts
+        - Use product hashtags
+    - Load data into temporary storage
+- **Web Scraping**:
+    - Collect data from eCommerce portals
+    - Collect data from product review blogs
+- **Data Formats**:
+    - Tweets
+    - Posts
+    - Comments
+    - Articles
+    - Memes
+        - Highly mixed structures and formats
+
+#### ✔️ 06 - Data Inspection & Transformation
+- **Data Inspection**: Review collected data before loading.
+    - Assess required transformations
+- **Data Processing Tool**:
+    - Python program
+        - Used for processing and loading data
+- **Data Preparation**:
+    - Clean data
+    - Transform data
+        - Convert into database-ready format
+
+#### ✔️ 07 - Data Storage & Dashboard Integration
+- **Database**: Stores processed sentiment data.
+    - Acts as the source for the dashboard
+- **Dashboard Consumption**:
+    - Pulls data from the database
+    - Displays sentiment reports
+- **Validation**:
+    - Results meet data scientists’ expectations
+
+#### ✔️ 08 - Limitations of Manual Data Updates
+- **Manual Data Pulls**:
+    - Business users request updates each time
+    - Leads to inefficiency
+- **Scalability Issue**:
+    - Not suitable for frequent or continuous updates
+
+#### ✔️ 09 - Building a Real-Time Data Pipeline
+- **Data Pipeline**: Automates ongoing data flow.
+    - Extract data continuously
+    - Transform data automatically
+    - Load data into the database
+- **Real-Time Analytics**:
+    - Dashboard updates automatically
+    - Business users see current sentiment instantly
+- **Outcome**:
+    - Continuous visibility into customer sentiment
+    - Improved decision-making during product launch
 
 
-#### ✔️ L4 - Create an instance of IBM Db2 database
-- Lab - Labs for IBM Cloud and Db2
-- Lab - Obtain IBM Cloud Feature Code and Activate Trial Account
-- Lab - Hands-on Lab: Create your IBM Cloud account
-- Lab - Hands-on Lab: Provision an instance of IBM Db2 Lite plan
-
-
-### ✅️ M3 - Data Engineering Lifecycle
-#### ✔️ L1 - Data Platforms, Data Stores, and Security
-- Video - Architecting the Data Platform
-- Video - Factors for Selecting and Designing Data Stores
-- Video - Security
-- Video - Viewpoints: Importance of Data Security
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
-
-
-#### ✔️ L2 - Data Collection and Data Wrangling
-- Video - How to Gather and Import Data
-- Video - Data Wrangling
-- Video - Tools for Data Wrangling
-- Lab - Hands-On Lab: Load data into the Datasette from a CSV file
-- Lab - Hands-on Lab: Load data into the Db2 Database from a CSV file
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
-
-
-#### ✔️ L3 - Querying Data, Performance Tuning, and Troubleshooting
-- Video - Querying and Analyzing Data
-- Video - Performance Tuning and Troubleshooting
-- Lab - Lab: Explore your dataset using SQL queries using Datasette
-- Lab - Hands-on Lab: Explore Your Dataset Using SQL Queries in DB2
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
-
-
-#### ✔️ L4 - Governance and Compliance
-- Video - Governance and Compliance
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
-- Read - Overview of the DataOps Methodology
-
-
-### ✅️ M4 - Career Opportunities and Data Engineering in Action
-#### ✔️ L1 - Career Opportunities and Learning Paths
-- Video - Career Opportunities in Data Engineering
-- Read - Reading: Data Warehousing Specialist
-- Read - Reading: Data Manager
-- Video - Viewpoints: Get into Data Engineering
-- Video - Data Engineering Learning Path
-- Video - Viewpoints: What Do Employers Look for in a Data Engineer
-- Video - Viewpoints: The Many Paths to Data Engineering
-- Video - Viewpoints: Advice to Aspiring Data Engineers
-
-
-#### ✔️ L2 - Module Quiz
-- Read - Summary and Highlights
-- Quiz - Practice Quiz
-- Quiz - Graded Quiz
-
-
-### ✅️ M5 - Final Project and Quiz
-#### ✔️ L2 - Final Project
-- Project - Final Project Submission Guidelines and Deliverables
-- Review - Option 1: AI-Graded - Final Submission and Evaluation
-- Review - Option 2: Peer-graded Assignment - Final Submission and Evaluation
-- Review - Option 2: Peer-graded Assignment - Final Submission and Evaluation
-
-
-#### ✔️ L3 - Final Quiz
-- Quiz - Final Quiz
-- Read - Congratulations and Next Steps
-
----
-
-## M1C1 - Get started
-
-
-
-### 01 - Welcome to the Google Data Analytics Certificate
-
-XXX
-
-### 02 - Reading: Course 1 Overview: Set Your Expectations
-
-####  Program overview
-
-1. Foundations: Data, Data, Everywhere (this course)
-2. Ask Questions to Make Data-Driven Decisions
-3. Prepare Data for Exploration
-4. Process Data from Dirty to Clean
-5. Analyze Data to Answer Questions
-6. Share Data Through the Art of Visualization
-7. Data Analysis with R Programming
-8. Google Data Analytics Capstone: Complete a Case Study
-9. Accelerate Your Job Search with AI
- 
-#### Course 1 content
-
-Each course is broken into modules. Here’s a quick overview of the skills you'll gain in each of the four Course 1 modules. 
-
-- Module 1: Introducing data analytics and analytical thinking
-
-Data helps us make decisions in both everyday life and in business. In this part of the course, you’ll learn how data analysts use a variety of tools and skills to inform those decisions. You’ll also get to know more about this course and the overall program expectations.
-
-- Module 2: The wonderful world of data
-
-In this part of the course, you'll learn about the data life cycle and data analysis process. They are both relevant to your work in this program and on the job. You’ll also be introduced to applications that help guide data through the data analysis process.
-
-- Module 3: Set up your data analytics toolbox
-
-Spreadsheets, query languages, and data visualization tools are all a big part of a data analyst’s job. In this part of the course, you’ll learn the basic concepts to use them for data analysis. You’ll also understand how they work through interesting examples.
-
-- Module 4: Become a fair and impactful data professional
-
-In this part of the course, you’ll examine different types of businesses and the jobs and tasks that analysts do for them. You’ll also learn how a Google Data Analytics Certificate will help you meet many of the requirements for an analyst position with these organizations.
-
-### 03 - Introduction to the Course
-
-XXX
-
-### 04 - Get Started with Your Google Data Analytics Certificate
-
-XXX
-
-### 05 - Reading: Evaluate Your Current Data Analytics Skills
-
-#### Data analytics knowledge and skills 
-
-Data analysts must have a comprehensive understanding of the data analytics process, as well as the technical skills that allow them to complete the data analysis process. In this section, you’ll consider questions about the data analytics process and specific technical skills to determine your readiness for the advanced certificate programs.
-
-First, evaluate your knowledge of the data analytics process by considering whether the following statements apply to you:
-
-- I have a thorough understanding of data-driven decision-making and how it helps organizations guide their business strategy based on facts. 
-- I’m able to ask questions and make hypotheses about business problems and use them to guide me through the data analysis process.
-- I know the steps to verify data credibility and perform data validation. 
-- I understand data modeling and know how organizations use it as a tool to understand their data. 
-- I can select and design visualizations that help me effectively communicate analysis insights to stakeholders. 
-
-If the previous statements apply to you, you probably know the basics of the data analysis process. Continue reading to evaluate your technical skills.
-
-Data analysts use a variety of tools, including software and programming languages, to analyze data. You will be most successful in an advanced certificate program if you’re able to use spreadsheets, SQL, Tableau, and R, which are covered in this program. Consider whether the following statements apply to you:
-
-- I’m able to join data from multiple sources to use for data analysis.
-- I can sort data in both a spreadsheet and a database.
-- I’m able to clean data by ensuring it contains no duplicate or incorrect entries and is in the correct format.
-- I know how to create data visualizations using a spreadsheet, Tableau, and R. 
-- I can write a SQL command that would select several columns from a table.
-- I understand packages in R and can select and install the packages I need to complete specific tasks.
