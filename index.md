@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Milanfx Study Notes
+layout: Note
+title: Note
 permalink: /
 ---
 
