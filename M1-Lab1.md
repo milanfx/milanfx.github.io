@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: Note
 title: /M1C1/
 permalink: /M1C1/
 ---
