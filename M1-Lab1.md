@@ -27,6 +27,111 @@ permalink: /M1C2/
 -  Quiz - Understanding SQL Basics for Interacting with Data
 -  Dialogue - Discuss How SQL Can Benefit Your Field
 
+#### ✔️ 01 - Language Categories for Data Professionals
+- **Languages for Data Professionals**: Languages relevant to accessing data, developing applications, and automating operational tasks.
+- **Language Categories**: Classification of languages used in data-related work.
+    - **Query Languages**: Designed for accessing and manipulating data in a database.
+        - Example: SQL
+    - **Programming Languages**: Designed for developing applications and controlling application behavior.
+        - Examples: Python, R, Java
+    - **Shell and Scripting Languages**: Designed for repetitive and time-consuming operational tasks.
+        - Examples: Unix/Linux Shell, PowerShell
+- **Proficiency Requirement**: Proficiency in at least one language in each category.
+    - Essential for any data professional
+
+#### ✔️ 02 - SQL (Structured Query Language)
+- **SQL**: Querying language for accessing and manipulating information.
+    - Used mostly, though not exclusively, with relational databases
+- **Database Operations**:
+    - Insert, update, and delete records
+    - Create databases, tables, and views
+    - Write stored procedures for later use
+- **SQL Advantages**:
+    - Platform independent and portable
+    - Works with a wide variety of databases and data repositories
+    - Simple, English-like syntax
+    - Fewer lines of code using basic keywords
+    - Fast and efficient retrieval of large amounts of data
+    - Interpreter-based execution for quick prototyping
+    - Large user community and extensive documentation
+
+#### ✔️ 03 - Python
+- **Python**: Open-source, general-purpose, high-level programming language.
+    - Used for developing applications and controlling application behavior
+- **Language Characteristics**:
+    - Simple and readable syntax
+    - Low learning curve
+    - Large developer community
+- **Data Processing Capabilities**:
+    - Performs high-computational tasks on large datasets
+    - Uses parallel processing through libraries
+- **Python Libraries**:
+    - Pandas for data cleaning and analysis
+    - NumPy and SciPy for statistical analysis
+    - BeautifulSoup and Scrapy for web scraping
+    - Matplotlib and Seaborn for data visualization
+    - OpenCV for image processing
+- **Programming Paradigms**:
+    - Object-oriented
+    - Imperative
+    - Functional
+    - Procedural
+
+#### ✔️ 04 - R
+- **R**: Open-source programming language and environment for data analysis.
+    - Used for data visualization, machine learning, and statistics
+- **Key Benefits**:
+    - Platform independent
+    - Can be paired with other programming languages such as Python
+    - Highly extensible through user-defined functions
+    - Handles structured and unstructured data
+- **Visualization and Reporting**:
+    - Libraries such as ggplot2 and Plotly
+    - Supports reports with embedded scripts
+    - Enables interactive web applications
+- **Primary Strength**:
+    - Dominant language for developing statistical tools
+
+#### ✔️ 05 - Java
+- **Java**: Object-oriented, class-based, platform-independent programming language.
+    - Originally developed by Sun Microsystems
+- **Data Analytics Usage**:
+    - Data cleaning
+    - Data import and export
+    - Statistical analysis
+    - Data visualization
+- **Big Data Ecosystem**:
+    - Hadoop
+    - Hive
+    - Spark
+- **Performance Focus**:
+    - Suitable for speed-critical projects
+
+#### ✔️ 06 - Unix/Linux Shell
+- **Unix/Linux Shell**: Computer program written for the UNIX shell.
+    - Series of UNIX commands written in plain text files
+- **Shell Scripts**: Used to automate repetitive tasks.
+- **Typical Operations**:
+    - File manipulation
+    - Program execution
+    - System administration tasks
+    - Disk backups and system log evaluation
+    - Installation scripts and batch execution
+
+#### ✔️ 07 - PowerShell
+- **PowerShell**: Cross-platform automation tool and configuration framework by Microsoft.
+    - Combines a command-line shell with a scripting language
+- **Design Characteristics**:
+    - Object-based pipeline processing
+- **Capabilities**:
+    - Filter, sort, measure, group, and compare objects
+    - Work with structured data formats such as JSON, CSV, XML
+    - Interact with REST APIs, websites, and office applications
+    - Support data mining
+    - Build GUIs
+    - Create charts, dashboards, and interactive reports
+
+
 ### ⭐️ Read - Introduction to Databases
 
 ### ⭐️ Demo - Explore How Data is Organized in the Chinook Database
