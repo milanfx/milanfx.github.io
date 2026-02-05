@@ -5,7 +5,7 @@ permalink: /M1C1/
 ---
 
 
-### ⭐️ M1 - What is Data Engineering?
+## ⭐️ M1 - What is Data Engineering?
 
 #### ⚡️ L1 - Modern Data Ecosystem and Role of Data Engineering
 - Video - Introduction to Data Engineering
@@ -21,8 +21,9 @@ permalink: /M1C1/
 - Video - Viewpoints: Skills and Qualities to be a Data Engineer
 - Video - A Day in the Life of a Data Engineer
 
+## ⚡️ L1 - Modern Data Ecosystem and Role of Data Engineering
 
-### ⭐️ Video - Introduction to Data Engineering
+### 🗂️ Video - Introduction to Data Engineering
 
 #### ✔️ 01 - Course Introduction & Motivation
 - **Data Engineering**: A foundational discipline focused on ensuring data accuracy and efficient access for decision-making.
@@ -58,7 +59,7 @@ permalink: /M1C1/
     - Guidance on pathways to becoming a data engineer
 
 
-### ⭐️ Video - Modern Data Ecosystem 
+### 🗂️ Video - Modern Data Ecosystem 
 
 #### ✔️ 01 - Data Growth & Modern Data Ecosystem
 - **Data Growth**: Data continues to increase due to faster processing speeds, higher bandwidth, and new data tools.
@@ -152,7 +153,7 @@ permalink: /M1C1/
     - Requires new tools, techniques, and skills.
         - Leads to new knowledge and insights.
 
-### ⭐️ Video - Key Players in the Data Ecosystem
+### 🗂️ Video - Key Players in the Data Ecosystem
 
 #### ✔️ 01 - Data-Driven Organizations & Competitive Advantage
 - **Data-Driven Organizations**: Organizations that use data to uncover opportunities and differentiate themselves.
@@ -250,7 +251,7 @@ permalink: /M1C1/
     - Data professionals often move between roles.
         - Achieved by supplementing skills within the data ecosystem
 
-### ⭐️ Video - Specializations in Data Engineering
+### 🗂️ Video - Specializations in Data Engineering
 
 #### ✔️ 01 - Overview of Specialized Roles in the Data Engineering Ecosystem
 - **Data Engineering Ecosystem**: A complex data landscape supported by multiple specialized professionals.
@@ -393,7 +394,7 @@ permalink: /M1C1/
     - Data managers align data with business goals
     - Database administrators maintain security and reliability
 
-### ⭐️ Video - What is Data Engineering?
+### 🗂️ Video - What is Data Engineering?
 
 #### ✔️ 01 - Scope of Data Engineering
 - **Data Engineering**: Focuses on the mechanics of data flow and data access.
@@ -489,11 +490,13 @@ permalink: /M1C1/
     - Understanding how data supports fact-finding
     - Enabling effective decision-making
 
-### ⭐️ Video - Viewpoints: Defining Data Engineering
+### 🗂️ Video - Viewpoints: Defining Data Engineering
 
-### ⭐️ Video - Viewpoints: Evolution of Data Engineering
+### 🗂️ Video - Viewpoints: Evolution of Data Engineering
 
-### ⭐️ Video - Responsibilities and Skillsets of a Data Engineer
+## ⚡️ L2 - Responsibilities and Skillsets of a Data Engineer
+
+### 🗂️ Video - Responsibilities and Skillsets of a Data Engineer
 
 #### ✔️ 01 - Core Responsibility of a Data Engineer
 - **Data Engineer**: A professional whose overarching responsibility is to provide analytics-ready data to data consumers.
@@ -641,9 +644,9 @@ permalink: /M1C1/
     - Requires continuous upskilling
 
 
-### ⭐️ Video - Viewpoints: Skills and Qualities to be a Data Engineer
+### 🗂️ Video - Viewpoints: Skills and Qualities to be a Data Engineer
 
-### ⭐️ Video - A Day in the Life of a Data Engineer
+### 🗂️ Video - A Day in the Life of a Data Engineer
 
 #### ✔️ 01 - Business Context & Motivation
 - **Data Engineer**: A professional supporting business goals through data systems.
