@@ -1,7 +1,7 @@
 ---
 layout: page
 title: /M1C1/
-permalink: /M1C2/
+permalink: /M1C1/
 ---
 
 
