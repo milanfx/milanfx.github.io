@@ -32,11 +32,11 @@ In this exercise, you will learn how to load a CSV file and create a table using
 
 **Step 1:** After launching the Datasette tool through the **Launch App** button, click on the three vertical lines located in the upper right corner to open the menu for adding datasets.
 
-<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/menu2.png" style="width:850px; max-height:600px; object-fit:contain;"></div>
+<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/menu2.png" style="width:820px; max-height:600px; object-fit:contain;"></div>
 
 **Step 2:** Next click the **Add DataSets** option to add the dataset.
 
-<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/adddata.png" style="width:850px; max-height:600px; object-fit:contain;"></div></div>
+<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/adddata.png" style="width:820px; max-height:600px; object-fit:contain;"></div>
 
 **Step 3:** You will be redirected to a page where you need to enter the full URL of the CSV dataset in the text box.
 
@@ -46,7 +46,7 @@ Right-click on the link
 
 Enter the copied URL in the text box and click on the create button.
 
-<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/Data_img2.png" style="width:850px; max-height:600px; object-fit:contain;"></div></div>
+<div align="left"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/Data_img2.png" style="width:820px; max-height:600px; object-fit:contain;"></div>
 
 **Step 4:** The exercise03_car_sales_data table will be created with the data loaded from the CSV file. 
 
