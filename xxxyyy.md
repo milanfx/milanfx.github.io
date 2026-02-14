@@ -1,7 +1,7 @@
 ---
 layout: Note
 title: S1C1M3Lab1
-permalink: /:title/
+permalink: /S1C1M3Lab1/
 ---
 
 # Lab01 - Datasette Loading Data from CSV
