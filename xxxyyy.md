@@ -32,7 +32,7 @@ In this exercise, you will learn how to load a CSV file and create a table using
 
 **Step 1:** After launching the Datasette tool through the **Launch App** button, click on the three vertical lines located in the upper right corner to open the menu for adding datasets.
 
-<div style="display: inline-grid; border: 2px solid var(--word);"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/menu2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
+<div align="left"><div style="display: inline-grid; border: 2px solid var(--word);"><img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0100EN-SkillsNetwork/Datasetteoptionallabs/Week3/images/menu2.png" style="width:890px; max-height:600px; object-fit:contain;"></div></div>
 
 **Step 2:** Next click the **Add DataSets** option to add the dataset.
 
